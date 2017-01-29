@@ -24,5 +24,11 @@
 			<result name="error">error.jsp</result>
 			<result name="success">welcome.jsp</result>
 		</action>
+		<action name="Register" class="club.istc.action.Register">
+			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
+			<result name="input">register.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="success">welcome.jsp</result>
+		</action>
 	</package>
 </struts>

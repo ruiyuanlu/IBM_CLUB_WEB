@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>T_T</title>
+    <title>My JSP 'fileuploadtest.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,6 +23,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    404~出错啦！<br>
+    <form action="HomeworkDocAction" method="post" enctype="multipart/form-data">
+        file: <input type="file" name="file"><br> 
+        <input type="submit" value="上传">
+    </form>
   </body>
 </html>

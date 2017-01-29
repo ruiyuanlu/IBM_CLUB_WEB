@@ -24,15 +24,15 @@ public class IDCheck {
 //	}
 	public IDCheck(String id) {
 		// TODO Auto-generated constructor stub
-		this.id=id;
+		this.id=id.trim();
 		result=checkID();
 		System.out.println("id的验证结果是："+result);
 	}
 	
-	public boolean checkID() {
+	private boolean checkID() {
 		//此处需要参考学号规则
 		try {
-			Integer.parseInt(id);
+			Long.parseLong(id);
 		} catch (NumberFormatException e) {
 			// TODO: handle exception
 			return false;

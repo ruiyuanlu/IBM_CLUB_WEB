@@ -2,7 +2,14 @@ package club.istc.action;
 
 
 import java.util.Map;
+
 import club.istc.bean.*;
+import club.istc.validation.IDCheck;
+import club.istc.validation.InjectionCheck;
+import club.istc.validation.PhoneNumberCheck;
+import club.istc.validation.QQCheck;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -15,36 +22,38 @@ public class Register extends ActionSupport{
 	private int age;
 	private String name;
 	private String password;
+	private String repassword;
 	private String QQ;
 	private String phoneNumber;
-	private int gender;
-	private Person curPerson;
+	private String gender;
+	private Person curPerson=new Person();
 	private Map<String, Object> session;
 	// 用户登录 
+	
+	public Register() {
+		// TODO Auto-generated constructor stub
+		ActionContext context=ActionContext.getContext();
+		session=context.getSession();
+	}
 	
 	@Override
 	public String execute() {
 		//加上数据库的操作
 		
 		try {
-			if (!personSet()) {
-				session.put("faulttype", "IllegalDefault");
-				return "input";
-			}
 //			if(new Func_for_control().registerPerson(curPerson)){
-//				session.put("personInfo", curPerson);
+				session.put("personInfo", curPerson);
 //				return SUCCESS;
 //			}
 		}
 //		catch (IllegalAccessException e) {
 //			// TODO: handle exception
-//			session.put("faulttype", "Illegal");
-//			return "illegal";
+//			addFieldError("registerfault", "数据库写入失败！请稍后再试。");
 //		}
 		catch (Exception e) {
 			// TODO: handle exception
-			session.put("faulttype", "Unknown");
-			return ERROR;
+			addFieldError("registerfault", "出现了未知错误，请稍后再试。");
+			return INPUT;
 		}
 		
 		return SUCCESS;
@@ -52,23 +61,81 @@ public class Register extends ActionSupport{
 
 	}
 	
-
-	public boolean personSet(){
-		try {
-			curPerson.setID(this.id);
-			curPerson.setAge(age);
-			curPerson.setName(name);
-			curPerson.setQQ(this.QQ);
-			curPerson.setPhoneNumber(phoneNumber);
-			curPerson.setPassword(password);
-			if (gender==0) {
-				curPerson.setGender(false);
-			}
-		} catch (NullPointerException e) {
-			// TODO: handle exception
-			return false;
+	
+	@Override
+	public void validate(){
+		if (id==null || id=="") {
+			addFieldError("id", "请输入您的学号！");
 		}
-		return true;
+		else {
+//			if (condition) {
+//			addFieldError("id", "您的学号已经被注册过！请登录或尝试找回密码。");
+//		}
+			if (!new IDCheck(id).getResult()) {
+				addFieldError("id", "您的学号输入有误，请检查并重新输入。");
+			}
+			else {
+				curPerson.setID(this.id);
+			}
+		}
+		if (password==null || password=="") {
+			addFieldError("password", "请设置您的密码！");
+		}
+		else {
+			if (!new InjectionCheck(password).getResult()) {
+				addFieldError("password", "请不要在密码中包含这些特殊符号：* ' ; - + / % #");
+			}
+			else if (!password.equals(repassword)) {
+				addFieldError("repassword", "两次输入的密码不一致！");
+			} else {
+				curPerson.setPassword(password);
+			}
+
+		}
+		if (name==null || name=="") {
+			addFieldError("name", "请输入您的姓名！");
+		}
+		else {
+			if (!new InjectionCheck(name).getResult()) {
+				addFieldError("name", "请输入正确的姓名信息！");
+			}
+			else {
+				curPerson.setName(name);
+			}
+		}
+		if (phoneNumber==null || phoneNumber=="") {
+			addFieldError("phoneNumber", "请告诉我们您的手机号以方便联系您。");
+		}
+		else {
+			if (!new PhoneNumberCheck(phoneNumber).getResult()) {
+				addFieldError("phoneNumber", "请输入有效的大陆手机号码！");
+			}
+			else {
+				curPerson.setPhoneNumber(phoneNumber);
+			}
+		}
+		if (QQ==null || QQ=="") {
+			addFieldError("QQ", "请告诉我们您的QQ号以方便日后您与社团其他成员的互动。");
+		}
+		else {
+			if (!new QQCheck(QQ).getResult()) {
+				addFieldError("QQ", "请输入正确的QQ号码！");
+			}
+			else {
+				curPerson.setQQ(this.QQ);
+			}
+		}
+		//西安交通大学招生简章规定，少年班的入学年龄不得低于14岁
+		if (age<14 || age>100) {
+			addFieldError("age", "您输入的年龄信息有误，请重新输入！");
+		}
+		else {
+			curPerson.setAge(age);
+		}
+		if (gender.equals("0")) {
+			curPerson.setGender(false);
+		}
+		session.put("personInfo", curPerson);
 	}
 	
 	public int getAge() {
@@ -82,7 +149,6 @@ public class Register extends ActionSupport{
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -103,12 +169,20 @@ public class Register extends ActionSupport{
 		this.password = password;
 	}
 
+	public String getRepassword() {
+		return repassword;
+	}
+
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
+	}
+	
 	public String getQQ() {
 		return QQ;
 	}
 
-	public void setQQ(String qQ) {
-		QQ = qQ;
+	public void setQQ(String QQ) {
+		this.QQ = QQ;
 	}
 
 	public String getPhoneNumber() {
@@ -119,11 +193,11 @@ public class Register extends ActionSupport{
 		this.phoneNumber = phoneNumber;
 	}
 
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	
