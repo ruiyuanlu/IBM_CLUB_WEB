@@ -22,6 +22,6 @@ session.setAttribute("info", "这是一段测试从jsp到Servlet能否正常发�
 	    password:<input type="password" name="password"/><font color="red"><s:fielderror fieldName="password"/></font><br/>
 	    <input type="submit" value="提交"/>
     </form>
-	<font color="red"><%=faulttype%></font>
+	<font color="red"><s:fielderror fieldName="loginfault"/></font>
 </body>
 </html>

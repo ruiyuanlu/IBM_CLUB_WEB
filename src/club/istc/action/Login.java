@@ -2,6 +2,10 @@ package club.istc.action;
 
 import java.util.Map;
 
+import org.apache.struts2.components.Password;
+
+import club.istc.validation.*;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -27,6 +31,7 @@ public class Login extends ActionSupport{
 		System.out.println(session.get("info"));
 	}
 	
+	@Override
 	public String execute() {
 		//通过用户名和密码获取Member类对象信息
 		//在这里嵌入数据库相关代码以检测是否成功连入数据库
@@ -56,12 +61,32 @@ public class Login extends ActionSupport{
 //			return ERROR;
 //		}
 		if ("2141601033".equals(id)) {
-			if ("456".equals(password)) {
-				return SUCCESS;
+			if (!"456".equals(password)) {
+				addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
+				return INPUT;
 			}
 		}
-		session.put("faulttype", "密码和用户名不匹配！");
-		return "input";
+		else {
+			addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
+			return INPUT;
+		}
+		return SUCCESS;
+	}
+	
+	@Override
+	public void validate(){
+		if (id==null || id=="") {
+			addFieldError("id", "请输入学号！");
+		}
+		if (password==null || password=="") {
+			addFieldError("password", "请输入密码！");
+		}
+		if (!new InjectionCheck(id).getResult()) {
+			addFieldError("id", "您输入的信息不合法！");
+		}
+		if (!new InjectionCheck(password).getResult()) {
+			addFieldError("password", "您输入的信息不合法！");
+		}
 	}
 	
 	public String getId() {
