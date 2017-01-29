@@ -15,7 +15,7 @@
 	<!-- 开发模式下使用的，可以打印出更加详细的错误信息 -->
 	<constant name="struts.devMode" value="true"></constant>
 	<!-- 是否开启动态方法调用 -->
-	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<!-- 声明包 -->
 	<package name="istc" namespace="/" extends="struts-default">
 		<action name="Login" class="club.istc.action.Login">
@@ -29,6 +29,11 @@
 			<result name="input">register.jsp</result>
 			<result name="error">error.jsp</result>
 			<result name="success">welcome.jsp</result>
+		</action>
+		<action name="HomeworkDocAction" class="club.istc.action.HomeworkDocAction">
+			<!-- 上传文件页面 -->
+			<result name="input">error.jsp</result>
+			<result>welcome.jsp</result>
 		</action>
 	</package>
 </struts>
