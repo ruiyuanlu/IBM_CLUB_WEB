@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<include file="struts-default.xml"></include>
+	<!-- 默认编码集 -->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- 设置需要struts2处理的请求后缀 -->
+	<constant name="struts.action.extension" value="do,action"></constant>
+	<!-- 设置浏览器是否缓存静态内容，开发阶段关闭，生产阶段打开 -->
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<!-- 配置文件被修改后，系统是否自动重新加载该文件，开发阶段打开 -->
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- 开发模式下使用的，可以打印出更加详细的错误信息 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 是否开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 声明包 -->
+	<package name="istc" namespace="/" extends="struts-default">
+		<action name="Login" class="org.istc.action.Login">
+			<!-- 用户登录页面，如果验证器通不过将一直留在这个页面 -->
+			<result name="index">index.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="success">welcome.jsp</result>
+		</action>
+	</package>
+</struts>
