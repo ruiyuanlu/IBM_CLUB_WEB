@@ -2,10 +2,6 @@ package club.istc.action;
 
 import java.util.Map;
 
-/**
- * 当前的会话有效性查验，用于判定操作是否合法
- */
-
 public class SessionCheck {
 	
 	

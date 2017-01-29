@@ -135,7 +135,7 @@ public class Register extends ActionSupport{
 		if (gender.equals("0")) {
 			curPerson.setGender(false);
 		}
-		session.put("personInfo", curPerson);
+		//session.put("personInfo", curPerson);
 	}
 	
 	public int getAge() {

@@ -10,9 +10,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 登录。
- * 通过输入的用户名和密码，获取该用户信息并存入session中。
- * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。
- * 任何涉及数据库的操作均需要查验session。
+ * 通过输入的用户名和密码，获取该用户信息并存入session中
+ * 该session在浏览网站的过程中全程存在，代表用户处于登录状态
+ * 任何涉及数据库的操作均需要查验session
  */
 
 public class Login extends ActionSupport{

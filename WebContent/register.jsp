@@ -1,48 +1,67 @@
 <%@page import="club.istc.bean.Person"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%
-Person curPerson=new Person();
-if(session.getAttribute("personInfo")!=null)
-	curPerson=(Person)session.getAttribute("personInfo");
-try{
-	curPerson.getAge();
-}
-catch(NullPointerException e){
-	curPerson.setAge(0);
-}
- %>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    
-    <title>注册</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
-  </head>
+<head>  
+<style type="text/css">  
+    .errorLabel{color: red;}  
+</style>  
+<sj:head jquerytheme="cupertino" ajaxcache="false" compressed="false"/>  
+</head> 
   
   <body>
-    <form action="Register.do" method="post">
-	  	  学号:<input type="text" name="id" <%if(curPerson.getID()!=null)%>value=<%=curPerson.getID()%>></input><font color="red"><s:fielderror fieldName="id"/></font><br/>
-	   	密码:<input type="password" name="password"/><font color="red"><s:fielderror fieldName="password"/></font><br/>
-	   	确认密码：<input type="password" name="repassword" /><font color="red"><s:fielderror fieldName="repassword"/></font><br/>
-	  	  姓名:<input type="text" name="name" <%if(curPerson.getName()!=null)%>value=<%=curPerson.getName()%> ></input><font color="red"><s:fielderror fieldName="name"/></font><br/>
+	<s:form action="Register.do" theme="xhtml" target="_blank">
+	  	  学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
+	   	密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
+	   	确认密码：<input type="password" name="repassword" /><font color="red"><span id="error_repassword"></span></font><br/>
+	  	  姓名:<input type="text" name="name" ></input><font color="red"><span id="error_name"></span></font><br/>
 	   	性别：<br/>
 	    <input type="radio" name="gender" value="1" checked> 男<br>
   		<input type="radio" name="gender" value="0"> 女<br>
-  		年龄：<input type="number" name="age" min="14" max="100"  <%if(curPerson.getAge()!=0)%>value=<%=curPerson.getAge()%>></input><font color="red"><s:fielderror fieldName="age"/></font><br/>
-  		手机号：<input type="text" name="phoneNumber" <%if(curPerson.getPhoneNumber()!=null)%>value=<%=curPerson.getPhoneNumber()%>></input><font color="red"><s:fielderror fieldName="phoneNumber"/></font><br/>
-  		QQ：<input type="text" name="QQ" <%if(curPerson.getQQ()!=null)%>value=<%=curPerson.getQQ()%>></input><font color="red"><s:fielderror fieldName="QQ" /></font><br/>
-	    <input type="submit" value="提交"/>
-    </form>
+  		年龄：<input type="number" name="age" min="14" max="100" value="18"></input><font color="red"><span id="error_age"></span></font><br/>
+  		手机号：<input type="text" name="phoneNumber" ></input><font color="red"><span id="error_phoneNumber"></span></font><br/>
+  		QQ：<input type="text" name="QQ"></input><font color="red"><span id="error_QQ"></span></font><br/> 
+        <sj:submit   
+            onCompleteTopics="complete"   
+            targets="result"   
+            onBeforeTopics="clearError"  
+            value="注册"/>  
+    </s:form>  
+    
 	<font color="red"><s:fielderror fieldName="registerfault"/></font>
   </body>
+ <script type="text/javascript">  
+    $.subscribe('clearError', function(event,data) {  
+        $("#errorMessages").html("");  
+        $('.errorLabel').html('').removeClass('errorLabel');  
+    });  
+    $.subscribe('complete', function(event,data) {  
+        $("#errorMessages").html("");//先将上次认证的错误消息清除掉  
+        $('.errorLabel').html('').removeClass('errorLabel');  
+          
+        var json = $.parseJSON(event.originalEvent.request.responseText);  
+        if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors  
+            $.each(json.actionErrors,function(index,data){  
+                $("#errorMessages").append("<li>"+data+"</li>");  
+            });  
+            return;  
+        }  
+        if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError(LoginAction-validation.xml验证错误)  
+            $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个  
+                $("#error_"+index).html(value[0]);  
+                $("#error_"+index).addClass("errorLabel");  
+            });  
+            return;  
+        }  
+        alert("登陆成功");//既没有actionError有没有fieldError则登陆成功  
+    });  
+    function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)  
+        for(var p in obj){  
+            return false;  
+        }  
+        return true;  
+    }  
+</script> 
 </html>

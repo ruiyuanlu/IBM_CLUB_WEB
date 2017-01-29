@@ -26,7 +26,7 @@ public class IDCheck {
 		// TODO Auto-generated constructor stub
 		this.id=id.trim();
 		result=checkID();
-		System.out.println("id的验证结果是："+result);
+		//System.out.println("id的验证结果是："+result);
 	}
 	
 	private boolean checkID() {
