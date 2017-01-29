@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h1>欢迎访问西交IBM俱乐部官网！</h1>
   <a href="register.jsp">注册</a><br/>
     <a href="login.jsp">登录</a><br/>
-    <a href="fileuploadtest.jsp">上传文件测试</a>
+    <a href="fileuploadtest.jsp">上传文件测试</a><br/>
+    <a href="intervieweeget">面试功能测试</a>
   </body>
 </html>

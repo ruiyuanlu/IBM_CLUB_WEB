@@ -13,26 +13,18 @@ public class InterviewAction extends ActionSupport{
 	 * 面试模块
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<Person> interviewees;
-	private List<String> passed;
-	private List<String> notpassed;
+	private static List<Person> interviewees=new ArrayList<Person>();
+	private String[] passed;
 	Map<String, Object> session;
 	
-	public List<String> getPassed(){  
+	public String[] getPassed(){  
 	    return passed;  
 	}  
 	
-	public void setPassed(List<String> passed){  
+	public void setPassed(String[] passed){  
 	    this.passed=passed;  
 	} 
-	
-	public List<String> getNotpassed() {
-		return notpassed;
-	}
-	
-	public void setNotpassed(List<String> notpassed) {
-		this.notpassed = notpassed;
-	}
+
 	
 	public InterviewAction() {
 		// TODO Auto-generated constructor stub
@@ -40,23 +32,86 @@ public class InterviewAction extends ActionSupport{
 		session=context.getSession();
 	}
 	
-	@Override
-	public String execute(){
-		deletePerson();
-		session.put("interviewList", interviewees);
-		return INPUT;
+	public String check() throws Exception{
+		try {
+			deletePerson();
+			//从数据库中重新获取Person对象的List
+			session.put("interviewList", interviewees);
+			if (interviewees.size()==0) {
+				addFieldError("getIntervieweeError", "面试已结束！");
+			}
+			return INPUT;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
+			return INPUT;
+		}
+	}
+	
+	public String get() throws Exception{
+		addtemp();
+		try {
+			session.put("interviewList", interviewees);
+			return INPUT;
+		} catch (Exception e) {
+			// TODO: handle exception
+			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
+			return INPUT;
+		}
 	}
 	
 	private void deletePerson(){
 		//将通过面试的用户加入数据库并删除其在面试列表中的记录
-		for (int i = 0; i < passed.size(); i++) {
-			//将学号对应的人员加入数据库
-			//在数据库删除对应人员
+		try {
+			for (int i = 0; i < passed.length; i++) {
+				//将学号对应的人员加入数据库
+				//在数据库中删除对应人员
+				for (int j = 0; j < interviewees.size(); j++) {
+					
+					if(passed[i].trim().equals(interviewees.get(j).getID().trim())){
+						interviewees.remove(j);
+						break;
+					}	
+				}
+			}
+		} catch (NullPointerException e) {
+			// TODO: handle exception
+			
 		}
-		for (int i = 0; i < notpassed.size(); i++) {
-			//在数据库删除对应人员
+
+	}
+	
+/*	private ArrayList<Person> getIntervieweesFromDatabase() {
+		//原则上是从数据库中获取数据，这里为了测试用假数据
+		try {
+			ArrayList<Person> curIntervieweesList = new ArrayList<Person>();
+			
+
+			
+			return curIntervieweesList;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
 		}
-		//从数据库中重新获取Person对象的List
+	}*/
+	
+	public static void addtemp() {
+		Person curPerson = new Person();
+		curPerson.setID("2141601033");
+		curPerson.setName("张三");
+		interviewees.add(curPerson);
+		
+		curPerson=new Person();
+		curPerson.setID("2141601022");
+		curPerson.setName("李四");
+		interviewees.add(curPerson);
+		
+		curPerson=new Person();
+		curPerson.setID("2141601011");
+		curPerson.setName("王五");
+		interviewees.add(curPerson);
 	}
 
 }

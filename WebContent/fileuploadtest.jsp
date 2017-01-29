@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-　　<form action="HomeworkDocAction.do" method="post" enctype="multipart/form-data">
+　　<form action="HomeworkDocAction" method="post" enctype="multipart/form-data">
         file: <input type="file" name="file"/><br>  
         <input type="submit" value="submit">
     </form>

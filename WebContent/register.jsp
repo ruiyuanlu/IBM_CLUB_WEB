@@ -30,7 +30,7 @@ catch(NullPointerException e){
   </head>
   
   <body>
-    <form action="Register.do" method="post">
+    <form action="Register" method="post">
 	  	  学号:<input type="text" name="id" <%if(curPerson.getID()!=null)%>value=<%=curPerson.getID()%>></input><font color="red"><s:fielderror fieldName="id"/></font><br/>
 	   	密码:<input type="password" name="password"/><font color="red"><s:fielderror fieldName="password"/></font><br/>
 	   	确认密码：<input type="password" name="repassword" /><font color="red"><s:fielderror fieldName="repassword"/></font><br/>

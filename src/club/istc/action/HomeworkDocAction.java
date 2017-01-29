@@ -48,6 +48,7 @@ public class HomeworkDocAction extends ActionSupport{
 	    @Override
 	    public String execute(){
 	    	try {
+	    //可以加上一个当目录不存在时自动创建目录的代码
 		        String root = ServletActionContext.getServletContext().getRealPath("/upload"); 
 		        InputStream is = new FileInputStream(file);
 		        OutputStream os = new FileOutputStream(new File(root, fileFileName));
@@ -56,8 +57,7 @@ public class HomeworkDocAction extends ActionSupport{
 		        System.out.println("file: " + file.getName());
 		        System.out.println("file: " + file.getPath());
 		        byte[] buffer = new byte[500];
-		        int length = 0;
-		        while(-1 != (length = is.read(buffer, 0, buffer.length))){
+		        while(-1 != (is.read(buffer, 0, buffer.length))){
 		            os.write(buffer);
 		        }
 		        os.close();
