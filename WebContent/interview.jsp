@@ -31,16 +31,16 @@ Person curPerson=new Person();
   <body>
   
   <font color="red"><s:fielderror fieldName="getIntervieweeError"/></font>
+  <%if(interviewees.size()!=0){ %>
        <form action="intervieweecheck" method="post">
        <%for (int i=0;i<interviewees.size();i++){%>
        <%=interviewees.get(i).getName()%>(<%=interviewees.get(i).getID()%>)
        <input type="checkbox" name="passed" value=<%=interviewees.get(i).getID()%>></input>通过
        <br/>
         <%}%>
-        <%if(interviewees.size()!=0){ %>
-	    <input type="submit" value="提交"/>
-	    <%}%>
+        
+	    <input type="submit" value="提交"/>   
     </form>
-    
+  <%}%>  
   </body>
 </html>
