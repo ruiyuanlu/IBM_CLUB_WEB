@@ -10,7 +10,7 @@ import club.istc.bean.*;
 public class InterviewAction extends ActionSupport{
 	
 	/**
-	 * ÃæÊÔÄ£¿é
+	 * é¢è¯•æ¨¡å—
 	 */
 	private static final long serialVersionUID = 1L;
 	private static List<Person> interviewees=new ArrayList<Person>();
@@ -35,16 +35,16 @@ public class InterviewAction extends ActionSupport{
 	public String check() throws Exception{
 		try {
 			deletePerson();
-			//´ÓÊı¾İ¿âÖĞÖØĞÂ»ñÈ¡Person¶ÔÏóµÄList
+			//ä»æ•°æ®åº“ä¸­é‡æ–°è·å–Personå¯¹è±¡çš„List
 			session.put("interviewList", interviewees);
 			if (interviewees.size()==0) {
-				addFieldError("getIntervieweeError", "ÃæÊÔÒÑ½áÊø£¡");
+				addFieldError("getIntervieweeError", "é¢è¯•å·²ç»“æŸï¼");
 			}
 			return INPUT;
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			addFieldError("getIntervieweeError", "»ñÈ¡ÃæÊÔÈËÔ±ĞÅÏ¢Ê§°Ü£¡");
+			addFieldError("getIntervieweeError", "è·å–é¢è¯•äººå‘˜ä¿¡æ¯å¤±è´¥ï¼");
 			return INPUT;
 		}
 	}
@@ -56,17 +56,17 @@ public class InterviewAction extends ActionSupport{
 			return INPUT;
 		} catch (Exception e) {
 			// TODO: handle exception
-			addFieldError("getIntervieweeError", "»ñÈ¡ÃæÊÔÈËÔ±ĞÅÏ¢Ê§°Ü£¡");
+			addFieldError("getIntervieweeError", "è·å–é¢è¯•äººå‘˜ä¿¡æ¯å¤±è´¥ï¼");
 			return INPUT;
 		}
 	}
 	
 	private void deletePerson(){
-		//½«Í¨¹ıÃæÊÔµÄÓÃ»§¼ÓÈëÊı¾İ¿â²¢É¾³ıÆäÔÚÃæÊÔÁĞ±íÖĞµÄ¼ÇÂ¼
+		//å°†é€šè¿‡é¢è¯•çš„ç”¨æˆ·åŠ å…¥æ•°æ®åº“å¹¶åˆ é™¤å…¶åœ¨é¢è¯•åˆ—è¡¨ä¸­çš„è®°å½•
 		try {
 			for (int i = 0; i < passed.length; i++) {
-				//½«Ñ§ºÅ¶ÔÓ¦µÄÈËÔ±¼ÓÈëÊı¾İ¿â
-				//ÔÚÊı¾İ¿âÖĞÉ¾³ı¶ÔÓ¦ÈËÔ±
+				//å°†å­¦å·å¯¹åº”çš„äººå‘˜åŠ å…¥æ•°æ®åº“
+				//åœ¨æ•°æ®åº“ä¸­åˆ é™¤å¯¹åº”äººå‘˜
 				for (int j = 0; j < interviewees.size(); j++) {
 					
 					if(passed[i].trim().equals(interviewees.get(j).getID().trim())){
@@ -83,7 +83,7 @@ public class InterviewAction extends ActionSupport{
 	}
 	
 /*	private ArrayList<Person> getIntervieweesFromDatabase() {
-		//Ô­ÔòÉÏÊÇ´ÓÊı¾İ¿âÖĞ»ñÈ¡Êı¾İ£¬ÕâÀïÎªÁË²âÊÔÓÃ¼ÙÊı¾İ
+		//åŸåˆ™ä¸Šæ˜¯ä»æ•°æ®åº“ä¸­è·å–æ•°æ®ï¼Œè¿™é‡Œä¸ºäº†æµ‹è¯•ç”¨å‡æ•°æ®
 		try {
 			ArrayList<Person> curIntervieweesList = new ArrayList<Person>();
 			
@@ -100,17 +100,17 @@ public class InterviewAction extends ActionSupport{
 	public static void addtemp() {
 		Person curPerson = new Person();
 		curPerson.setID("2141601033");
-		curPerson.setName("ÕÅÈı");
+		curPerson.setName("å¼ ä¸‰");
 		interviewees.add(curPerson);
 		
 		curPerson=new Person();
 		curPerson.setID("2141601022");
-		curPerson.setName("ÀîËÄ");
+		curPerson.setName("æå››");
 		interviewees.add(curPerson);
 		
 		curPerson=new Person();
 		curPerson.setID("2141601011");
-		curPerson.setName("ÍõÎå");
+		curPerson.setName("ç‹äº”");
 		interviewees.add(curPerson);
 	}
 

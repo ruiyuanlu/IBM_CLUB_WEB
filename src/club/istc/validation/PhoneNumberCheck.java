@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
- * ÊÖ»úºÅÂëºÏ·¨ĞÔ¼ì²â
+ * æ‰‹æœºå·ç åˆæ³•æ€§æ£€æµ‹
  */
 
 public class PhoneNumberCheck {
@@ -17,7 +17,7 @@ public class PhoneNumberCheck {
 		// TODO Auto-generated constructor stub
 		this.phoneNumber=phonenumber.trim();
 		result=checkPhonenumber();
-		//System.out.println("ÊÖ»úºÅ¼ì²â½á¹ûÊÇ£º"+false);
+		//System.out.println("æ‰‹æœºå·æ£€æµ‹ç»“æœæ˜¯ï¼š"+false);
 		
 	}
 	
@@ -33,12 +33,12 @@ public class PhoneNumberCheck {
 	
     private static boolean isChinaPhoneLegal(String str) throws PatternSyntaxException { 
         /** 
-         * ´óÂ½ÊÖ»úºÅÂë11Î»Êı£¬Æ¥Åä¸ñÊ½£ºÇ°ÈıÎ»¹Ì¶¨¸ñÊ½+ºó8Î»ÈÎÒâÊı 
-         * ´Ë·½·¨ÖĞÇ°ÈıÎ»¸ñÊ½ÓĞ£º 
-         * 13+ÈÎÒâÊı 
-         * 15+³ı4µÄÈÎÒâÊı 
-         * 18+³ı1ºÍ4µÄÈÎÒâÊı 
-         * 17+³ı9µÄÈÎÒâÊı 
+         * å¤§é™†æ‰‹æœºå·ç 11ä½æ•°ï¼ŒåŒ¹é…æ ¼å¼ï¼šå‰ä¸‰ä½å›ºå®šæ ¼å¼+å8ä½ä»»æ„æ•° 
+         * æ­¤æ–¹æ³•ä¸­å‰ä¸‰ä½æ ¼å¼æœ‰ï¼š 
+         * 13+ä»»æ„æ•° 
+         * 15+é™¤4çš„ä»»æ„æ•° 
+         * 18+é™¤1å’Œ4çš„ä»»æ„æ•° 
+         * 17+é™¤9çš„ä»»æ„æ•° 
          * 147 
          */  
         String regExp = "^((13[0-9])|(15[^4])|(18[0,2,3,5-9])|(17[0-8])|(147))\\d{8}$";  
@@ -50,7 +50,7 @@ public class PhoneNumberCheck {
 
     private static boolean isHKPhoneLegal(String str)throws PatternSyntaxException {  
         /** 
-         * Ïã¸ÛÊÖ»úºÅÂë8Î»Êı£¬5|6|8|9¿ªÍ·+7Î»ÈÎÒâÊı 
+         * é¦™æ¸¯æ‰‹æœºå·ç 8ä½æ•°ï¼Œ5|6|8|9å¼€å¤´+7ä½ä»»æ„æ•° 
          */  
         String regExp = "^(5|6|8|9)\\d{7}$";  
         Pattern p = Pattern.compile(regExp);  

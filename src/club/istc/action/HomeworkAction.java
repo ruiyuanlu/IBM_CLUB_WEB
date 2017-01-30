@@ -1,7 +1,7 @@
 package club.istc.action;
 
 /**
- * ╡©Ё╓╪╟ртиоЁит╠╧эюМвВр╣пео╒╥╒╡╪
+ * И┐╗И∙©Е▐┼Д╩╔Д╦┼Ф┬░Е▒≤Г╝║Г░├Д╫°Д╦ Д©║Ф│╞Е▐▒Е╦┐
  */
 
 public class HomeworkAction {

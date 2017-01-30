@@ -1,7 +1,7 @@
 package club.istc.validation;
 
 /**
- * SQL×¢Èë¼ì²â£¬²»ÔÊĞí±íµ¥ÖĞÊäÈëÈÎºÎSQLÓï¾äÖĞµÄ¹Ø¼ü´ÊºÍ·ûºÅ£¬Ò»µ©´æÔÚÔò·µ»ØFALSE
+ * SQLæ³¨å…¥æ£€æµ‹ï¼Œä¸å…è®¸è¡¨å•ä¸­è¾“å…¥ä»»ä½•SQLè¯­å¥ä¸­çš„å…³é”®è¯å’Œç¬¦å·ï¼Œä¸€æ—¦å­˜åœ¨åˆ™è¿”å›FALSE
  */
 
 public class InjectionCheck {
@@ -33,13 +33,13 @@ public class InjectionCheck {
 			
 		}
 		
-		//System.out.println("SQL×¢ÈëµÄÑéÖ¤½á¹ûÊÇ£º"+result);
+		//System.out.println("SQLæ³¨å…¥çš„éªŒè¯ç»“æœæ˜¯ï¼š"+result);
 	}
 	
 	private boolean checkString() {
         String str2 = needcheck.toLowerCase();
-        //String[] SqlStr1 = {"and","exec","execute","insert","select","delete","update","count","drop","chr","mid","master","truncate","char","declare","sitename","net user","xp_cmdshell","like","and","exec","execute","insert","create","drop","table","from","grant","use","group_concat","column_name","information_schema.columns","table_schema","union","where","select","delete","update","order","by","count","chr","mid","master","truncate","char","declare","or"};//´ÊÓï
-        String[] SqlStr2 = {"*","'",";","-","--","+","//","/","%","#"};//ÌØÊâ×Ö·û
+        //String[] SqlStr1 = {"and","exec","execute","insert","select","delete","update","count","drop","chr","mid","master","truncate","char","declare","sitename","net user","xp_cmdshell","like","and","exec","execute","insert","create","drop","table","from","grant","use","group_concat","column_name","information_schema.columns","table_schema","union","where","select","delete","update","order","by","count","chr","mid","master","truncate","char","declare","or"};//è¯è¯­
+        String[] SqlStr2 = {"*","'",";","-","--","+","//","/","%","#"};//ç‰¹æ®Šå­—ç¬¦
   
 //       for (int i = 0; i < SqlStr1.length; i++) {
 //            if (str2.indexOf(SqlStr1[i])>=0) {

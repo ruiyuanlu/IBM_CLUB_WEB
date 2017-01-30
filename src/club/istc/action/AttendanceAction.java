@@ -1,7 +1,7 @@
 package club.istc.action;
 
 /**
- * 部长及以上成员管理考勤信息
+ * 閮ㄩ暱鍙婁互涓婃垚鍛樼鐞嗚�冨嫟淇℃伅
  */
 
 public class AttendanceAction {

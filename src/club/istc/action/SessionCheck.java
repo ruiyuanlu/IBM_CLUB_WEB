@@ -3,7 +3,7 @@ package club.istc.action;
 import java.util.Map;
 
 /**
- * µ±Ç°µÄ»á»°ÓĞĞ§ĞÔ²éÑé£¬ÓÃÓÚÅĞ¶¨²Ù×÷ÊÇ·ñºÏ·¨
+ * å½“å‰çš„ä¼šè¯æœ‰æ•ˆæ€§æŸ¥éªŒï¼Œç”¨äºåˆ¤å®šæ“ä½œæ˜¯å¦åˆæ³•
  */
 
 public class SessionCheck {
@@ -16,14 +16,14 @@ public class SessionCheck {
 	}
 	
 	private boolean check(Map<String, Object> session) {
-		//»ñµÃ°üº¬µ±Ç°µÇÂ¼ÓÃ»§ĞÅÏ¢µÄsession£¬ÓÃÓÚÅĞ¶ÏÈ¨ÏŞ
+		//è·å¾—åŒ…å«å½“å‰ç™»å½•ç”¨æˆ·ä¿¡æ¯çš„sessionï¼Œç”¨äºåˆ¤æ–­æƒé™
 		try {
 			session.get("PersonInfo");
 		} catch (NullPointerException e) {
 			// TODO: handle exception
 			return false;
 		}
-		//ÑéÖ¤²¿·Ö£¬ifÖĞÌîĞ´ÑéÖ¤´úÂë£¬Éæ¼°µ½´ÓÊı¾İ¿âÖĞµÄÑéÖ¤
+		//éªŒè¯éƒ¨åˆ†ï¼Œifä¸­å¡«å†™éªŒè¯ä»£ç ï¼Œæ¶‰åŠåˆ°ä»æ•°æ®åº“ä¸­çš„éªŒè¯
 		if (true) {
 			return true;
 		} else {

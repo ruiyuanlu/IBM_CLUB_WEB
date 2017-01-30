@@ -1,7 +1,7 @@
 package club.istc.action;
 
 /**
- * ╡©Ё╓╪╟ртиоЁит╠╧эюМюЩ╩Апео╒╥╒╡╪
+ * И┐╗И∙©Е▐┼Д╩╔Д╦┼Ф┬░Е▒≤Г╝║Г░├Д╬▀Д╪ Д©║Ф│╞Е▐▒Е╦┐
  */
 
 public class MeetingAction {

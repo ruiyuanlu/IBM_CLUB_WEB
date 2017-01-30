@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * ×¢²á
+ * æ³¨å†Œ
  */
 
 public class Register extends ActionSupport{
@@ -28,7 +28,7 @@ public class Register extends ActionSupport{
 	private String gender;
 	private Person curPerson=new Person();
 	private Map<String, Object> session;
-	// ÓÃ»§µÇÂ¼ 
+	// ç”¨æˆ·ç™»å½• 
 	
 	public Register() {
 		// TODO Auto-generated constructor stub
@@ -38,7 +38,7 @@ public class Register extends ActionSupport{
 	
 	@Override
 	public String execute() {
-		//¼ÓÉÏÊı¾İ¿âµÄ²Ù×÷
+		//åŠ ä¸Šæ•°æ®åº“çš„æ“ä½œ
 		
 		try {
 //			if(new Func_for_control().registerPerson(curPerson)){
@@ -48,11 +48,11 @@ public class Register extends ActionSupport{
 		}
 //		catch (IllegalAccessException e) {
 //			// TODO: handle exception
-//			addFieldError("registerfault", "Êı¾İ¿âĞ´ÈëÊ§°Ü£¡ÇëÉÔºóÔÙÊÔ¡£");
+//			addFieldError("registerfault", "æ•°æ®åº“å†™å…¥å¤±è´¥ï¼è¯·ç¨åå†è¯•ã€‚");
 //		}
 		catch (Exception e) {
 			// TODO: handle exception
-			addFieldError("registerfault", "³öÏÖÁËÎ´Öª´íÎó£¬ÇëÉÔºóÔÙÊÔ¡£");
+			addFieldError("registerfault", "å‡ºç°äº†æœªçŸ¥é”™è¯¯ï¼Œè¯·ç¨åå†è¯•ã€‚");
 			return INPUT;
 		}
 		
@@ -65,69 +65,69 @@ public class Register extends ActionSupport{
 	@Override
 	public void validate(){
 		if (id==null || id=="") {
-			addFieldError("id", "ÇëÊäÈëÄúµÄÑ§ºÅ£¡");
+			addFieldError("id", "è¯·è¾“å…¥æ‚¨çš„å­¦å·ï¼");
 		}
 		else {
 //			if (condition) {
-//			addFieldError("id", "ÄúµÄÑ§ºÅÒÑ¾­±»×¢²á¹ı£¡ÇëµÇÂ¼»ò³¢ÊÔÕÒ»ØÃÜÂë¡£");
+//			addFieldError("id", "æ‚¨çš„å­¦å·å·²ç»è¢«æ³¨å†Œè¿‡ï¼è¯·ç™»å½•æˆ–å°è¯•æ‰¾å›å¯†ç ã€‚");
 //		}
 			if (!new IDCheck(id).getResult()) {
-				addFieldError("id", "ÄúµÄÑ§ºÅÊäÈëÓĞÎó£¬Çë¼ì²é²¢ÖØĞÂÊäÈë¡£");
+				addFieldError("id", "æ‚¨çš„å­¦å·è¾“å…¥æœ‰è¯¯ï¼Œè¯·æ£€æŸ¥å¹¶é‡æ–°è¾“å…¥ã€‚");
 			}
 			else {
 				curPerson.setID(this.id);
 			}
 		}
 		if (password==null || password=="") {
-			addFieldError("password", "ÇëÉèÖÃÄúµÄÃÜÂë£¡");
+			addFieldError("password", "è¯·è®¾ç½®æ‚¨çš„å¯†ç ï¼");
 		}
 		else {
 			if (!new InjectionCheck(password).getResult()) {
-				addFieldError("password", "Çë²»ÒªÔÚÃÜÂëÖĞ°üº¬ÕâĞ©ÌØÊâ·ûºÅ£º* ' ; - + / % #");
+				addFieldError("password", "è¯·ä¸è¦åœ¨å¯†ç ä¸­åŒ…å«è¿™äº›ç‰¹æ®Šç¬¦å·ï¼š* ' ; - + / % #");
 			}
 			else if (!password.equals(repassword)) {
-				addFieldError("repassword", "Á½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ£¡");
+				addFieldError("repassword", "ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´ï¼");
 			} else {
 				curPerson.setPassword(password);
 			}
 
 		}
 		if (name==null || name=="") {
-			addFieldError("name", "ÇëÊäÈëÄúµÄĞÕÃû£¡");
+			addFieldError("name", "è¯·è¾“å…¥æ‚¨çš„å§“åï¼");
 		}
 		else {
 			if (!new InjectionCheck(name).getResult()) {
-				addFieldError("name", "ÇëÊäÈëÕıÈ·µÄĞÕÃûĞÅÏ¢£¡");
+				addFieldError("name", "è¯·è¾“å…¥æ­£ç¡®çš„å§“åä¿¡æ¯ï¼");
 			}
 			else {
 				curPerson.setName(name);
 			}
 		}
 		if (phoneNumber==null || phoneNumber=="") {
-			addFieldError("phoneNumber", "Çë¸æËßÎÒÃÇÄúµÄÊÖ»úºÅÒÔ·½±ãÁªÏµÄú¡£");
+			addFieldError("phoneNumber", "è¯·å‘Šè¯‰æˆ‘ä»¬æ‚¨çš„æ‰‹æœºå·ä»¥æ–¹ä¾¿è”ç³»æ‚¨ã€‚");
 		}
 		else {
 			if (!new PhoneNumberCheck(phoneNumber).getResult()) {
-				addFieldError("phoneNumber", "ÇëÊäÈëÓĞĞ§µÄ´óÂ½ÊÖ»úºÅÂë£¡");
+				addFieldError("phoneNumber", "è¯·è¾“å…¥æœ‰æ•ˆçš„å¤§é™†æ‰‹æœºå·ç ï¼");
 			}
 			else {
 				curPerson.setPhoneNumber(phoneNumber);
 			}
 		}
 		if (QQ==null || QQ=="") {
-			addFieldError("QQ", "Çë¸æËßÎÒÃÇÄúµÄQQºÅÒÔ·½±ãÈÕºóÄúÓëÉçÍÅÆäËû³ÉÔ±µÄ»¥¶¯¡£");
+			addFieldError("QQ", "è¯·å‘Šè¯‰æˆ‘ä»¬æ‚¨çš„QQå·ä»¥æ–¹ä¾¿æ—¥åæ‚¨ä¸ç¤¾å›¢å…¶ä»–æˆå‘˜çš„äº’åŠ¨ã€‚");
 		}
 		else {
 			if (!new QQCheck(QQ).getResult()) {
-				addFieldError("QQ", "ÇëÊäÈëÕıÈ·µÄQQºÅÂë£¡");
+				addFieldError("QQ", "è¯·è¾“å…¥æ­£ç¡®çš„QQå·ç ï¼");
 			}
 			else {
 				curPerson.setQQ(this.QQ);
 			}
 		}
-		//Î÷°²½»Í¨´óÑ§ÕĞÉú¼òÕÂ¹æ¶¨£¬ÉÙÄê°àµÄÈëÑ§ÄêÁä²»µÃµÍÓÚ14Ëê
+		//è¥¿å®‰äº¤é€šå¤§å­¦æ‹›ç”Ÿç®€ç« è§„å®šï¼Œå°‘å¹´ç­çš„å…¥å­¦å¹´é¾„ä¸å¾—ä½äº14å²
 		if (age<14 || age>100) {
-			addFieldError("age", "ÄúÊäÈëµÄÄêÁäĞÅÏ¢ÓĞÎó£¬ÇëÖØĞÂÊäÈë£¡");
+			addFieldError("age", "æ‚¨è¾“å…¥çš„å¹´é¾„ä¿¡æ¯æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼");
 		}
 		else {
 			curPerson.setAge(age);

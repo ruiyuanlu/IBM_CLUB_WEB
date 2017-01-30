@@ -6,7 +6,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * µÇ³ö£¬Ïú»Ùsession¼´¿É
+ * ç™»å‡ºï¼Œé”€æ¯sessionå³å¯
  */
 
 @SuppressWarnings("serial")
@@ -19,8 +19,8 @@ public class Logout extends ActionSupport {
 	}
 	
 	public String execute(){   
-	    System.out.println("ÍË³öÏµÍ³"); 
-	    //µÇÂ¼¼´ÒâÎ¶×Åsession´æÔÚÓÚµ±Ç°Ò³Ãæ£¬ÍË³öÊ±Ïú»Ùsession
+	    System.out.println("é€€å‡ºç³»ç»Ÿ"); 
+	    //ç™»å½•å³æ„å‘³ç€sessionå­˜åœ¨äºå½“å‰é¡µé¢ï¼Œé€€å‡ºæ—¶é”€æ¯session
 	    session.clear();
 	    return "exit";
 	}

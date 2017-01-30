@@ -1,7 +1,7 @@
 package club.istc.validation;
 
 /**
- * ¼ì²é×¢²áÊ±ÊäÈëµÄÑ§ºÅ¸ñÊ½ÊÇ·ñÕıÈ·
+ * æ£€æŸ¥æ³¨å†Œæ—¶è¾“å…¥çš„å­¦å·æ ¼å¼æ˜¯å¦æ­£ç¡®
  */
 
 public class IDCheck {
@@ -26,11 +26,11 @@ public class IDCheck {
 		// TODO Auto-generated constructor stub
 		this.id=id.trim();
 		result=checkID();
-		System.out.println("idµÄÑéÖ¤½á¹ûÊÇ£º"+result);
+		System.out.println("idçš„éªŒè¯ç»“æœæ˜¯ï¼š"+result);
 	}
 	
 	private boolean checkID() {
-		//´Ë´¦ĞèÒª²Î¿¼Ñ§ºÅ¹æÔò
+		//æ­¤å¤„éœ€è¦å‚è€ƒå­¦å·è§„åˆ™
 		try {
 			Long.parseLong(id);
 		} catch (NumberFormatException e) {

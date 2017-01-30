@@ -1,7 +1,7 @@
 package club.istc.action;
 
 /**
- * 用于实现页面的重定向
+ * 鐢ㄤ簬瀹炵幇椤甸潰鐨勯噸瀹氬悜
  */
 
 public class Redirect {

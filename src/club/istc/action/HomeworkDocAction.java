@@ -7,18 +7,18 @@ import com.opensymphony.xwork2.ActionSupport;
 public class HomeworkDocAction extends ActionSupport{
 	
 	/**
-	 * ³ÉÔ±¹ÜÀí×Ô¼º×÷ÒµÎÄ¼şµÄÉÏ´«ºÍÏÂÔØ
+	 * æˆå‘˜ç®¡ç†è‡ªå·±ä½œä¸šæ–‡ä»¶çš„ä¸Šä¼ å’Œä¸‹è½½
 	 */
 	
 	private static final long serialVersionUID = 1L;
     
-	 //×¢Òâ£¬file²¢²»ÊÇÖ¸Ç°¶ËjspÉÏ´«¹ıÀ´µÄÎÄ¼ş±¾Éí£¬¶øÊÇÎÄ¼şÉÏ´«¹ıÀ´´æ·ÅÔÚÁÙÊ±ÎÄ¼ş¼ĞÏÂÃæµÄÎÄ¼ş
+	 //æ³¨æ„ï¼Œfileå¹¶ä¸æ˜¯æŒ‡å‰ç«¯jspä¸Šä¼ è¿‡æ¥çš„æ–‡ä»¶æœ¬èº«ï¼Œè€Œæ˜¯æ–‡ä»¶ä¸Šä¼ è¿‡æ¥å­˜æ”¾åœ¨ä¸´æ—¶æ–‡ä»¶å¤¹ä¸‹é¢çš„æ–‡ä»¶
 	    private File file;
 	    
-	    //Ìá½»¹ıÀ´µÄfileµÄÃû×Ö
+	    //æäº¤è¿‡æ¥çš„fileçš„åå­—
 	    private String fileFileName;
 	    
-	    //Ìá½»¹ıÀ´µÄfileµÄMIMEÀàĞÍ
+	    //æäº¤è¿‡æ¥çš„fileçš„MIMEç±»å‹
 	    private String fileContentType;
 
 	    public File getFile(){
@@ -48,12 +48,12 @@ public class HomeworkDocAction extends ActionSupport{
 	    @Override
 	    public String execute(){
 	    	try {
-	    //¿ÉÒÔ¼ÓÉÏÒ»¸öµ±Ä¿Â¼²»´æÔÚÊ±×Ô¶¯´´½¨Ä¿Â¼µÄ´úÂë
+	    //å¯ä»¥åŠ ä¸Šä¸€ä¸ªå½“ç›®å½•ä¸å­˜åœ¨æ—¶è‡ªåŠ¨åˆ›å»ºç›®å½•çš„ä»£ç 
 		        String root = ServletActionContext.getServletContext().getRealPath("/upload"); 
 		        InputStream is = new FileInputStream(file);
 		        OutputStream os = new FileOutputStream(new File(root, fileFileName));
 		        System.out.println("fileFileName: " + fileFileName);
-		// ÒòÎªfileÊÇ´æ·ÅÔÚÁÙÊ±ÎÄ¼ş¼ĞµÄÎÄ¼ş£¬ÎÒÃÇ¿ÉÒÔ½«ÆäÎÄ¼şÃûºÍÎÄ¼şÂ·¾¶´òÓ¡³öÀ´£¬¿´ºÍÖ®Ç°µÄfileFileNameÊÇ·ñÏàÍ¬
+		// å› ä¸ºfileæ˜¯å­˜æ”¾åœ¨ä¸´æ—¶æ–‡ä»¶å¤¹çš„æ–‡ä»¶ï¼Œæˆ‘ä»¬å¯ä»¥å°†å…¶æ–‡ä»¶åå’Œæ–‡ä»¶è·¯å¾„æ‰“å°å‡ºæ¥ï¼Œçœ‹å’Œä¹‹å‰çš„fileFileNameæ˜¯å¦ç›¸åŒ
 		        System.out.println("file: " + file.getName());
 		        System.out.println("file: " + file.getPath());
 		        byte[] buffer = new byte[500];
