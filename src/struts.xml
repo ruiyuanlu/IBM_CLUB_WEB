@@ -40,5 +40,9 @@
 			<!-- 面试测试页面 -->
 			<result name="input">interview.jsp</result>
 		</action>
+		<action name="*" class="club.istc.action.Redirect" method="{1}">
+			<!-- 面试测试页面 -->
+			<result name="{1}">{1}.jsp</result>
+		</action>
 	</package>
 </struts>
