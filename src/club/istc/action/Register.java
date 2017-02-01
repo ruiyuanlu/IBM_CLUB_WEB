@@ -34,6 +34,7 @@ public class Register extends ActionSupport{
 		// TODO Auto-generated constructor stub
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();
+		gender="0";
 	}
 	
 	@Override
@@ -43,20 +44,19 @@ public class Register extends ActionSupport{
 		try {
 //			if(new Func_for_control().registerPerson(curPerson)){
 				session.put("personInfo", curPerson);
+				return INPUT;
 //				return SUCCESS;
 //			}
 		}
 //		catch (IllegalAccessException e) {
 //			// TODO: handle exception
-//			addFieldError("registerfault", "数据库写入失败！请稍后再试。");
+//			this.addActionError("写入数据库失败。请稍后再试。"); 
 //		}
 		catch (Exception e) {
 			// TODO: handle exception
-			addFieldError("registerfault", "出现了未知错误，请稍后再试。");
+			this.addActionError("未知错误。请稍后再试。"); 
 			return INPUT;
 		}
-		
-		return SUCCESS;
 		//System.out.println("gender is"+gender);
 
 	}

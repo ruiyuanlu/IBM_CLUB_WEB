@@ -1,9 +1,22 @@
-function getValidation(){
+function getRegisterValidation(){
     //alert("complete!");
     $("#errorMessages").html("");  
     $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Register.do",$("form").serialize(), function(json) {
-    //json = $.parseJSON('{"actionErrors":[],"actionMessages":[],"fieldErrors":{"id":["请输入您的学号！"],"password":["请设置您的密码！"],"name":["请输入您的姓名！"],"phoneNumber":["请告诉我们您的手机号以方便联系您。"],"QQ":["请告诉我们您的QQ号以方便日后您与社团其他成员的互动。"]}}');  
+    $.post("Register.do",$("#register").serialize(), function(json) {  
+    	jsonSerialize(json,"注册成功！");
+    });
+}
+
+function getLoginValidation(){
+    //alert("complete!");
+    $("#errorMessages").html("");  
+    $('.errorLabel').html('').removeClass('errorLabel');  
+    $.post("Login.do",$("#login").serialize(), function(json) {
+    	jsonSerialize(json,"登录成功！");
+    });
+}
+
+function jsonSerialize(json,success){
     if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors  
         $.each(json.actionErrors,function(index,data){  
             $("#errorMessages").append("<li>"+data+"</li>");  
@@ -17,8 +30,7 @@ function getValidation(){
         });  
         return;  
     }  
-    alert("登陆成功");//既没有actionError有没有fieldError则登陆成功
-    });
+    alert(success);//既没有actionError有没有fieldError则登陆成功
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)  

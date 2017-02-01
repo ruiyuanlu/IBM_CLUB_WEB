@@ -9,10 +9,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 
 /**
- * µÇÂ¼¡£
- * Í¨¹ıÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë£¬»ñÈ¡¸ÃÓÃ»§ĞÅÏ¢²¢´æÈësessionÖĞ
- * ¸ÃsessionÔÚä¯ÀÀÍøÕ¾µÄ¹ı³ÌÖĞÈ«³Ì´æÔÚ£¬´ú±íÓÃ»§´¦ÓÚµÇÂ¼×´Ì¬
- * ÈÎºÎÉæ¼°Êı¾İ¿âµÄ²Ù×÷¾ùĞèÒª²éÑésession
+ * ç™»å½•ã€‚
+ * é€šè¿‡è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç ï¼Œè·å–è¯¥ç”¨æˆ·ä¿¡æ¯å¹¶å­˜å…¥sessionä¸­ã€‚
+ * è¯¥sessionåœ¨æµè§ˆç½‘ç«™çš„è¿‡ç¨‹ä¸­å…¨ç¨‹å­˜åœ¨ï¼Œä»£è¡¨ç”¨æˆ·å¤„äºç™»å½•çŠ¶æ€ã€‚
+ * ä»»ä½•æ¶‰åŠæ•°æ®åº“çš„æ“ä½œå‡éœ€è¦æŸ¥éªŒsessionã€‚
  */
 
 public class Login extends ActionSupport{
@@ -20,72 +20,72 @@ public class Login extends ActionSupport{
 	private String id;
 	private String password;
 	private Map<String, Object> session;
-	// ÓÃ»§µÇÂ¼ 
+	// ç”¨æˆ·ç™»å½• 
 	
 	public Login() {
 		// TODO Auto-generated constructor stub
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();
-		System.out.println(session.get("infofromjsp2Action"));
+		//System.out.println(session.get("infofromjsp2Action"));
 	}
 	
 	@Override
 	public String execute() {
-		//Í¨¹ıÓÃ»§ÃûºÍÃÜÂë»ñÈ¡MemberÀà¶ÔÏóĞÅÏ¢
-		//ÔÚÕâÀïÇ¶ÈëÊı¾İ¿âÏà¹Ø´úÂëÒÔ¼ì²âÊÇ·ñ³É¹¦Á¬ÈëÊı¾İ¿â
-		//Í¨¹ıÓÃ»§ÃûºÍÃÜÂë»ñÈ¡MemberÀà¶ÔÏóĞÅÏ¢
-		//ÉèÖÃsession	
+		//é€šè¿‡ç”¨æˆ·åå’Œå¯†ç è·å–Memberç±»å¯¹è±¡ä¿¡æ¯
+		//åœ¨è¿™é‡ŒåµŒå…¥æ•°æ®åº“ç›¸å…³ä»£ç ä»¥æ£€æµ‹æ˜¯å¦æˆåŠŸè¿å…¥æ•°æ®åº“
+		//é€šè¿‡ç”¨æˆ·åå’Œå¯†ç è·å–Memberç±»å¯¹è±¡ä¿¡æ¯
+		//è®¾ç½®session	
 //		try {
 //			curPerson=new Func_for_control().getMember(""+id, password, ""+id);
 //			if (curPerson==null) {
-//				//µÇÂ¼Ê§°Ü£¬ÖØ¶¨ÏòÖÁÔ­Ò³Ãæ£¬·¢ËÍÒ»¸ösession±íÊ¾µÇÂ¼Ê§°Ü
-//				session.put("faulttype", "NoPerson");
-//				return ERROR;
+//				//ç™»å½•å¤±è´¥ï¼Œé‡å®šå‘è‡³åŸé¡µé¢ï¼Œå‘é€ä¸€ä¸ªsessionè¡¨ç¤ºç™»å½•å¤±è´¥
+//				addFieldError("id", "ç™»å½•å¤±è´¥ã€‚è¯·å†è¯•ã€‚");
+//				return INPUT;
 //			}
 //			else {
-//				//µÇÂ¼³É¹¦£¬ÔÚÇ°¶ËÍ¨¹ımemberInfoÕâ¸ökey¼´¿É»ñµÃsession£¬²¢½«Æä±£´æ£¬½øĞĞÇëÇóÊ±Ô­Ñù·¢ËÍ»ØÀ´
+//				//ç™»å½•æˆåŠŸï¼Œåœ¨å‰ç«¯é€šè¿‡memberInfoè¿™ä¸ªkeyå³å¯è·å¾—sessionï¼Œå¹¶å°†å…¶ä¿å­˜ï¼Œè¿›è¡Œè¯·æ±‚æ—¶åŸæ ·å‘é€å›æ¥
 //				session.put("memberInfo", curPerson);
-//				return SUCCESS;
 //			}
 //		}
 //		catch (IllegalAccessException e) {
 //			// TODO: handle exception
-//			session.put("faulttype", "Illegal");
+//			this.addActionError("éæ³•æ“ä½œï¼");
 //			return "illegal";
 //		}
 //		catch (Exception e) {
 //			// TODO: handle exception
-//			session.put("faulttype", "Unknown");
+//			this.addActionError("æœªçŸ¥é”™è¯¯ã€‚è¯·ç¨åå†è¯•ã€‚");
 //			return ERROR;
 //		}
-		//×Ô¶¨ÒåÒ»¸ösessionĞÅÏ¢£¬ÓÃÓÚ²âÊÔ´Óactionµ½jspµÄsession´«Êä
-		session.put("infofromAction2jsp", "ÕâÊÇÒ»¶Î²âÊÔ´Óservletµ½jspÄÜ·ñÕı³£·¢ËÍsessionµÄÎÄ×Ö£¬Èç¹û¸Ã¶ÎÎÄ×ÖÎŞÂÒÂëµØÕı³£ÏÔÊ¾ÔòÃ»ÓĞÎÊÌâ¡£");
+		//è‡ªå®šä¹‰ä¸€ä¸ªsessionä¿¡æ¯ï¼Œç”¨äºæµ‹è¯•ä»actionåˆ°jspçš„sessionä¼ è¾“
+		//session.put("infofromAction2jsp", "è¿™æ˜¯ä¸€æ®µæµ‹è¯•ä»servletåˆ°jspèƒ½å¦æ­£å¸¸å‘é€sessionçš„æ–‡å­—ï¼Œå¦‚æœè¯¥æ®µæ–‡å­—æ— ä¹±ç åœ°æ­£å¸¸æ˜¾ç¤ºåˆ™æ²¡æœ‰é—®é¢˜ã€‚");
+		//åœ¨ajaxä¸‹ä¼šå¤±æ•ˆ
 		if ("2141601033".equals(id)) {
 			if (!"456".equals(password)) {
-				addFieldError("loginfault", "Ñ§ºÅºÍÃÜÂë²»Æ¥Åä£¬ÇëÖØĞÂ¼ì²éºóÊäÈë£¡");
+				this.addActionError("å­¦å·å’Œå¯†ç ä¸åŒ¹é…ï¼Œè¯·é‡æ–°æ£€æŸ¥åè¾“å…¥ï¼");
 				return INPUT;
 			}
 		}
 		else {
-			addFieldError("loginfault", "Ñ§ºÅºÍÃÜÂë²»Æ¥Åä£¬ÇëÖØĞÂ¼ì²éºóÊäÈë£¡");
+			this.addActionError("å­¦å·å’Œå¯†ç ä¸åŒ¹é…ï¼Œè¯·é‡æ–°æ£€æŸ¥åè¾“å…¥ï¼");
 			return INPUT;
 		}
-		return SUCCESS;
+		return INPUT;
 	}
 	
 	@Override
 	public void validate(){
 		if (id==null || id=="") {
-			addFieldError("id", "ÇëÊäÈëÑ§ºÅ£¡");
+			addFieldError("id", "è¯·è¾“å…¥å­¦å·ï¼");
 		}
 		if (password==null || password=="") {
-			addFieldError("password", "ÇëÊäÈëÃÜÂë£¡");
+			addFieldError("password", "è¯·è¾“å…¥å¯†ç ï¼");
 		}
 		if (!new InjectionCheck(id).getResult()) {
-			addFieldError("id", "Çë²»ÒªÔÚÊäÈëµÄĞÅÏ¢ÖĞ°üº¬ÌØÊâ·ûºÅ£¨* ' ; - + / % #£©");
+			addFieldError("id", "è¯·ä¸è¦åœ¨è¾“å…¥çš„ä¿¡æ¯ä¸­åŒ…å«ç‰¹æ®Šç¬¦å·ï¼ˆ* ' ; - + / % #ï¼‰");
 		}
 		if (!new InjectionCheck(password).getResult()) {
-			addFieldError("password","Çë²»ÒªÔÚÊäÈëµÄĞÅÏ¢ÖĞ°üº¬ÌØÊâ·ûºÅ£¨* ' ; - + / % #£©");
+			addFieldError("password","è¯·ä¸è¦åœ¨è¾“å…¥çš„ä¿¡æ¯ä¸­åŒ…å«ç‰¹æ®Šç¬¦å·ï¼ˆ* ' ; - + / % #ï¼‰");
 		}
 	}
 	
