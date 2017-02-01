@@ -32,7 +32,6 @@
                 <param name="ignoreHierarchy">false</param>  
                 <param name="includeProperties">actionErrors\[\d+\], fieldErrors\..+$, actionMessages\[\d+\]</param>  
             </result>
-            <result name="success">welcome.jsp</result>
         </action>  
     </package>
 </struts>
