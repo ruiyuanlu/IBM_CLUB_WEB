@@ -25,6 +25,10 @@
 			<result name="error">error.jsp</result>
 			<result name="success">welcome.jsp</result>
 		</action>
+		<action name="Logout" class="club.istc.action.Logout">
+			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
+			<result name="exit">timeout.jsp</result>
+		</action>
 		<action name="Register" class="club.istc.action.Register">
 			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
 			<result name="input">register.jsp</result>
@@ -44,5 +48,21 @@
 			<!-- 面试测试页面 -->
 			<result name="{1}">{1}.jsp</result>
 		</action>
+	</package>
+	<package name="intercept" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginedCheck" class="club.istc.validation.SessionCheck" />
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginedCheck" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="exception">error.jsp</result>
+			<result name="exit">timeout.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="exception" />
+		</global-exception-mappings>    
 	</package>
 </struts>

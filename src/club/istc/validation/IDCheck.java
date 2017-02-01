@@ -9,24 +9,10 @@ public class IDCheck {
 	String id;
 	boolean result;
 	
-//	public void validate(Object arg0){
-//		// TODO Auto-generated method stub
-//		String fieldName = getFieldName();
-//		try{
-//		Object value = this.getFieldValue(fieldName,arg0); 
-//		this.id=(String)value;
-//		if (!checkID()) 
-//			addFieldError(fieldName, arg0);
-//		}
-//		catch(ValidationException exception){
-//			addFieldError(fieldName, arg0);
-//		}
-//	}
 	public IDCheck(String id) {
 		// TODO Auto-generated constructor stub
 		this.id=id.trim();
 		result=checkID();
-		System.out.println("id的验证结果是："+result);
 	}
 	
 	private boolean checkID() {

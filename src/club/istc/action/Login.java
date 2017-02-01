@@ -36,7 +36,8 @@ public class Login extends ActionSupport{
 		//通过用户名和密码获取Member类对象信息
 		//设置session	
 //		try {
-//			curPerson=new Func_for_control().getMember(""+id, password, ""+id);
+//			SessionCheck ck=new SessionCheck(session);
+//			curPerson=new Func_for_control().getMember(id, password, id);
 //			if (curPerson==null) {
 //				//登录失败，重定向至原页面，发送一个session表示登录失败
 //				session.put("faulttype", "NoPerson");

@@ -33,4 +33,8 @@ public class Redirect extends ActionSupport{
 		return "register";
 	}
 	
+	public String timeout() {
+		return "timeout";
+	}
+	
 }
