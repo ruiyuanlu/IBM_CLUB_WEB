@@ -33,29 +33,25 @@ public class Login extends ActionSupport{
 	public String execute() {
 		//通过用户名和密码获取Member类对象信息
 		//在这里嵌入数据库相关代码以检测是否成功连入数据库
-		//通过用户名和密码获取Member类对象信息
-		//设置session	
 //		try {
 //			curPerson=new Func_for_control().getMember(""+id, password, ""+id);
 //			if (curPerson==null) {
 //				//登录失败，重定向至原页面，发送一个session表示登录失败
-//				addFieldError("id", "登录失败。请再试。");
+//				this.addActionError("学号和密码不匹配，请重新检查后输入！");
 //				return INPUT;
 //			}
 //			else {
 //				//登录成功，在前端通过memberInfo这个key即可获得session，并将其保存，进行请求时原样发送回来
-//				session.put("memberInfo", curPerson);
+//				session.put("personInfo", curPerson);
 //			}
 //		}
 //		catch (IllegalAccessException e) {
 //			// TODO: handle exception
 //			this.addActionError("非法操作！");
-//			return "illegal";
 //		}
 //		catch (Exception e) {
 //			// TODO: handle exception
 //			this.addActionError("未知错误。请稍后再试。");
-//			return ERROR;
 //		}
 		//自定义一个session信息，用于测试从action到jsp的session传输
 		//session.put("infofromAction2jsp", "这是一段测试从servlet到jsp能否正常发送session的文字，如果该段文字无乱码地正常显示则没有问题。");
@@ -63,12 +59,10 @@ public class Login extends ActionSupport{
 		if ("2141601033".equals(id)) {
 			if (!"456".equals(password)) {
 				this.addActionError("学号和密码不匹配，请重新检查后输入！");
-				return INPUT;
 			}
 		}
 		else {
 			this.addActionError("学号和密码不匹配，请重新检查后输入！");
-			return INPUT;
 		}
 		return INPUT;
 	}

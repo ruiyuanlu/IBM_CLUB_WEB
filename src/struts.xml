@@ -20,7 +20,7 @@
 	<package name="default" namespace="/" extends="struts-default">
 
 	</package>
-	<package name="register" extends="json-default,struts-default"> 
+	<package name="needajax" extends="json-default,struts-default"> 
         <action name="Register" class="club.istc.action.Register">  
             <interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
             <result name="input" type="json"> 

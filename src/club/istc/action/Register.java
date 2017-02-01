@@ -34,7 +34,6 @@ public class Register extends ActionSupport{
 		// TODO Auto-generated constructor stub
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();
-		gender="0";
 	}
 	
 	@Override
@@ -57,7 +56,6 @@ public class Register extends ActionSupport{
 			this.addActionError("未知错误。请稍后再试。"); 
 			return INPUT;
 		}
-		//System.out.println("gender is"+gender);
 
 	}
 	
