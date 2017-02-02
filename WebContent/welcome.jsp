@@ -3,7 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%
+//以下代码测试能否获取在action中自定义的session，如果该段文字无乱码地正常显示则没有问题
+String info="";
+if(session.getAttribute("infofromAction2jsp")!=null){
+	info=(String)session.getAttribute("infofromAction2jsp");
+}
+%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -23,6 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <%=info %>
     Welcome!欢迎！ <br>
     <a href="fileupload">上传文件测试</a><br/>
     <a href="intervieweeget">面试功能测试</a>

@@ -34,7 +34,7 @@
 			<!-- 用户登录页面，如果验证器通不过将一直留在这个页面 -->
 			<result name="input">login.jsp</result>
 			<result name="error">error.jsp</result>
-			<result name="success">welcome.jsp</result> 
+			<result name="success" type="redirectAction">welcome</result> 
     		<interceptor-ref name="tokenSession" />   
     		<interceptor-ref name="defaultStack" />  
 		</action>
