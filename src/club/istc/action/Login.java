@@ -2,10 +2,12 @@ package club.istc.action;
 
 import java.util.Map;
 
+import club.istc.bean.Person;
 import club.istc.validation.*;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 
 /**
@@ -61,6 +63,10 @@ public class Login extends ActionSupport{
 //		}
 		//自定义一个session信息，用于测试从action到jsp的session传输
 		session.put("infofromAction2jsp", "这是一段测试从servlet到jsp能否正常发送session的文字，如果该段文字无乱码地正常显示则没有问题。");
+		
+		System.out.println(id);
+		System.out.println(password);
+		
 		if ("2141601033".equals(id)) {
 			if (!"456".equals(password)) {
 				addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
@@ -71,6 +77,10 @@ public class Login extends ActionSupport{
 			addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
 			return INPUT;
 		}
+		//这是一小段测试代码
+		Person person=new Person();
+		person.setAge(15);
+		session.put("personInfo", person);
 		return SUCCESS;
 	}
 	

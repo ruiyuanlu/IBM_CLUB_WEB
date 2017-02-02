@@ -22,6 +22,7 @@ session.setAttribute("infofromjsp2Action", "这是一段测试从jsp到Servlet�
     <form action="Login" method="post">
 	    ID:<input type="text" name="id"/><font color="red"><s:fielderror fieldName="id"/></font><br/>
 	    password:<input type="password" name="password"/><font color="red"><s:fielderror fieldName="password"/></font><br/>
+	    <s:token></s:token>
 	    <input type="submit" value="提交"/>
     </form>
 	<font color="red"><s:fielderror fieldName="loginfault"/></font>

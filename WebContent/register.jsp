@@ -41,6 +41,7 @@ catch(NullPointerException e){
   		年龄：<input type="number" name="age" min="14" max="100"  <%if(curPerson.getAge()!=0)%>value=<%=curPerson.getAge()%>></input><font color="red"><s:fielderror fieldName="age"/></font><br/>
   		手机号：<input type="text" name="phoneNumber" <%if(curPerson.getPhoneNumber()!=null)%>value=<%=curPerson.getPhoneNumber()%>></input><font color="red"><s:fielderror fieldName="phoneNumber"/></font><br/>
   		QQ：<input type="text" name="QQ" <%if(curPerson.getQQ()!=null)%>value=<%=curPerson.getQQ()%>></input><font color="red"><s:fielderror fieldName="QQ" /></font><br/>
+  		<s:token/>
 	    <input type="submit" value="提交"/>
     </form>
 	<font color="red"><s:fielderror fieldName="registerfault"/></font>

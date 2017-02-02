@@ -24,6 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     Welcome!欢迎！ <br>
+    <a href="fileupload">上传文件测试</a><br/>
+    <a href="intervieweeget">面试功能测试</a>
     <a href="Logout">登出</a>
   </body>
 </html>

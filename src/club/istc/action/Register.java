@@ -56,6 +56,10 @@ public class Register extends ActionSupport{
 			return INPUT;
 		}
 		
+		//这是一小段测试代码
+		Person person=new Person();
+		person.setAge(15);
+		session.put("personInfo", person);
 		return SUCCESS;
 		//System.out.println("gender is"+gender);
 
