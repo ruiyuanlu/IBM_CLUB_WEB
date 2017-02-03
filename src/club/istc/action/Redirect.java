@@ -1,7 +1,5 @@
 package club.istc.action;
 
-import java.util.Map;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -9,11 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 
 public class Redirect extends ActionSupport{
-	
-	/**
-	 * 
-	 */
-	private Map<String, Object> session;
+
 	private static final long serialVersionUID = 1L;
 	
 	public Redirect() {

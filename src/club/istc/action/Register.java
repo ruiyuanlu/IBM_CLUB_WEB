@@ -4,10 +4,7 @@ package club.istc.action;
 import java.util.Map;
 
 import club.istc.bean.*;
-import club.istc.validation.IDCheck;
-import club.istc.validation.InjectionCheck;
-import club.istc.validation.PhoneNumberCheck;
-import club.istc.validation.QQCheck;
+import club.istc.validation.*;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -86,15 +83,15 @@ public class Register extends ActionSupport{
 			addFieldError("password", "请设置您的密码！");
 		}
 		else {
-			if (!new InjectionCheck(password).getResult()) {
-				addFieldError("password", "请不要在密码中包含这些特殊符号：* ' ; - + / % #");
+			if (!new PasswordCheck(password).getResult()) {
+				addFieldError("password", "密码中只允许使用数字、字母和下划线，长度不小于6位，不大于30位。");
 			}
 			else if (!password.equals(repassword)) {
 				addFieldError("repassword", "两次输入的密码不一致！");
-			} else {
+			} 
+			else {
 				curPerson.setPassword(password);
 			}
-
 		}
 		if (name==null || name=="") {
 			addFieldError("name", "请输入您的姓名！");

@@ -7,7 +7,6 @@ import club.istc.validation.*;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 
 /**
@@ -68,7 +67,7 @@ public class Login extends ActionSupport{
 		System.out.println(password);
 		
 		if ("2141601033".equals(id)) {
-			if (!"456".equals(password)) {
+			if (!"456789".equals(password)) {
 				addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
 				return INPUT;
 			}

@@ -12,38 +12,11 @@ public class HomeworkDocAction extends ActionSupport{
 	
 	private static final long serialVersionUID = 1L;
     
-	 //注意，file并不是指前端jsp上传过来的文件本身，而是文件上传过来存放在临时文件夹下面的文件
 	    private File file;
-	    
 	    //提交过来的file的名字
 	    private String fileFileName;
-	    
 	    //提交过来的file的MIME类型
 	    private String fileContentType;
-
-	    public File getFile(){
-	        return file;
-	    }
-
-	    public void setFile(File file){
-	        this.file = file;
-	    }
-
-	    public String getFileFileName(){
-	        return fileFileName;
-	    }
-
-	    public void setFileFileName(String fileFileName){
-	        this.fileFileName = fileFileName;
-	    }
-
-	    public String getFileContentType(){
-	        return fileContentType;
-	    }
-
-	    public void setFileContentType(String fileContentType){
-	        this.fileContentType = fileContentType;
-	    }
 	    
 	    @Override
 	    public String execute(){
@@ -67,6 +40,29 @@ public class HomeworkDocAction extends ActionSupport{
 				// TODO: handle exception
 				return INPUT;
 			}
+	    }
+	    
+	    public File getFile(){
+	        return file;
+	    }
 
+	    public void setFile(File file){
+	        this.file = file;
+	    }
+
+	    public String getFileFileName(){
+	        return fileFileName;
+	    }
+
+	    public void setFileFileName(String fileFileName){
+	        this.fileFileName = fileFileName;
+	    }
+
+	    public String getFileContentType(){
+	        return fileContentType;
+	    }
+
+	    public void setFileContentType(String fileContentType){
+	        this.fileContentType = fileContentType;
 	    }
 	}

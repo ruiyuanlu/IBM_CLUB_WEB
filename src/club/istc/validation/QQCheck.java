@@ -19,10 +19,9 @@ public class QQCheck {
 	private boolean checkQQ() {
 		//检查qq号是否合法
 		try {
-			Long.parseLong(QQ);
-			String regex = "[1-9][0-9]{4,14}";
+			String regex = "[1-9][0-9]{4,}";
 			result = QQ.matches(regex);
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			result=false;
 		}
