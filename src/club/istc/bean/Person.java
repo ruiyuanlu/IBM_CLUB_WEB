@@ -34,7 +34,7 @@ public class Person implements Serializable{
     //@Column(name = "phone",length = 20)
     protected String phoneNumber;
     //@Basic(fetch = FetchType.EAGER)
-    protected boolean gender;//ÐÔ±ð
+    protected boolean gender;
 	//@Basic(fetch = FetchType.EAGER)
 	//    @Id
 	    private Integer age;

@@ -23,9 +23,8 @@ public class PhoneNumberCheck {
 	
 	private boolean checkPhonenumber() {
 		try {
-			Long.parseLong(phoneNumber);
 			return isChinaPhoneLegal(phoneNumber) || isHKPhoneLegal(phoneNumber);  
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
 		}

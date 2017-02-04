@@ -2,6 +2,7 @@ package club.istc.action;
 
 import java.util.Map;
 
+import club.istc.bean.Person;
 import club.istc.validation.*;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -36,7 +37,8 @@ public class Login extends ActionSupport{
 		//通过用户名和密码获取Member类对象信息
 		//设置session	
 //		try {
-//			curPerson=new Func_for_control().getMember(""+id, password, ""+id);
+//			SessionCheck ck=new SessionCheck(session);
+//			curPerson=new Func_for_control().getMember(id, password, id);
 //			if (curPerson==null) {
 //				//登录失败，重定向至原页面，发送一个session表示登录失败
 //				session.put("faulttype", "NoPerson");
@@ -60,8 +62,12 @@ public class Login extends ActionSupport{
 //		}
 		//自定义一个session信息，用于测试从action到jsp的session传输
 		session.put("infofromAction2jsp", "这是一段测试从servlet到jsp能否正常发送session的文字，如果该段文字无乱码地正常显示则没有问题。");
+		
+		System.out.println(id);
+		System.out.println(password);
+		
 		if ("2141601033".equals(id)) {
-			if (!"456".equals(password)) {
+			if (!"456789".equals(password)) {
 				addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
 				return INPUT;
 			}
@@ -70,6 +76,10 @@ public class Login extends ActionSupport{
 			addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
 			return INPUT;
 		}
+		//这是一小段测试代码
+		Person person=new Person();
+		person.setAge(15);
+		session.put("personInfo", person);
 		return SUCCESS;
 	}
 	

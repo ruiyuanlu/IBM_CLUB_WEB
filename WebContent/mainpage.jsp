@@ -3,20 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%
-//以下代码测试能否获取在action中自定义的session，如果该段文字无乱码地正常显示则没有问题
-String info="";
-if(session.getAttribute("infofromAction2jsp")!=null){
-	info=(String)session.getAttribute("infofromAction2jsp");
-}
-%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>登录成功</title>
-    
+    <title>istc</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -25,14 +18,13 @@ if(session.getAttribute("infofromAction2jsp")!=null){
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
   </head>
   
   <body>
-  <%=info %>
-    Welcome!欢迎！ <br>
+  <h1>欢迎访问西交IBM俱乐部官网！</h1>
+  <a href="register">注册</a><br/>
+    <a href="login">登录</a><br/>
     <a href="fileupload">上传文件测试</a><br/>
-    <a href="intervieweeget" target="_blank">面试功能测试</a>
-    <a href="Logout">登出</a>
+    <a href="intervieweeget">面试功能测试</a>
   </body>
 </html>

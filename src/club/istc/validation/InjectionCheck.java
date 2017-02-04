@@ -1,26 +1,12 @@
 package club.istc.validation;
 
 /**
- * SQL注入检测，不允许表单中输入任何SQL语句中的关键词和符号，一旦存在则返回FALSE
+ * SQL注入检测
  */
 
 public class InjectionCheck {
 	String needcheck;
 	boolean result;
-	
-//	public void validate(Object arg0){
-//		// TODO Auto-generated method stub
-//		String fieldName = getFieldName();
-//		try{
-//		Object value = this.getFieldValue(fieldName,arg0); 
-//		this.needcheck=(String)value;
-//		if (!checkString(needcheck)) 
-//			addFieldError(fieldName, arg0);
-//		}
-//		catch(ValidationException exception){
-//			addFieldError(fieldName, arg0);
-//		}
-//	}
 	
 	public InjectionCheck(String needcheck) {
 		// TODO Auto-generated constructor stub
@@ -28,26 +14,22 @@ public class InjectionCheck {
 		try {
 			result=checkString();
 		} catch (NullPointerException e) {
-			// TODO: handle exception
+			// 什么也没有，那么不会存在注入
 			result=true;
 			
 		}
 		
-		//System.out.println("SQL注入的验证结果是："+result);
 	}
 	
+/**
+ * 包含有(* ' ; - + / % #)这些符号均会返回错误。
+ */	
 	private boolean checkString() {
-        String str2 = needcheck.toLowerCase();
-        //String[] SqlStr1 = {"and","exec","execute","insert","select","delete","update","count","drop","chr","mid","master","truncate","char","declare","sitename","net user","xp_cmdshell","like","and","exec","execute","insert","create","drop","table","from","grant","use","group_concat","column_name","information_schema.columns","table_schema","union","where","select","delete","update","order","by","count","chr","mid","master","truncate","char","declare","or"};//词语
-        String[] SqlStr2 = {"*","'",";","-","--","+","//","/","%","#"};//特殊字符
+        String str = needcheck.toLowerCase();
+        String[] SqlStr = {"*","'",";","-","+","/","%","#","\""};//特殊字符
   
-//       for (int i = 0; i < SqlStr1.length; i++) {
-//            if (str2.indexOf(SqlStr1[i])>=0) {
-//                return false;
-//            }
-//        }
-        for (int i = 0; i < SqlStr2.length; i++) {
-            if (str2.indexOf(SqlStr2[i]) >= 0) {
+        for (int i = 0; i < SqlStr.length; i++) {
+            if (str.indexOf(SqlStr[i]) >= 0) {
                 return false;
             }
         }
@@ -56,6 +38,21 @@ public class InjectionCheck {
 	
 	public boolean getResult(){
 		return result;
+	}
+
+/**
+ * 考虑到输入大量数据时用户不便于修正，(* ' ; - + / % #)这些符号如果出现在大量文本并提交时，会被系统修改为全角符号。
+ */		
+
+	public String replaceString(){
+		char[] charArray = needcheck.toCharArray();
+		for (int i = 0; i < needcheck.length(); i++) {
+            int charIntValue = (int)charArray[i];
+            if (charIntValue >= 33 && charIntValue <= 47) {
+                charArray[i] = (char) (charIntValue + 65248);
+            } 
+		}
+		return new String(charArray);
 	}
 
 }
