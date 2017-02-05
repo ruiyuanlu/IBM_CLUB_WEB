@@ -42,4 +42,8 @@ public class Redirect extends ActionSupport{
 		return "welcome";
 	}
 	
+	public String error() {
+		return "error";
+	}
+	
 }

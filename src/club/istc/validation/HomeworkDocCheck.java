@@ -20,7 +20,7 @@ public class HomeworkDocCheck {
 	public HomeworkDocCheck(File file) {
 		// TODO Auto-generated constructor stub
 		maxlength=5242880;
-		FILE_TYPE_MAP.put("255044462d312e350d0a", "pdf");
+		FILE_TYPE_MAP.put("255044462d312e", "pdf");
         FILE_TYPE_MAP.put("d0cf11e0a1b11ae10000", "doc"); 
         FILE_TYPE_MAP.put("504b0304140006000800", "docx");  
         FILE_TYPE_MAP.put("d0cf11e0a1b11ae10000", "wps");
@@ -34,7 +34,6 @@ public class HomeworkDocCheck {
         } catch (NullPointerException e){
         	found=false;
         }
-        
 	}
 	
     private String bytesToHexString(byte[] src) {  
@@ -60,10 +59,15 @@ public class HomeworkDocCheck {
     }
     
     private void checkFileValidation(File file) throws FileNotFoundException,IOException{
-        FileInputStream is = new FileInputStream(file);  
+    	String filename=file.getName().toLowerCase();
+    	if (!(filename.endsWith(".docx") || filename.endsWith(".doc") || filename.endsWith(".pdf"))) {
+    		formatmatch=false;
+		}
+        FileInputStream is = new FileInputStream(file);
         byte[] b = new byte[10];  
         is.read(b, 0, b.length);  
-        String fileCode = bytesToHexString(b);     
+        String fileCode = bytesToHexString(b);
+        System.out.println(fileCode);
         Iterator<String> keyIter = this.FILE_TYPE_MAP.keySet().iterator();  
         while(keyIter.hasNext()){  
              String key = keyIter.next();  
@@ -73,6 +77,7 @@ public class HomeworkDocCheck {
                 }  
              }
         is.close();
+
     } 
 
 	public boolean isLengthnotover() {

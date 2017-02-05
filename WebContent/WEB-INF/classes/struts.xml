@@ -16,8 +16,8 @@
 	<constant name="struts.devMode" value="true"></constant>
 	<!-- 是否开启动态方法调用 -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
-	<!-- 设置全局文件上传大小限制，50MB -->
-	<constant name="struts.multipart.maxSize" value="52428800"/>
+	<!-- 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 -->
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
 	<!-- 声明包 -->	
 	<package name="istc" namespace="/" extends="struts-default">
 		<interceptors>  
@@ -36,7 +36,7 @@
 		<action name="Login" class="club.istc.action.Login">
 			<!-- 用户登录页面，如果验证器通不过将一直留在这个页面 -->
 			<result name="input">login.jsp</result>
-			<result name="error">error.jsp</result>
+			<exception-mapping exception="java.lang.Exception" result="error" />
 			<result name="success" type="redirectAction">welcome</result> 
     		<interceptor-ref name="tokenSession" />   
     		<interceptor-ref name="defaultStack" />  
@@ -49,8 +49,9 @@
 			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
 			<result name="input">register.jsp</result>
 			<result name="success" type="redirectAction">mainpage</result>
+			<exception-mapping exception="java.lang.Exception" result="error" />
 			<interceptor-ref name="tokenSession" />   
-    		<interceptor-ref name="defaultStack" /> 
+    		<interceptor-ref name="defaultStack" />
 		</action>
 		<action name="HomeworkDocAction" class="club.istc.action.HomeworkDocAction">
 			<!-- 上传文件页面 -->
@@ -58,15 +59,19 @@
     		<interceptor-ref name="defaultStack" /> 
 			<result name="input">fileupload.jsp</result>
 			<result name="success" type="redirectAction">fileupload</result>
+			<result name="invalid.token" type="redirectAction">fileupload</result>
+			<exception-mapping exception="java.lang.Exception" result="error" />
 		</action>
 		<action name="interviewee*" class="club.istc.action.InterviewAction" method="{1}">
 			<!-- 面试测试页面 -->
 			<result name="input">interview.jsp</result>
+			<exception-mapping exception="java.lang.Exception" result="error" />
 		</action>
 		<action name="*" class="club.istc.action.Redirect" method="{1}">
 			<!-- 面试测试页面 -->
-			<exception-mapping exception="java.lang.NoSuchMethodException" result="error" />
 			<result name="{1}">{1}.jsp</result>
+			<exception-mapping exception="java.lang.Exception" result="error" />
 		</action>
+ 
 	</package>
 </struts>

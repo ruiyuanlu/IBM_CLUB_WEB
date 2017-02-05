@@ -2,7 +2,6 @@ package club.istc.action;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.apache.struts2.ServletActionContext;
@@ -37,17 +36,27 @@ public class HomeworkDocAction extends ActionSupport{
 				}
 		        Date date = new Date();
 		        SimpleDateFormat timestamp=new SimpleDateFormat("yyyyMMddHHmmss");
-		        OutputStream os = new FileOutputStream(new File(root, timestamp.format(date)+"-"+fileFileName));
-		        System.out.println("fileFileName: " + fileFileName);
-		// 因为file是存放在临时文件夹的文件，我们可以将其文件名和文件路径打印出来，看和之前的fileFileName是否相同
-		        System.out.println("file: " + file.getName());
-		        System.out.println("file: " + file.getPath());
-		        byte[] buffer = new byte[500];
-		        while(-1 != (is.read(buffer, 0, buffer.length))){
-		            os.write(buffer);
-		        }
+		        File targetFile=new File(root, timestamp.format(date)+"-"+fileFileName);
+		        OutputStream os = new FileOutputStream(targetFile);
+		        String targetpath=targetFile.getPath();
+		        byte[] bytes = new byte[1024];  
+		        int i = is.read(bytes,0,1024);  
+		        while(i!=-1)  
+		        {  
+		            os.write(bytes,0,i);  
+		            i = is.read(bytes,0,1024);  
+		        }  
 		        os.close();
 		        is.close();
+		        try {
+					if (!targetFile.getName().toLowerCase().endsWith(".pdf")) {
+						WordOnlineConverter.canExtractImage(targetpath);
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+					addFieldError("fileerror", "创建在线预览版本失败！");
+				}
+		        
 		        return SUCCESS;
 			} 
 	    	catch (FileNotFoundException e) {
@@ -62,12 +71,15 @@ public class HomeworkDocAction extends ActionSupport{
 	    	HomeworkDocCheck curfile = new HomeworkDocCheck(file);
 	    	if (!curfile.isFound()) {
 				addFieldError("fileerror", "您还未选择文件！");
+				return;
 			}
 	    	if (!curfile.isFormatmatch()) {
 				addFieldError("fileerror", "格式不匹配，请重新选择！");
+				return;
 			}
 	    	if (!curfile.isLengthnotover()) {
 	    		addFieldError("fileerror", "文件大小超过了5M！");
+	    		return;
 			}
 	    }
 	    

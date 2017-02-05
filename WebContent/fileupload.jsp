@@ -24,6 +24,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <input type="submit" value="上传">
         <s:token></s:token>
     </form>
-   <font color="red"><s:actionmessage/></font>
   </body>
 </html>
