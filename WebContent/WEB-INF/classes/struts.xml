@@ -16,6 +16,8 @@
 	<constant name="struts.devMode" value="true"></constant>
 	<!-- 是否开启动态方法调用 -->
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+	<!-- 设置全局文件上传大小限制，50MB -->
+	<constant name="struts.multipart.maxSize" value="52428800"/>
 	<!-- 声明包 -->	
 	<package name="istc" namespace="/" extends="struts-default">
 		<interceptors>  
@@ -43,18 +45,18 @@
 			<result name="exit">timeout.jsp</result>
 		</action>
 		<action name="Register" class="club.istc.action.Register">
-		    <interceptor-ref name="token"/>
 			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
 			<result name="input">register.jsp</result>
-			<result name="error">error.jsp</result>
-			<result name="success">welcome.jsp</result>
+			<result name="success" type="redirectAction">mainpage</result>
 			<interceptor-ref name="tokenSession" />   
     		<interceptor-ref name="defaultStack" /> 
 		</action>
 		<action name="HomeworkDocAction" class="club.istc.action.HomeworkDocAction">
 			<!-- 上传文件页面 -->
-			<result name="input">error.jsp</result>
-			<result>fileupload.jsp</result>
+			<interceptor-ref name="tokenSession" />   
+    		<interceptor-ref name="defaultStack" /> 
+			<result name="input">fileupload.jsp</result>
+			<result name="success" type="redirectAction">fileupload</result>
 		</action>
 		<action name="interviewee*" class="club.istc.action.InterviewAction" method="{1}">
 			<!-- 面试测试页面 -->

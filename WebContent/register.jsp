@@ -30,6 +30,10 @@ catch(NullPointerException e){
   </head>
   
   <body>
+  请在该页面提交您的信息。<br/>
+  请保证您的信息，尤其是手机号的填写正确。信息一旦提交后不可手动修改！<br/>
+  到时我们会通过手机号为您通知具体的面试信息。<br/>
+  面试通过后您可以用该页面填写的信息登录。<br/>
     <form action="Register" method="post">
 	  	  学号:<input type="text" name="id" <%if(curPerson.getID()!=null)%>value=<%=curPerson.getID()%>></input><font color="red"><s:fielderror fieldName="id"/></font><br/>
 	   	密码:<input type="password" name="password"/><font color="red"><s:fielderror fieldName="password"/></font><br/>

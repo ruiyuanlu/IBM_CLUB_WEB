@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,13 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'fileuploadtest.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+    <title>文件上传测试</title>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -23,9 +18,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  上传文件格式限定为pdf, doc, docx和wps，上传的文件大小不得超过5M。
 　　<form action="HomeworkDocAction" method="post" enctype="multipart/form-data">
-        文件选择: <input type="file" name="file"/><br>  
+        文件选择: <input type="file" name="file"/><font color="red"><s:fielderror fieldName="fileerror"/></font><br/>  
         <input type="submit" value="上传">
+        <s:token></s:token>
     </form>
+   <font color="red"><s:actionmessage/></font>
   </body>
 </html>
