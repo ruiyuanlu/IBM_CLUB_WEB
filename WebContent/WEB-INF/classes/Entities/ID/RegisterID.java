@@ -2,8 +2,7 @@ package Entities.ID;
 
 import Entities.Entity.Department;
 
-import javax.persistence.Embeddable;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * Created by lurui on 2016/11/21 0021.
@@ -11,7 +10,7 @@ import javax.persistence.OneToOne;
 @Embeddable
 public class RegisterID implements java.io.Serializable{
     private int times;
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Department department;
 
     public RegisterID(){

@@ -40,11 +40,22 @@ public class Department {
     @OneToMany
     private Set<HomeWork> homeWorks;
 
+    @OneToMany
+    private Set<Register> registers;
+
     public Department() {
     }
 
     public Department(int deptID) {
         this.deptID = deptID;
+    }
+
+    public Set<Register> getRegisters() {
+        return registers;
+    }
+
+    public void setRegisters(Set<Register> registers) {
+        this.registers = registers;
     }
 
     public Set<HomeWork> getHomeWorks() {
