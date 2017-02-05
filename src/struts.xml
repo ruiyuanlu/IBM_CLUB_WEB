@@ -30,7 +30,8 @@
 		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
 		<global-results>
 			<result name="exit">timeout.jsp</result>
-		</global-results> 
+			<result name="error">error.jsp</result>
+		</global-results>
 		<global-allowed-methods>regex:.*</global-allowed-methods>
 		<action name="Login" class="club.istc.action.Login">
 			<!-- 用户登录页面，如果验证器通不过将一直留在这个页面 -->
@@ -64,6 +65,7 @@
 		</action>
 		<action name="*" class="club.istc.action.Redirect" method="{1}">
 			<!-- 面试测试页面 -->
+			<exception-mapping exception="java.lang.NoSuchMethodException" result="error" />
 			<result name="{1}">{1}.jsp</result>
 		</action>
 	</package>
