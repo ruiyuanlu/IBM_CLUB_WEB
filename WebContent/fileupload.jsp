@@ -1,14 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
     
     <title>文件上传测试</title>
 	<!--
@@ -18,7 +13,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  上传文件格式限定为pdf, doc, docx和wps，上传的文件大小不得超过5M。
+  上传文件格式限定为pdf, doc(wps)和docx，上传的文件大小不得超过5M。<br>
+  word文件均会由系统生成在线预览版本。<br>
 　　<form action="HomeworkDocAction" method="post" enctype="multipart/form-data">
         文件选择: <input type="file" name="file"/><font color="red"><s:fielderror fieldName="fileerror"/></font><br/>  
         <input type="submit" value="上传">

@@ -26,6 +26,8 @@ public class HomeworkDocAction extends ActionSupport{
 	    //提交过来的file的MIME类型
 	    private String fileContentType;
 	    
+	    private String extend;
+	    
 	    @Override
 	    public String execute() throws Exception{
 	    	try {
@@ -41,7 +43,15 @@ public class HomeworkDocAction extends ActionSupport{
 		        Date date = new Date();
 		        SimpleDateFormat timestamp=new SimpleDateFormat("yyyyMMddHHmmss");
 		        //文件格式为“yyyyMMddHHmmss-[文件名].[文件扩展名]”
-		        File targetFile=new File(root, timestamp.format(date)+"-"+fileFileName);
+		        String fullname;
+		        //如果没有扩展名，那么手动识别后添加
+		        if (!fileFileName.toLowerCase().endsWith(extend)){
+		        	fullname=fileFileName+"."+extend;
+		        }
+		        else {
+					fullname=fileFileName;
+				}
+		        File targetFile=new File(root, timestamp.format(date)+"-"+fullname);
 		        OutputStream os = new FileOutputStream(targetFile);
 		        String targetpath=targetFile.getPath();
 		        //文件上传
@@ -56,8 +66,8 @@ public class HomeworkDocAction extends ActionSupport{
 		        is.close();
 		        try {
 		        	//如果上传的文件不是pdf格式，那么转换为可以在线预览的html版本
-					if (!targetFile.getName().toLowerCase().endsWith(".pdf")) {
-						WordOnlineConverter.canExtractImage(targetpath);
+					if (!extend.equals("pdf")) {
+						WordOnlineConverter.canExtractImage(targetpath,extend);
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -76,6 +86,7 @@ public class HomeworkDocAction extends ActionSupport{
 	    @Override
 	    public void validate(){
 	    	HomeworkDocCheck curfile = new HomeworkDocCheck(file);
+	    	extend=curfile.getExtend();
 	    	if (!curfile.isFound()) {
 				addFieldError("fileerror", "您还未选择文件！");
 				return;

@@ -19,6 +19,7 @@ public class HomeworkDocCheck {
 	boolean lengthnotover=false;
 	boolean formatmatch=false;
 	boolean found=true;
+	String extend;
 	
 	
 	public HomeworkDocCheck(File file) {
@@ -27,8 +28,7 @@ public class HomeworkDocCheck {
 		//允许的文件特征码
 		FILE_TYPE_MAP.put("255044462d312e", "pdf");
         FILE_TYPE_MAP.put("d0cf11e0a1b11ae10000", "doc"); 
-        FILE_TYPE_MAP.put("504b0304140006000800", "docx");  
-        FILE_TYPE_MAP.put("d0cf11e0a1b11ae10000", "wps");
+        FILE_TYPE_MAP.put("504b0304140006000800", "docx");
         try {
         	checkSize(file);
             checkFileValidation(file);
@@ -70,27 +70,21 @@ public class HomeworkDocCheck {
 	 * 文件格式检验
 	 */
     private void checkFileValidation(File file) throws FileNotFoundException,IOException{
-    	String filename=file.getName().toLowerCase();
-    	//首先检验扩展名，如果不对则判断格式不正确
-    	if (!(filename.endsWith(".docx") || filename.endsWith(".doc") || filename.endsWith(".pdf"))) {
-    		formatmatch=false;
-    		return;
-		}
-        FileInputStream is = new FileInputStream(file);
-        byte[] b = new byte[10];  
-        is.read(b, 0, b.length);  
-        String fileCode = bytesToHexString(b);
-        //其次检验文件特征码，如果是伪造的那么不予通过
-        Iterator<String> keyIter = this.FILE_TYPE_MAP.keySet().iterator();  
-        while(keyIter.hasNext()){  
-             String key = keyIter.next();  
-             if(key.toLowerCase().startsWith(fileCode.toLowerCase()) || fileCode.toLowerCase().startsWith(key.toLowerCase())){ 
-                formatmatch=true;
-                break;
-                }  
-             }
-        is.close();
-
+            FileInputStream is = new FileInputStream(file);
+            byte[] b = new byte[10];  
+            is.read(b, 0, b.length);  
+            String fileCode = bytesToHexString(b);
+            //其次检验文件特征码，如果是伪造的那么不予通过
+            Iterator<String> keyIter = this.FILE_TYPE_MAP.keySet().iterator();  
+            while(keyIter.hasNext()){  
+                 String key = keyIter.next();  
+                 if(key.toLowerCase().startsWith(fileCode.toLowerCase()) || fileCode.toLowerCase().startsWith(key.toLowerCase())){ 
+                    formatmatch=true;
+                    extend=this.FILE_TYPE_MAP.get(key);
+                    break;
+                    }  
+                 }
+            is.close();
     } 
 
 	public boolean isLengthnotover() {
@@ -103,6 +97,9 @@ public class HomeworkDocCheck {
 
 	public boolean isFound() {
 		return found;
+	}
+	public String getExtend() {
+		return extend;
 	}
 	
 	

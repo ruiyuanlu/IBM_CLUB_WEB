@@ -25,12 +25,10 @@ import org.w3c.dom.Document;
 public class WordOnlineConverter {  
   
     //@Test  
-    public static void canExtractImage(String fullpath) throws IOException, ParserConfigurationException, TransformerException {
+    public static void canExtractImage(String fullpath,String extend) throws IOException, ParserConfigurationException, TransformerException {
     	File f=new File(fullpath);
     	String path=f.getParent()+"\\";
     	String file=f.getName();
-    	System.out.println(path);
-    	System.out.println(file);
         if (!f.exists()) {
             throw new FileNotFoundException(); 
         } else {
@@ -39,10 +37,10 @@ public class WordOnlineConverter {
                 InputStream in = new FileInputStream(f);  
                 XWPFDocument document = new XWPFDocument(in);
                 //设置图片存储目录
-                File imageFolderFile = new File(path+file.substring(0, file.indexOf(".")));  
+                File imageFolderFile = new File(path+file.substring(0, file.indexOf("."+extend)));  
                 XHTMLOptions options = XHTMLOptions.create().URIResolver(new FileURIResolver(imageFolderFile));  
                 options.setExtractor(new FileImageExtractor(imageFolderFile));  
-                OutputStream out = new FileOutputStream(new File(path+file.substring(0, file.indexOf("."))+".html"));  
+                OutputStream out = new FileOutputStream(new File(path+file.substring(0, file.indexOf("."+extend))+".html"));  
                 XHTMLConverter.getInstance().convert(document, out, options);
             } else {
             	//office 95-2003的转换
@@ -52,13 +50,13 @@ public class WordOnlineConverter {
                 wordToHtmlConverter.setPicturesManager(new PicturesManager() {
                 	//设置图片存储目录
                     public String savePicture(byte[] content, PictureType pictureType, String suggestedName, float widthInches, float heightInches) {
-                        return file.substring(0, file.indexOf("."))+"/"+suggestedName;
+                        return file.substring(0, file.indexOf("."+extend))+"/"+suggestedName;
                     }
                 });
                 wordToHtmlConverter.processDocument(wordDocument);
                 List<Picture> pics = wordDocument.getPicturesTable().getAllPictures();
                 if (pics!= null) {
-                	File picdir=new File(path+file.substring(0, file.indexOf(".")));
+                	File picdir=new File(path+file.substring(0, file.indexOf("."+extend)));
     		        if (!picdir.exists()) {
     					picdir.mkdirs();
     				}
@@ -83,7 +81,7 @@ public class WordOnlineConverter {
                 serializer.transform(domSource, streamResult);
                 outStream.close();
                 String content = new String(outStream.toByteArray());
-                FileUtils.write(new File(path, file.substring(0, file.indexOf("."))+".html"), content, "utf-8");
+                FileUtils.write(new File(path, file.substring(0, file.indexOf("."+extend))+".html"), content, "utf-8");
             }  
         }  
     }  
