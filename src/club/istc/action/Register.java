@@ -81,7 +81,7 @@ public class Register extends ActionSupport{
 		}
 		else {
 			if (!new PasswordCheck(password).getResult()) {
-				addFieldError("password", "密码中只允许使用数字、字母和下划线，长度不小于6位，不大于30位。");
+				addFieldError("password", "密码中只允许使用数字、字母和下划线。长度不小于6位，不大于30位。");
 			}
 			else if (!password.equals(repassword)) {
 				addFieldError("repassword", "两次输入的密码不一致！");

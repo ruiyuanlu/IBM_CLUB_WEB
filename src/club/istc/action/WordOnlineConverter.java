@@ -33,20 +33,24 @@ public class WordOnlineConverter {
     	System.out.println(file);
         if (!f.exists()) {
             throw new FileNotFoundException(); 
-        } else {  
-            if (f.getName().toLowerCase().endsWith(".docx")) {  
+        } else {
+            if (f.getName().toLowerCase().endsWith(".docx")) {
+            	//office 2007+以上的word转换
                 InputStream in = new FileInputStream(f);  
-                XWPFDocument document = new XWPFDocument(in);  
+                XWPFDocument document = new XWPFDocument(in);
+                //设置图片存储目录
                 File imageFolderFile = new File(path+file.substring(0, file.indexOf(".")));  
                 XHTMLOptions options = XHTMLOptions.create().URIResolver(new FileURIResolver(imageFolderFile));  
                 options.setExtractor(new FileImageExtractor(imageFolderFile));  
                 OutputStream out = new FileOutputStream(new File(path+file.substring(0, file.indexOf("."))+".html"));  
-                XHTMLConverter.getInstance().convert(document, out, options);  
-            } else {  
+                XHTMLConverter.getInstance().convert(document, out, options);
+            } else {
+            	//office 95-2003的转换
             	InputStream input = new FileInputStream(f);
                 HWPFDocument wordDocument = new HWPFDocument(input);
                 WordToHtmlConverter wordToHtmlConverter = new WordToHtmlConverter(DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument());
                 wordToHtmlConverter.setPicturesManager(new PicturesManager() {
+                	//设置图片存储目录
                     public String savePicture(byte[] content, PictureType pictureType, String suggestedName, float widthInches, float heightInches) {
                         return file.substring(0, file.indexOf("."))+"/"+suggestedName;
                     }

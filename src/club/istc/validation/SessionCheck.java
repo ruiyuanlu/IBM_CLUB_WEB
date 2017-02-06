@@ -32,7 +32,7 @@ public class SessionCheck extends AbstractInterceptor {
 		response.setHeader("Cache-Control", "no-store");
 		response.setHeader("Content-Type", "text/html; charset=UTF-8");
 		Person userinfo = null;
-		//对登录与注销请求直接放行，不予拦截
+		//对登录，注销，注册等请求直接放行，不予拦截
 		if (url.indexOf("login") != -1 || 
 			url.indexOf("Logout") != -1 || 
 			url.indexOf("Login") != -1 || 

@@ -1,7 +1,7 @@
 package club.istc.validation;
 
 /**
- * 检查Password号是否合法
+ * 检查密码是否合法
  */
 
 public class PasswordCheck {
@@ -15,10 +15,11 @@ public class PasswordCheck {
 		result=checkpassword();
 	}
 	
+	/**
+	 * 检查密码是否合法
+	 */
 	private boolean checkpassword() {
-		//检查password号是否合法
-
-		String regex = "[a-zA-Z0-9_]{6,30}";
+		String regex = "[a-zA-Z0-9_]{6,30}";//密码中只允许使用数字、字母和下划线，长度不小于6位，不大于30位
 		result = password.matches(regex);
 		return result;
 	}

@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * 作业文件上传检验
+ */
+
 public class HomeworkDocCheck {
 	
 	int maxlength;
@@ -18,8 +22,9 @@ public class HomeworkDocCheck {
 	
 	
 	public HomeworkDocCheck(File file) {
-		// TODO Auto-generated constructor stub
+		//文件最大限制在5M
 		maxlength=5242880;
+		//允许的文件特征码
 		FILE_TYPE_MAP.put("255044462d312e", "pdf");
         FILE_TYPE_MAP.put("d0cf11e0a1b11ae10000", "doc"); 
         FILE_TYPE_MAP.put("504b0304140006000800", "docx");  
@@ -35,7 +40,9 @@ public class HomeworkDocCheck {
         	found=false;
         }
 	}
-	
+	/**
+	 * 用于获取文件的特征码
+	 */
     private String bytesToHexString(byte[] src) {  
         StringBuilder stringBuilder = new StringBuilder();  
         if (src == null || src.length <= 0) {  
@@ -51,23 +58,29 @@ public class HomeworkDocCheck {
         }  
         return stringBuilder.toString();  
     }
-    
+	/**
+	 * 文件大小检验
+	 */
     private void checkSize(File file){
 		if(file.length()<maxlength){
 			lengthnotover=true;
 		}
     }
-    
+	/**
+	 * 文件格式检验
+	 */
     private void checkFileValidation(File file) throws FileNotFoundException,IOException{
     	String filename=file.getName().toLowerCase();
+    	//首先检验扩展名，如果不对则判断格式不正确
     	if (!(filename.endsWith(".docx") || filename.endsWith(".doc") || filename.endsWith(".pdf"))) {
     		formatmatch=false;
+    		return;
 		}
         FileInputStream is = new FileInputStream(file);
         byte[] b = new byte[10];  
         is.read(b, 0, b.length);  
         String fileCode = bytesToHexString(b);
-        System.out.println(fileCode);
+        //其次检验文件特征码，如果是伪造的那么不予通过
         Iterator<String> keyIter = this.FILE_TYPE_MAP.keySet().iterator();  
         while(keyIter.hasNext()){  
              String key = keyIter.next();  

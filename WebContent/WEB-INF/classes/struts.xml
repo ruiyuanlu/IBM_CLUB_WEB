@@ -18,10 +18,11 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
 	<!-- 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 -->
 	<constant name="struts.multipart.maxSize" value="1073741824"/>
-	<!-- 声明包 -->	
+	<!-- 声明包 -->
 	<package name="istc" namespace="/" extends="struts-default">
+	<!--全局拦截器和拦截器栈-->
 		<interceptors>  
-            <interceptor name="loginInteceptor" class="club.istc.validation.SessionCheck" />  
+            <interceptor name="loginInteceptor" class="club.istc.validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
             <interceptor-stack name="loginStack">
             	<interceptor-ref name="loginInteceptor"></interceptor-ref>  
             	<interceptor-ref name="defaultStack"></interceptor-ref>  
@@ -31,22 +32,22 @@
 		<global-results>
 			<result name="exit">timeout.jsp</result>
 			<result name="error">error.jsp</result>
-		</global-results>
+		</global-results><!--开启通配符的使用，用于动态方法调用-->
 		<global-allowed-methods>regex:.*</global-allowed-methods>
 		<action name="Login" class="club.istc.action.Login">
-			<!-- 用户登录页面，如果验证器通不过将一直留在这个页面 -->
+			<!-- 用户登录action-->
 			<result name="input">login.jsp</result>
 			<exception-mapping exception="java.lang.Exception" result="error" />
-			<result name="success" type="redirectAction">welcome</result> 
-    		<interceptor-ref name="tokenSession" />   
+			<result name="success" type="redirectAction">welcome</result><!--tokenSession拦截器，用于拦截表单重复提交-->
+			<interceptor-ref name="tokenSession" />
     		<interceptor-ref name="defaultStack" />  
 		</action>
 		<action name="Logout" class="club.istc.action.Logout">
-			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
+			<!-- 用户登出action-->
 			<result name="exit">timeout.jsp</result>
 		</action>
 		<action name="Register" class="club.istc.action.Register">
-			<!-- 用户注册页面，如果验证器通不过将一直留在这个页面 -->
+			<!-- 用户注册action-->
 			<result name="input">register.jsp</result>
 			<result name="success" type="redirectAction">mainpage</result>
 			<exception-mapping exception="java.lang.Exception" result="error" />
@@ -54,7 +55,7 @@
     		<interceptor-ref name="defaultStack" />
 		</action>
 		<action name="HomeworkDocAction" class="club.istc.action.HomeworkDocAction">
-			<!-- 上传文件页面 -->
+			<!-- 上传文件action-->
 			<interceptor-ref name="tokenSession" />   
     		<interceptor-ref name="defaultStack" /> 
 			<result name="input">fileupload.jsp</result>
@@ -63,12 +64,12 @@
 			<exception-mapping exception="java.lang.Exception" result="error" />
 		</action>
 		<action name="interviewee*" class="club.istc.action.InterviewAction" method="{1}">
-			<!-- 面试测试页面 -->
+			<!-- 面试用action-->
 			<result name="input">interview.jsp</result>
 			<exception-mapping exception="java.lang.Exception" result="error" />
 		</action>
 		<action name="*" class="club.istc.action.Redirect" method="{1}">
-			<!-- 面试测试页面 -->
+			<!-- 重定向页面 -->
 			<result name="{1}">{1}.jsp</result>
 			<exception-mapping exception="java.lang.Exception" result="error" />
 		</action>

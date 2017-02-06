@@ -33,7 +33,9 @@ public class MeetingAction extends ActionSupport{
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();
 	}
-	
+	/**
+	 * 添加会议信息
+	 */
 	public String add(){
 		try {
 			//获取上一次例会信息
@@ -63,7 +65,9 @@ public class MeetingAction extends ActionSupport{
 			addFieldError("dateerror", "您设定的时间已过，请重新设定！");
 		}
 	}
-	
+	/**
+	 * 删除会议信息
+	 */
 	public String delete(){
 		try {
 			
@@ -75,6 +79,9 @@ public class MeetingAction extends ActionSupport{
 		return "deletesuccess";
 	}
 	
+	/**
+	 * 通修改会议信息
+	 */
 	public String modify(){
 		try {
 			if (summary!=null && meetingDateTime!=null) {
@@ -105,7 +112,9 @@ public class MeetingAction extends ActionSupport{
 			addFieldError("dateerror", "您设定的时间已过，请重新设定！");
 		}
 	}
-	
+	/**
+	 * 获得之前的会议清单
+	 */
 	public String get(){
 		try {
 			ArrayList<Meeting> meetinglist = null;

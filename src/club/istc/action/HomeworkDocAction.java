@@ -10,12 +10,14 @@ import club.istc.validation.HomeworkDocCheck;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+
+/**
+ * 成员管理自己作业文件的上传和下载
+ */
+
+
 public class HomeworkDocAction extends ActionSupport{
-	
-	/**
-	 * 成员管理自己作业文件的上传和下载
-	 */
-	
+
 	private static final long serialVersionUID = 1L;
     
 	    private File file;
@@ -27,20 +29,24 @@ public class HomeworkDocAction extends ActionSupport{
 	    @Override
 	    public String execute() throws Exception{
 	    	try {
-	    //可以加上一个当目录不存在时自动创建目录的代码
+	    		//设置文件存储目录
 		        String root = ServletActionContext.getServletContext().getRealPath("/file/homework"); 
 		        InputStream is = new FileInputStream(file);
+		        //如果目录不存在则自动创建
 		        File homeworkdir=new File(root);
 		        if (!homeworkdir.exists()) {
 					homeworkdir.mkdirs();
 				}
+		        //设置时间戳，格式为yyyyMMddHHmmss
 		        Date date = new Date();
 		        SimpleDateFormat timestamp=new SimpleDateFormat("yyyyMMddHHmmss");
+		        //文件格式为“yyyyMMddHHmmss-[文件名].[文件扩展名]”
 		        File targetFile=new File(root, timestamp.format(date)+"-"+fileFileName);
 		        OutputStream os = new FileOutputStream(targetFile);
 		        String targetpath=targetFile.getPath();
+		        //文件上传
 		        byte[] bytes = new byte[1024];  
-		        int i = is.read(bytes,0,1024);  
+		        int i = is.read(bytes,0,1024);
 		        while(i!=-1)  
 		        {  
 		            os.write(bytes,0,i);  
@@ -49,6 +55,7 @@ public class HomeworkDocAction extends ActionSupport{
 		        os.close();
 		        is.close();
 		        try {
+		        	//如果上传的文件不是pdf格式，那么转换为可以在线预览的html版本
 					if (!targetFile.getName().toLowerCase().endsWith(".pdf")) {
 						WordOnlineConverter.canExtractImage(targetpath);
 					}

@@ -5,7 +5,7 @@ import java.util.Map;
 import club.istc.bean.Person;
 
 /**
- * 当前的会话有效性查验，用于判定操作是否合法，以及超时下线的实现。
+ * 当前的会话有效性查验，以及获取其中的密码和学号信息
  */
 
 public class SessionValidation {

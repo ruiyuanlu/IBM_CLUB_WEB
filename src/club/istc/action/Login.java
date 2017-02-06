@@ -10,10 +10,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 
 /**
- * 登录。
- * 通过输入的用户名和密码，获取该用户信息并存入session中。
- * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。
- * 任何涉及数据库的操作均需要查验session。
+ * 登录。<br>
+ * 通过输入的用户名和密码，获取该用户信息并存入session中。<br>
+ * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。<br>
  */
 
 public class Login extends ActionSupport{
@@ -30,12 +29,12 @@ public class Login extends ActionSupport{
 		System.out.println(session.get("infofromjsp2Action"));
 	}
 	
+	/**
+	 * 通过用户名和密码检验身份并产生session
+	 */
 	@Override
 	public String execute() {
-		//通过用户名和密码获取Member类对象信息
-		//在这里嵌入数据库相关代码以检测是否成功连入数据库
-		//通过用户名和密码获取Member类对象信息
-		//设置session	
+		//在这里嵌入数据库相关代码
 //		try {
 //			SessionCheck ck=new SessionCheck(session);
 //			curPerson=new Func_for_control().getMember(id, password, id);

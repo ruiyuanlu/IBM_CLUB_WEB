@@ -32,6 +32,9 @@ public class InterviewAction extends ActionSupport{
 		session=context.getSession();
 	}
 	
+	/**
+	 * 用于获得用户提交的面试结果信息，并对数据库进行相应的处理
+	 */
 	public String check() throws Exception{
 		try {
 			deletePerson();
@@ -49,6 +52,9 @@ public class InterviewAction extends ActionSupport{
 		}
 	}
 	
+	/**
+	 * 从数据库获取面试人员列表
+	 */
 	public String get() throws Exception{
 		addtemp();
 		try {
@@ -61,8 +67,10 @@ public class InterviewAction extends ActionSupport{
 		}
 	}
 	
+	/**
+	 * 将通过面试的用户加入数据库并删除其在面试列表中的记录
+	 */
 	private void deletePerson(){
-		//将通过面试的用户加入数据库并删除其在面试列表中的记录
 		try {
 			for (int i = 0; i < passed.length; i++) {
 				//将学号对应的人员加入数据库
@@ -83,7 +91,6 @@ public class InterviewAction extends ActionSupport{
 	}
 	
 /*	private ArrayList<Person> getIntervieweesFromDatabase() {
-		//原则上是从数据库中获取数据，这里为了测试用假数据
 		try {
 			ArrayList<Person> curIntervieweesList = new ArrayList<Person>();
 			
@@ -98,6 +105,7 @@ public class InterviewAction extends ActionSupport{
 	}*/
 	
 	public static void addtemp() {
+		//原则上是从数据库中获取数据，这里为了测试用假数据
 		Person curPerson = new Person();
 		curPerson.setID("2141601033");
 		curPerson.setName("张三");
