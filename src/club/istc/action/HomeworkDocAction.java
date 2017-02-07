@@ -41,17 +41,9 @@ public class HomeworkDocAction extends ActionSupport{
 				}
 		        //设置时间戳，格式为yyyyMMddHHmmss
 		        Date date = new Date();
-		        SimpleDateFormat timestamp=new SimpleDateFormat("yyyyMMddHHmmss");
+		        SimpleDateFormat timestamp=new SimpleDateFormat("yyyyMMddhhmmssSSS");
 		        //文件格式为“yyyyMMddHHmmss-[文件名].[文件扩展名]”
-		        String fullname;
-		        //如果没有扩展名，那么手动识别后添加
-		        if (!fileFileName.toLowerCase().endsWith(extend)){
-		        	fullname=fileFileName+"."+extend;
-		        }
-		        else {
-					fullname=fileFileName;
-				}
-		        File targetFile=new File(root, timestamp.format(date)+"-"+fullname);
+		        File targetFile=new File(root, timestamp.format(date)+"."+extend);
 		        OutputStream os = new FileOutputStream(targetFile);
 		        String targetpath=targetFile.getPath();
 		        //文件上传
