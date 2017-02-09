@@ -43,7 +43,7 @@ public class HomeworkDocAction extends ActionSupport{
 		        Date date = new Date();
 		        SimpleDateFormat timestamp=new SimpleDateFormat("yyyyMMddhhmmssSSS");
 		        //文件格式为“yyyyMMddHHmmss-[文件名].[文件扩展名]”
-		        File targetFile=new File(root, timestamp.format(date)+"."+extend);
+		        File targetFile=new File(root, timestamp.format(date)+"-"+fileFileName+"."+extend);
 		        OutputStream os = new FileOutputStream(targetFile);
 		        String targetpath=targetFile.getPath();
 		        //文件上传

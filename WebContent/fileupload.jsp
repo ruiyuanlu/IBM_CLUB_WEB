@@ -14,7 +14,8 @@
   
   <body>
   上传文件格式限定为pdf, doc(wps)和docx，上传的文件大小不得超过5M。<br>
-  word文件均会由系统生成在线预览版本。<br>
+  word文件均会由系统生成HTML在线预览版本。<br>
+  pdf的在线预览一般由浏览器直接支持所以此处不进行转换。<br>
 　　<form action="HomeworkDocAction" method="post" enctype="multipart/form-data">
         文件选择: <input type="file" name="file"/><font color="red"><s:fielderror fieldName="fileerror"/></font><br/>  
         <input type="submit" value="上传">
