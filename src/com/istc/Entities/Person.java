@@ -10,8 +10,7 @@ import java.util.Calendar;
  */
 
 /**
- * 由于年龄随时间变化
- * 因此使用birthday进行计算，不存储age
+ * 年龄使用Calendar计算
  */
 @Entity
 @Table(name="person")
@@ -23,11 +22,13 @@ public class Person implements Serializable{
     protected String  ID;
     @Column
     protected String password;
+    @Basic(fetch = FetchType.EAGER)
     @Column(name = "name",length = 45)
     protected String name;
-    protected String description;
     @Temporal(value = TemporalType.TIMESTAMP)
-    protected Calendar birthDay;
+    private Calendar birthDay;
+
+    protected String description;
     @Column(name = "qq",length = 20)
     protected String QQ;
     @Column(name = "phone",length = 20)
@@ -54,13 +55,24 @@ public class Person implements Serializable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
+
         Person person = (Person) o;
+
         return ID != null ? ID.equals(person.ID) : person.ID == null;
+
     }
 
     @Override
     public int hashCode() {
         return ID != null ? ID.hashCode() : 0;
+    }
+
+    public Calendar getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(Calendar birthDay) {
+        this.birthDay = birthDay;
     }
 
     public String getPassword() {
@@ -115,6 +127,7 @@ public class Person implements Serializable{
         return this.gender == MALE;
     }
 
+
     public String getName() {
         return name;
     }
@@ -124,7 +137,7 @@ public class Person implements Serializable{
     }
 
     public Integer getAge() {
-        return Calendar.getInstance().get(Calendar.YEAR) - birthDay.get(Calendar.YEAR);
+        return Calendar.getInstance().get(Calendar.YEAR) - birthDay.getInstance().get(Calendar.YEAR);
     }
 
     public void setGender(boolean gender) {
@@ -139,12 +152,17 @@ public class Person implements Serializable{
         return MALE;
     }
 
-    public Calendar getBirthDay() {
-        return birthDay;
+    @Override
+    public String toString() {
+        return "Person{" +
+                ", ID='" + ID + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", QQ='" + QQ + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", gender=" + gender +
+                ", peopleVersion=" + peopleVersion +
+                '}';
     }
-
-    public void setBirthDay(Calendar birthDay) {
-        this.birthDay = birthDay;
-    }
-
 }
