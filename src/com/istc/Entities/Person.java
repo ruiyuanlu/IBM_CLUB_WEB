@@ -2,10 +2,16 @@ package com.istc.Entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 
 
 /**
  * Created by lurui on 2016/11/18 0018.
+ */
+
+/**
+ * 由于年龄随时间变化
+ * 因此使用birthday进行计算，不存储age
  */
 @Entity
 @Table(name="person")
@@ -17,15 +23,11 @@ public class Person implements Serializable{
     protected String  ID;
     @Column
     protected String password;
-    @Version
-    int version;
-    @Basic(fetch = FetchType.EAGER)
-
-    private Integer age;
     @Column(name = "name",length = 45)
     protected String name;
-    @Lob
     protected String description;
+    @Temporal(value = TemporalType.TIMESTAMP)
+    protected Calendar birthDay;
     @Column(name = "qq",length = 20)
     protected String QQ;
     @Column(name = "phone",length = 20)
@@ -52,20 +54,13 @@ public class Person implements Serializable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
-
         Person person = (Person) o;
-
         return ID != null ? ID.equals(person.ID) : person.ID == null;
-
     }
 
     @Override
     public int hashCode() {
         return ID != null ? ID.hashCode() : 0;
-    }
-
-    private int getVersion() {
-        return version;
     }
 
     public String getPassword() {
@@ -74,10 +69,6 @@ public class Person implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    private void setVersion(int peo_version) {
-        this.version = peo_version;
     }
 
     public String getDescription(){
@@ -124,7 +115,6 @@ public class Person implements Serializable{
         return this.gender == MALE;
     }
 
-
     public String getName() {
         return name;
     }
@@ -134,11 +124,7 @@ public class Person implements Serializable{
     }
 
     public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+        return Calendar.getInstance().get(Calendar.YEAR) - birthDay.get(Calendar.YEAR);
     }
 
     public void setGender(boolean gender) {
@@ -153,19 +139,12 @@ public class Person implements Serializable{
         return MALE;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "age=" + age +
-                ", ID='" + ID + '\'' +
-                ", password='" + password + '\'' +
-                ", version=" + version +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", QQ='" + QQ + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", gender=" + gender +
-                ", peopleVersion=" + peopleVersion +
-                '}';
+    public Calendar getBirthDay() {
+        return birthDay;
     }
+
+    public void setBirthDay(Calendar birthDay) {
+        this.birthDay = birthDay;
+    }
+
 }

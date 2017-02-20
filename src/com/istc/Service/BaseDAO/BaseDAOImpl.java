@@ -33,7 +33,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     private Class<PK> pkClass;
 
     public BaseDAOImpl() {
-        //通过反射机制获取子类传递来的实体类的类型 E 以及实体类ID的类型 PK
+        //通过反射机制获取子类传递来的实体类的类型 E 以及实体类ID的类型 PK;
         Type[] types = ((ParameterizedType)this.getClass().getGenericSuperclass()).getActualTypeArguments();
         this.eClass = (Class<E>)types[0];
         this.pkClass = (Class<PK>)types[1];
