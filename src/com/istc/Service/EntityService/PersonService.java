@@ -27,8 +27,6 @@ import java.util.*;
 @Service("personService")
 @Transactional(rollbackFor = Exception.class)
 public class PersonService {
-//    原先的自己写的DAO工厂
-//    private PersonDAO personDAO = DAOFactory.getInstance("PersonDAO", PersonDAO.class);
     /**
      * 由spring管理DAO
      */

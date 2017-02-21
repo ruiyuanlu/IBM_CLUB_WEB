@@ -1,9 +1,14 @@
 package com.istc.Service.EntityDAO.EntityDAOImpl;
 
+import com.istc.Entities.Member;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.MemberDAO;
+import org.springframework.stereotype.Repository;
+
+import java.io.Serializable;
 
 /**
  * Created by lurui on 2017/2/4 0004.
  */
-public class MemberDAOImpl extends PersonDAOImpl implements MemberDAO{
+@Repository("memberDAO")
+public class MemberDAOImpl<E extends Member, PK extends Serializable> extends PersonDAOImpl<Member, String> implements MemberDAO<E, PK>{
 }

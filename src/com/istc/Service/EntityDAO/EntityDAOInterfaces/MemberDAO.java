@@ -1,7 +1,11 @@
 package com.istc.Service.EntityDAO.EntityDAOInterfaces;
 
+import com.istc.Entities.Member;
+
+import java.io.Serializable;
+
 /**
  * Created by lurui on 2017/2/4 0004.
  */
-public interface MemberDAO extends PersonDAO {
+public interface MemberDAO<E extends Member, PK extends Serializable> extends PersonDAO<Member, String> {
 }
