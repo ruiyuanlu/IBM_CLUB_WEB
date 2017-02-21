@@ -1,23 +1,20 @@
-package com.istc.Entities.TestEntities;
+package com.istc.Entities;
 
 /**
  * Created by lurui on 2017/2/21 0021.
  */
 
-import com.istc.Entities.Member;
-import com.istc.Utilities.JsonUtils.JsonType;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * 站内消息实体类
  * 目标: 使用Json简化数据格式，使得消息的内容格式能够根据需要灵活变化，同时不影响数据库架构设计
- * JsonType 是使用Hibernate实现 Json 字符串存储到数据库的POJO类，与hibernate的映射的实现基于
- * JsonTypeForHibernate 和 JsonTypeMySQLDialect
+ * Json 直接以字符串形式存储, 前端解析
  */
-public class Message {
+@Entity
+public class Message implements Serializable{
     @Id
     private Integer id;
     @OneToOne
@@ -28,11 +25,10 @@ public class Message {
     private Calendar sendTime;
 
     /**
-     * 自定义 Json 类型
+     * 不超过500个字
      */
-    @Column
-    @Type(type = "com.istc.Utilities.JsonUtils.JsonType")
-    private JsonType messageContent;
+    @Column(length = 1003)
+    private String messageContentJson;
 
 
     public Message() {
@@ -46,12 +42,12 @@ public class Message {
         this.id = id;
     }
 
-    public JsonType getMessageContent() {
-        return messageContent;
+    public String getMessageContentJson() {
+        return messageContentJson;
     }
 
-    public void setMessageContent(JsonType messageContent) {
-        this.messageContent = messageContent;
+    public void setMessageContentJson(String messageContentJson) {
+        this.messageContentJson = messageContentJson;
     }
 
     public Member getReceiver() {
@@ -85,7 +81,7 @@ public class Message {
                 ", sender=" + sender +
                 ", receiver=" + receiver +
                 ", sendTime=" + sendTime +
-                ", messageContent=" + messageContent +
+                ", messageContentJson=" + messageContentJson +
                 '}';
     }
 
@@ -100,7 +96,7 @@ public class Message {
         if (sender != null ? !sender.equals(message.sender) : message.sender != null) return false;
         if (receiver != null ? !receiver.equals(message.receiver) : message.receiver != null) return false;
         if (sendTime != null ? !sendTime.equals(message.sendTime) : message.sendTime != null) return false;
-        return messageContent != null ? messageContent.equals(message.messageContent) : message.messageContent == null;
+        return messageContentJson != null ? messageContentJson.equals(message.messageContentJson) : message.messageContentJson == null;
 
     }
 
@@ -110,7 +106,7 @@ public class Message {
         result = 31 * result + (sender != null ? sender.hashCode() : 0);
         result = 31 * result + (receiver != null ? receiver.hashCode() : 0);
         result = 31 * result + (sendTime != null ? sendTime.hashCode() : 0);
-        result = 31 * result + (messageContent != null ? messageContent.hashCode() : 0);
+        result = 31 * result + (messageContentJson != null ? messageContentJson.hashCode() : 0);
         return result;
     }
 }

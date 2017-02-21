@@ -16,7 +16,6 @@ package com.istc.Entities;
  * */
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -38,9 +37,72 @@ public class Member extends Person implements Serializable{
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "member_homeWork")
     private Set<HomeWork> homeWorks;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Message> sendMessages;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Message> receiveMessages;
 
 
     public Member() {
+    }
+
+    public Set<Message> getSendMessages() {
+        return sendMessages;
+    }
+
+    public Set<Message> getReceiveMessages() {
+        return receiveMessages;
+    }
+
+    public void setReceiveMessages(Set<Message> receiveMessages) {
+        this.receiveMessages = receiveMessages;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Member)) return false;
+        if (!super.equals(o)) return false;
+
+        Member member = (Member) o;
+
+        if (authority != null ? !authority.equals(member.authority) : member.authority != null) return false;
+        if (enterDepts != null ? !enterDepts.equals(member.enterDepts) : member.enterDepts != null) return false;
+        if (registerRecords != null ? !registerRecords.equals(member.registerRecords) : member.registerRecords != null)
+            return false;
+        if (homeWorks != null ? !homeWorks.equals(member.homeWorks) : member.homeWorks != null) return false;
+        if (sendMessages != null ? !sendMessages.equals(member.sendMessages) : member.sendMessages != null)
+            return false;
+        return receiveMessages != null ? receiveMessages.equals(member.receiveMessages) : member.receiveMessages == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (authority != null ? authority.hashCode() : 0);
+        result = 31 * result + (enterDepts != null ? enterDepts.hashCode() : 0);
+        result = 31 * result + (registerRecords != null ? registerRecords.hashCode() : 0);
+        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
+        result = 31 * result + (sendMessages != null ? sendMessages.hashCode() : 0);
+        result = 31 * result + (receiveMessages != null ? receiveMessages.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "authority=" + authority +
+                ", enterDepts=" + enterDepts +
+                ", registerRecords=" + registerRecords +
+                ", homeWorks=" + homeWorks +
+                ", sendMessages=" + sendMessages +
+                ", receiveMessages=" + receiveMessages +
+                '}';
+    }
+
+    public void setSendMessages(Set<Message> sendMessages) {
+        this.sendMessages = sendMessages;
     }
 
     public Set<Register> getRegisterRecords() {
@@ -83,39 +145,4 @@ public class Member extends Person implements Serializable{
         this.authority = authority;
     }
 
-    @Override
-    public String toString() {
-        return super.toString()+"Member{" +
-                "authority=" + authority +
-                ", enterDepts=" + enterDepts +
-                ", registerRecords=" + registerRecords +
-                ", homeWorks=" + homeWorks +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Member)) return false;
-        if (!super.equals(o)) return false;
-
-        Member member = (Member) o;
-
-        if (authority != null ? !authority.equals(member.authority) : member.authority != null) return false;
-        if (enterDepts != null ? !enterDepts.equals(member.enterDepts) : member.enterDepts != null) return false;
-        if (registerRecords != null ? !registerRecords.equals(member.registerRecords) : member.registerRecords != null)
-            return false;
-        return homeWorks != null ? homeWorks.equals(member.homeWorks) : member.homeWorks == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (authority != null ? authority.hashCode() : 0);
-        result = 31 * result + (enterDepts != null ? enterDepts.hashCode() : 0);
-        result = 31 * result + (registerRecords != null ? registerRecords.hashCode() : 0);
-        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
-        return result;
-    }
 }

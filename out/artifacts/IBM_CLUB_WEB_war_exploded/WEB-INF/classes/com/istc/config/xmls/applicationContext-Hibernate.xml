@@ -13,7 +13,7 @@
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd">
 
-    <!--加载数据库配置xml为一个配置类对象, 这里本可以直接使用property name=location value=路径简化配置，但为了演示加载多个配置文件，因此使用了list-->
+    <!--加载数据库配置xml为一个配置类对象, 这里本可以直接使用property name=location originalObject=路径简化配置，但为了演示加载多个配置文件，因此使用了list-->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
