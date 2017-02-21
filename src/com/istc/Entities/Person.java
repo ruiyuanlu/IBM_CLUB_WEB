@@ -2,6 +2,7 @@ package com.istc.Entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 
 
 /**
@@ -20,8 +21,8 @@ public class Person implements Serializable{
     @Version
     int version;
     @Basic(fetch = FetchType.EAGER)
-
-    private Integer age;
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private Calendar birthDay;
     @Column(name = "name",length = 45)
     protected String name;
     @Lob
@@ -66,6 +67,10 @@ public class Person implements Serializable{
 
     private int getVersion() {
         return version;
+    }
+
+    public Integer getAge(){
+        return Calendar.getInstance().get(Calendar.YEAR) - birthDay.get(Calendar.YEAR);
     }
 
     public String getPassword() {
@@ -133,12 +138,12 @@ public class Person implements Serializable{
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Calendar getBirthDay() {
+        return birthDay;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setBirthDay(Calendar birthDay) {
+        this.birthDay = birthDay;
     }
 
     public void setGender(boolean gender) {
@@ -156,7 +161,7 @@ public class Person implements Serializable{
     @Override
     public String toString() {
         return "Person{" +
-                "age=" + age +
+                "birthDay=" + birthDay +
                 ", ID='" + ID + '\'' +
                 ", password='" + password + '\'' +
                 ", version=" + version +
