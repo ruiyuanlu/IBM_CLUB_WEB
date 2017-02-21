@@ -97,4 +97,36 @@ public class UploadedFile {
     public void setFileOnwer(Member fileOnwer) {
         this.fileOnwer = fileOnwer;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UploadedFile)) return false;
+
+        UploadedFile that = (UploadedFile) o;
+
+        if (fileID != that.fileID) return false;
+        if (requiredAuthority != that.requiredAuthority) return false;
+        if (fileVersion != that.fileVersion) return false;
+        if (fileName != null ? !fileName.equals(that.fileName) : that.fileName != null) return false;
+        if (nameExtention != null ? !nameExtention.equals(that.nameExtention) : that.nameExtention != null)
+            return false;
+        if (filePath != null ? !filePath.equals(that.filePath) : that.filePath != null) return false;
+        if (uploadTime != null ? !uploadTime.equals(that.uploadTime) : that.uploadTime != null) return false;
+        return fileOnwer != null ? fileOnwer.equals(that.fileOnwer) : that.fileOnwer == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = fileID;
+        result = 31 * result + (fileName != null ? fileName.hashCode() : 0);
+        result = 31 * result + (nameExtention != null ? nameExtention.hashCode() : 0);
+        result = 31 * result + requiredAuthority;
+        result = 31 * result + (filePath != null ? filePath.hashCode() : 0);
+        result = 31 * result + (uploadTime != null ? uploadTime.hashCode() : 0);
+        result = 31 * result + (fileOnwer != null ? fileOnwer.hashCode() : 0);
+        result = 31 * result + fileVersion;
+        return result;
+    }
 }

@@ -1,24 +1,28 @@
 package com.istc.Entities.ID;
 
+import com.istc.Entities.Department;
+
 import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
 
 /**
  * Created by lurui on 2016/11/21 0021.
  */
 @Embeddable
 public class MeetingID implements java.io.Serializable{
+    @ManyToOne
+    private Department department;
     private int times;
-    private int deptID;
 
     public MeetingID() {
     }
 
-    public int getDeptID() {
-        return deptID;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setDeptID(int deptID) {
-        this.deptID = deptID;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public int getTimes() {
@@ -37,14 +41,14 @@ public class MeetingID implements java.io.Serializable{
         MeetingID meetingID = (MeetingID) o;
 
         if (times != meetingID.times) return false;
-        return deptID == meetingID.deptID;
+        return department != null ? department.equals(meetingID.department) : meetingID.department == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = times;
-        result = 31 * result + deptID;
+        result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
     }
 }

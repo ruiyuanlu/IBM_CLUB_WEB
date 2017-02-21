@@ -74,18 +74,6 @@ public class Member extends Person {
         this.enterDepts = manageDepts;
     }
 
-    /**
-     * 修改
-     */
-    //事物处理
-    public void addDepartment(Department dept){
-        if (dept == null)return;
-        if (this.enterDepts == null)this.enterDepts = new HashSet<>();
-        enterDepts.add(dept);
-        return;
-    }
-
-
     public Integer getAuthority() {
         return authority;
     }

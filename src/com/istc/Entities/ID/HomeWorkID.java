@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Embeddable
 public class HomeWorkID implements java.io.Serializable{
     @ManyToOne
-    private Department dept;
+    private Department department;
     private int times;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "member_id", referencedColumnName = "id")
@@ -28,8 +28,8 @@ public class HomeWorkID implements java.io.Serializable{
         this.homeWorkSubmitter = homeWorkSubmitter;
     }
 
-    public Department getDept() {
-        return dept;
+    public Department getDepartment() {
+        return department;
     }
 
 
@@ -41,21 +41,21 @@ public class HomeWorkID implements java.io.Serializable{
         HomeWorkID that = (HomeWorkID) o;
 
         if (times != that.times) return false;
-        if (dept != null ? !dept.equals(that.dept) : that.dept != null) return false;
+        if (department != null ? !department.equals(that.department) : that.department != null) return false;
         return homeWorkSubmitter != null ? homeWorkSubmitter.equals(that.homeWorkSubmitter) : that.homeWorkSubmitter == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = dept != null ? dept.hashCode() : 0;
+        int result = department != null ? department.hashCode() : 0;
         result = 31 * result + times;
         result = 31 * result + (homeWorkSubmitter != null ? homeWorkSubmitter.hashCode() : 0);
         return result;
     }
 
-    public void setDept(Department dept) {
-        this.dept = dept;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public int getTimes() {

@@ -66,15 +66,15 @@ public class Meeting {
         return this.meetingID.getTimes();
     }
 
-    public void setTimes(int times) {
-        this.meetingID.setDeptID(times);
+    public void setTimes(Department times) {
+        this.meetingID.setDepartment(times);
     }
 
-    public int getDeptID() {
-        return meetingID.getDeptID();
+    public Department getDeptID() {
+        return meetingID.getDepartment();
     }
 
-    public void setDeptID(int deptID) {
-        this.meetingID.setDeptID(deptID);
+    public void setDeptID(Department deptID) {
+        this.meetingID.setDepartment(deptID);
     }
 }

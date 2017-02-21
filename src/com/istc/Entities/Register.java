@@ -10,11 +10,6 @@ public class Register {
 
     @Id
     private RegisterID registerID;
-//    @Id
-//    private int registerID;//含有多对多映射的实体类，其主键不能有多个属性，否则报错: A Foreign key refering ... has the wrong number of column. should be 2
-//    private int times;
-//    @OneToOne
-//    private Department department;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "register_member", joinColumns = {@JoinColumn(name = "register_dept"),

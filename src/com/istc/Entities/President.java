@@ -21,4 +21,30 @@ public class President extends Member {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"President{" +
+                "title='" + title + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof President)) return false;
+        if (!super.equals(o)) return false;
+
+        President president = (President) o;
+
+        return title != null ? title.equals(president.title) : president.title == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        return result;
+    }
 }

@@ -18,14 +18,12 @@ public class Person implements Serializable{
     protected String  ID;
     @Column
     protected String password;
-    @Version
-    int version;
-    @Basic(fetch = FetchType.EAGER)
+
     @Temporal(value = TemporalType.TIMESTAMP)
-    private Calendar birthDay;
+    protected Calendar birthDay;
     @Column(name = "name",length = 45)
     protected String name;
-    @Lob
+    @Column(length = 403)
     protected String description;
     @Column(name = "qq",length = 20)
     protected String QQ;
@@ -65,10 +63,6 @@ public class Person implements Serializable{
         return ID != null ? ID.hashCode() : 0;
     }
 
-    private int getVersion() {
-        return version;
-    }
-
     public Integer getAge(){
         return Calendar.getInstance().get(Calendar.YEAR) - birthDay.get(Calendar.YEAR);
     }
@@ -79,10 +73,6 @@ public class Person implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    private void setVersion(int peo_version) {
-        this.version = peo_version;
     }
 
     public String getDescription(){
@@ -164,7 +154,6 @@ public class Person implements Serializable{
                 "birthDay=" + birthDay +
                 ", ID='" + ID + '\'' +
                 ", password='" + password + '\'' +
-                ", version=" + version +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", QQ='" + QQ + '\'' +

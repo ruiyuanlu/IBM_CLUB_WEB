@@ -31,14 +31,29 @@ public class Minister extends Member implements Serializable{
         this.manageDepts = manageDepts;
     }
 
-    /***
-     * 修改
-     */
-    public boolean addDepartments(Department []depts){
-        if(depts == null || depts.length == 0)return false;
-        if(this.manageDepts == null) manageDepts = new HashSet<>();
-        for(Department d: depts) manageDepts.add(d);
-        return true;
+    @Override
+    public String toString() {
+        return super.toString()+"Minister{" +
+                "manageDepts=" + manageDepts +
+                '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Minister)) return false;
+        if (!super.equals(o)) return false;
+
+        Minister minister = (Minister) o;
+
+        return manageDepts != null ? manageDepts.equals(minister.manageDepts) : minister.manageDepts == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (manageDepts != null ? manageDepts.hashCode() : 0);
+        return result;
+    }
 }

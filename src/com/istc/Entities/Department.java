@@ -5,9 +5,7 @@ import com.sun.istack.internal.NotNull;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.sql.Clob;
 import java.util.Calendar;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -18,8 +16,8 @@ import java.util.Set;
 public class Department {
     @Id
     private int deptID;
-    @Lob
-    private Clob introduction;
+    @Column(length = 603)
+    private String introduction;
     @NotNull
     private String deptName;
     @Temporal(value = TemporalType.TIMESTAMP)
@@ -86,11 +84,11 @@ public class Department {
         this.homeWorks = homeWorks;
     }
 
-    public Clob getIntroduction() {
+    public String getIntroduction() {
         return introduction;
     }
 
-    public void setIntroduction(Clob introduction) {
+    public void setIntroduction(String introduction) {
         this.introduction = introduction;
     }
 
@@ -123,5 +121,52 @@ public class Department {
         this.deptName = deptName;
     }
 
+    @Override
+    public String toString() {
+        return "Department{" +
+                "deptID=" + deptID +
+                ", introduction='" + introduction + '\'' +
+                ", deptName='" + deptName + '\'' +
+                ", establishTime=" + establishTime +
+                ", minister=" + minister +
+                ", members=" + members +
+                ", meetings=" + meetings +
+                ", homeWorks=" + homeWorks +
+                ", deptVersion=" + deptVersion +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Department)) return false;
+
+        Department that = (Department) o;
+
+        if (deptID != that.deptID) return false;
+        if (deptVersion != that.deptVersion) return false;
+        if (introduction != null ? !introduction.equals(that.introduction) : that.introduction != null) return false;
+        if (deptName != null ? !deptName.equals(that.deptName) : that.deptName != null) return false;
+        if (establishTime != null ? !establishTime.equals(that.establishTime) : that.establishTime != null)
+            return false;
+        if (minister != null ? !minister.equals(that.minister) : that.minister != null) return false;
+        if (members != null ? !members.equals(that.members) : that.members != null) return false;
+        if (meetings != null ? !meetings.equals(that.meetings) : that.meetings != null) return false;
+        return homeWorks != null ? homeWorks.equals(that.homeWorks) : that.homeWorks == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = deptID;
+        result = 31 * result + (introduction != null ? introduction.hashCode() : 0);
+        result = 31 * result + (deptName != null ? deptName.hashCode() : 0);
+        result = 31 * result + (establishTime != null ? establishTime.hashCode() : 0);
+        result = 31 * result + (minister != null ? minister.hashCode() : 0);
+        result = 31 * result + (members != null ? members.hashCode() : 0);
+        result = 31 * result + (meetings != null ? meetings.hashCode() : 0);
+        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
+        result = 31 * result + deptVersion;
+        return result;
+    }
 }

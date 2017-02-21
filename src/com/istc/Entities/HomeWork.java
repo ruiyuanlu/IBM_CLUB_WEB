@@ -43,11 +43,11 @@ public class HomeWork {
     }
 
     public Department getDeptID() {
-        return homeWorkID.getDept();
+        return homeWorkID.getDepartment();
     }
 
     public void setDeptID(Department deptID) {
-        this.homeWorkID.setDept(deptID);
+        this.homeWorkID.setDepartment(deptID);
     }
 
     public HomeWorkID getHomeWorkID() {
