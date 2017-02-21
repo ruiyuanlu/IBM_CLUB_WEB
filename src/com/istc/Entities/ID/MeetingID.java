@@ -51,4 +51,12 @@ public class MeetingID implements java.io.Serializable{
         result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "MeetingID{" +
+                "department=" + department +
+                ", times=" + times +
+                '}';
+    }
 }

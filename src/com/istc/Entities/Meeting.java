@@ -77,4 +77,15 @@ public class Meeting {
     public void setDeptID(Department deptID) {
         this.meetingID.setDepartment(deptID);
     }
+
+    @Override
+    public String toString() {
+        return "Meeting{" +
+                "dept=" + dept +
+                ", meetingID=" + meetingID +
+                ", meetingContent='" + meetingContent + '\'' +
+                ", location='" + location + '\'' +
+                ", meetingVersion=" + meetingVersion +
+                '}';
+    }
 }

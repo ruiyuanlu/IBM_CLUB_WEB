@@ -54,6 +54,15 @@ public class HomeWorkID implements java.io.Serializable{
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "HomeWorkID{" +
+                "department=" + department +
+                ", times=" + times +
+                ", homeWorkSubmitter=" + homeWorkSubmitter +
+                '}';
+    }
+
     public void setDepartment(Department department) {
         this.department = department;
     }

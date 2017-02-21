@@ -44,6 +44,15 @@ public class Register {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Register{" +
+                "members=" + members +
+                ", registerID=" + registerID +
+                ", registerVersion=" + registerVersion +
+                '}';
+    }
+
     public void setDepartment(Department department) {
         this.registerID.setDepartment(department);
     }

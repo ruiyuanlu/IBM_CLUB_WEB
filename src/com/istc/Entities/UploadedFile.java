@@ -129,4 +129,18 @@ public class UploadedFile {
         result = 31 * result + fileVersion;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "UploadedFile{" +
+                "fileID=" + fileID +
+                ", fileName='" + fileName + '\'' +
+                ", nameExtention='" + nameExtention + '\'' +
+                ", requiredAuthority=" + requiredAuthority +
+                ", filePath='" + filePath + '\'' +
+                ", uploadTime=" + uploadTime +
+                ", fileOnwer=" + fileOnwer +
+                ", fileVersion=" + fileVersion +
+                '}';
+    }
 }

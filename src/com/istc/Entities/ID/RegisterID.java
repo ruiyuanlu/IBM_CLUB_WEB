@@ -51,4 +51,12 @@ public class RegisterID implements java.io.Serializable{
         result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "RegisterID{" +
+                "department=" + department +
+                ", times=" + times +
+                '}';
+    }
 }

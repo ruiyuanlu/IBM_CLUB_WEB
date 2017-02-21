@@ -101,4 +101,16 @@ public class HomeWork {
     public void setEndTime(Calendar endTime) {
         this.endTime = endTime;
     }
+
+    @Override
+    public String toString() {
+        return "HomeWork{" +
+                "beginTime=" + beginTime +
+                ", homeWorkID=" + homeWorkID +
+                ", fileID=" + fileID +
+                ", homeWorkRequirement=" + homeWorkRequirement +
+                ", endTime=" + endTime +
+                ", homeWorkVersion=" + homeWorkVersion +
+                '}';
+    }
 }

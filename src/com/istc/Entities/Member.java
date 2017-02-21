@@ -81,4 +81,14 @@ public class Member extends Person {
     public void setAuthority(Integer authority) {
         this.authority = authority;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Member{" +
+                "authority=" + authority +
+                ", enterDepts=" + enterDepts +
+                ", registerRecords=" + registerRecords +
+                ", homeWorks=" + homeWorks +
+                '}';
+    }
 }
