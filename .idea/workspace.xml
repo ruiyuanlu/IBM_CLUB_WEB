@@ -2,41 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bda9481-533e-4c57-9e8f-4d28806748d4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Department.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Department.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/HomeWork.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/HomeWork.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/HomeWorkID.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/HomeWorkID.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/MeetingID.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/MeetingID.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/RegisterID.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/RegisterID.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Meeting.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Meeting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Member.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Member.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Minister.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Minister.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Person.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/President.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/President.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Register.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Register.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/UploadedFile.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/UploadedFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Department.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Department.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/HomeWork.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/HomeWork.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/HomeWorkID.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/HomeWorkID.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/MeetingID.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/MeetingID.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/RegisterID.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/RegisterID.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Meeting.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Meeting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Member.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Member.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Minister.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Minister.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Person.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/President.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/President.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Register.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Register.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/UploadedFile.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/UploadedFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Department.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Department.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/HomeWork.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/HomeWork.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/ID/HomeWorkID.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/ID/HomeWorkID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/ID/MeetingID.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/ID/MeetingID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/ID/RegisterID.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/ID/RegisterID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Meeting.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Meeting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Member.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Member.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Minister.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Minister.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Person.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/President.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/President.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Register.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Register.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/UploadedFile.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/UploadedFile.java" />
     </list>
     <ignored path="IBM_CLUB_WEB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,9 +116,12 @@
       <file leaf-file-name="Meeting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Meeting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="1350">
+              <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
+              <folding>
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -892,16 +877,16 @@
       <workItem from="1487647580084" duration="643000" />
       <workItem from="1487648344061" duration="595000" />
       <workItem from="1487649021854" duration="733000" />
-      <workItem from="1487655703786" duration="1149000" />
+      <workItem from="1487655703786" duration="1543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3120000" />
+    <option name="totallyTimeSpent" value="3514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -918,7 +903,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25937834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25937834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1204,9 +1189,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Meeting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="1350">
+          <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
+          <folding>
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
