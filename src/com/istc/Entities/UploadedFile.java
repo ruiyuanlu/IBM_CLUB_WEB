@@ -5,13 +5,14 @@ package com.istc.Entities;
  */
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Used to represent and manage uploaded files
  */
 @Entity
-public class UploadedFile {
+public class UploadedFile implements Serializable{
     @Id
     private int fileID;
     private String fileName;

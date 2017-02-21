@@ -3,11 +3,12 @@ package com.istc.Entities;
 import com.istc.Entities.ID.HomeWorkID;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.*;
 import java.util.Calendar;
 
 @Entity
-public class HomeWork {
+public class HomeWork implements Serializable{
     @Id
     private HomeWorkID homeWorkID;
     @Basic
@@ -112,5 +113,33 @@ public class HomeWork {
                 ", endTime=" + endTime +
                 ", homeWorkVersion=" + homeWorkVersion +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof HomeWork)) return false;
+
+        HomeWork homeWork = (HomeWork) o;
+
+        if (fileID != homeWork.fileID) return false;
+        if (homeWorkVersion != homeWork.homeWorkVersion) return false;
+        if (homeWorkID != null ? !homeWorkID.equals(homeWork.homeWorkID) : homeWork.homeWorkID != null) return false;
+        if (homeWorkRequirement != null ? !homeWorkRequirement.equals(homeWork.homeWorkRequirement) : homeWork.homeWorkRequirement != null)
+            return false;
+        if (beginTime != null ? !beginTime.equals(homeWork.beginTime) : homeWork.beginTime != null) return false;
+        return endTime != null ? endTime.equals(homeWork.endTime) : homeWork.endTime == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = homeWorkID != null ? homeWorkID.hashCode() : 0;
+        result = 31 * result + fileID;
+        result = 31 * result + (homeWorkRequirement != null ? homeWorkRequirement.hashCode() : 0);
+        result = 31 * result + (beginTime != null ? beginTime.hashCode() : 0);
+        result = 31 * result + (endTime != null ? endTime.hashCode() : 0);
+        result = 31 * result + homeWorkVersion;
+        return result;
     }
 }

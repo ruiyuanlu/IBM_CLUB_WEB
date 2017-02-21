@@ -3,10 +3,11 @@ package com.istc.Entities;
 import com.istc.Entities.ID.RegisterID;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class Register {
+public class Register implements Serializable{
 
     @Id
     private RegisterID registerID;

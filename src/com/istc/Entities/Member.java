@@ -15,6 +15,7 @@ package com.istc.Entities;
  *
  * */
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ import java.util.Set;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Member extends Person {
+public class Member extends Person implements Serializable{
 
     @Basic
     private Integer authority;
@@ -90,5 +91,31 @@ public class Member extends Person {
                 ", registerRecords=" + registerRecords +
                 ", homeWorks=" + homeWorks +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Member)) return false;
+        if (!super.equals(o)) return false;
+
+        Member member = (Member) o;
+
+        if (authority != null ? !authority.equals(member.authority) : member.authority != null) return false;
+        if (enterDepts != null ? !enterDepts.equals(member.enterDepts) : member.enterDepts != null) return false;
+        if (registerRecords != null ? !registerRecords.equals(member.registerRecords) : member.registerRecords != null)
+            return false;
+        return homeWorks != null ? homeWorks.equals(member.homeWorks) : member.homeWorks == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (authority != null ? authority.hashCode() : 0);
+        result = 31 * result + (enterDepts != null ? enterDepts.hashCode() : 0);
+        result = 31 * result + (registerRecords != null ? registerRecords.hashCode() : 0);
+        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
+        return result;
     }
 }

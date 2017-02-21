@@ -1,13 +1,14 @@
 package com.istc.Entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by lurui on 2016/11/21 0021.
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class President extends Member {
+public class President extends Member implements Serializable{
 
     private String title;
 

@@ -5,6 +5,7 @@ import com.sun.istack.internal.NotNull;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ import java.util.Set;
  */
 @Component
 @Entity
-public class Department {
+public class Department implements Serializable{
     @Id
     private int deptID;
     @Column(length = 603)
