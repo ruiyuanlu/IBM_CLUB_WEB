@@ -1,7 +1,8 @@
 package club.istc.action;
 
 import java.util.Map;
-
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -10,10 +11,16 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 
 @SuppressWarnings("serial")
-public class Logout extends ActionSupport {
+@Action(
+		value="Logout", 
+        results={ 
+				@Result(name="exit",location="timeout.jsp")
+        }
+) 
+public class LogoutAction extends ActionSupport {
 	
 	Map<String, Object> session;
-	public Logout(){
+	public LogoutAction(){
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();
 	}

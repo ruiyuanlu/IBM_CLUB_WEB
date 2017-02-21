@@ -3,6 +3,11 @@ package club.istc.action;
 
 import java.util.Map;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+
 import club.istc.bean.*;
 import club.istc.validation.*;
 
@@ -12,8 +17,18 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 注册
  */
-
-public class Register extends ActionSupport{
+@Action(
+		value="Register",
+        results={ 
+				@Result(name="input", location="register.jsp"),
+				@Result(name="success", location="mainpage", type="redirect")
+        },
+        interceptorRefs={ 
+			    @InterceptorRef("tokenSession"),  
+			    @InterceptorRef("defaultStack")  
+        }
+) 
+public class RegisterAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private int age;
@@ -27,7 +42,7 @@ public class Register extends ActionSupport{
 	private Map<String, Object> session;
 	// 用户登录 
 	
-	public Register() {
+	public RegisterAction() {
 		// TODO Auto-generated constructor stub
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();

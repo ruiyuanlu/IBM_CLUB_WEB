@@ -5,7 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.struts2.ServletActionContext;
-
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.Result;
 import club.istc.validation.HomeworkDocCheck;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,8 +16,18 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 成员管理自己作业文件的上传和下载
  */
-
-
+@Action(
+		value="HomeworkDocAction", 
+        results={ 
+				@Result(name="input", location="fileupload.jsp"),
+				@Result(name="success", location="fileupload", type="redirect"),
+				@Result(name="invalid.token", location="fileupload", type="redirect")
+        },
+        interceptorRefs={ 
+			    @InterceptorRef("tokenSession"),  
+			    @InterceptorRef("defaultStack")  
+        }
+) 
 public class HomeworkDocAction extends ActionSupport{
 
 	private static final long serialVersionUID = 1L;

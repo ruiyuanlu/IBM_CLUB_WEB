@@ -2,6 +2,11 @@ package club.istc.action;
 
 import java.util.Map;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+
 import club.istc.bean.Person;
 import club.istc.validation.*;
 
@@ -14,15 +19,25 @@ import com.opensymphony.xwork2.ActionSupport;
  * 通过输入的用户名和密码，获取该用户信息并存入session中。<br>
  * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。<br>
  */
-
-public class Login extends ActionSupport{
+@Action(
+		value="Login",
+        results={ 
+				@Result(name="input", location="login.jsp"),
+				@Result(name="success", location="welcome", type="redirect")
+        },
+        interceptorRefs={ 
+			    @InterceptorRef("tokenSession"),  
+			    @InterceptorRef("defaultStack")  
+        }
+)
+public class LoginAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String password;
 	private Map<String, Object> session;
 	// 用户登录 
 	
-	public Login() {
+	public LoginAction() {
 		// TODO Auto-generated constructor stub
 		ActionContext context=ActionContext.getContext();
 		session=context.getSession();
@@ -32,7 +47,7 @@ public class Login extends ActionSupport{
 	/**
 	 * 通过用户名和密码检验身份并产生session
 	 */
-	@Override
+
 	public String execute() {
 		//在这里嵌入数据库相关代码
 //		try {

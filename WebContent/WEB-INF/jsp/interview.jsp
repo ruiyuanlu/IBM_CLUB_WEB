@@ -32,7 +32,7 @@ Person curPerson=new Person();
   
   <font color="red"><s:fielderror fieldName="getIntervieweeError"/></font>
   <%if(interviewees.size()!=0){ %>
-       <form action="intervieweecheck" method="post">
+       <form action="intervieweeCheck" method="post">
        <%for (int i=0;i<interviewees.size();i++){%>
        <%=interviewees.get(i).getName()%>(<%=interviewees.get(i).getID()%>)
        <input type="checkbox" name="passed" value=<%=interviewees.get(i).getID()%>></input>通过

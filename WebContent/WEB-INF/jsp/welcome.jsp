@@ -32,7 +32,7 @@ if(session.getAttribute("infofromAction2jsp")!=null){
   <%=info %><br/>
     Welcome!欢迎！ <br>
     <a href="fileupload">上传文件测试</a><br/>
-    <a href="intervieweeget" target="_blank">面试功能测试</a><br/>
+    <a href="intervieweeGet" target="_blank">面试功能测试</a><br/>
     <a href="Logout">登出</a>
   </body>
 </html>

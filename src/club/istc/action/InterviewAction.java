@@ -2,16 +2,21 @@ package club.istc.action;
 
 import java.util.*;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.AllowedMethods;
+import org.apache.struts2.convention.annotation.Result;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import club.istc.bean.*;
-
+/**
+ * 面试模块
+ */
+@AllowedMethods({"intervieweeGet", "intervieweeCheck"})
+@Result(name="input",location="interview.jsp")
 public class InterviewAction extends ActionSupport{
 	
-	/**
-	 * 面试模块
-	 */
 	private static final long serialVersionUID = 1L;
 	private static List<Person> interviewees=new ArrayList<Person>();
 	private String[] passed;
@@ -35,7 +40,8 @@ public class InterviewAction extends ActionSupport{
 	/**
 	 * 用于获得用户提交的面试结果信息，并对数据库进行相应的处理
 	 */
-	public String check() throws Exception{
+	@Action(value="intervieweeCheck") 
+	public String intervieweeCheck() throws Exception{
 		try {
 			deletePerson();
 			//从数据库中重新获取Person对象的List
@@ -55,7 +61,8 @@ public class InterviewAction extends ActionSupport{
 	/**
 	 * 从数据库获取面试人员列表
 	 */
-	public String get() throws Exception{
+	@Action(value="intervieweeGet") 
+	public String intervieweeGet() throws Exception{
 		addtemp();
 		try {
 			session.put("interviewList", interviewees);
