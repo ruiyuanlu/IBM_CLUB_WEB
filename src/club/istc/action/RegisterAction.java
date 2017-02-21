@@ -21,7 +21,8 @@ import com.opensymphony.xwork2.ActionSupport;
 		value="Register",
         results={ 
 				@Result(name="input", location="register.jsp"),
-				@Result(name="success", location="mainpage", type="redirect")
+				@Result(name="success", location="mainpage", type="redirect"),
+				@Result(name="invalid.token", location="register", type="redirect")
         },
         interceptorRefs={ 
 			    @InterceptorRef("tokenSession"),  

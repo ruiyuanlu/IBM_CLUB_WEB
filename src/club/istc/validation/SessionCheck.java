@@ -38,7 +38,8 @@ public class SessionCheck extends AbstractInterceptor {
 			url.indexOf("Login") != -1 || 
 			url.indexOf("mainpage")!= -1 ||
 			url.indexOf("register")!=-1 ||
-			url.indexOf("Register")!=-1) 
+			url.indexOf("Register")!=-1 ||
+			url.indexOf("error")!=-1 ) 
 		{
 			System.out.println("登录和登出，直接放行。");
 			return ai.invoke();

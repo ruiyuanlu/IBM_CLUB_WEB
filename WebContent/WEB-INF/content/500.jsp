@@ -12,8 +12,6 @@
   </head>
   
   <body>
-    404~出错啦！找不到您请求的页面！<br>
-    错误原因：<br>
-    <s:property value="%{exception.message}"/>
-  </body>
+    服务器出错啦！请联系管理员以帮助我们尽快解决问题。<br>
+    </body>
 </html>

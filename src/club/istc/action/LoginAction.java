@@ -23,7 +23,8 @@ import com.opensymphony.xwork2.ActionSupport;
 		value="Login",
         results={ 
 				@Result(name="input", location="login.jsp"),
-				@Result(name="success", location="welcome", type="redirect")
+				@Result(name="success", location="welcome", type="redirect"),
+				@Result(name="invalid.token", location="login", type="redirect"),
         },
         interceptorRefs={ 
 			    @InterceptorRef("tokenSession"),  
@@ -46,9 +47,10 @@ public class LoginAction extends ActionSupport{
 	
 	/**
 	 * 通过用户名和密码检验身份并产生session
+	 * @throws Exception 
 	 */
 
-	public String execute() {
+	public String execute(){
 		//在这里嵌入数据库相关代码
 //		try {
 //			SessionCheck ck=new SessionCheck(session);
@@ -75,6 +77,7 @@ public class LoginAction extends ActionSupport{
 //			return ERROR;
 //		}
 		//自定义一个session信息，用于测试从action到jsp的session传输
+		
 		session.put("infofromAction2jsp", "这是一段测试从servlet到jsp能否正常发送session的文字，如果该段文字无乱码地正常显示则没有问题。");
 		
 		System.out.println(id);

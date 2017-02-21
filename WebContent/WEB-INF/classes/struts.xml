@@ -18,4 +18,30 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<!-- 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 -->
 	<constant name="struts.multipart.maxSize" value="10737418240"/>
+	<package name="HandleInvalidAction" extends="struts-default">  
+   		<default-action-ref name="notFound" />  
+   		<action name="HandleInvalidAction">  
+   			<result>/WEB-INF/content/404.jsp</result>  
+  		</action>  
+	</package>
+	<package name="main" namespace="/" extends="struts-default">
+		<!--该拦截器栈用于检测session是否合法-->
+		<interceptors>  
+            <interceptor name="loginInteceptor" class="club.istc.validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
+            <interceptor-stack name="loginStack">
+            	<interceptor-ref name="loginInteceptor"></interceptor-ref>  
+            	<interceptor-ref name="defaultStack"></interceptor-ref>  
+            </interceptor-stack>  
+		</interceptors>
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
+		<global-results>
+			<result name="exit">/WEB-INF/content/timeout.jsp</result>
+			<result name="error" type="redirect">error</result>
+		</global-results>
+		<!--开启通配符的使用，用于动态方法调用-->
+		<global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
+	</package>
+	
 </struts>
