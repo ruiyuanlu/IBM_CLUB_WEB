@@ -1,9 +1,11 @@
 package club.istc.action;
 
 import java.util.Map;
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
-import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -17,12 +19,12 @@ import com.opensymphony.xwork2.ActionSupport;
 				@Result(name="exit",location="timeout.jsp")
         }
 ) 
-public class LogoutAction extends ActionSupport {
+public class LogoutAction extends ActionSupport implements SessionAware{
 	
 	Map<String, Object> session;
+	
 	public LogoutAction(){
-		ActionContext context=ActionContext.getContext();
-		session=context.getSession();
+
 	}
 	
 	public String execute(){   
@@ -30,5 +32,11 @@ public class LogoutAction extends ActionSupport {
 	    //登录即意味着session存在于当前页面，退出时销毁session
 	    session.clear();
 	    return "exit";
+	}
+
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
 	}
 }

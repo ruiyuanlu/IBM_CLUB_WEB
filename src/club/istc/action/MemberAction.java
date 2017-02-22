@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.struts2.interceptor.SessionAware;
+
 import club.istc.bean.*;
 import club.istc.validation.IDCheck;
 import club.istc.validation.InjectionCheck;
@@ -11,14 +13,13 @@ import club.istc.validation.PasswordCheck;
 import club.istc.validation.PhoneNumberCheck;
 import club.istc.validation.QQCheck;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 用于管理成员信息的增删改查，其中手动增加成员仅可以由部长级以上成员完成
  */
 
-public class MemberAction extends ActionSupport{
+public class MemberAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	
 	private String id;
@@ -38,10 +39,12 @@ public class MemberAction extends ActionSupport{
 	
 	public MemberAction() {
 		// TODO Auto-generated constructor stub
-		ActionContext context=ActionContext.getContext();
-		session=context.getSession();
 	}
-	
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
+	}
 	/**
 	 * 手动添加成员<br/>
 	 * 为了简化操作，部长增加成员只需要设置学号和姓名，其余信息可由部员自行修改

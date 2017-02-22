@@ -5,8 +5,8 @@ import java.util.*;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import club.istc.bean.*;
@@ -15,7 +15,7 @@ import club.istc.bean.*;
  */
 @AllowedMethods({"intervieweeGet", "intervieweeCheck"})
 @Result(name="input",location="interview.jsp")
-public class InterviewAction extends ActionSupport{
+public class InterviewAction extends ActionSupport implements SessionAware{
 	
 	private static final long serialVersionUID = 1L;
 	private static List<Person> interviewees=new ArrayList<Person>();
@@ -33,10 +33,13 @@ public class InterviewAction extends ActionSupport{
 	
 	public InterviewAction() {
 		// TODO Auto-generated constructor stub
-		ActionContext context=ActionContext.getContext();
-		session=context.getSession();
 	}
 	
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
+	}
 	/**
 	 * 用于获得用户提交的面试结果信息，并对数据库进行相应的处理
 	 */

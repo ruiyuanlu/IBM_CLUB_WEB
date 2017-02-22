@@ -4,13 +4,12 @@ import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.InterceptorRef;
-import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
 
 import club.istc.bean.Person;
 import club.istc.validation.*;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -31,7 +30,7 @@ import com.opensymphony.xwork2.ActionSupport;
 			    @InterceptorRef("defaultStack")  
         }
 )
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String password;
@@ -40,8 +39,13 @@ public class LoginAction extends ActionSupport{
 	
 	public LoginAction() {
 		// TODO Auto-generated constructor stub
-		ActionContext context=ActionContext.getContext();
-		session=context.getSession();
+	}
+	
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
+		//测试代码
 		System.out.println(session.get("infofromjsp2Action"));
 	}
 	
@@ -128,4 +132,6 @@ public class LoginAction extends ActionSupport{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 }

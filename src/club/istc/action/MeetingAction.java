@@ -5,17 +5,18 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
+
 import club.istc.bean.*;
 import club.istc.validation.InjectionCheck;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 部长及以上成员管理例会信息发布
  */
 
-public class MeetingAction extends ActionSupport{
+public class MeetingAction extends ActionSupport implements SessionAware{
 	
 	private static final long serialVersionUID = 1L;
 	private String summary;
@@ -30,8 +31,12 @@ public class MeetingAction extends ActionSupport{
 	
 	public MeetingAction() {
 		// TODO Auto-generated constructor stub
-		ActionContext context=ActionContext.getContext();
-		session=context.getSession();
+	}
+	
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
 	}
 	/**
 	 * 添加会议信息

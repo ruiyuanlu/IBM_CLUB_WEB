@@ -5,13 +5,12 @@ import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.InterceptorRef;
-import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
 
 import club.istc.bean.*;
 import club.istc.validation.*;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -29,7 +28,7 @@ import com.opensymphony.xwork2.ActionSupport;
 			    @InterceptorRef("defaultStack")  
         }
 ) 
-public class RegisterAction extends ActionSupport{
+public class RegisterAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private int age;
@@ -45,10 +44,12 @@ public class RegisterAction extends ActionSupport{
 	
 	public RegisterAction() {
 		// TODO Auto-generated constructor stub
-		ActionContext context=ActionContext.getContext();
-		session=context.getSession();
 	}
-	
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		// TODO Auto-generated method stub
+		this.session=arg0;
+	}
 	@Override
 	public String execute() {
 		//加上数据库的操作
