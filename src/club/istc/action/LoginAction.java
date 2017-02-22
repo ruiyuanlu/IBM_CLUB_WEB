@@ -3,7 +3,6 @@ package club.istc.action;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
@@ -19,17 +18,12 @@ import com.opensymphony.xwork2.ActionSupport;
  * 通过输入的用户名和密码，获取该用户信息并存入session中。<br>
  * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。<br>
  */
-@ParentPackage("json-default")
+@ParentPackage("needajax")
 @Action(
 		value="Login", 
         results={
 				@Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
 				@Result(name="invalid.token", location="login.jsp")
-        },
-        interceptorRefs={
-				@InterceptorRef("jsonValidationWorkflowStack"),
-			    @InterceptorRef("tokenSession"),  
-			    @InterceptorRef("defaultStack")  
         }
 ) 
 public class LoginAction extends ActionSupport implements SessionAware{

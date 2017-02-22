@@ -43,4 +43,14 @@
             <exception-mapping exception="java.lang.Exception" result="error" />
         </global-exception-mappings>
 	</package>
+	<package name="needajax" extends="json-default">
+		<interceptors>
+            <interceptor-stack name="ajaxStack">
+            	<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
+            	<interceptor-ref name="tokenSession"></interceptor-ref>
+            	<interceptor-ref name="defaultStack"></interceptor-ref>  
+            </interceptor-stack>  
+		</interceptors>
+		<default-interceptor-ref name="ajaxStack"></default-interceptor-ref>
+    </package>
 </struts>
