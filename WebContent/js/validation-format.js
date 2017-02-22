@@ -3,7 +3,7 @@ function getRegisterValidation(){
     $("#errorMessages").html("");  
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Register.do",$("#register").serialize(), function(json) {  
-    	jsonSerialize(json,"注册成功！");
+    	jsonSerialize(json,"注册成功！","index.jsp");
     });
 }
 
@@ -12,11 +12,11 @@ function getLoginValidation(){
     $("#errorMessages").html("");  
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Login.do",$("#login").serialize(), function(json) {
-    	jsonSerialize(json,"登录成功！");
+    	jsonSerialize(json,"登录成功！","welcome.jsp");
     });
 }
 
-function jsonSerialize(json,success){
+function jsonSerialize(json,success,url){
     if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors  
         $.each(json.actionErrors,function(index,data){  
             $("#errorMessages").append("<li>"+data+"</li>");  
@@ -31,6 +31,7 @@ function jsonSerialize(json,success){
         return;  
     }  
     alert(success);//既没有actionError有没有fieldError则登陆成功
+    window.location.href(url);
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)  
