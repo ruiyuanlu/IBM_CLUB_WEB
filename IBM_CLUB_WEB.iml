@@ -4,31 +4,31 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
-      </configuration>
-      <facet type="Struts2" name="Struts 2">
-        <configuration>
-          <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/src/com/istc/config/xmls/struts.xml</file>
-          </fileset>
-          <propertiesKeys disabled="false" />
-        </configuration>
-      </facet>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/config/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/config/xmls/applicationContext-Hibernate.xml</file>
-          <file>file://$MODULE_DIR$/src/com/istc/config/xmls/applicationContext-Hibernate.xml</file>
-          <file>file://$MODULE_DIR$/src/com/istc/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/com/istc/config/xmls/applicationContext.xml</file>
-        </fileset>
       </configuration>
     </facet>
   </component>
@@ -39,7 +39,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.8" level="application_server_libraries" />
+    <orderEntry type="library" name="lib2" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
   </component>
 </module>
