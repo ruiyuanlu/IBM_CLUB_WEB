@@ -1,1 +1,2 @@
-#西交IBM俱乐部网站开发项目（二期）
+# IBM_CLUB_WEB
+This is a website project built for IBM student club.

@@ -1,26 +1,12 @@
 package club.istc.validation;
 
 /**
- * SQL×¢Èë¼ì²â£¬²»ÔÊĞí±íµ¥ÖĞÊäÈëÈÎºÎSQLÓï¾äÖĞµÄ¹Ø¼ü´ÊºÍ·ûºÅ£¬Ò»µ©´æÔÚÔò·µ»ØFALSE
+ * SQLæ³¨å…¥æ£€æµ‹
  */
 
 public class InjectionCheck {
 	String needcheck;
 	boolean result;
-	
-//	public void validate(Object arg0){
-//		// TODO Auto-generated method stub
-//		String fieldName = getFieldName();
-//		try{
-//		Object value = this.getFieldValue(fieldName,arg0); 
-//		this.needcheck=(String)value;
-//		if (!checkString(needcheck)) 
-//			addFieldError(fieldName, arg0);
-//		}
-//		catch(ValidationException exception){
-//			addFieldError(fieldName, arg0);
-//		}
-//	}
 	
 	public InjectionCheck(String needcheck) {
 		// TODO Auto-generated constructor stub
@@ -28,26 +14,22 @@ public class InjectionCheck {
 		try {
 			result=checkString();
 		} catch (NullPointerException e) {
-			// TODO: handle exception
+			// ä»€ä¹ˆä¹Ÿæ²¡æœ‰ï¼Œé‚£ä¹ˆä¸ä¼šå­˜åœ¨æ³¨å…¥
 			result=true;
 			
 		}
 		
-		//System.out.println("SQL×¢ÈëµÄÑéÖ¤½á¹ûÊÇ£º"+result);
 	}
 	
+/**
+ * åŒ…å«æœ‰(* ' ; - + / % #)è¿™äº›ç¬¦å·å‡ä¼šè¿”å›é”™è¯¯ã€‚
+ */	
 	private boolean checkString() {
-        String str2 = needcheck.toLowerCase();
-        //String[] SqlStr1 = {"and","exec","execute","insert","select","delete","update","count","drop","chr","mid","master","truncate","char","declare","sitename","net user","xp_cmdshell","like","and","exec","execute","insert","create","drop","table","from","grant","use","group_concat","column_name","information_schema.columns","table_schema","union","where","select","delete","update","order","by","count","chr","mid","master","truncate","char","declare","or"};//´ÊÓï
-        String[] SqlStr2 = {"*","'",";","-","--","+","//","/","%","#"};//ÌØÊâ×Ö·û
+        String str = needcheck.toLowerCase();
+        String[] SqlStr = {"*","'",";","-","+","/","%","#","\""};//ç‰¹æ®Šå­—ç¬¦
   
-//       for (int i = 0; i < SqlStr1.length; i++) {
-//            if (str2.indexOf(SqlStr1[i])>=0) {
-//                return false;
-//            }
-//        }
-        for (int i = 0; i < SqlStr2.length; i++) {
-            if (str2.indexOf(SqlStr2[i]) >= 0) {
+        for (int i = 0; i < SqlStr.length; i++) {
+            if (str.indexOf(SqlStr[i]) >= 0) {
                 return false;
             }
         }
@@ -56,6 +38,21 @@ public class InjectionCheck {
 	
 	public boolean getResult(){
 		return result;
+	}
+
+/**
+ * è€ƒè™‘åˆ°è¾“å…¥å¤§é‡æ•°æ®æ—¶ç”¨æˆ·ä¸ä¾¿äºä¿®æ­£ï¼Œ(* ' ; - + / % #)è¿™äº›ç¬¦å·å¦‚æœå‡ºç°åœ¨å¤§é‡æ–‡æœ¬å¹¶æäº¤æ—¶ï¼Œä¼šè¢«ç³»ç»Ÿä¿®æ”¹ä¸ºå…¨è§’ç¬¦å·ã€‚
+ */		
+
+	public String replaceString(){
+		char[] charArray = needcheck.toCharArray();
+		for (int i = 0; i < needcheck.length(); i++) {
+            int charIntValue = (int)charArray[i];
+            if (charIntValue >= 33 && charIntValue <= 47) {
+                charArray[i] = (char) (charIntValue + 65248);
+            } 
+		}
+		return new String(charArray);
 	}
 
 }

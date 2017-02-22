@@ -2,8 +2,8 @@ function getRegisterValidation(){
     //alert("complete!");
     $("#errorMessages").html("");  
     $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Register.do",$("#register").serialize(), function(json) {  
-    	jsonSerialize(json,"注册成功！","index.jsp");
+    $.post("Register",$("#register").serialize(), function(json) {  
+    	jsonSerialize(json,"注册成功！稍后返回首页。","mainpage");
     });
 }
 
@@ -11,8 +11,8 @@ function getLoginValidation(){
     //alert("complete!");
     $("#errorMessages").html("");  
     $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Login.do",$("#login").serialize(), function(json) {
-    	jsonSerialize(json,"登录成功！","welcome.jsp");
+    $.post("Login",$("#login").serialize(), function(json) {
+    	jsonSerialize(json,"登录成功！","welcome");
     });
 }
 

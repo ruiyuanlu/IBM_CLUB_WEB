@@ -1,7 +1,7 @@
 package club.istc.validation;
 
 /**
- * ¼ì²éQQºÅÊÇ·ñºÏ·¨
+ * æ£€æŸ¥QQå·æ˜¯å¦åˆæ³•
  */
 
 public class QQCheck {
@@ -13,17 +13,16 @@ public class QQCheck {
 		// TODO Auto-generated constructor stub
 		this.QQ=QQ.trim();
 		result=checkQQ();
-		//System.out.println("QQºÅ¼ì²â½á¹ûÊÇ£º"+false);
 	}
 	
+	/**
+	 * æ£€æŸ¥QQå·æ˜¯å¦åˆæ³•
+	 */
 	private boolean checkQQ() {
-		//¼ì²éqqºÅÊÇ·ñºÏ·¨
 		try {
-			Long.parseLong(QQ);
-			String regex = "[1-9][0-9]{4,14}";
+			String regex = "[1-9][0-9]{4,}";
 			result = QQ.matches(regex);
-		} catch (NumberFormatException e) {
-			// TODO: handle exception
+		} catch (Exception e) {
 			result=false;
 		}
 		return result;
