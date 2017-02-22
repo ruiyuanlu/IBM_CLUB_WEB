@@ -18,7 +18,8 @@ public class Person implements Serializable{
     protected String  ID;
     @Column
     protected String password;
-
+    @Column
+    protected String email;
     @Temporal(value = TemporalType.TIMESTAMP)
     protected Calendar birthDay;
     @Column(name = "name",length = 45)
@@ -39,6 +40,14 @@ public class Person implements Serializable{
     public Person() {
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     private int getPeopleVersion() {
         return peopleVersion;
     }
@@ -54,13 +63,48 @@ public class Person implements Serializable{
 
         Person person = (Person) o;
 
-        return ID != null ? ID.equals(person.ID) : person.ID == null;
+        if (gender != person.gender) return false;
+        if (peopleVersion != person.peopleVersion) return false;
+        if (ID != null ? !ID.equals(person.ID) : person.ID != null) return false;
+        if (password != null ? !password.equals(person.password) : person.password != null) return false;
+        if (email != null ? !email.equals(person.email) : person.email != null) return false;
+        if (birthDay != null ? !birthDay.equals(person.birthDay) : person.birthDay != null) return false;
+        if (name != null ? !name.equals(person.name) : person.name != null) return false;
+        if (description != null ? !description.equals(person.description) : person.description != null) return false;
+        if (QQ != null ? !QQ.equals(person.QQ) : person.QQ != null) return false;
+        return phoneNumber != null ? phoneNumber.equals(person.phoneNumber) : person.phoneNumber == null;
 
     }
 
     @Override
     public int hashCode() {
-        return ID != null ? ID.hashCode() : 0;
+        int result = ID != null ? ID.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (birthDay != null ? birthDay.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (QQ != null ? QQ.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (gender ? 1 : 0);
+        result = 31 * result + peopleVersion;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "birthDay=" + birthDay +
+                ", ID='" + ID + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", QQ='" + QQ + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", gender=" + gender +
+                ", peopleVersion=" + peopleVersion +
+                '}';
     }
 
     public Integer getAge(){
@@ -148,18 +192,4 @@ public class Person implements Serializable{
         return MALE;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "birthDay=" + birthDay +
-                ", ID='" + ID + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", QQ='" + QQ + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", gender=" + gender +
-                ", peopleVersion=" + peopleVersion +
-                '}';
-    }
 }
