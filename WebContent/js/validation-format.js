@@ -31,7 +31,7 @@ function jsonSerialize(json,success,url){
         return;  
     }  
     alert(success);//既没有actionError有没有fieldError则登陆成功
-    window.location.href(url);
+    window.location.assign(url);
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)  
