@@ -3,11 +3,8 @@ package club.istc.action;
 
 import java.util.Map;
 
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
-import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.interceptor.SessionAware;
-
 import club.istc.bean.*;
 import club.istc.validation.*;
 
@@ -16,18 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 注册
  */
-@Action(
-		value="Register",
-        results={ 
-				@Result(name="input", location="register.jsp"),
-				@Result(name="success", location="mainpage", type="redirect"),
-				@Result(name="invalid.token", location="register", type="redirect")
-        },
-        interceptorRefs={ 
-			    @InterceptorRef("tokenSession"),  
-			    @InterceptorRef("defaultStack")  
-        }
-) 
+@ParentPackage("needajax")
 public class RegisterAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
@@ -66,12 +52,12 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 //		}
 		catch (Exception e) {
 			// TODO: handle exception
-			addFieldError("registerfault", "出现了未知错误，请稍后再试。");
+			this.addActionError("出现了未知错误，请稍后再试。");
 			return INPUT;
 		}
 		
 		//这是一小段测试代码
-		return SUCCESS;
+		return INPUT;
 		//System.out.println("gender is"+gender);
 
 	}

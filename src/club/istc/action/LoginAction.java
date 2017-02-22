@@ -2,9 +2,7 @@ package club.istc.action;
 
 import java.util.Map;
 
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
-import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.interceptor.SessionAware;
 
 import club.istc.bean.Person;
@@ -18,18 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * 通过输入的用户名和密码，获取该用户信息并存入session中。<br>
  * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。<br>
  */
-@Action(
-		value="Login",
-        results={ 
-				@Result(name="input", location="login.jsp"),
-				@Result(name="success", location="welcome", type="redirect"),
-				@Result(name="invalid.token", location="login", type="redirect"),
-        },
-        interceptorRefs={ 
-			    @InterceptorRef("tokenSession"),  
-			    @InterceptorRef("defaultStack")  
-        }
-)
+@ParentPackage("needajax")
 public class LoginAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
@@ -89,19 +76,19 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		
 		if ("2141601033".equals(id)) {
 			if (!"456789".equals(password)) {
-				addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
+				this.addActionError("学号和密码不匹配，请重新检查后输入！");
 				return INPUT;
 			}
 		}
 		else {
-			addFieldError("loginfault", "学号和密码不匹配，请重新检查后输入！");
+			this.addActionError("学号和密码不匹配，请重新检查后输入！");
 			return INPUT;
 		}
 		//这是一小段测试代码
 		Person person=new Person();
 		person.setAge(15);
 		session.put("personInfo", person);
-		return SUCCESS;
+		return INPUT;
 	}
 	
 	@Override
