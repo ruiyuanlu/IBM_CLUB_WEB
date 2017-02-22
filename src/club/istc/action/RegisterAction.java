@@ -3,8 +3,12 @@ package club.istc.action;
 
 import java.util.Map;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
+
 import club.istc.bean.*;
 import club.istc.validation.*;
 
@@ -13,7 +17,19 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * 注册
  */
-@ParentPackage("needajax")
+@ParentPackage("json-default")
+@Action(
+		value="Register", 
+        results={
+				@Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+				@Result(name="invalid.token", location="register", type="redirect")
+        },
+        interceptorRefs={
+				@InterceptorRef("jsonValidationWorkflowStack"),
+			    @InterceptorRef("tokenSession"),  
+			    @InterceptorRef("defaultStack")  
+        }
+) 
 public class RegisterAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;

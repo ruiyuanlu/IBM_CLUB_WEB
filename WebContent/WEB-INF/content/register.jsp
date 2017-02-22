@@ -29,6 +29,7 @@
   		年龄：<input type="number" name="age" min="14" max="100" value="18"></input><font color="red"><span id="error_age"></span></font><br/>
   		手机号：<input type="text" name="phoneNumber" ></input><font color="red"><span id="error_phoneNumber"></span></font><br/>
   		QQ：<input type="text" name="QQ"></input><font color="red"><span id="error_QQ"></span></font><br/>
+  		<s:token></s:token>
     </form>  
     <button onclick="getRegisterValidation()">注册</button>
 	<font color="red"><ul id="errorMessages"></ul></font>

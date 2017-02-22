@@ -43,21 +43,4 @@
             <exception-mapping exception="java.lang.Exception" result="error" />
         </global-exception-mappings>
 	</package>
-	
-	<package name="needajax" extends="json-default"> 
-        <action name="Register" class="club.istc.action.RegisterAction">  
-            <interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
-            <result name="input" type="json"> 
-                <param name="ignoreHierarchy">false</param>  
-                <param name="includeProperties">actionErrors\[\d+\], fieldErrors\..+$, actionMessages\[\d+\]</param>  
-            </result>
-        </action>
-         <action name="Login" class="club.istc.action.LoginAction">  
-            <interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
-            <result name="input" type="json"> 
-                <param name="ignoreHierarchy">false</param>  
-                <param name="includeProperties">actionErrors\[\d+\], fieldErrors\..+$, actionMessages\[\d+\]</param>  
-            </result>
-        </action>
-    </package>
 </struts>

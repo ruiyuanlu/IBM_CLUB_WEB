@@ -4,10 +4,14 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.Result;
+
 import club.istc.validation.HomeworkDocCheck;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -41,7 +45,8 @@ public class HomeworkDocAction extends ActionSupport{
 	    private String extend;
 	    
 	    @Override
-	    public String execute() throws Exception{
+	    public String execute(){
+	    	String targetpath="";
 	    	try {
 	    		//设置文件存储目录
 		        String root = ServletActionContext.getServletContext().getRealPath("/file/homework"); 
@@ -57,7 +62,7 @@ public class HomeworkDocAction extends ActionSupport{
 		        //文件格式为“yyyyMMddHHmmss-[文件名].[文件扩展名]”
 		        File targetFile=new File(root, timestamp.format(date)+"-"+fileFileName+"."+extend);
 		        OutputStream os = new FileOutputStream(targetFile);
-		        String targetpath=targetFile.getPath();
+		        targetpath=targetFile.getPath();
 		        //文件上传
 		        byte[] bytes = new byte[1024];  
 		        int i = is.read(bytes,0,1024);
@@ -68,21 +73,33 @@ public class HomeworkDocAction extends ActionSupport{
 		        }  
 		        os.close();
 		        is.close();
-		        try {
-		        	//如果上传的文件不是pdf格式，那么转换为可以在线预览的html版本
-					if (!extend.equals("pdf")) {
-						WordOnlineConverter.canExtractImage(targetpath,extend);
-					}
-				} catch (Exception e) {
-					// TODO: handle exception
-					addFieldError("fileerror", "创建在线预览版本失败！");
+				if (!extend.equals("pdf")) {
+					WordOnlineConverter.canExtractImage(targetpath,extend);
 				}
-		        
 		        return SUCCESS;
 			} 
 	    	catch (FileNotFoundException e) {
 				// TODO: handle exception
 				addFieldError("fileerror", "文件上传失败！");
+				return INPUT;
+			}
+	    	catch (IOException e) {
+				// TODO: handle exception
+	    		addFieldError("fileerror", "创建在线预览版本失败！");
+	    		return INPUT;
+			} 
+	    	catch (ParserConfigurationException e) {
+				// TODO Auto-generated catch block
+				addFieldError("fileerror", "创建在线预览版本失败！");
+				return INPUT;
+			} 
+	    	catch (TransformerException e) {
+				// TODO Auto-generated catch block
+				addFieldError("fileerror", "创建在线预览版本失败！");
+				return INPUT;
+			}
+	    	catch (Exception e) {
+	    		addFieldError("fileerror", "未知错误，请联系管理员解决问题。");
 				return INPUT;
 			}
 	    }

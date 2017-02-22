@@ -62,11 +62,7 @@ public class WordOnlineConverter {
     				}
                     for (int i = 0; i < pics.size(); i++) {
                         Picture pic = (Picture) pics.get(i);
-                        try {
-                            pic.writeImageContent(new FileOutputStream(picdir+"/"+pic.suggestFullFileName()));
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                        }
+                        pic.writeImageContent(new FileOutputStream(picdir+"/"+pic.suggestFullFileName()));
                     }
                 }
                 Document htmlDocument = wordToHtmlConverter.getDocument();
