@@ -1,0 +1,137 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link href="dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="dist/css/normalize.css" rel="stylesheet"> 
+  <link href="dist/css/signin.css" rel="stylesheet">
+  <link href="dist/css/dashboard.css" rel="stylesheet">
+<link href="dist/css/carousel.css" rel="stylesheet">
+    <script src="dist/js/bootstrap.min.js"></script>
+    <link rel="icon" href="">
+<title>IBM</title>
+
+<style type="text/css">
+.container.marketing.block
+{background-color: #fff;padding:66px 1.57%;margin-top:-40px ;}
+
+video#bgvid { 
+position: fixed; right: 0; bottom: 0; 
+min-width: 100%; min-height: 100%; 
+width: auto; 
+height: auto; 
+z-index: -100; 
+background: url(normalbg.jpg) no-repeat; 
+background-size: cover;}
+.big-video{ position: absolute; z-index: 1; left: 40%; top: 0; margin-left: -960px; width: 1920px; height: 1080px;}
+
+</style>
+</head>
+
+
+<body >
+<!--
+  <video autoplay="autoplay" loop poster="image/main.jpg" id="bgvid" class="big-video"> 
+<!-- <source src="image/videolol.webm" type="video/webm">  -->
+</video>
+
+<div class="navbar-wrapper">
+      <div class="container">
+
+       
+
+
+
+  <!-- Marketing messaging and featurettes
+    ================================================== 
+    <script type="text/javascript">
+//权限判断并禁止链接
+var change=function(link)
+{
+   //删除href属性,使其成为文本元素
+     link.removeAttribute("href");
+      //设置disabled属性
+     link.setAttribute("disabled", "disabled");
+}
+
+var CheckAuthority=function(){
+  //var targetEle=document.getElementByld(username).Authority;
+  var targetEle=0;
+  if(targetEle>10){
+
+  }
+  else if(targetEle>1){
+    
+    change(mannageDebt);
+
+  }
+  else{
+    change(registNew);
+    change(mannageDebt);
+    change(mannageFile);
+change(mannageMember);
+
+  }
+
+}
+
+ window.load=CheckAuthority();
+
+ </script>
+ -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing block">
+
+      <!-- Three columns of text below the carousel -->
+      
+        
+        <div class="col-lg-9">
+          <h2 style="font-size:120px;" >出错啦！</h2>
+        </div><!-- /.col-lg-4 -->
+    
+
+
+
+
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">纳尼！<span class="text-muted">页面竟然找不到了！</span></h2>
+          <p class="lead" style="font-size:25px;font-weight:bold;">NAIVE!</p>
+           <s:property value="%{exception.message}"/>
+          <p class="lead" style="font-size:35px;font-weight:bold;">皮皮虾！！我们走！</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="image/hj2.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">回到开始</a></p>
+        <p> Copyright © IBM·西安交大 &middot; <a href="index.html">加入</a> &middot; <a href="#">联系</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+     <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="dist/js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>
+</html>
