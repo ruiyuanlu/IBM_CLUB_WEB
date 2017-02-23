@@ -49,12 +49,14 @@ import java.util.Map;
          */
         @Action(
                 value = "login", results = {
-                //      1.如果location中不加'/', 则会使用Spring默认路径前缀: /WEB-INF/content
-                //          例如location = "jsp/success.jsp" 实际路径指向:web(Eclipse 中为webRoot)/WEB-INF/content/jsp/success.jsp
-                //      2.如果location中加'/', 则不会增加任何前缀, 实际路径与location中的一致
-                //          例如location = "/jsp/success.jsp" 实际路径指向:web(Eclipse 中为webRoot)/jsp/success.jsp
+                // 1.如果location中不加'/', 则会使用Spring默认路径前缀: /WEB-INF/content
+                //    例如location = "jsp/success.jsp" 实际路径指向:web(Eclipse 中为webRoot)/WEB-INF/content/jsp/success.jsp
+                // 2.如果location中加'/', 则不会增加任何前缀, 实际路径与location中的一致
+                //    例如location = "/jsp/success.jsp" 实际路径指向:web(Eclipse 中为webRoot)/jsp/success.jsp
+                // 3.由于有validateLogin方法, 所有重写的validate方法内置为会返回INPUT
                 @Result(name = "success", location = "jsp/success.jsp"),
-                @Result(name = "fail", location = "jsp/fail.jsp")
+                @Result(name = "fail", location = "jsp/fail.jsp"),
+                @Result(name = INPUT, location = "jsp/fail.jsp")
         }
         )
         public String login() throws Exception{
@@ -74,7 +76,8 @@ import java.util.Map;
             return "success";
         }
 
-        @Action(value = "logout", results = { @Result(name="exit",location="jsp/logout.jsp") })
+
+        @Action(value = "logout", results = {@Result(name="exit",location="jsp/logout.jsp")})
         public String logout()throws Exception {
             if (sessionMap != null)
                 sessionMap.invalidate();

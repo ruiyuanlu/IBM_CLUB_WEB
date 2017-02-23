@@ -2,7 +2,6 @@ package com.istc.Entities.Entity;
 
 
 import com.sun.istack.internal.NotNull;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.io.Serializable;
