@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOImpl;
 
-import com.istc.Entities.Register;
+import com.istc.Entities.Entity.Register;
 import com.istc.Entities.ID.RegisterID;
 import com.istc.Service.BaseDAO.BaseDAOImpl;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.RegisterDAO;

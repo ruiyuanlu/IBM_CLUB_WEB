@@ -1,4 +1,4 @@
-package com.istc.Entities;
+package com.istc.Entities.Entity;
 
 import com.istc.Entities.ID.HomeWorkID;
 

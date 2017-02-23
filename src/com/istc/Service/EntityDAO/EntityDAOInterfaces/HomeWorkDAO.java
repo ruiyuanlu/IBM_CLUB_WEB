@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOInterfaces;
 
-import com.istc.Entities.HomeWork;
+import com.istc.Entities.Entity.HomeWork;
 import com.istc.Entities.ID.HomeWorkID;
 import com.istc.Service.BaseDAO.BaseDAO;
 

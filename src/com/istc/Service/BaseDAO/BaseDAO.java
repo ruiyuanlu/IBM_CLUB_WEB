@@ -56,10 +56,24 @@ public interface BaseDAO<E, PK extends Serializable> {
     public List<E> findAll();
 
     /**
+     * 查找指定条件的对象列表
+     * @param query 指定条件的hql的query
+     * @return 符合条件的示例列表
+     */
+    public List<E> findAll(Query query);
+
+    /**
      * 统计总体实例的数量
      * @return 实例总数量
      */
     public int totalCount();
+
+    /**
+     * 统计一定条件下的实例总数量
+     * 条件由传入的Query指定
+     * @return 符合条件的实例总数量
+     */
+    public int count(Query query);
 
     /**
      * 获取分页列表

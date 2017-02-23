@@ -1,6 +1,6 @@
 package com.istc.Entities.ID;
 
-import com.istc.Entities.Department;
+import com.istc.Entities.Entity.Department;
 
 import javax.persistence.Embeddable;
 import javax.persistence.OneToOne;

@@ -1,6 +1,6 @@
 package com.istc.Entities.ID;
 
-import com.istc.Entities.Department;
+import com.istc.Entities.Entity.Department;
 
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
@@ -12,10 +12,23 @@ import javax.persistence.ManyToOne;
 public class MeetingID implements java.io.Serializable{
     @ManyToOne
     private Department department;
-    private int times;
+    private Integer times;
+
+    public MeetingID(Integer deptID, Integer times) {
+        this.department = new Department();
+        department.setDeptID(deptID);
+        this.times = times;
+    }
+
+    public MeetingID(Department department, Integer times) {
+        this.department = department;
+        this.times = times;
+    }
 
     public MeetingID() {
     }
+
+
 
     public Department getDepartment() {
         return department;
@@ -25,11 +38,11 @@ public class MeetingID implements java.io.Serializable{
         this.department = department;
     }
 
-    public int getTimes() {
+    public Integer getTimes() {
         return times;
     }
 
-    public void setTimes(int times) {
+    public void setTimes(Integer times) {
         this.times = times;
     }
 

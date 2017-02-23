@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOImpl;
 
-import com.istc.Entities.Minister;
+import com.istc.Entities.Entity.Minister;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.MinisterDAO;
 import org.springframework.stereotype.Repository;
 

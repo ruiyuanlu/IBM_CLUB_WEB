@@ -1,8 +1,7 @@
-package com.istc.Entities;
+package com.istc.Entities.Entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 /**

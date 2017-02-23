@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOInterfaces;
 
-import com.istc.Entities.Member;
+import com.istc.Entities.Entity.Member;
 
 import java.io.Serializable;
 

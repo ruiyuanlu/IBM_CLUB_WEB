@@ -1,8 +1,7 @@
 package com.istc.Service.EntityService;
 
-import com.istc.Entities.Person;
+import com.istc.Entities.Entity.Person;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.PersonDAO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

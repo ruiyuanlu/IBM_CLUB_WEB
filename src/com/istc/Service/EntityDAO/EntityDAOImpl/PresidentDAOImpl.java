@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOImpl;
 
-import com.istc.Entities.President;
+import com.istc.Entities.Entity.President;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.PresidentDAO;
 import org.springframework.stereotype.Repository;
 

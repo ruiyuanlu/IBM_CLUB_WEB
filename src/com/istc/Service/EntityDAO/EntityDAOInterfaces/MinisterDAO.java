@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOInterfaces;
 
-import com.istc.Entities.Minister;
+import com.istc.Entities.Entity.Minister;
 
 import java.io.Serializable;
 

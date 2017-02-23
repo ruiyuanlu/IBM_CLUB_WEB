@@ -1,4 +1,4 @@
-package com.istc.Entities;
+package com.istc.Entities.Entity;
 /**--------------------------------------------------------------------------------
  *
  * proxy,权限管理

@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOImpl;
 
-import com.istc.Entities.Department;
+import com.istc.Entities.Entity.Department;
 import com.istc.Service.BaseDAO.BaseDAOImpl;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.DepartmentDAO;
 import org.springframework.stereotype.Repository;

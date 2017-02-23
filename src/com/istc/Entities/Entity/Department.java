@@ -1,4 +1,4 @@
-package com.istc.Entities;
+package com.istc.Entities.Entity;
 
 
 import com.sun.istack.internal.NotNull;
@@ -12,7 +12,6 @@ import java.util.Set;
 /**
  * Created by lurui on 2016/11/21 0021.
  */
-@Component
 @Entity
 public class Department implements Serializable{
     @Id
@@ -33,7 +32,6 @@ public class Department implements Serializable{
     private Set<Member> members;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "meeting_dept")
     private Set<Meeting> meetings;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

@@ -1,6 +1,6 @@
 //package com.istc.action;
 //
-//import com.istc.Entities.Person;
+//import com.istc.Entities.Entity.Person;
 //import com.istc.Service.EntityService.PersonService;
 //import com.opensymphony.xwork2.ActionSupport;
 //import org.apache.struts2.convention.annotation.Action;

@@ -1,4 +1,4 @@
-package com.istc.Entities;
+package com.istc.Entities.Entity;
 
 /**
  * Created by lurui on 2017/2/2 0002.

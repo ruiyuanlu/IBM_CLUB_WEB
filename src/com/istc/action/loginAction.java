@@ -1,11 +1,10 @@
 package com.istc.action;
 
-import com.istc.Entities.Person;
+import com.istc.Entities.Entity.Person;
 import com.istc.Service.EntityService.PersonService;
 import com.istc.Validation.InjectionCheck;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;

@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOImpl;
 
-import com.istc.Entities.UploadedFile;
+import com.istc.Entities.Entity.UploadedFile;
 import com.istc.Service.BaseDAO.BaseDAOImpl;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.UploadedFileDAO;
 import org.springframework.stereotype.Repository;

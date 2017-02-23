@@ -64,6 +64,11 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     }
 
     @Override
+    public List<E> findAll(Query query) {
+        return (List<E>)query.list();
+    }
+
+    @Override
     public PageModel<E> findByPage(int pageNum, int pageSize) {
         if(pageNum < 1 || pageSize < 0) return null;
         String hql = "select t from " + eClass.getSimpleName() + " t";
@@ -107,8 +112,14 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     }
 
     @Override
+    public int count(Query query) {
+        Long count = (Long)query.uniqueResult();
+        return count == null ? -1 : count.intValue();
+    }
+
+    @Override
     public void update(String sql) {
-        getSession().createQuery(sql);
+        getSession().createQuery(sql).executeUpdate();
     }
 
 }

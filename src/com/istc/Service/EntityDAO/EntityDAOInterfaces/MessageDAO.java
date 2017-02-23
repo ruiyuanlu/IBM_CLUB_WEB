@@ -1,6 +1,6 @@
 package com.istc.Service.EntityDAO.EntityDAOInterfaces;
 
-import com.istc.Entities.Message;
+import com.istc.Entities.Entity.Message;
 import com.istc.Service.BaseDAO.BaseDAO;
 
 /**
