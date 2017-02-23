@@ -1,7 +1,6 @@
-<%@page import="club.istc.bean.Person"%>
+<%@page import="com.istc.bean.Person"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sj" uri="/struts-jquery-tags"%> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>  
@@ -9,7 +8,6 @@
     .errorLabel{color: red;}  
 </style>
 <!--底下这行代码是个神奇的玩意儿，明明用不上却不能删……-->
-<sj:head jquerytheme="cupertino" ajaxcache="true" compressed="false"/>
 <script type="text/javascript" src="js/validation-format.js"></script>  
 </head> 
   
@@ -29,7 +27,7 @@
   		年龄：<input type="number" name="age" min="14" max="100" value="18"></input><font color="red"><span id="error_age"></span></font><br/>
   		手机号：<input type="text" name="phoneNumber" ></input><font color="red"><span id="error_phoneNumber"></span></font><br/>
   		QQ：<input type="text" name="QQ"></input><font color="red"><span id="error_QQ"></span></font><br/>
-  		<s:token></s:token>
+		<input type="hidden" name="token" value="">
     </form>  
     <button onclick="getRegisterValidation()">注册</button>
 	<font color="red"><ul id="errorMessages"></ul></font>

@@ -1,6 +1,8 @@
+document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/sha1.js"></script>');
+document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script>');
 function getRegisterValidation(){
     //alert("complete!");
-    $("#errorMessages").html("");  
+    $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Register",$("#register").serialize(), function(json) {  
     	jsonSerialize(json,"注册成功！稍后返回首页。","mainpage");
@@ -9,6 +11,9 @@ function getRegisterValidation(){
 
 function getLoginValidation(){
     //alert("complete!");
+    var password=$("[name='password']").val();
+    var sha1=CryptoJS.SHA1(password);
+    $("[name='password']").val(sha1);
     $("#errorMessages").html("");  
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Login",$("#login").serialize(), function(json) {
@@ -17,16 +22,22 @@ function getLoginValidation(){
 }
 
 function jsonSerialize(json,success,url){
+    $("[name='password']").val("");
+    $("[name='repassword']").val("");
+    $.each(json.actionMessages,function(index,data){
+        $("[name='token']").val(data);
+    });
     if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors  
         $.each(json.actionErrors,function(index,data){  
-            $("#errorMessages").append("<li>"+data+"</li>");  
-        });  
+            $("#errorMessages").append(data);
+        });
+        $("[name='password']").val("");
         return;  
     }  
     if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
         $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个  
             $("#error_"+index).html(value[0]);  
-            $("#error_"+index).addClass("errorLabel");  
+            $("#error_"+index).addClass("errorLabel");
         });  
         return;  
     }  

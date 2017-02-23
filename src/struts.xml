@@ -15,9 +15,9 @@
 	<!-- 开发模式下使用的，可以打印出更加详细的错误信息 -->
 	<constant name="struts.devMode" value="true"></constant>
 	<!-- 是否开启动态方法调用 -->
-	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<!-- 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 -->
-	<constant name="struts.multipart.maxSize" value="10737418240"/>
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
 	<package name="HandleInvalidAction" extends="struts-default">  
    		<default-action-ref name="notFound" />  
    		<action name="HandleInvalidAction">  
@@ -27,7 +27,7 @@
 	<package name="main" namespace="/" extends="struts-default">
 		<!--该拦截器栈用于检测session是否合法-->
 		<interceptors>  
-            <interceptor name="loginInteceptor" class="club.istc.validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
+            <interceptor name="loginInteceptor" class="com.istc.validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
             <interceptor-stack name="loginStack">
             	<interceptor-ref name="loginInteceptor"></interceptor-ref>  
             	<interceptor-ref name="defaultStack"></interceptor-ref>  
@@ -47,7 +47,6 @@
 		<interceptors>
             <interceptor-stack name="ajaxStack">
             	<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
-            	<interceptor-ref name="tokenSession"></interceptor-ref>
             	<interceptor-ref name="defaultStack"></interceptor-ref>  
             </interceptor-stack>  
 		</interceptors>
@@ -55,7 +54,7 @@
     </package>
 	<package name="logininterceptor" extends="struts-default">
 		<global-allowed-methods>regex:.*</global-allowed-methods>
-		<action name="*" class="club.istc.action.RedirectNotNeedCheckAction" method="{1}">
+		<action name="*" class="com.istc.action.RedirectNotNeedCheckAction" method="{1}">
 			<result name="{1}">/WEB-INF/content/{1}.jsp</result>
 		</action>
 	</package>

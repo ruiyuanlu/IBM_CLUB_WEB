@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*,club.istc.bean.*" pageEncoding="utf-8"%>
+<%@ page import="com.istc.bean.Person" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
