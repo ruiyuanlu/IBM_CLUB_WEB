@@ -42,8 +42,8 @@ public class PersonService {
         return personDAO.findAll();
     }
 
-    public Person check(Person person){
-        return personDAO.check(person);
+    public Person get(Person person){
+        return personDAO.get(person);
     }
 
     public Boolean exist(Person person){

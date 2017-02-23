@@ -13,6 +13,6 @@ import java.io.Serializable;
  * Person类为类型, String为Person的ID类型
  */
 public interface PersonDAO<E extends Person, PK extends Serializable> extends BaseDAO<Person, String> {
-    Person check(E person);
+    Person get(E person);
     Boolean exist(E person);
 }
