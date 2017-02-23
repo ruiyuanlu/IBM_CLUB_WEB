@@ -5,6 +5,8 @@ import com.istc.Service.EntityService.PersonService;
 import com.istc.Validation.InjectionCheck;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,19 +17,14 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 /**
- * Created by lurui on 2017/2/23 0023.
+ * Created by lurui on 2017/2/16 0016.
  */
 
-
-    /**
-     * Created by lurui on 2017/2/16 0016.
-     */
-
-    @Controller("loginAction")
-    @Scope(scopeName = "prototype")
+@Controller("loginAction")
+@Scope(scopeName = "prototype")
 //以下两个注解在struts2-convention-plugin.jar中
-//@Namespace("")
-//    @ParentPackage("ajax")
+@Namespace("")
+@ParentPackage("ajax")
 /**
  * 注意,Struts有个坑，是所有的action必须放在action, actions, struts2, struts, xwork报名下(区分大小写), 否则不认识Action
  * 会显示"404 error" 找不到对应的action
@@ -56,7 +53,7 @@ import java.util.Map;
                 // 3.由于有validateLogin方法, 所有重写的validate方法内置为会返回INPUT
                 @Result(name = "success", location = "jsp/success.jsp"),
                 @Result(name = "fail", location = "jsp/fail.jsp"),
-                @Result(name = INPUT, location = "jsp/fail.jsp")
+                @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
         }
         )
         public String login() throws Exception{

@@ -23,8 +23,6 @@ public class InjectionCheck {
  * 包含有(* ' ; - + / % #)这些符号均会返回错误。
  */	
 	private boolean check(final String targetString) {
-
-        System.out.println("\n\n进入validation 的注入检测\n");
         if(targetString == null)
             return true;
             String str = targetString.toLowerCase();

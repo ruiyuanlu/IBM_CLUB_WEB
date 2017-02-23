@@ -1,3 +1,5 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sj" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: lurui
@@ -10,7 +12,14 @@ import="java.util.*, java.lang.*" %>
 
 <html>
   <head>
+    <style type="text/css">
+        .errorLabel{color:red;}
+    </style>
+
     <title>登陆页面</title>
+
+      <sj:head jquerytheme="cupertino" ajaxcache="true" compressed="false"/>
+      <script type="text/javascript" src="js/validation-format.js"></script>
   </head>
   <body>
   <%--form中的action属性用于指定发送到struts中的请求, method指定发送请求的方法
@@ -24,11 +33,18 @@ import="java.util.*, java.lang.*" %>
       并存储到 LoginAction 的 Map<String, Object> session 这个成员变量
       因此封装了获取资源的过程
       --%>
-  <form action="login" method="post" name="person">
-    用户名: <input type="text" value="请输入用户名" name="id"/>
-    密 码 : <input type="password" name="password"/>
-    <br/>
-    <input type="submit" value="登陆"/>
+  <%--<form action="login" method="post" name="person">--%>
+    <%--用户名: <input type="text" value="请输入用户名" name="id"/>${}--%>
+    <%--密 码 : <input type="password" name="password"/>--%>
+    <%--<br/>--%>
+    <%--<input type="submit" value="登陆"/>--%>
+  <%--</form>--%>
+
+  <form id="login" action="login">
+      学号:<input type="text" name="id"/></input><font color="red"><span id="error_id"/></font><br/><s:fielderror fieldName="id" />
+      密码:<input type="password" name="password"/><font color="red"><span id="error_password"/></font><br/><s:fielderror fieldName="password" />
+      <s:token/>
+      <input type="submit" value="登陆"/>
   </form>
   </body>
 </html>
