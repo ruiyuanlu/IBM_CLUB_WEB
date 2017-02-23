@@ -54,6 +54,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
             @Result(name = "success", location = "jsp/success.jsp"),
             @Result(name = "fail", location = "jsp/fail.jsp"),
 //            @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
+            @Result(name = INPUT, location = "/index.jsp")
     }
     )
     public String login() throws Exception{
