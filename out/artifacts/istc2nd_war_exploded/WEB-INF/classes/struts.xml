@@ -53,4 +53,10 @@
 		</interceptors>
 		<default-interceptor-ref name="ajaxStack"></default-interceptor-ref>
     </package>
+	<package name="logininterceptor" extends="struts-default">
+		<global-allowed-methods>regex:.*</global-allowed-methods>
+		<action name="*" class="club.istc.action.RedirectNotNeedCheckAction" method="{1}">
+			<result name="{1}">/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
 </struts>
