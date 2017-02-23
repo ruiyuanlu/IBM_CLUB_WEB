@@ -71,13 +71,13 @@ public class WordOnlineConverter {
                 StreamResult streamResult = new StreamResult(outStream);
                 TransformerFactory tf = TransformerFactory.newInstance();
                 Transformer serializer = tf.newTransformer();
-                serializer.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+                serializer.setOutputProperty(OutputKeys.ENCODING, "gbk");
                 serializer.setOutputProperty(OutputKeys.INDENT, "yes");
                 serializer.setOutputProperty(OutputKeys.METHOD, "html");
                 serializer.transform(domSource, streamResult);
                 outStream.close();
                 String content = new String(outStream.toByteArray());
-                FileUtils.write(new File(path, file.substring(0, file.length()-extend.length()-1)+".html"), content, "utf-8");
+                FileUtils.write(new File(path, file.substring(0, file.length()-extend.length()-1)+".html"), content, "gbk");
             }  
         }  
     }  
