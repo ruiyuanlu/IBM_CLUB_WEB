@@ -37,5 +37,27 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
+
+    <!--Session 配置-->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!--全局错误页面配置-->
+    <!--注意: location 必须从 /WEB-INF 开始配置路径-->
+    <error-page>
+        <error-code>400</error-code>
+        <location>/WEB-INF/content/errorPages/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/content/errorPages/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/content/errorPages/500.jsp</location>
+    </error-page><error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/WEB-INF/content/errorPages/</location>
+</error-page>
 </web-app>
