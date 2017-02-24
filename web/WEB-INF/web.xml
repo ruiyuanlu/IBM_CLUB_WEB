@@ -26,10 +26,7 @@
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:com/istc/config/xmls</param-value>
-        </init-param>
+
     </filter>
 
     <!--然后定义过滤器如何过滤，filter-name用于映射mapping和filter-->

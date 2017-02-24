@@ -23,7 +23,7 @@
       <facet type="Struts2" name="Struts 2">
         <configuration>
           <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/src/com/istc/config/xmls/struts.xml</file>
+            <file>file://$MODULE_DIR$/src/struts.xml</file>
             <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar!/struts-plugin.xml</file>
             <file>jar://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar!/struts-plugin.xml</file>
             <file>jar://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar!/struts-plugin.xml</file>

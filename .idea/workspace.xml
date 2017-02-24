@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d366f211-fee7-4c33-8c73-5b17f9fff70f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/errorPages/error.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/welcome.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/LoginAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" afterPath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml" afterPath="$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/xmls/struts.xml" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/xmls/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java" afterPath="$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
     </list>
     <ignored path="IBM_CLUB_WEB.iws" />
@@ -29,24 +38,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LoginAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="303">
+              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1020#1047#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/welcome.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedirectAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#708#709#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml">
+        <entry file="file://$PROJECT_DIR$/src/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+            <state relative-caret-position="257">
+              <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -55,14 +87,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionCheck.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/errorPages/error.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            <state relative-caret-position="590">
+              <caret line="37" column="49" lean-forward="true" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#304#331#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +112,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="51" column="64" lean-forward="false" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+            <state relative-caret-position="215">
+              <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -81,7 +122,7 @@
       <file leaf-file-name="unknownError.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/errorPages/unknownError.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="125">
               <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
@@ -98,41 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="404.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/errorPages/404.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InjectionCheck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/InjectionCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validation-format.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/validation-format.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="165">
+              <caret line="42" column="33" lean-forward="false" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -143,8 +154,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -152,6 +163,7 @@
     <findStrings>
       <find>not</find>
       <find>notFound</find>
+      <find>login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Department.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/js/validation-format.js" />
         <option value="$PROJECT_DIR$/src/com/istc/Validation/InjectionCheck.java" />
@@ -182,6 +193,11 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml" />
         <option value="$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/welcome.jsp" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/errorPages/error.jsp" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
       </list>
     </option>
   </component>
@@ -223,7 +239,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,6 +328,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="errorPages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -476,6 +509,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -491,6 +525,10 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src" />
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc\config\xmls" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\errorPages" />
       <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\js" />
@@ -944,11 +982,12 @@
       <workItem from="1487853059946" duration="3407000" />
       <workItem from="1487900064845" duration="766000" />
       <workItem from="1487903043074" duration="6083000" />
+      <workItem from="1487921002093" duration="3205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16288000" />
+    <option name="totallyTimeSpent" value="19493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -978,7 +1017,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26152197" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2652733" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1013,33 +1052,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/originalLogin.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/config/xmls/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1020#1047#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/PersonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1065,7 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,7 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1302,25 +1311,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="51" column="64" lean-forward="false" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/InjectionCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="250">
           <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding />
         </state>
@@ -1344,20 +1337,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/errorPages/unknownError.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="125">
           <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1020#1047#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1365,14 +1347,75 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-741">
           <caret line="135" column="134" lean-forward="false" selection-start-line="135" selection-start-column="134" selection-end-line="135" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/logout.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="24" column="58" lean-forward="false" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="37" column="49" lean-forward="true" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="42" column="33" lean-forward="false" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/welcome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/errorPages/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1380,13 +1423,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        <state relative-caret-position="303">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#304#331#0" expanded="true" />
           </folding>
         </state>
       </provider>

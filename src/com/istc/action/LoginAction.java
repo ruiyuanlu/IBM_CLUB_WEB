@@ -24,7 +24,7 @@ import java.util.Map;
 @Scope(scopeName = "prototype")
 //以下两个注解在struts2-convention-plugin.jar中
 @Namespace("")
-//@ParentPackage("ajax")
+//@ParentPackage("main")
 /**
 * 注意,Struts有个坑，是所有的action必须放在action, actions, struts2, struts, xwork报名下(区分大小写), 否则不认识Action
 * 会显示"404 error" 找不到对应的action
@@ -39,6 +39,9 @@ public class LoginAction extends ActionSupport implements SessionAware {
     private String id;
     private String password;
 
+    private final String loginKey = "member";
+
+
     /**
      * 登陆
      * @return 返回操作结果的字符串(名称)
@@ -51,14 +54,14 @@ public class LoginAction extends ActionSupport implements SessionAware {
             // 2.如果location中加'/', 则不会增加任何前缀, 实际路径与location中的一致
             //    例如location = "/jsp/success.jsp" 实际路径指向:web(Eclipse 中为webRoot)/jsp/success.jsp
             // 3.由于有validateLogin方法, 所有重写的validate方法内置为会返回INPUT
-            @Result(name = "success", location = "jsp/success.jsp"),
+            @Result(name = "success", location = "welcome", type="redirect"),
             @Result(name = "fail", location = "jsp/fail.jsp"),
 //            @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
             @Result(name = INPUT, location = "/index.jsp")
     }
     )
     public String login() throws Exception{
-        final String loginKey = "member";
+        System.out.println("login 启动");
         Person person = (Person) sessionMap.get(loginKey);
         if(person == null){
             person = new Person();

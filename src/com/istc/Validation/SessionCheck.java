@@ -32,7 +32,7 @@ public class SessionCheck extends AbstractInterceptor {
         }
         else {
             //验证是否已经登录
-            userinfo = (Person) ServletActionContext.getRequest().getSession().getAttribute("personInfo");
+            userinfo = (Person) ServletActionContext.getRequest().getSession().getAttribute("member");
             if (userinfo == null) {
                 //尚未登录,跳转至登录页面
                 System.out.println("session非法。");
