@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>登陆失败</h1>
+<a href="login">重新登陆</a>
 </body>
 </html>

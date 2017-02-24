@@ -41,5 +41,16 @@
             <result name="error" type="redirect">/WEB-INF/content/errorPages/error.jsp</result>
         </global-results>
     </package>
+
+    <!--Ajax 包-->
+    <package name="ajax" extends="json-default,struts-default">
+        <interceptors>
+            <interceptor-stack name="ajaxStack">
+                <interceptor-ref name="jsonValidationWorkflowStack"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="ajaxStack"/>
+    </package>
     
 </struts>

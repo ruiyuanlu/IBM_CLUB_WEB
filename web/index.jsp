@@ -40,7 +40,7 @@ import="java.util.*, java.lang.*" %>
     <%--<input type="submit" value="登陆"/>--%>
   <%--</form>--%>
 
-  <form id="login" action="login">
+  <form id="login" action="login" method="post">
       学号:<input type="text" name="id"/><li color="red" border="0"><s:fielderror fieldName="id" /></li>
       密码:<input type="password" name="password"/><li color="red" border="0"><s:fielderror fieldName="password" /></li>
       <s:token/>

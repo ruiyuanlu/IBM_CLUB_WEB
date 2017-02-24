@@ -24,7 +24,7 @@ import java.util.Map;
 @Scope(scopeName = "prototype")
 //以下两个注解在struts2-convention-plugin.jar中
 @Namespace("")
-//@ParentPackage("main")
+@ParentPackage("ajax")
 /**
 * 注意,Struts有个坑，是所有的action必须放在action, actions, struts2, struts, xwork报名下(区分大小写), 否则不认识Action
 * 会显示"404 error" 找不到对应的action
@@ -56,8 +56,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
             // 3.由于有validateLogin方法, 所有重写的validate方法内置为会返回INPUT
             @Result(name = "success", location = "welcome", type="redirect"),
             @Result(name = "fail", location = "jsp/fail.jsp"),
-//            @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
-            @Result(name = INPUT, location = "/index.jsp")
+            @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
+//            @Result(name = INPUT, location = "/index.jsp")
     }
     )
     public String login() throws Exception{
