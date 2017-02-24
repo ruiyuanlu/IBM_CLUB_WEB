@@ -1,5 +1,6 @@
 package com.istc.action;
 
+import com.istc.validation.Crypto;
 import com.istc.validation.TokenCheck;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
@@ -21,7 +22,6 @@ public class RedirectNotNeedCheckAction extends ActionSupport implements Session
     public String mainpage() {
         try{
             session.remove("token");
-            session.remove("tokennull");
         }
         catch (NullPointerException e){
 
@@ -32,12 +32,12 @@ public class RedirectNotNeedCheckAction extends ActionSupport implements Session
     }
 
     public String login() {
-        String curtoken= TokenCheck.generateNewToken();
+        session.put("token", TokenCheck.generateNewToken());
         return "login";
     }
 
     public String register() {
-        String curtoken= TokenCheck.generateNewToken();
+        session.put("token", TokenCheck.generateNewToken());
         return "register";
     }
 

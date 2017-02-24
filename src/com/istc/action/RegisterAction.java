@@ -49,7 +49,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 	@Override
 	public String execute() {
 		tokenCheck();
-		System.out.println("execute执行");
+		//System.out.println("execute执行");
 		//加上数据库的操作
 		
 		try {
@@ -244,7 +244,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		System.out.println(session.get("token"));
 		String curtoken= TokenCheck.generateNewToken();
 		try{
-			if (!TokenCheck.checkToken(session,token) && session.get("tokennull").equals("false")){
+			if (!TokenCheck.checkToken(session,token)){
 				session.remove("token");
 				addActionMessage(curtoken);
 				session.put("token",curtoken);
@@ -254,9 +254,9 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 			}
 		}
 		catch (NullPointerException e){
-			session.put("tokennull","false");
 			addActionMessage(curtoken);
 			session.put("token", curtoken);
+			addActionError("请勿重复提交！");
 			return;
 		}
 		session.remove("token");

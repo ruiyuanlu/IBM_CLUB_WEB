@@ -2,12 +2,11 @@ package com.istc.validation;
 
 /**
  * Created by Morn Wu on 2017/2/23.
- * 字符串转换为MD5码
+ * 加解密
  */
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.security.*;
 
-public class SHA1Encoding {
+public class Crypto {
     public static String toSHA1(String decript){
         try {
             MessageDigest digest = java.security.MessageDigest

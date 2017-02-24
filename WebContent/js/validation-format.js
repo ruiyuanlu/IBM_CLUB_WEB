@@ -1,20 +1,33 @@
 document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/sha1.js"></script>');
 document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script>');
+document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/aes.js"></script>');
+document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/components/mode-ecb-min.js"></script>');
+
 function getRegisterValidation(){
     //alert("complete!");
+    //var key=CryptoJS.enc.Utf8.parse($("[name='token']").val());
+   // var password=CryptoJS.enc.Utf8.parse($("[name='password']").val());
+    //var repassword=CryptoJS.enc.Utf8.parse($("[name='repassword']").val());
+    //var pwEncrypt=CryptoJS.AES.encrypt(password, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+    //var rpwEncrypt=CryptoJS.AES.encrypt(repassword, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+    //$("[name='password']").val(pwEncrypt);
+    //$("[name='repassword']").val(rpwEncrypt);
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Register",$("#register").serialize(), function(json) {  
-    	jsonSerialize(json,"注册成功！稍后返回首页。","mainpage");
+    	jsonSerialize(json,"注册成功！单击确定按钮返回首页。","mainpage");
     });
 }
 
 function getLoginValidation(){
     //alert("complete!");
-    var password=$("[name='password']").val();
-    var sha1=CryptoJS.SHA1(password);
-    $("[name='password']").val(sha1);
-    $("#errorMessages").html("");  
+    //var password=CryptoJS.enc.Utf8.parse($("[name='password']").val());
+    //var key=CryptoJS.enc.Utf8.parse($("[name='token']").val());
+    //var key=CryptoJS.enc.Utf8.parse("456");
+    //var AESencrypt=CryptoJS.AES.encrypt(password, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+    //alert(password+"\n"+key);
+    //$("[name='password']").val(AESencrypt);
+    $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Login",$("#login").serialize(), function(json) {
     	jsonSerialize(json,"登录成功！","welcome");

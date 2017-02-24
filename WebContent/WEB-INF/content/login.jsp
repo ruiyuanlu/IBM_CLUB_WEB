@@ -24,7 +24,7 @@ session.setAttribute("infofromjsp2Action", "这是一段测试从jsp到Servlet�
 	<form id="login" onsubmit="return false;">
 	  	  学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
 	   	密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
-		<input type="hidden" name="token" value="">
+		<input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
     </form>
   <button onclick="getLoginValidation()">登录</button>
 	<font color="red"><ul id="errorMessages"></ul></font>

@@ -3,7 +3,7 @@ package com.istc.action;
 import java.util.Map;
 
 import com.istc.validation.InjectionCheck;
-import com.istc.validation.SHA1Encoding;
+import com.istc.validation.Crypto;
 import com.istc.validation.TokenCheck;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.struts2.convention.annotation.Action;
@@ -77,12 +77,12 @@ public class LoginAction extends ActionSupport{
 		//自定义一个session信息，用于测试从action到jsp的session传输
 		
 		//session.put("infofromAction2jsp", "这是一段测试从servlet到jsp能否正常发送session的文字，如果该段文字无乱码地正常显示则没有问题。");
-		
 		if ("2141601033".equals(id)) {
-			if (!SHA1Encoding.toSHA1("456789").toLowerCase().equals(password)) {
-				this.addActionError("学号和密码不匹配，请重新检查后输入！");
-				return INPUT;
-			}
+				if (!password.equals("456789")){
+					this.addActionError("学号和密码不匹配，请重新检查后输入！");
+					return INPUT;
+				}
+
 		}
 		else {
 			this.addActionError("学号和密码不匹配，请重新检查后输入！");
@@ -100,7 +100,7 @@ public class LoginAction extends ActionSupport{
 		System.out.println(session.get("token"));
 		String curtoken= TokenCheck.generateNewToken();
 		try{
-			if (!TokenCheck.checkToken(session,token) && session.get("tokennull").equals("false")){
+			if (!TokenCheck.checkToken(session,token)){
 				session.remove("token");
 				addActionMessage(curtoken);
 				session.put("token",curtoken);
@@ -110,9 +110,9 @@ public class LoginAction extends ActionSupport{
 			}
 		}
 		catch (NullPointerException e){
-			session.put("tokennull","false");
 			addActionMessage(curtoken);
 			session.put("token", curtoken);
+			addActionError("请勿重复提交！");
 			return;
 		}
 		session.remove("token");

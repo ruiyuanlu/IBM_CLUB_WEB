@@ -15,7 +15,7 @@ public class TokenCheck {
 
     public static String generateNewToken(){
         String a=""+Math.random();
-        String result= SHA1Encoding.toSHA1(a);
+        String result= Crypto.toSHA1(a);
         return result;
     }
 }
