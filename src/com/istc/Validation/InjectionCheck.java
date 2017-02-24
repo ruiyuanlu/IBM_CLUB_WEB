@@ -16,7 +16,7 @@ public class InjectionCheck {
      * @return 注入检测对象
      */
     public static InjectionCheck getInstance(){
-        return self == null ? new InjectionCheck() : self;
+        return self == null ? self = new InjectionCheck() : self;
     }
 
 /**
@@ -27,7 +27,7 @@ public class InjectionCheck {
             return true;
             String str = targetString.toLowerCase();
         for (String s: SqlStr) {
-            if (str.indexOf(s) >= 0)
+            if (str.contains(s))
                 return false;
         }
         return true;
@@ -47,7 +47,7 @@ public class InjectionCheck {
             int charIntValue = (int)charArray[i];
             if (charIntValue >= 33 && charIntValue <= 47) {
                 charArray[i] = (char) (charIntValue + 65248);
-            } 
+            }
 		}
 		return new String(charArray);
 	}
