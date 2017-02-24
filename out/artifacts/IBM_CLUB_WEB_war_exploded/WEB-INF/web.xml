@@ -22,9 +22,14 @@
     </listener>
 
     <!--添加Struts过滤器 首先定义一个过滤器名称和过滤器类-->
+    <!--配置 struts 文件路径 struts 配置文件的文件夹通过 contextConfigLocation 参数给出-->
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:com/istc/config/xmls</param-value>
+        </init-param>
     </filter>
 
     <!--然后定义过滤器如何过滤，filter-name用于映射mapping和filter-->
