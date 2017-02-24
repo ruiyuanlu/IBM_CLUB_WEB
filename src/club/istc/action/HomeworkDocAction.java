@@ -73,6 +73,7 @@ public class HomeworkDocAction extends ActionSupport{
 		        }  
 		        os.close();
 		        is.close();
+				System.out.println(targetpath);
 				if (!extend.equals("pdf")) {
 					WordOnlineConverter.canExtractImage(targetpath,extend);
 				}

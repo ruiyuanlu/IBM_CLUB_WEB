@@ -6,6 +6,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="istc2nd" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="istc2nd/web/Web" />
     </root>
