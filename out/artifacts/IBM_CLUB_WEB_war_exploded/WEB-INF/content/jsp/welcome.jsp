@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>登陆成功</title>
 </head>
 <body>
-huanyin
-
+<h1>欢迎</h1>
+<a href="logout">退出登陆</a>
 </body>
 </html>

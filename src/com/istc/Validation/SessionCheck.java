@@ -5,6 +5,7 @@ package com.istc.Validation;
  */
 
 import com.istc.Entities.Entity.Person;
+import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionInvocation;
@@ -16,12 +17,12 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 @SuppressWarnings("serial")
 
-public class SessionCheck extends AbstractInterceptor {
+public class SessionCheck extends MethodFilterInterceptor {
 
     @SuppressWarnings("unchecked")
     @Override
 
-    public String intercept(ActionInvocation ai) throws Exception {
+    public String doIntercept(ActionInvocation ai) throws Exception {
         System.out.println("拦截器启动。");
         Person userinfo = null;
         //验证Session是否过期
