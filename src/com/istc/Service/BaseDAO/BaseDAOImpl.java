@@ -105,6 +105,18 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     }
 
     @Override
+    public void save(E[] entities) {
+        Session session = getSession();
+        for(int i = 0; i < entities.length; i++){
+            session.save(entities[i]);
+            if( i % 20 == 0){
+                session.flush();
+                session.clear();
+            }
+        }
+    }
+
+    @Override
     public int totalCount() {
         String hql = "select count(t) from " + eClass.getSimpleName() + " t";
         Long count = (Long)getSession().createQuery(hql).uniqueResult();
@@ -118,7 +130,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     }
 
     @Override
-    public void update(String sql) {
+    public void excuteUpdate(String sql) {
         getSession().createQuery(sql).executeUpdate();
     }
 

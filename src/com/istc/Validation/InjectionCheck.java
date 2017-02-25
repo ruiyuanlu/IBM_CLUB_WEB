@@ -16,7 +16,12 @@ public class InjectionCheck {
      * @return 注入检测对象
      */
     public static InjectionCheck getInstance(){
-        return self == null ? self = new InjectionCheck() : self;
+        if(self == null){
+            synchronized (InjectionCheck.class){
+                if(self == null)self = new InjectionCheck();
+            }
+        }
+        return self;
     }
 
 /**

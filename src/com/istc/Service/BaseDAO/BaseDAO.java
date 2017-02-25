@@ -22,6 +22,7 @@ public interface BaseDAO<E, PK extends Serializable> {
      */
     public void save(E entity);
 
+    public void save(E[] entities);
     /**
      * 根据主键删除一个实例
      * @param id 主键，类型可以是int，也可以是泛型: ID
@@ -88,7 +89,7 @@ public interface BaseDAO<E, PK extends Serializable> {
      * 根据指定SQL进行数据更新
      * @param sql 指定的SQL语句
      */
-    public void update(String sql);
+    public void excuteUpdate(String sql);
 
     /**
      * 根据指定SQL进行单个对象的查询操作

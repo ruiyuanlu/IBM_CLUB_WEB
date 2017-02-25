@@ -6,6 +6,7 @@
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
+        <welcome-file>/WEB-INF/content/jsp/interview.jsp</welcome-file>
     </welcome-file-list>
     
     <!--配置spring文件路径-->
