@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @Result(name="input",location="interview.jsp")
 public class InterviewAction extends ActionSupport implements SessionAware{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 12343251L;
 	private static List<Person> interviewees=new ArrayList<Person>();
 	private String[] passed;
 	Map<String, Object> session;
