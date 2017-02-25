@@ -25,7 +25,7 @@ public class Person implements Serializable{
     @Column(name = "name",length = 45)
     protected String name;
     @Column(length = 403)
-    protected String description;
+    protected String selfIntroduction;
     @Column(name = "qq",length = 20)
     protected String QQ;
     @Column(name = "phone",length = 20)
@@ -70,7 +70,7 @@ public class Person implements Serializable{
         if (email != null ? !email.equals(person.email) : person.email != null) return false;
         if (birthDay != null ? !birthDay.equals(person.birthDay) : person.birthDay != null) return false;
         if (name != null ? !name.equals(person.name) : person.name != null) return false;
-        if (description != null ? !description.equals(person.description) : person.description != null) return false;
+        if (selfIntroduction != null ? !selfIntroduction.equals(person.selfIntroduction) : person.selfIntroduction != null) return false;
         if (QQ != null ? !QQ.equals(person.QQ) : person.QQ != null) return false;
         return phoneNumber != null ? phoneNumber.equals(person.phoneNumber) : person.phoneNumber == null;
 
@@ -83,7 +83,7 @@ public class Person implements Serializable{
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (birthDay != null ? birthDay.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (selfIntroduction != null ? selfIntroduction.hashCode() : 0);
         result = 31 * result + (QQ != null ? QQ.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         result = 31 * result + (gender ? 1 : 0);
@@ -99,7 +99,7 @@ public class Person implements Serializable{
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                ", selfIntroduction='" + selfIntroduction + '\'' +
                 ", QQ='" + QQ + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", gender=" + gender +
@@ -119,12 +119,12 @@ public class Person implements Serializable{
         this.password = password;
     }
 
-    public String getDescription(){
-        return description;
+    public String getSelfIntroduction(){
+        return selfIntroduction;
     }
 
-    public void setDescription(String description){
-        this.description = description;
+    public void setSelfIntroduction(String selfIntroduction){
+        this.selfIntroduction = selfIntroduction;
     }
 
     public String getQQ() {
