@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE struts PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
-        "http://struts.apache.org/dtds/struts-2.5.dtd">
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
@@ -10,33 +10,14 @@
     <constant name="struts.objectFactory" value="spring"/>
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.action.extension" value="do, action, jsp, html"/>
+    <constant name="struts.multipart.maxSize" value="209715200"/>
     <constant name="struts.configuration.xml.reload" value="true"/>
-    <constant name="struts.convention.classes.reload" value="true"/>
     <constant name="struts.serve.static.browserCache" value="true"/>
-    <!--扫描注解的位置-->
-    <constant name="struts.convention.package.locators.basePackage" value="com.istc"/>
-    <!-- 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 -->
-    <constant name="struts.multipart.maxSize" value="1073741824"/>
 
-    <!--全局包-->
-    <package name="main" namespace="/" extends="struts-default">
-        <!--该拦截器栈用于检测session是否合法-->
-        <!--<interceptors>-->
-            <!--<interceptor name="loginInteceptor" class="com.istc.Validation.SessionCheck" />&lt;!&ndash;该拦截器栈用于检测session是否合法&ndash;&gt;-->
-            <!--<interceptor-stack name="loginStack">-->
-                <!--<interceptor-ref name="loginInteceptor"></interceptor-ref>-->
-                <!--<interceptor-ref name="defaultStack"></interceptor-ref>-->
-            <!--</interceptor-stack>-->
-        <!--</interceptors>-->
-        <!--<default-interceptor-ref name="loginStack"></default-interceptor-ref>-->
-        <!--<global-results>-->
-            <!--<result name="exit">/WEB-INF/content/timeout.jsp</result>-->
-            <!--<result name="error" type="redirect">error</result>-->
-        <!--</global-results>-->
-        <!--&lt;!&ndash;开启通配符的使用，用于动态方法调用&ndash;&gt;-->
-        <!--<global-exception-mappings>-->
-            <!--<exception-mapping exception="java.lang.Exception" result="error" />-->
-        <!--</global-exception-mappings>-->
-    </package>
+    <constant name="struts.convention.action.packages" value="com.istc.action"/>
+    <!--修改后无需重启自动重新加载-->
+    <constant name="struts.convention.classes.reload" value="true"/>
     
+    <!--<constant name="struts.convention.result.path" value="/WEB-INF/WebContent/"/>-->
+    <!--<constant name="struts.convention.default.parent.package" value="struts-default"/>-->
 </struts>
