@@ -21,25 +21,7 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	private static List<Person> interviewees=new ArrayList<Person>();
 	private String[] passed;
 	Map<String, Object> session;
-	
-	public String[] getPassed(){  
-	    return passed;  
-	}  
-	
-	public void setPassed(String[] passed){  
-	    this.passed=passed;  
-	} 
 
-	
-	public InterviewAction() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	@Override
-	public void setSession(Map<String, Object> arg0) {
-		// TODO Auto-generated method stub
-		this.session=arg0;
-	}
 	/**
 	 * 用于获得用户提交的面试结果信息，并对数据库进行相应的处理
 	 */
@@ -132,4 +114,16 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 		interviewees.add(curPerson);
 	}
 
+	public String[] getPassed(){
+		return passed;
+	}
+
+	public void setPassed(String[] passed){
+		this.passed=passed;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> arg0) {
+		this.session=arg0;
+	}
 }

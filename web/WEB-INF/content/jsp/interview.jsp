@@ -5,9 +5,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%
-List<Person> interviewees=new ArrayList<Person>();
-if(session.getAttribute("interviewList")!=null)
-	interviewees=(ArrayList<Person>)session.getAttribute("interviewList");
+List<Person> interviewees = (List<Person>)session.getAttribute("interviewList");
 Person curPerson=new Person();
  %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -19,7 +17,7 @@ Person curPerson=new Person();
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<!--
@@ -31,11 +29,11 @@ Person curPerson=new Person();
   <body>
   
   <font color="red"><s:fielderror fieldName="getIntervieweeError"/></font>
-  <%if(interviewees.size()!=0){ %>
+  <%if(interviewees != null &&  interviewees.size() > 0){ %>
        <form action="intervieweeCheck" method="post">
-       <%for (int i=0;i<interviewees.size();i++){%>
-       <%=interviewees.get(i).getName()%>(<%=interviewees.get(i).getID()%>)
-       <input type="checkbox" name="passed" value=<%=interviewees.get(i).getID()%>></input>通过
+       <%for (Person p: interviewees){%>
+       <%=p.getName()%>(<%=p.getID()%>)
+       <input type="checkbox" name="passed" value=<%=p.getID()%>></input>通过
        <br/>
         <%}%>
         
