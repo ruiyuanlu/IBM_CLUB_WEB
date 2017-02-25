@@ -79,6 +79,7 @@ public class WordOnlineConverter {
                 String content = new String(outStream.toByteArray());
                 FileUtils.write(new File(path, file.substring(0, file.length()-extend.length()-1)+".html"), content, "gbk");
             }  
-        }  
-    }  
-}  
+        }
+    }
+
+}

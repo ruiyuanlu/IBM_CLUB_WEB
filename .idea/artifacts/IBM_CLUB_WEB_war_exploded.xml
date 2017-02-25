@@ -10,6 +10,7 @@
           <element id="library" level="project" name="lib" />
           <element id="library" level="project" name="lib1" />
           <element id="library" level="project" name="lib2" />
+          <element id="library" level="project" name="POI" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="IBM_CLUB_WEB/web/Web2" />
