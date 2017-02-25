@@ -7,6 +7,7 @@ import java.io.Serializable;
 /**
  * Created by lurui on 2017/2/25 0025.
  */
-public interface IntervieweeDAO<E extends Interviewee, PK extends Serializable> extends PersonDAO<E, PK> {
-
+public interface IntervieweeDAO<E extends Interviewee, PK extends Serializable> extends PersonDAO<Interviewee, String> {
+    Boolean isPassed(String id);
+    Boolean isPassed(Interviewee interviewee);
 }

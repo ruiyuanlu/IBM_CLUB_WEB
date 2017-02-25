@@ -10,26 +10,26 @@ import javax.persistence.InheritanceType;
 
 /**
  * 面试者
- * passed 代表是否通过
+ * isPassed 代表是否通过
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Interviewee extends Person {
-    Boolean passed;
+    Boolean isPassed;
 
     public Interviewee() {
     }
 
-    public Interviewee(String id, Boolean passed) {
+    public Interviewee(String id, Boolean isPassed) {
         this.setID(id);
-        this.passed = passed;
+        this.isPassed = isPassed;
     }
 
-    public Boolean getPassed() {
-        return passed;
+    public Boolean getIsPassed() {
+        return isPassed;
     }
 
-    public void setPassed(Boolean passed) {
-        this.passed = passed;
+    public void setIsPassed(Boolean isPassed) {
+        this.isPassed = isPassed;
     }
 }

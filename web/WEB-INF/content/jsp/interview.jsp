@@ -33,7 +33,7 @@ Person curPerson=new Person();
        <form action="intervieweeCheck" method="post">
        <%for (Person p: interviewees){%>
        <%=p.getName()%>(<%=p.getID()%>)
-       <input type="checkbox" name="passed" value=<%=p.getID()%>></input>通过
+       <input type="checkbox" name="isPassed" value=<%=p.getID()%>></input>通过
        <br/>
         <%}%>
         
