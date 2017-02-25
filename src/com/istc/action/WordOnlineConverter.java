@@ -20,13 +20,14 @@ import org.w3c.dom.Document;
 
 /**
  * 实现office在线预览的功能
+ * 传入的路径必须包括文件名和文件后缀名
+ * 并且再传入文件后缀名
  */
 
 public class WordOnlineConverter {  
   
-    //@Test  
-    public static void canExtractImage(String fullpath,String extend) throws IOException, ParserConfigurationException, TransformerException {
-    	File f=new File(fullpath);
+    public static void canExtractImage(String filePath,String extend) throws IOException, ParserConfigurationException, TransformerException {
+    	File f=new File(filePath);
     	String path=f.getParent()+"\\";
     	String file=f.getName();
         if (!f.exists()) {
