@@ -2,8 +2,8 @@ package com.istc.validation;
 
 /**
  * Created by Morn Wu on 2017/2/25.
- * 这是一个cookie拦截器
- * struts有自带的cookie拦截器，这里是为了增加灵活性，所以用自定义的cookie拦截器
+ * 这是一个包含编辑cookie编辑工具的工具类
+ * struts有自带的cookie拦截器，这里是为了增加灵活性，所以进行了自定义
  */
 
 import javax.servlet.http.Cookie;
@@ -104,5 +104,20 @@ public class CookieUtils{
             }
         }
         return response;
+    }
+
+    public static Cookie[] updateCookie(HttpServletRequest request){
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("ID".equals(cookie.getName())) {
+                    cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+                }
+                if ("password".equals(cookie.getName())){
+                    cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+                }
+            }
+        }
+        return cookies;
     }
 }

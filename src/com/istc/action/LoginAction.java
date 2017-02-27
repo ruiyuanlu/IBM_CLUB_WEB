@@ -17,7 +17,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -176,20 +175,12 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	public void setToken(String token) {
 		this.token = token;
 	}
-
 	@Override
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request=httpServletRequest;
 	}
 	@Override
-	public void setServletResponse(HttpServletResponse httpServletResponse) {
-		this.response=httpServletResponse;
-	}
-	public String getRemember() {
-		return remember;
-	}
-
-	public void setRemember(String remember) {
-		this.remember = remember;
-	}
+	public void setServletResponse(HttpServletResponse httpServletResponse) {this.response=httpServletResponse;}
+	public String getRemember() {return remember;}
+	public void setRemember(String remember) {this.remember = remember;}
 }

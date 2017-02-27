@@ -7,7 +7,5 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 
 public class AttendanceAction extends ActionSupport{
-	
-	
 
 }

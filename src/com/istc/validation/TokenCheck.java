@@ -9,7 +9,7 @@ import java.util.Map;
 public class TokenCheck {
 
     public static boolean checkToken(Map<String,Object> session, String token) throws NullPointerException{
-        String sessiontoken=sessiontoken=(String)session.get("token");
+        String sessiontoken=(String)session.get("token");
         if (sessiontoken.equals(token)) return true;
         else return false;
     }
