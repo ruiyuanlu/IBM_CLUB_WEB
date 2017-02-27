@@ -16,7 +16,7 @@ public class Person implements Serializable{
     @Id
     @Column(length = 20)
     protected String  ID;
-    @Column
+    @Column(length = 50)
     protected String password;
     @Column
     protected String email;

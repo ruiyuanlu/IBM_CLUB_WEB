@@ -2,6 +2,7 @@ package com.istc.Entities.Entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -19,6 +20,31 @@ public class Minister extends Member implements Serializable{
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Department> manageDepts;
 
+    public void addManageDept(Department department){
+        if(department == null)return;
+        if(this.manageDepts == null) this.manageDepts = new HashSet<>();
+        if(department != null)this.manageDepts.add(department);
+    }
+
+    public void addManageDepts(Department[] departments){
+        if(departments == null)return;
+        if(this.manageDepts == null) this.manageDepts = new HashSet<>();
+        for(Department department: departments)
+            if(department != null)this.manageDepts.add(department);
+    }
+
+    public void deleteManageDept(Department department){
+        if(department == null || this.manageDepts == null)return;
+        if(department != null)this.manageDepts.remove(department);
+    }
+
+    public void deleteManageDepts(Department[] departments){
+        if(departments == null || this.manageDepts == null)return;
+        for(Department department: departments)
+            if(department != null)this.manageDepts.remove(department);
+    }
+
+    //getters and setters
     public Minister(){
     }
 

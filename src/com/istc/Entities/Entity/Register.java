@@ -4,6 +4,7 @@ import com.istc.Entities.ID.RegisterID;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -24,6 +25,34 @@ public class Register implements Serializable{
         this.registerID = new RegisterID();
     }
 
+    public void addMember(Member member){
+        if(member == null)return;
+        if(this.members == null) this.members = new HashSet<>();
+        if(member != null)this.members.add(member);
+    }
+
+
+    public void addMembers(Member[] members){
+        if(members == null)return;
+        if(this.members == null) this.members = new HashSet<>();
+        for(Member member: members)
+            if(member != null)this.members.add(member);
+    }
+
+
+    public void deleteMembers(Member member){
+        if(member == null || this.members == null)return;
+        if(member != null)this.members.remove(member);
+    }
+
+
+    public void deleteMembers(Member[] members){
+        if(members == null || this.members == null)return;
+        for(Member member: members)
+            if(member != null)this.members.remove(member);
+    }
+
+//  getters and stters and equals and toString
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

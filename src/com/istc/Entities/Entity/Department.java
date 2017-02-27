@@ -6,6 +6,7 @@ import com.sun.istack.internal.NotNull;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -39,6 +40,78 @@ public class Department implements Serializable{
     @Version
     private int deptVersion;
 
+    public void addHomework(HomeWork homeWork){
+        if(homeWork == null)return;
+        if(this.homeWorks == null) this.homeWorks = new HashSet<>();
+        if(homeWork != null)this.homeWorks.add(homeWork);
+    }
+
+    public void addHomeworks(HomeWork[] homeWorks){
+        if(homeWorks == null)return;
+        if(this.homeWorks == null) this.homeWorks = new HashSet<>();
+        for(HomeWork homeWork: homeWorks)
+            if(homeWork != null)this.homeWorks.add(homeWork);
+    }
+
+    public void deleteHomework(HomeWork homeWork){
+        if(homeWork == null || this.homeWorks == null)return;
+        if(homeWork != null)this.homeWorks.remove(homeWork);
+    }
+
+    public void deleteHomeworks(HomeWork[] homeWorks){
+        if(homeWorks == null || this.homeWorks == null)return;
+        for(HomeWork homeWork: homeWorks)
+            if(homeWork != null)this.homeWorks.remove(homeWork);
+    }
+    public void addMember(Member member){
+        if(member == null)return;
+        if(this.members == null) this.members = new HashSet<>();
+        if(member != null)this.members.add(member);
+    }
+
+    public void addMembers(Member[] members){
+        if(members == null)return;
+        if(this.members == null) this.members = new HashSet<>();
+        for(Member member: members)
+            if(member != null)this.members.add(member);
+    }
+
+    public void deleteMember(Member member){
+        if(member == null || this.members == null)return;
+        if(member != null)this.members.remove(member);
+    }
+
+    public void deleteMembers(Member[] members){
+        if(members == null || this.members == null)return;
+        for(Member member: members)
+            if(member != null)this.members.remove(member);
+    }
+
+    public void addMeeting(Meeting meeting){
+        if(meeting == null)return;
+        if(this.meetings == null) this.meetings = new HashSet<>();
+        if(meeting != null)this.meetings.add(meeting);
+    }
+
+    public void addMeetings(Meeting[] meetings){
+        if(meetings == null)return;
+        if(this.meetings == null) this.meetings = new HashSet<>();
+        for(Meeting meeting: meetings)
+            if(meeting != null)this.meetings.add(meeting);
+    }
+
+    public void deleteMeeting(Meeting meeting){
+        if(meeting == null || this.meetings == null)return;
+        if(meeting != null)this.meetings.remove(meeting);
+    }
+
+    public void deleteMeetings(Meeting[] meetings){
+        if(meetings == null || this.meetings == null)return;
+        for(Meeting meeting: meetings)
+            if(meeting != null)this.meetings.remove(meeting);
+    }
+
+    // getters and setters
     private int getDeptVersion() {
         return deptVersion;
     }

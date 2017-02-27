@@ -49,7 +49,7 @@ public class Member extends Person implements Serializable{
     public Member() {
     }
 
-    public void addRegisterRecords(Register register){
+    public void addRegisterRecord(Register register){
         if(register == null)return;
         if(this.registerRecords == null) this.registerRecords = new HashSet<>();
         if(register != null)this.registerRecords.add(register);
@@ -63,7 +63,7 @@ public class Member extends Person implements Serializable{
             if(register != null)this.registerRecords.add(register);
     }
 
-    public void deleteRegisterRecords(Register register){
+    public void deleteRegisterRecord(Register register){
         if(register == null || this.registerRecords == null)return;
         if(register != null)this.registerRecords.remove(register);
     }
@@ -103,7 +103,6 @@ public class Member extends Person implements Serializable{
         if(this.sendMessages == null) this.sendMessages = new HashSet<>();
         if(sendMessage != null)this.sendMessages.add(sendMessage);
     }
-
 
     public void addSendMessages(Message[] sendMessages){
         if(sendMessages == null)return;

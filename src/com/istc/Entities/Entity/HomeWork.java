@@ -13,8 +13,8 @@ public class HomeWork implements Serializable{
     private HomeWorkID homeWorkID;
     @Basic
     private int fileID;
-    @Lob
-    private Clob homeWorkRequirement;
+    @Column(length = 603)
+    private String homeWorkRequirement;
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar beginTime;
     @Temporal(value = TemporalType.TIMESTAMP)
@@ -79,11 +79,11 @@ public class HomeWork implements Serializable{
         this.fileID = fileID;
     }
 
-    public Clob getHomeWorkRequirement() {
+    public String getHomeWorkRequirement() {
         return homeWorkRequirement;
     }
 
-    public void setHomeWorkRequirement(Clob homeWorkRequirement) {
+    public void setHomeWorkRequirement(String homeWorkRequirement) {
         this.homeWorkRequirement = homeWorkRequirement;
     }
 
