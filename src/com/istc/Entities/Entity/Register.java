@@ -13,8 +13,8 @@ public class Register implements Serializable{
     private RegisterID registerID;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "register_member", joinColumns = {@JoinColumn(name = "register_dept"),
-            @JoinColumn(name = "register_times")}, inverseJoinColumns = {@JoinColumn(name = "member_id")})
+//    @JoinTable(name = "register_member", joinColumns = {@JoinColumn(name = "register_dept"),
+//            @JoinColumn(name = "register_times")}, inverseJoinColumns = {@JoinColumn(name = "member_id")})
     private Set<Member> members;
 
     @Version

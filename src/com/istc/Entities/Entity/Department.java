@@ -23,11 +23,11 @@ public class Department implements Serializable{
     private Calendar establishTime;
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "minister_id",referencedColumnName = "id") //外键设置为部长ID, 多对一关系由多的一方管理
+    @JoinColumn(name = "minister_id",referencedColumnName = "id") //外键设置为部长ID, 多对一关系由多的一方管理,@JoinColumn 可以避免生成额外的关联表，降低效率
     private Minister minister;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)//多对多关系由其中任意一方管理, 另一方设置mappedBy
-    @JoinTable(name = "dept_member", joinColumns = {@JoinColumn(name = "dept_id")},inverseJoinColumns = {@JoinColumn(name = "member_id")})
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)//多对多关系由其中任意一方管理, 维护多对多关系的一方设置mappedBy，此处维护方是Member类，这里可以让它自动产生关联表
+//    @JoinTable(name = "dept_member", joinColumns = {@JoinColumn(name = "dept_id")},inverseJoinColumns = {@JoinColumn(name = "member_id")})
     private Set<Member> members;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

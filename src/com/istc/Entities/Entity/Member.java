@@ -16,6 +16,7 @@ package com.istc.Entities.Entity;
  * */
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -28,7 +29,7 @@ public class Member extends Person implements Serializable{
     @Basic
     private Integer authority;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)//将mappedBy设置为对方的集合的引用变量的名称
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "members")//将mappedBy设置为对方的集合的引用变量的名称
     private Set<Department> enterDepts;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "members")
@@ -38,14 +39,122 @@ public class Member extends Person implements Serializable{
     @JoinColumn(name = "member_homeWork")
     private Set<HomeWork> homeWorks;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_sendMessage")
     private Set<Message> sendMessages;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_receiveMessage")
     private Set<Message> receiveMessages;
 
 
     public Member() {
     }
 
+    public void addRegisterRecords(Register register){
+        if(register == null)return;
+        if(this.registerRecords == null) this.registerRecords = new HashSet<>();
+        if(register != null)this.registerRecords.add(register);
+    }
+
+
+    public void addRegisterRecords(Register[] registerRecords){
+        if(registerRecords == null)return;
+        if(this.registerRecords == null) this.registerRecords = new HashSet<>();
+        for(Register register: registerRecords)
+            if(register != null)this.registerRecords.add(register);
+    }
+
+    public void deleteRegisterRecords(Register register){
+        if(register == null || this.registerRecords == null)return;
+        if(register != null)this.registerRecords.remove(register);
+    }
+
+    public void deleteRegisterRecords(Register[] registerRecords){
+        if(registerRecords == null || this.registerRecords == null)return;
+        for(Register register: registerRecords)
+            if(register != null)this.registerRecords.remove(register);
+    }
+    public void addReceiveMessage(Message receiveMessage){
+        if(receiveMessage == null)return;
+        if(this.receiveMessages == null) this.receiveMessages = new HashSet<>();
+        if(receiveMessage != null)this.receiveMessages.add(receiveMessage);
+    }
+
+    public void addReceiveMessages(Message[] receiveMessages){
+        if(receiveMessages == null)return;
+        if(this.receiveMessages == null) this.receiveMessages = new HashSet<>();
+        for(Message receiveMessage: receiveMessages)
+            if(receiveMessage != null)this.receiveMessages.add(receiveMessage);
+    }
+
+
+    public void deleteReceiveMessage(Message receiveMessage){
+        if(receiveMessage == null || this.receiveMessages == null)return;
+        if(receiveMessage != null)this.receiveMessages.remove(receiveMessage);
+    }
+
+
+    public void deleteReceiveMessages(Message[] receiveMessages){
+        if(receiveMessages == null || this.receiveMessages == null)return;
+        for(Message receiveMessage: receiveMessages)
+            if(receiveMessage != null)this.receiveMessages.remove(receiveMessage);
+    }
+    public void addSendMessage(Message sendMessage){
+        if(sendMessage == null)return;
+        if(this.sendMessages == null) this.sendMessages = new HashSet<>();
+        if(sendMessage != null)this.sendMessages.add(sendMessage);
+    }
+
+
+    public void addSendMessages(Message[] sendMessages){
+        if(sendMessages == null)return;
+        if(this.sendMessages == null) this.sendMessages = new HashSet<>();
+        for(Message sendMessage: sendMessages)
+            if(sendMessage != null)this.sendMessages.add(sendMessage);
+    }
+
+
+    public void deleteSendMessage(Message sendMessage){
+        if(sendMessage == null || this.sendMessages == null)return;
+        if(sendMessage != null)this.sendMessages.remove(sendMessage);
+    }
+
+
+    public void deleteSendMessages(Message[] sendMessages){
+        if(sendMessages == null || this.sendMessages == null)return;
+        for(Message sendMessage: sendMessages)
+            if(sendMessage != null)this.sendMessages.remove(sendMessage);
+    }
+
+    public void addHomeWork(HomeWork homeWork){
+        if(homeWork == null)return;
+        if(this.homeWorks == null) this.homeWorks = new HashSet<>();
+        if(homeWork != null)this.homeWorks.add(homeWork);
+    }
+
+
+    public void addHomeWorks(HomeWork[] homeWorks){
+        if(homeWorks == null)return;
+        if(this.homeWorks == null) this.homeWorks = new HashSet<>();
+        for(HomeWork homeWork: homeWorks)
+            if(homeWork != null)this.homeWorks.add(homeWork);
+    }
+
+
+    public void deleteHomeWork(HomeWork homeWork){
+        if(homeWork == null || this.homeWorks == null)return;
+        if(homeWork != null)this.homeWorks.remove(homeWork);
+    }
+
+
+    public void deleteHomeWorks(HomeWork[] homeWorks){
+        if(homeWorks == null || this.homeWorks == null)return;
+        for(HomeWork homeWork: homeWorks)
+            if(homeWork != null)this.homeWorks.remove(homeWork);
+    }
+
+
+
+    // getter && setters && toString && hashCode
     public Set<Message> getSendMessages() {
         return sendMessages;
     }
