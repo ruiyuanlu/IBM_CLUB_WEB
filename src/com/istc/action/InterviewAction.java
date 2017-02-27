@@ -39,7 +39,7 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 			//从数据库中重新获取剩余对象的List
             List<Interviewee> restIntrviewees = intervieweeService.getRestInterviewees();
 			session.put("interviewList", restIntrviewees);
-			if (restIntrviewees.size()==0)
+			if (restIntrviewees.size() <= 0)
 				addFieldError("getIntervieweeError", "面试已结束！");
 		} catch (Exception e) {
 			addFieldError("getIntervieweeError", "获取面试人员信息失败！");

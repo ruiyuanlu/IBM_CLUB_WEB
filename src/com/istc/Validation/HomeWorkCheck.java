@@ -6,6 +6,7 @@ package com.istc.Validation;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,12 +16,8 @@ import java.util.Map;
  */
 public class HomeWorkCheck {
 
-    private Boolean fileLengthOK;
-    private Boolean fileExsits;
-    private Boolean fileTypeOK;
-    private String fileExtion;
-
     private static final Integer buffSize = 14;
+    private static HomeWorkCheck self;
 
     /**
      * 文件类型特征码到文件类型的转换
@@ -42,18 +39,20 @@ public class HomeWorkCheck {
     }
 
     /**
-     * 构造时进行文件相关检查
+     * 构造函数
      */
-    public HomeWorkCheck(File file) {
-        //检查文件大小
-        this.isFileLengthOK(file);
-        try {
-            //检查文件类型
-            this.isFileTypeOK(file);
-        } catch (Exception e) {
-            fileLengthOK = fileExsits = fileTypeOK = false;
-            fileExtion = null;
-        }
+    private HomeWorkCheck() {
+    }
+
+    /**
+     * 单例模式
+     */
+    public static HomeWorkCheck getInstance(){
+        if(self == null)
+            synchronized (HomeWorkCheck.class){
+                if(self == null) self = new HomeWorkCheck();
+            }
+        return self;
     }
 
     /**
@@ -62,24 +61,43 @@ public class HomeWorkCheck {
      * @return 文件类型是否符合要求, 即pdf, doc, docx 三种
      * @throws Exception
      */
-    private Boolean isFileTypeOK(File file)throws Exception{
-        if(file == null)return fileTypeOK = fileExsits = false;
-        fileExsits = true;
+    public Boolean isFileTypeOK(File file){
+        return this.getFileExtend(file) != null;
+    }
 
-        FileInputStream fis = new FileInputStream(file);
-        byte[] buff = new byte[buffSize];
-        fis.read(buff);
-        //获取文件头中的特征码
-        String code = getFileCharactorCode(buff);
-        for(String head: characterCode2Type.keySet()){
-            if(head.startsWith(code.toLowerCase())){
-                fileExtion = characterCode2Type.get(head);
-                fis.close();
-                return fileTypeOK = true;
+    public Boolean isFileLengthOK(File file){
+        return file == null ? false : file.length() <= maxLen;
+    }
+
+    public Boolean isFileExsits(File file){
+        return file != null && file.exists();
+    }
+
+    /**
+     * 检查文件格式，并匹配扩展名
+     * @param file
+     * @return 如果文件存在并且是允许的格式，则返回对应扩展名
+     * @return 如果文件不存在，或是其它格式，则返回 null
+     */
+    public String getFileExtend(File file){
+        if(!this.isFileExsits(file))return null;
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            byte[] buff = new byte[buffSize];
+            fis.read(buff);
+            //获取文件头中的特征码
+            String code = getFileCharactorCode(buff);
+            for(String head: characterCode2Type.keySet()){
+                if(head.startsWith(code.toLowerCase())){
+                    fis.close();
+                    return characterCode2Type.get(head);
+                }
             }
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        fis.close();
-        return fileTypeOK = false;
+        return null;
     }
 
     /**
@@ -95,23 +113,4 @@ public class HomeWorkCheck {
         return strb.toString();
     }
 
-    private Boolean isFileLengthOK(File file){
-        return this.fileLengthOK = file == null ? false : file.length() <= maxLen;
-    }
-
-    public Boolean isFileLengthOK() {
-        return fileLengthOK;
-    }
-
-    public Boolean isFileExsits() {
-        return fileExsits;
-    }
-
-    public Boolean isFileTypeOK() {
-        return fileTypeOK;
-    }
-
-    public String getFileExtion() {
-        return fileExtion;
-    }
 }

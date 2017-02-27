@@ -86,14 +86,14 @@ public class HomeWorkUploadAction extends ActionSupport{
     }
 
     public void validateHomeWorkUpload(){
-        HomeWorkCheck check = new HomeWorkCheck(file);
-        if(!check.isFileExsits()){
+        HomeWorkCheck check = HomeWorkCheck.getInstance();
+        if(!check.isFileExsits(file)){
             addFieldError("uploadError", "请选择要上传的文件!");
             return;
-        }else if(!check.isFileTypeOK()){
+        }else if(!check.isFileLengthOK(file)){
             addFieldError("uploadError", "文件过大, 无法上传!");
             return;
-        }else if(!check.isFileTypeOK()){
+        }else if((extend = check.getFileExtend(file)) == null){
             addFieldError("uploadError", "不支持上传所选文件格式的文件!");
             return;
         }

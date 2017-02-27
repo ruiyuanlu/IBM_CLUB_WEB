@@ -88,6 +88,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
     /**
      * 验证器: 验证登陆有效性
      * 理论上自动被Struts根据方法名调用
+     * 验证失败时自动返回 INPUT，成功时为 void
      */
     public void validateLogin(){
         if (id == null || id.equals("")) {
