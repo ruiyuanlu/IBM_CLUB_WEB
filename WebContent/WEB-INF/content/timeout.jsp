@@ -5,10 +5,10 @@
 
 	<head>
 	<title>退出登录</title>
-	<meta http-equiv="refresh" content="3; url=login" />
+	<meta http-equiv="refresh" content="3; url=mainpage" />
 	</head>
 
   <body>
-    您已退出登录或者登录超时。请重新登录（3秒钟后自动进入登录界面）。 <br>
+    您已退出登录或者登录超时。请重新登录（3秒钟后自动进入首页）。 <br>
   </body>
 </html>

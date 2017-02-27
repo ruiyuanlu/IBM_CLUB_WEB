@@ -7,6 +7,7 @@ import java.util.Map;
  * 这是一个检查token是否匹配的类
  */
 public class TokenCheck {
+
     public static boolean checkToken(Map<String,Object> session, String token) throws NullPointerException{
         String sessiontoken=sessiontoken=(String)session.get("token");
         if (sessiontoken.equals(token)) return true;

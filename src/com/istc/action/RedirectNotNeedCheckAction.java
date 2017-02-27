@@ -28,13 +28,15 @@ public class RedirectNotNeedCheckAction extends ActionSupport implements Session
         this.session=arg0;
     }
     public String mainpage() {
-        if (CookieUtils.checkCookie(request)){
-            response=CookieUtils.updateCookie(request,response);
-            System.out.println("cookie更新");
-            session.put("personInfo",CookieUtils.getPersonInCookie(request));
-            return "loginsuccess";
-        }
         try{
+            if (session.get("personInfo")!=null){
+                if (CookieUtils.checkCookie(request)){
+                    response=CookieUtils.updateCookie(request,response);
+                    System.out.println("cookie更新");
+                    session.put("personInfo",CookieUtils.getPersonInCookie(request));
+                    return "mainpage";
+                }
+            }
             session.remove("token");
         }
         catch (NullPointerException e){

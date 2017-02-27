@@ -33,7 +33,7 @@ function getLoginValidation(){
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Login",$("#login").serialize(), function(json) {
-    	jsonSerialize(json,"登录成功！","welcome");
+    	jsonSerialize(json,"登录成功！","mainpage");
     });
 }
 

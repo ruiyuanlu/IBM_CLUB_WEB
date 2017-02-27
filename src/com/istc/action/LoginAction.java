@@ -181,12 +181,10 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	public void setServletRequest(HttpServletRequest httpServletRequest) {
 		this.request=httpServletRequest;
 	}
-
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {
 		this.response=httpServletResponse;
 	}
-
 	public String getRemember() {
 		return remember;
 	}

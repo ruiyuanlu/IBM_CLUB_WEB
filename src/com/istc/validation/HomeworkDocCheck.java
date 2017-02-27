@@ -71,14 +71,14 @@ public class HomeworkDocCheck {
 	 */
     private void checkFileValidation(File file) throws FileNotFoundException,IOException{
             FileInputStream is = new FileInputStream(file);
-            byte[] b = new byte[10];  
+            byte[] b = new byte[14];
             is.read(b, 0, b.length);  
             String fileCode = bytesToHexString(b);
             //其次检验文件特征码，如果是伪造的那么不予通过
             Iterator<String> keyIter = this.FILE_TYPE_MAP.keySet().iterator();
             while(keyIter.hasNext()){  
-                 String key = keyIter.next();  
-                 if(key.toLowerCase().startsWith(fileCode.toLowerCase()) || fileCode.toLowerCase().startsWith(key.toLowerCase())){ 
+                 String key = keyIter.next();
+                 if(key.toLowerCase().startsWith(fileCode.toLowerCase()) || fileCode.toLowerCase().startsWith(key.toLowerCase())){
                     formatmatch=true;
                     extend=this.FILE_TYPE_MAP.get(key);
                     break;

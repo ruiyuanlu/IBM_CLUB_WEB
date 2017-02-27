@@ -1,13 +1,20 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="com.istc.bean.Person" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    Person p=new Person();
+    String id=null;
+    try {
+        p=(Person)session.getAttribute("personInfo");
+        id=p.getID();
+    }
+    catch (Exception e){
+        id=null;
+    }
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
     
     <title>istc</title>
 	<meta http-equiv="pragma" content="no-cache">
@@ -22,8 +29,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <h1>欢迎访问西交IBM俱乐部官网！</h1>
+  <% if(id==null){ %>
   <a href="register">面试申请</a><br/>
     <a href="login">登录</a><br/>
-    <a href="fileupload">上传文件测试</a>(理论上点击该链接会进入失败)
+  <%}
+  else{%>
+      欢迎您，<%=id%><br/>
+  <a href="welcome">进入个人中心</a><br/>
+      <%}%>
   </body>
 </html>

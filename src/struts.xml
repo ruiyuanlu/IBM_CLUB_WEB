@@ -55,7 +55,6 @@
 	<package name="logininterceptor" extends="struts-default">
 		<global-allowed-methods>regex:.*</global-allowed-methods>
 		<action name="*" class="com.istc.action.RedirectNotNeedCheckAction" method="{1}">
-			<result name="loginsuccess" type="redirect">welcome</result>
 			<result name="{1}">/WEB-INF/content/{1}.jsp</result>
 		</action>
 	</package>
