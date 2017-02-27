@@ -44,6 +44,14 @@ public interface BaseDAO<E, PK extends Serializable> {
     public E get(PK id);
 
     /**
+     * 根据主键查询多个实例
+     * @param ids
+     * @return 符合条件的实例数组
+     * 这个方法画蛇添足，影响效率
+     */
+//    public List<E> get(PK[] ids);
+
+    /**
      * 根据主键获取对应实例
      * @param id 主键
      * @return 如果查询成功，返回符合条件的实例，否则抛出空指针异常

@@ -5,6 +5,8 @@ package com.istc.Entities.Entity;
  */
 
 import javax.persistence.*;
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Calendar;
 
@@ -17,22 +19,46 @@ public class UploadedFile implements Serializable{
     private int fileID;
     private String fileName;
     /**文件扩展名used to save filename extension;*/
-    private String nameExtention;
+    private String fileExtention;
 
     private int requiredAuthority;
-    private String filePath;
+    private String fileCanonicalPath;
 
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar uploadTime;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "file_member")
-    private Member fileOnwer;
+    private Member fileOwner;
 
     @Version
     int fileVersion;
 
     public UploadedFile() {
+    }
+
+    public UploadedFile(File file, Integer fileID, Member owner)throws IOException{
+        if(file == null)return;
+        this.fileID = fileID;
+        this.fileCanonicalPath = file.getCanonicalPath();
+        this.fileName = file.getName();
+        this.fileExtention = fileName.substring(fileName.lastIndexOf('.'));
+        this.fileOwner = owner;
+        this.uploadTime = Calendar.getInstance();
+    }
+
+    public UploadedFile(File file, Integer fileID, Member fileOwner, Integer requiredAuthority) throws IOException{
+        this(file, fileID, fileOwner);
+        this.requiredAuthority = requiredAuthority;
+    }
+
+    /**
+     * 根据文件绝对路径创建文件接口
+     * @return null 如果 fileCanonicalPath 为 null
+     * @return File 如果 fileCanonicalPath 存在且成功创建了文件
+     */
+    public File createFile(){
+        return this.fileCanonicalPath == null ? null : new File(this.fileCanonicalPath);
     }
 
     public Calendar getUploadTime() {
@@ -59,12 +85,12 @@ public class UploadedFile implements Serializable{
         this.fileName = fileName;
     }
 
-    public String getNameExtention() {
-        return nameExtention;
+    public String getFileExtention() {
+        return fileExtention;
     }
 
-    public void setNameExtention(String nameExtention) {
-        this.nameExtention = nameExtention;
+    public void setFileExtention(String fileExtention) {
+        this.fileExtention = fileExtention;
     }
 
     public int getRequiredAuthority() {
@@ -75,12 +101,12 @@ public class UploadedFile implements Serializable{
         this.requiredAuthority = requiredAuthority;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public String getFileCanonicalPath() {
+        return fileCanonicalPath;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFileCanonicalPath(String fileCanonicalPath) {
+        this.fileCanonicalPath = fileCanonicalPath;
     }
 
     public int getFileVersion() {
@@ -91,12 +117,12 @@ public class UploadedFile implements Serializable{
         this.fileVersion = file_version;
     }
 
-    public Member getFileOnwer() {
-        return fileOnwer;
+    public Member getFileOwner() {
+        return fileOwner;
     }
 
-    public void setFileOnwer(Member fileOnwer) {
-        this.fileOnwer = fileOnwer;
+    public void setFileOwner(Member fileOwner) {
+        this.fileOwner = fileOwner;
     }
 
     @Override
@@ -110,11 +136,11 @@ public class UploadedFile implements Serializable{
         if (requiredAuthority != that.requiredAuthority) return false;
         if (fileVersion != that.fileVersion) return false;
         if (fileName != null ? !fileName.equals(that.fileName) : that.fileName != null) return false;
-        if (nameExtention != null ? !nameExtention.equals(that.nameExtention) : that.nameExtention != null)
+        if (fileExtention != null ? !fileExtention.equals(that.fileExtention) : that.fileExtention != null)
             return false;
-        if (filePath != null ? !filePath.equals(that.filePath) : that.filePath != null) return false;
+        if (fileCanonicalPath != null ? !fileCanonicalPath.equals(that.fileCanonicalPath) : that.fileCanonicalPath != null) return false;
         if (uploadTime != null ? !uploadTime.equals(that.uploadTime) : that.uploadTime != null) return false;
-        return fileOnwer != null ? fileOnwer.equals(that.fileOnwer) : that.fileOnwer == null;
+        return fileOwner != null ? fileOwner.equals(that.fileOwner) : that.fileOwner == null;
 
     }
 
@@ -122,11 +148,11 @@ public class UploadedFile implements Serializable{
     public int hashCode() {
         int result = fileID;
         result = 31 * result + (fileName != null ? fileName.hashCode() : 0);
-        result = 31 * result + (nameExtention != null ? nameExtention.hashCode() : 0);
+        result = 31 * result + (fileExtention != null ? fileExtention.hashCode() : 0);
         result = 31 * result + requiredAuthority;
-        result = 31 * result + (filePath != null ? filePath.hashCode() : 0);
+        result = 31 * result + (fileCanonicalPath != null ? fileCanonicalPath.hashCode() : 0);
         result = 31 * result + (uploadTime != null ? uploadTime.hashCode() : 0);
-        result = 31 * result + (fileOnwer != null ? fileOnwer.hashCode() : 0);
+        result = 31 * result + (fileOwner != null ? fileOwner.hashCode() : 0);
         result = 31 * result + fileVersion;
         return result;
     }
@@ -136,11 +162,11 @@ public class UploadedFile implements Serializable{
         return "UploadedFile{" +
                 "fileID=" + fileID +
                 ", fileName='" + fileName + '\'' +
-                ", nameExtention='" + nameExtention + '\'' +
+                ", fileExtention='" + fileExtention + '\'' +
                 ", requiredAuthority=" + requiredAuthority +
-                ", filePath='" + filePath + '\'' +
+                ", fileCanonicalPath='" + fileCanonicalPath + '\'' +
                 ", uploadTime=" + uploadTime +
-                ", fileOnwer=" + fileOnwer +
+                ", fileOwner=" + fileOwner +
                 ", fileVersion=" + fileVersion +
                 '}';
     }

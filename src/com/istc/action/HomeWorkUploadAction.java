@@ -1,5 +1,9 @@
 package com.istc.action;
 
+import com.istc.Entities.Entity.Member;
+import com.istc.Service.EntityService.IntervieweeService;
+import com.istc.Service.EntityService.MemberService;
+import com.istc.Service.EntityService.UploadedFileService;
 import com.istc.Validation.HomeWorkCheck;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
@@ -7,7 +11,10 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
+import javax.annotation.Resource;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,8 +22,13 @@ import java.util.Calendar;
 /**
  * Created by lurui on 2017/2/27 0027.
  */
+@Controller("homeWorkUploadAction")
+@Scope("prototype")
 @AllowedMethods("homeWorkUpload")
 public class HomeWorkUploadAction extends ActionSupport{
+
+    private static final Integer buffSize = 2 << 10;//文件上传缓冲区大小: 2M
+
     //注意，file并不是指前端jsp上传过来的文件本身，而是文件上传过来存放在临时文件夹下面的文件
     private File file;
     //提交过来的file的名字
@@ -24,8 +36,13 @@ public class HomeWorkUploadAction extends ActionSupport{
     //提交过来的file的MIME类型, struts 会自动注入这个属性
     private String fileContentType;
     private String extend;
+    //文件提交者的ID
+    private String ownerID;
 
-    private static final Integer buffSize = 2 << 10;//文件上传缓冲区大小: 2M
+    @Resource(name = "uploadedFileService")
+    private UploadedFileService uploadedFileService;
+    @Resource(name = "memberService")
+    private MemberService memberService;
 
     @Action(value = "homeWorkUpload",results = {
             @Result(name = SUCCESS, location = "jsp/fileupload.jsp"),
@@ -82,6 +99,9 @@ public class HomeWorkUploadAction extends ActionSupport{
             System.out.println("上传文件关闭输入输出流时异常");
             return INPUT;
         }
+        //向数据库中添加记录
+        Member owner = memberService.get(ownerID);
+        uploadedFileService.addFile(file, owner);
         return SUCCESS;
     }
 

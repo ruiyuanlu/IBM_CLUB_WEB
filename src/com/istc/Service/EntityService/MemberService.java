@@ -1,5 +1,6 @@
 package com.istc.Service.EntityService;
 
+import com.istc.Entities.Entity.Member;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.MemberDAO;
 import com.istc.Utilities.DAOFactory;
 import org.springframework.stereotype.Service;
@@ -14,5 +15,9 @@ import javax.annotation.Resource;
 @Transactional(rollbackFor = Exception.class)
 public class MemberService {
     @Resource
-    private transient MemberService memberService;
+    private transient MemberDAO memberDAO;
+
+    public Member get(String id){
+        return memberDAO.get(id);
+    }
 }

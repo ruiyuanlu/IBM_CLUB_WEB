@@ -12,11 +12,11 @@ import java.util.Map;
 
 /**
  * 检查文件上传合法性
- * 单个文件最大不能超过 500M
+ * 单个文件最大不能超过 50M
  */
 public class HomeWorkCheck {
 
-    private static final Integer buffSize = 8;
+    private static final Integer buffSize = 14;
     private static HomeWorkCheck self;
 
     /**
