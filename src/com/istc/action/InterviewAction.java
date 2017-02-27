@@ -39,15 +39,14 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 			//从数据库中重新获取剩余对象的List
             List<Interviewee> restIntrviewees = intervieweeService.getRestInterviewees();
 			session.put("interviewList", restIntrviewees);
-			if (restIntrviewees.size()==0) {
+			if (restIntrviewees.size()==0)
 				addFieldError("getIntervieweeError", "面试已结束！");
-			}
-			return INPUT;
 		} catch (Exception e) {
 			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
 			return INPUT;
 		}
-	}
+        return INPUT;
+    }
 	
 	/**
 	 * 从数据库获取面试人员列表
@@ -56,11 +55,11 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	public String intervieweeGet() throws Exception{
 		try {
 			session.put("interviewList", intervieweeService.getRestInterviewees());
-			return INPUT;
 		} catch (Exception e) {
 			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
-			return INPUT;
-		}
+            return INPUT;
+        }
+		return INPUT;
 	}
 
 	public String[] getPassedIDs(){
