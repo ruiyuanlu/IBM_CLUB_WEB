@@ -31,23 +31,16 @@ public class LogoutAction implements SessionAware,ServletResponseAware,ServletRe
 	Map<String, Object> session;
 	private HttpServletResponse response;
 	private HttpServletRequest request;
-	private CookieUtils cu;
 
 	public LogoutAction(){
 
 	}
 	
 	public String execute(){
-		cu=new CookieUtils(request);
 	    System.out.println("退出系统");
 	    //登录即意味着session存在于当前页面，退出时销毁session
 	    session.clear();
-		Cookie[] emptycookie=cu.clearCookie(request);
-		if (emptycookie!=null) {
-			response.addCookie(emptycookie[0]);
-			response.addCookie(emptycookie[1]);
-			System.out.println("cookie初始化");
-		}
+		response=CookieUtils.clearCookie(request,response);
 	    return "exit";
 	}
 

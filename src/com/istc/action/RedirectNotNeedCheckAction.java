@@ -1,7 +1,6 @@
 package com.istc.action;
 
 import com.istc.validation.CookieUtils;
-import com.istc.validation.Crypto;
 import com.istc.validation.TokenCheck;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -29,14 +28,11 @@ public class RedirectNotNeedCheckAction extends ActionSupport implements Session
         this.session=arg0;
     }
     public String mainpage() {
-        cu=new CookieUtils(request);
-        if (cu.checkCookie()){
-            Cookie[] newcookie=cu.updateCookie(request);
-            response.addCookie(newcookie[0]);
-            response.addCookie(newcookie[1]);
+        if (CookieUtils.checkCookie(request)){
+            response=CookieUtils.updateCookie(request,response);
             System.out.println("cookie更新");
-            session.put("personInfo",cu.getPersonincookie());
-            return "welcome";
+            session.put("personInfo",CookieUtils.getPersonInCookie(request));
+            return "loginsuccess";
         }
         try{
             session.remove("token");

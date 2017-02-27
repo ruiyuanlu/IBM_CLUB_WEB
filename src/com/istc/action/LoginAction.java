@@ -45,7 +45,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	private HttpServletResponse response;
 	private HttpServletRequest request;
 	private String remember;
-	CookieUtils cu;
 	// 用户登录
 	public LoginAction() {
 		// TODO Auto-generated constructor stub
@@ -105,11 +104,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 		person.setPassword(password);
 		session.put("personInfo", person);
 		if (remember.equals("true")){
-			cu=new CookieUtils(request);
-			Cookie[] newcookie=cu.generateCookie(this.id,this.password);
-			response.addCookie(newcookie[0]);
-			response.addCookie(newcookie[1]);
-			System.out.println("cookie新增");
+			response=CookieUtils.generateCookie(person,response);
 		}
 		return INPUT;
 	}

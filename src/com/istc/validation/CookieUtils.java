@@ -11,24 +11,50 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.istc.bean.Person;
-import org.apache.struts2.interceptor.SessionAware;
-
-import java.util.Map;
 
 /**
  * cookie的增加、删除、查询
  */
 public class CookieUtils{
-    public static final String USER_COOKIE = "cookie";
-    private Cookie[] cookies;
-    private  Person personincookie=new Person();
 
-    public CookieUtils(HttpServletRequest request){
-        getCookieParameter(request);
+    public CookieUtils(){
+
     }
 
-    private void getCookieParameter(HttpServletRequest request){
-        cookies = request.getCookies();
+
+    public static HttpServletResponse generateCookie(Person p,HttpServletResponse response) {
+        Cookie[] cookies=new Cookie[2];
+        cookies[0] = new Cookie("ID",p.getID());
+        cookies[1] = new Cookie("password",p.getPassword());
+        //System.out.println("添加cookie");
+        cookies[0].setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+        cookies[1].setMaxAge(60 * 60 * 24 * 14);
+        response.addCookie(cookies[0]);
+        response.addCookie(cookies[1]);
+        return response;
+    }
+
+
+
+    // 得到cookie
+    public static boolean checkCookie(HttpServletRequest request) {
+        Person personincookie=CookieUtils.getPersonInCookie(request);
+        try {
+            if (personincookie.getID().equals("2141601033")){
+                if (personincookie.getPassword().equals(Crypto.toSHA1("456789"))){
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            return false;
+        }
+        return false;
+    }
+
+
+    public static Person getPersonInCookie(HttpServletRequest request){
+        Person personincookie=new Person();
+        Cookie[] cookies = request.getCookies();
         System.out.println("cookies已获取: " + cookies);
         if (cookies != null) {
             for (Cookie cookie : cookies) {
@@ -43,68 +69,40 @@ public class CookieUtils{
                 }
             }
         }
+        return personincookie;
     }
 
-
-    public Cookie[] generateCookie(String ID,String password) {
-        Cookie[] cookies=new Cookie[2];
-        cookies[0] = new Cookie("ID",ID);
-        cookies[1] = new Cookie("password",password);
-        //System.out.println("添加cookie");
-        cookies[0].setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
-        cookies[1].setMaxAge(60 * 60 * 24 * 14);
-        return cookies;
-    }
-
-
-
-    // 得到cookie
-    public boolean checkCookie() {
-        try {
-            if (personincookie.getID().equals("2141601033")){
-                if (personincookie.getPassword().equals(Crypto.toSHA1("456789"))){
-                    return true;
-                }
-            }
-        }catch (Exception e){
-            return false;
-        }
-        return false;
-    }
-
-    public Cookie[] clearCookie(HttpServletRequest request) {
+    public static HttpServletResponse clearCookie(HttpServletRequest request,HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("ID".equals(cookie.getName())) {
                     cookie.setMaxAge(0);
+                    response.addCookie(cookie);
                 }
                 if ("password".equals(cookie.getName())){
                     cookie.setMaxAge(0);
+                    response.addCookie(cookie);
                 }
             }
         }
-        return cookies;
+        return response;
     }
 
-    public Cookie[] updateCookie(HttpServletRequest request) {
+    public static HttpServletResponse updateCookie(HttpServletRequest request,HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("ID".equals(cookie.getName())) {
                     cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+                    response.addCookie(cookie);
                 }
                 if ("password".equals(cookie.getName())){
                     cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+                    response.addCookie(cookie);
                 }
             }
         }
-        return cookies;
+        return response;
     }
-
-    public Cookie[] getCookies(){
-        return this.cookies;
-    }
-
-    public Person getPersonincookie() { return this.personincookie; }
 }
