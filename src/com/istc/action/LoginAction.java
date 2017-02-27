@@ -2,8 +2,9 @@ package com.istc.action;
 
 import java.util.Map;
 
-import com.istc.validation.InjectionCheck;
+import com.istc.validation.CookieUtils;
 import com.istc.validation.Crypto;
+import com.istc.validation.InjectionCheck;
 import com.istc.validation.TokenCheck;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.struts2.convention.annotation.Action;
@@ -13,6 +14,12 @@ import org.apache.struts2.convention.annotation.Result;
 import com.istc.bean.Person;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -22,19 +29,22 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 @ParentPackage("needajax")
 @Action(
-		value="Login", 
+		value="Login",
         results={
 				@Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
 				@Result(name="invalid.token", location="login.jsp")
         }
-) 
-public class LoginAction extends ActionSupport{
+)
+public class LoginAction extends ActionSupport implements ServletRequestAware,ServletResponseAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String password;
-	private Map<String, Object> session;
 	private String token;
 	private boolean passed=true;
+	private Map<String, Object> session;
+	private HttpServletResponse response;
+	private HttpServletRequest request;
+	CookieUtils cu;
 	// 用户登录
 	public LoginAction() {
 		// TODO Auto-generated constructor stub
@@ -49,6 +59,7 @@ public class LoginAction extends ActionSupport{
 
 	public String execute(){
 		tokenCheck();
+
 		//在这里嵌入数据库相关代码
 //		try {
 //			SessionCheck ck=new SessionCheck(session);
@@ -78,11 +89,10 @@ public class LoginAction extends ActionSupport{
 		
 		//session.put("infofromAction2jsp", "这是一段测试从servlet到jsp能否正常发送session的文字，如果该段文字无乱码地正常显示则没有问题。");
 		if ("2141601033".equals(id)) {
-				if (!password.equals("456789")){
+				if (!password.equals(Crypto.toSHA1("456789"))){
 					this.addActionError("学号和密码不匹配，请重新检查后输入！");
 					return INPUT;
 				}
-
 		}
 		else {
 			this.addActionError("学号和密码不匹配，请重新检查后输入！");
@@ -90,8 +100,14 @@ public class LoginAction extends ActionSupport{
 		}
 		//这是一小段测试代码
 		Person person=new Person();
-		person.setAge(15);
+		person.setID(id);
+		person.setPassword(password);
 		session.put("personInfo", person);
+		cu=new CookieUtils(request);
+		Cookie[] newcookie=cu.generateCookie(this.id,this.password);
+		response.addCookie(newcookie[0]);
+		response.addCookie(newcookie[1]);
+		System.out.println("cookie新增");
 		return INPUT;
 	}
 	//用于进行token验证
@@ -161,5 +177,15 @@ public class LoginAction extends ActionSupport{
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	@Override
+	public void setServletRequest(HttpServletRequest httpServletRequest) {
+		this.request=httpServletRequest;
+	}
+
+	@Override
+	public void setServletResponse(HttpServletResponse httpServletResponse) {
+		this.response=httpServletResponse;
 	}
 }

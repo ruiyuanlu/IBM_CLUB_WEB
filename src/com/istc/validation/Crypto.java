@@ -2,7 +2,7 @@ package com.istc.validation;
 
 /**
  * Created by Morn Wu on 2017/2/23.
- * 加解密
+ * 加解密，可能暂时没什么用
  */
 import java.security.*;
 

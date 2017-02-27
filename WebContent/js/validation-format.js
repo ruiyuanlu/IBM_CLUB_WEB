@@ -21,12 +21,13 @@ function getRegisterValidation(){
 
 function getLoginValidation(){
     //alert("complete!");
-    //var password=CryptoJS.enc.Utf8.parse($("[name='password']").val());
+    var password=CryptoJS.enc.Utf8.parse($("[name='password']").val());
     //var key=CryptoJS.enc.Utf8.parse($("[name='token']").val());
     //var key=CryptoJS.enc.Utf8.parse("456");
     //var AESencrypt=CryptoJS.AES.encrypt(password, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
     //alert(password+"\n"+key);
-    //$("[name='password']").val(AESencrypt);
+    var SHA1encrypt=CryptoJS.SHA1(password);
+    $("[name='password']").val(SHA1encrypt);
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
     $.post("Login",$("#login").serialize(), function(json) {

@@ -1,25 +1,43 @@
 package com.istc.action;
 
+import com.istc.validation.CookieUtils;
 import com.istc.validation.Crypto;
 import com.istc.validation.TokenCheck;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
  * Created by Morn Wu on 2017/2/23.
  */
 
-public class RedirectNotNeedCheckAction extends ActionSupport implements SessionAware {
+public class RedirectNotNeedCheckAction extends ActionSupport implements SessionAware,ServletRequestAware,ServletResponseAware {
 
     Map<String, Object> session;
+    private HttpServletResponse response;
+    private HttpServletRequest request;
+    CookieUtils cu;
 
     public void setSession(Map<String, Object> arg0) {
         // TODO Auto-generated method stub
         this.session=arg0;
     }
     public String mainpage() {
+        cu=new CookieUtils(request);
+        if (cu.checkCookie()){
+            Cookie[] newcookie=cu.updateCookie(request);
+            response.addCookie(newcookie[0]);
+            response.addCookie(newcookie[1]);
+            System.out.println("cookie更新");
+            session.put("personInfo",cu.getPersonincookie());
+            return "welcome";
+        }
         try{
             session.remove("token");
         }
@@ -44,5 +62,15 @@ public class RedirectNotNeedCheckAction extends ActionSupport implements Session
     public String error() {return "error";}
 
     public String exit() {return "exit";}
+
+    @Override
+    public void setServletRequest(HttpServletRequest httpServletRequest) {
+        this.request=httpServletRequest;
+    }
+
+    @Override
+    public void setServletResponse(HttpServletResponse httpServletResponse) {
+        this.response=httpServletResponse;
+    }
 
 }
