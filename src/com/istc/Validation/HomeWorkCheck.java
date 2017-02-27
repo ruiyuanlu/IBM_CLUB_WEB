@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public class HomeWorkCheck {
 
-    private static final Integer buffSize = 14;
+    private static final Integer buffSize = 8;
     private static HomeWorkCheck self;
 
     /**
