@@ -44,6 +44,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	private Map<String, Object> session;
 	private HttpServletResponse response;
 	private HttpServletRequest request;
+	private String remember;
 	CookieUtils cu;
 	// 用户登录
 	public LoginAction() {
@@ -103,11 +104,13 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 		person.setID(id);
 		person.setPassword(password);
 		session.put("personInfo", person);
-		cu=new CookieUtils(request);
-		Cookie[] newcookie=cu.generateCookie(this.id,this.password);
-		response.addCookie(newcookie[0]);
-		response.addCookie(newcookie[1]);
-		System.out.println("cookie新增");
+		if (remember.equals("true")){
+			cu=new CookieUtils(request);
+			Cookie[] newcookie=cu.generateCookie(this.id,this.password);
+			response.addCookie(newcookie[0]);
+			response.addCookie(newcookie[1]);
+			System.out.println("cookie新增");
+		}
 		return INPUT;
 	}
 	//用于进行token验证
@@ -187,5 +190,13 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {
 		this.response=httpServletResponse;
+	}
+
+	public String getRemember() {
+		return remember;
+	}
+
+	public void setRemember(String remember) {
+		this.remember = remember;
 	}
 }
