@@ -32,7 +32,7 @@
     <input type="radio" name="<%=signlist.get(i).getID()%>" value="attend" >已到
     <input type="radio" name="<%=signlist.get(i).getID()%>" value="absent" checked>未到
     <input type="radio" name="<%=signlist.get(i).getID()%>" value="leave" >请假
-    <input type="radio" name="<%=signlist.get(i).getID()%>" value="late" >请假
+    <input type="radio" name="<%=signlist.get(i).getID()%>" value="late" >迟到
     <br/>
     <%
     }
