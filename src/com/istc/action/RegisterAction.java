@@ -244,7 +244,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		System.out.println(session.get("token"));
 		String curtoken= TokenCheck.generateNewToken();
 		try{
-			if (!TokenCheck.checkToken(session,token)){
+			if (!TokenCheck.checkFormToken(session,token)){
 				session.remove("token");
 				addActionMessage(curtoken);
 				session.put("token",curtoken);

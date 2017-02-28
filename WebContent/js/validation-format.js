@@ -1,7 +1,5 @@
 document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/sha1.js"></script>');
 document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script>');
-document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/aes.js"></script>');
-document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/components/mode-ecb-min.js"></script>');
 
 function getRegisterValidation(){
     //alert("complete!");
@@ -66,4 +64,4 @@ function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情�
         return false;  
     }  
     return true;  
-}  
+}

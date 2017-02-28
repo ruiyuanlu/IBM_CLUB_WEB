@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="com.istc.bean.Person" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -16,23 +17,16 @@ if(session.getAttribute("infofromAction2jsp")!=null){
     <base href="<%=basePath%>">
     
     <title>登录成功</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 
   </head>
   
   <body>
-  <%=info %><br/>
-    Welcome!欢迎！ <br>
+    欢迎，<%=((Person)session.getAttribute("personInfo")).getID()%> <br>
     <a href="fileupload">上传文件测试</a><br/>
     <a href="intervieweeGet" target="_blank">面试功能测试</a><br/>
+    <a href="fetchRestPerson" target="_blank">手动签到</a><br>
+    <a href="QRcodesign" target="_blank">开始扫码签到</a><br>
     <a href="Logout">登出</a>
   </body>
 </html>

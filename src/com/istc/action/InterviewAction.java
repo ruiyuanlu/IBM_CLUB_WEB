@@ -34,6 +34,10 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	public InterviewAction() {
 		// TODO Auto-generated constructor stub
 	}
+
+	static {
+		addtemp();
+	}
 	
 	@Override
 	public void setSession(Map<String, Object> arg0) {
@@ -66,7 +70,6 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	 */
 	@Action(value="intervieweeGet") 
 	public String intervieweeGet() throws Exception{
-		addtemp();
 		try {
 			session.put("interviewList", interviewees);
 			return INPUT;

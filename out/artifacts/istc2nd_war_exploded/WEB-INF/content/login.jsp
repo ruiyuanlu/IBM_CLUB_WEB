@@ -22,12 +22,12 @@ session.setAttribute("infofromjsp2Action", "这是一段测试从jsp到Servlet�
   <body>
   <%=info %>
 	<form id="login" onsubmit="return false;">
-	  	  学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
+		学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
 	   	密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
 		<input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
 		<input type="checkbox" name="remember" value="true">下次自动登录
 	</form>
   <button onclick="getLoginValidation()">登录</button>
-	<font color="red"><ul id="errorMessages"></ul></font>
+  <font color="red"><span id="errorMessages"></span></font>
   </body>
 </html>

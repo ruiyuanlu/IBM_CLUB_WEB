@@ -34,7 +34,7 @@ import javax.servlet.http.HttpServletResponse;
 				@Result(name="invalid.token", location="login.jsp")
         }
 )
-public class LoginAction extends ActionSupport implements ServletRequestAware,ServletResponseAware{
+public class LoginAction extends ActionSupport implements ServletResponseAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String password;
@@ -42,7 +42,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	private boolean passed=true;
 	private Map<String, Object> session;
 	private HttpServletResponse response;
-	private HttpServletRequest request;
 	private String remember;
 	// 用户登录
 	public LoginAction() {
@@ -102,9 +101,14 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 		person.setID(id);
 		person.setPassword(password);
 		session.put("personInfo", person);
-		if (remember.equals("true")){
-			response=CookieUtils.generateCookie(person,response);
-		}
+		try {
+            if (remember.equals("true")){
+                response=CookieUtils.generateCookie(person,response);
+            }
+        }
+        catch (Exception e){
+		    //do Nothing
+        }
 		return INPUT;
 	}
 	//用于进行token验证
@@ -113,7 +117,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 		System.out.println(session.get("token"));
 		String curtoken= TokenCheck.generateNewToken();
 		try{
-			if (!TokenCheck.checkToken(session,token)){
+			if (!TokenCheck.checkFormToken(session,token)){
 				session.remove("token");
 				addActionMessage(curtoken);
 				session.put("token",curtoken);
@@ -174,10 +178,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware,Se
 	}
 	public void setToken(String token) {
 		this.token = token;
-	}
-	@Override
-	public void setServletRequest(HttpServletRequest httpServletRequest) {
-		this.request=httpServletRequest;
 	}
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {this.response=httpServletResponse;}

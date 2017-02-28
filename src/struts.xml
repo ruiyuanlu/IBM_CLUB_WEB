@@ -42,11 +42,19 @@
 	</package>
 	<package name="needajax" extends="json-default">
 		<interceptors>
+            <interceptor name="loginInteceptor" class="com.istc.validation.SessionCheck" >
+                <param name="includeMethods">fetchRestPerson,manualSign</param>
+            </interceptor>
             <interceptor-stack name="ajaxStack">
             	<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
-            	<interceptor-ref name="defaultStack"></interceptor-ref>  
+                <interceptor-ref name="loginInteceptor"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
             </interceptor-stack>  
 		</interceptors>
 		<default-interceptor-ref name="ajaxStack"></default-interceptor-ref>
+        <global-results>
+            <result name="exit">/WEB-INF/content/timeout.jsp</result>
+            <result name="error" type="redirect">error</result>
+        </global-results>
     </package>
 </struts>

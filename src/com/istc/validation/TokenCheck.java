@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class TokenCheck {
 
-    public static boolean checkToken(Map<String,Object> session, String token) throws NullPointerException{
+    public static boolean checkFormToken(Map<String,Object> session, String token) throws NullPointerException{
         String sessiontoken=(String)session.get("token");
         if (sessiontoken.equals(token)) return true;
         else return false;
