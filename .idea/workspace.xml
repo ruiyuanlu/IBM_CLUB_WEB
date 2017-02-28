@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5339fe84-28b1-453d-b9b3-dc9a8649b96a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/attendance.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/js/QRcodeGenerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/js/manualSignSubmit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/istc/action/SignAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/AttendanceAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/AttendanceAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/InterviewAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/InterviewAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/RegisterAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/RegisterAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/validation/TokenCheck.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/validation/TokenCheck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/AttendanceAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/AttendanceAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/InterviewAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/InterviewAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/RegisterAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/RegisterAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/validation/TokenCheck.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/validation/TokenCheck.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/interview.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/interview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/login.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/js/validation-format.js" afterPath="$PROJECT_DIR$/WebContent/js/validation-format.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/interview.jsp" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/interview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/timeout.jsp" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/timeout.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/welcome.jsp" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/welcome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/js/validation-format.js" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/js/validation-format.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/AttendanceAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/AttendanceAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/RegisterAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/RegisterAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/validation/TokenCheck.java" afterPath="$PROJECT_DIR$/src/com/istc/validation/TokenCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/meetingsignfail.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/QRcodesign.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/meetingsignsuccess.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/meetingsign.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/WebContent/WEB-INF/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +23,7 @@
       <file leaf-file-name="LoginAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-226">
+            <state relative-caret-position="266">
               <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,11 +35,10 @@
       <file leaf-file-name="AttendanceAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/AttendanceAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="68" column="45" lean-forward="true" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+            <state relative-caret-position="-76">
+              <caret line="68" column="45" lean-forward="false" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#914#922#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,21 +47,28 @@
       <file leaf-file-name="RedirectAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="29" />
-              <folding>
-                <element signature="e#3148#3149#0" expanded="true" />
-                <element signature="e#3183#3184#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="297">
+              <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manualSignSubmit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegisterAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="251" column="23" lean-forward="true" selection-start-line="251" selection-start-column="23" selection-end-line="251" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manualSignSubmit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/js/manualSignSubmit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            <state relative-caret-position="532">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -105,8 +79,18 @@
       <file leaf-file-name="QRcodesign.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/QRcodesign.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state relative-caret-position="297">
+              <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/register.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -116,20 +100,10 @@
         <entry file="file://$PROJECT_DIR$/WebContent/js/QRcodeGenerate.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+              <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -138,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/fileupload.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+              <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -147,22 +121,10 @@
       <file leaf-file-name="SignAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/SignAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="34" column="90" lean-forward="true" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
+            <state relative-caret-position="513">
+              <caret line="34" column="90" lean-forward="false" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="attendance.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/attendance.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="34" column="71" lean-forward="false" selection-start-line="34" selection-start-column="71" selection-end-line="34" selection-end-column="71" />
-              <folding>
-                <element signature="e#422#430#0#JAVA" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,6 +148,7 @@
       <find>tokennull</find>
       <find>sys</find>
       <find>extend</find>
+      <find>session</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/club/istc/action/LoginAction.java" />
         <option value="$PROJECT_DIR$/src/club/istc/action/RedirectNotNeedCheckAction.java" />
         <option value="$PROJECT_DIR$/src/club/istc/action/RedirectNeedCheckAction.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/RegisterAction.java" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/register.jsp" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/Crypto.java" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/CookieCheck.java" />
@@ -244,6 +206,7 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/QRcodesign.jsp" />
         <option value="$PROJECT_DIR$/WebContent/js/QRcodeGenerate.js" />
         <option value="$PROJECT_DIR$/src/com/istc/action/SignAction.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/RegisterAction.java" />
       </list>
     </option>
   </component>
@@ -284,6 +247,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -438,9 +404,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1018,15 +981,16 @@
       <workItem from="1488178991436" duration="2306000" />
       <workItem from="1488181519385" duration="13710000" />
       <workItem from="1488244333487" duration="25101000" />
+      <workItem from="1488272614070" duration="982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104157000" />
+    <option name="totallyTimeSpent" value="105139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1052,9 +1016,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29245284" sideWeight="0.491875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23457584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="-25" y="47" width="360" height="765" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2377892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="-25" y="47" width="360" height="765" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1062,6 +1025,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1085,7 +1049,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1187,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1211,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,19 +1188,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="209" column="4" lean-forward="false" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/validation/SessionCheck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1244,21 +1199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#339#340#0" expanded="false" />
-            <element signature="e#370#371#0" expanded="false" />
-            <element signature="e#418#419#0" expanded="false" />
-            <element signature="e#453#454#0" expanded="false" />
-            <element signature="e#486#487#0" expanded="false" />
-            <element signature="e#514#515#0" expanded="false" />
-            <element signature="e#557#558#0" expanded="false" />
-            <element signature="e#591#592#0" expanded="false" />
-            <element signature="e#625#626#0" expanded="false" />
-            <element signature="e#654#655#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,14 +1210,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/meetingsignfail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/meetingsignfail.jsp" />
     <entry file="file://$PROJECT_DIR$/src/com/istc/action/LogoutAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1298,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1314,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1326,23 +1257,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-93">
           <caret line="39" column="80" lean-forward="true" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/action/InterviewAction.java">
@@ -1381,7 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-399">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1389,23 +1311,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/attendance.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="646">
           <caret line="34" column="71" lean-forward="false" selection-start-line="34" selection-start-column="71" selection-end-line="34" selection-end-column="71" />
-          <folding>
-            <element signature="e#422#430#0#JAVA" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
+        <state relative-caret-position="532">
           <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding />
         </state>
@@ -1413,7 +1332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
+        <state relative-caret-position="266">
           <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1421,40 +1340,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="29" />
-          <folding>
-            <element signature="e#3148#3149#0" expanded="true" />
-            <element signature="e#3183#3184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/AttendanceAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="68" column="45" lean-forward="true" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#914#922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/fileupload.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/QRcodesign.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1462,7 +1351,7 @@
     <entry file="file://$PROJECT_DIR$/WebContent/js/QRcodeGenerate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
           </folding>
@@ -1471,8 +1360,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/action/SignAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="34" column="90" lean-forward="true" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
+        <state relative-caret-position="513">
+          <caret line="34" column="90" lean-forward="false" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1481,11 +1370,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/js/manualSignSubmit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="532">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/AttendanceAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="68" column="45" lean-forward="false" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/QRcodesign.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="251" column="23" lean-forward="true" selection-start-line="251" selection-start-column="23" selection-end-line="251" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

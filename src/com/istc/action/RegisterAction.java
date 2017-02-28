@@ -54,7 +54,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		
 		try {
 //			if(new Func_for_control().registerPerson(curPerson)){
-				session.put("personInfo", curPerson);
+				//session.put("personInfo", curPerson);
 //				return SUCCESS;
 //			}
 		}
@@ -162,7 +162,6 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		if (gender.equals("0")) {
 			curPerson.setGender(false);
 		}
-		session.put("personInfo", curPerson);
 		if (!passed){
 			tokenCheck();
 		}
