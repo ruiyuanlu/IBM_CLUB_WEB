@@ -1,7 +1,7 @@
 package com.istc.action;
 
-import com.istc.Entities.Entity.Person;
-import com.istc.Service.EntityService.PersonService;
+import com.istc.Entities.Entity.Member;
+import com.istc.Service.EntityService.MemberService;
 import com.istc.Validation.InjectionCheck;
 import com.istc.Validation.TokenCheck;
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,8 +38,8 @@ import java.util.Map;
 public class LoginAction extends ActionSupport implements SessionAware,ServletResponseAware {
     private static final long serialVersionUID = 6473585621724667329L;
 
-    @Resource(name = "personService")
-    private PersonService personService;
+    @Resource(name = "memberService")
+    private MemberService memberService;
 
     //配置 Session
     private SessionMap<String, Object> sessionMap;
@@ -54,7 +54,9 @@ public class LoginAction extends ActionSupport implements SessionAware,ServletRe
     //自定义的 token 检查器，实现在 Utilities 中
     private TokenCheck tokenChecker;
 
+    //定义全局常量
     private final String loginKey = "member";
+    private final String tokenKey = "token";
 
     /**
      * 产生登陆动作时检查浏览器的token
@@ -85,18 +87,19 @@ public class LoginAction extends ActionSupport implements SessionAware,ServletRe
     )
     public String login() throws Exception{
         System.out.println("login 启动");
-        Person person = (Person) sessionMap.get(loginKey);
-        if(person == null){
-            person = new Person();
-            person.setID(id);
-            person.setPassword(password);
+        tokenCheck();// token 登陆检查
+        Member member = (Member) sessionMap.get(loginKey);
+        if(member == null){
+            member = new Member();
+            member.setID(id);
+            member.setPassword(password);
         }
-        person = personService.get(person);
-        if(person == null){
+        member = memberService.get(member);
+        if(member == null){
             addActionError("学号或密码错误!");
             return "fail";
         }
-        sessionMap.put(loginKey, person);
+        sessionMap.put(loginKey, member);
         return "success";
     }
 
@@ -128,6 +131,16 @@ public class LoginAction extends ActionSupport implements SessionAware,ServletRe
             addFieldError("password","请不要在输入的信息中包含特殊符号（* ' ; - + / % #）");
         }
     }
+
+    public void tokenCheck(){
+        if(tokenChecker.isResubmit(sessionMap, token)){
+            addFieldError(tokenKey, "请勿重复提交信息哦(●'◡'●)");
+        }
+        String currentToken = tokenChecker.generateNewToken();
+        sessionMap.put(loginKey, currentToken);
+        addActionMessage(currentToken);
+    }
+
     /**
      * SessionAware 接口
      * ServletResponse 接口

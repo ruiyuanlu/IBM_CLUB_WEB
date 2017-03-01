@@ -14,10 +14,14 @@ import javax.annotation.Resource;
 @Service("memberService")
 @Transactional(rollbackFor = Exception.class)
 public class MemberService {
-    @Resource
+    @Resource(name = "memberDAO")
     private transient MemberDAO memberDAO;
 
     public Member get(String id){
         return memberDAO.get(id);
+    }
+
+    public Member get(Member member){
+        return memberDAO.get(member);
     }
 }

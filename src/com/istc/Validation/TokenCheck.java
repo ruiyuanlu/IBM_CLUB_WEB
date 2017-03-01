@@ -33,11 +33,11 @@ public class TokenCheck {
      * @return true 如果 session 中的 token 与传入的 token 不相等
      * @return false 如果 session 和 token 均不为空且 session 中的 token 与传入的 token 相等
      */
-    private boolean isResubmit(SessionMap<String, Object> session, String token){
+    public boolean isResubmit(SessionMap<String, Object> session, String token){
         return session == null || token == null ? true : !token.equals((String)session.get(tokenKey));
     }
 
-    private String generateNewToken(){
+    public String generateNewToken(){
         String digist = String.valueOf(Math.random());
         return Encoder.getInstance().encodeSHA512(digist.getBytes());
     }
