@@ -65,6 +65,7 @@ public class LoginAction extends ActionSupport implements SessionAware,ServletRe
      * 初始化自定义检查工具
      */
     public LoginAction(){
+        System.out.println("进入loginAction");
         tokenUtil = TokenUtils.getInstance();
         cookieUtil = CookieUtils.getInstance();
     }
@@ -99,7 +100,7 @@ public class LoginAction extends ActionSupport implements SessionAware,ServletRe
         member = memberService.get(member);
         if(member == null){
             addActionError("学号或密码错误!");
-            return "fail";
+            return INPUT;
         }
         //登陆成功, 放入 session 中, 如果前端传入的参数允许存储cookie, 则操作存储 cookie
         sessionMap.put(loginKey, member);
