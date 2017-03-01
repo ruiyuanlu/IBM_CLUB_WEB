@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!--自动扫描和装配bean-->
+
+    <!--数据库连接配置-->
+
+    <!--dbcp配置,dbcp是Apache的数据库连接池管理包，需要commons-dbcp.jar 和 commons-pool.jar-->
+    <!--首先是配置数据库连接信息，这里不需要配置并发和事务隔离级别，因为配置sessionFactory时可以进行更加细致的配置-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <!--驱动类-->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <!--连接参数-->
+        <property name="url" value="jdbc:mysql://localhost:3306/hibernatetest"/>
+        <property name="username" value="luruiyuan"/>
+        <property name="password" value="root"/>
+        
+        <!--dbcp连接池配置-->
+        <property name="maxTotal" value="20"/>
+        <property name="maxIdle" value="5"/>
+        <property name="maxWaitMillis" value="300"/>
+    </bean>
+
+    <!--配置hibernate的SessionFactory所需的属性-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!--将SessionFactory和配置好的连接源关联起来-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--配置SessionFactory的属性，这里和单独配置的hibernate.cfg.xml大同小异
+        有了这里的配置，我们就不需要hibernate.cfg.xml了。同时，由于我们配置了数据库连接源dataSource,
+        我们就不需要再配置连接时的用户名，密码等属性了-->
+        <property name="hibernateProperties">
+            <props>
+                <!--这里分别设置了：数据库方言，建表方式(update)，事务隔离级别(2)，并发级别(线程级别)
+                自动提交(true), 显示sql, 格式化sql-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.connection.isolation">2</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.connection.autocommit">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">false</prop>
+            </props>
+        </property>
+
+        <!--扫描实体类并映射到数据库-->
+        <property name="packagesToScan" value="Entities"/>
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <!--将SessionFactory和事务管理器关联-->
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--将事务管理器关联到上下文-->
+    <tx:annotation-driven transaction-manager="txManager"/>
+
+</beans>
