@@ -117,7 +117,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 			passed=false;
 		}
 		else {
-			if (!new InjectionCheck(name).getResult()) {
+			if (!new NameCheck(name).getResult()) {
 				addFieldError("name", "请输入正确的姓名信息！");
 				passed=false;
 			}
