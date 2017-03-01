@@ -73,51 +73,27 @@ public class CookieUtils{
     }
 
     public static HttpServletResponse clearCookie(HttpServletRequest request,HttpServletResponse response) {
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("ID".equals(cookie.getName())) {
-                    cookie.setMaxAge(0);
-                    response.addCookie(cookie);
-                }
-                if ("password".equals(cookie.getName())){
-                    cookie.setMaxAge(0);
-                    response.addCookie(cookie);
-                }
-            }
-        }
-        return response;
+        return cookieMaxAgeReset(request,response,0);
     }
 
     public static HttpServletResponse updateCookie(HttpServletRequest request,HttpServletResponse response) {
+        return cookieMaxAgeReset(request,response,60 * 60 * 24 * 14);
+    }
+
+    private static HttpServletResponse cookieMaxAgeReset(HttpServletRequest request,HttpServletResponse response,int maxage){
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("ID".equals(cookie.getName())) {
-                    cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+                    cookie.setMaxAge(maxage);
                     response.addCookie(cookie);
                 }
                 if ("password".equals(cookie.getName())){
-                    cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
+                    cookie.setMaxAge(maxage);
                     response.addCookie(cookie);
                 }
             }
         }
         return response;
-    }
-
-    public static Cookie[] updateCookie(HttpServletRequest request){
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("ID".equals(cookie.getName())) {
-                    cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
-                }
-                if ("password".equals(cookie.getName())){
-                    cookie.setMaxAge(60 * 60 * 24 * 14);// cookie保存两周
-                }
-            }
-        }
-        return cookies;
     }
 }

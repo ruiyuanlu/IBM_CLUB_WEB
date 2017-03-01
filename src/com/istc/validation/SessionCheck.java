@@ -62,8 +62,6 @@ public class SessionCheck extends MethodFilterInterceptor {
 		//设置session
 		session.setAttribute("personInfo",CookieUtils.getPersonInCookie(request));
 		//更新cookie的超时
-		Cookie[] old=CookieUtils.updateCookie(request);
-		response.addCookie(old[0]);
-		response.addCookie(old[1]);
+		response=CookieUtils.updateCookie(request,response);
 	}
 }

@@ -16,7 +16,15 @@ function refreshQRcode() {
                 url=url+token;
                 document.getElementById("signurl").innerHTML=url;
                 document.getElementById("qrcode").innerHTML="";
-                new QRCode(document.getElementById("qrcode"), url);
+                new QRCode('qrcode', {
+                    text: url,
+                    width: 256,
+                    height: 256,
+                    colorDark : '#000000',
+                    colorLight : '#ffffff',
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+
             }
             else {
                 document.getElementById("signurl").innerHTML="获取二维码失败！";
