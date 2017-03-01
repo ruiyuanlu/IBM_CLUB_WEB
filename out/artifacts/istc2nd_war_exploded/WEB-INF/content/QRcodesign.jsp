@@ -11,12 +11,20 @@
     <title>扫码签到</title>
     <script type="text/JavaScript" src="js/QRcodeGenerate.js"></script>
 </head>
-<body onbeforeunload="changeTokenWhileClosing()">
+<body onbeforeunload="return changeTokenWhileClosing()">
 <div id="signurl"></div>
 <div id="qrcode"></div>
 </body>
 <script>
     refreshQRcode();
     var doRefresh=window.setInterval(refreshQRcode,10000);
+    function changeTokenWhileClosing() {
+        $.post("qrcodeSign", function(json) {
+            $.each(json.actionMessages,function(index,data){
+
+            });
+        });
+        return "关闭确认";
+    }
 </script>
 </html>

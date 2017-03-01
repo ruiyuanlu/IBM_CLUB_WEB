@@ -32,11 +32,3 @@ function refreshQRcode() {
         });
     });
 }
-
-function changeTokenWhileClosing() {
-    $.post("qrcodeSign", function(json) {
-        $.each(json.actionMessages,function(index,data){
-
-        });
-    });
-}
