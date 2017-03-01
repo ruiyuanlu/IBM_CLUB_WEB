@@ -1,6 +1,11 @@
 package com.istc.action;
 
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 
 import com.istc.bean.Person;
@@ -25,7 +30,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class RegisterAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
-	private int age;
+	private String birthday;
 	private String name;
 	private String password;
 	private String repassword;
@@ -49,6 +54,19 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 	@Override
 	public String execute() {
 		tokenCheck();
+		//以下是测试代码
+		System.out.println(birthday);
+		SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+		Calendar curbirthday = Calendar.getInstance();
+		Calendar curtime = Calendar.getInstance();
+		curtime.setTime(new Date());
+		try {
+			curbirthday.setTime(sdf.parse(birthday));
+			System.out.println("年龄："+(curtime.get(Calendar.YEAR)-curbirthday.get(Calendar.YEAR)));
+		}
+		catch (Exception e){
+
+		}
 		//System.out.println("execute执行");
 		//加上数据库的操作
 		
@@ -79,7 +97,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 	public void validate(){
 		System.out.println("验证器");
 		//
-		if (id==null || id=="") {
+		if (id==null || id.equals("")) {
 			addFieldError("id", "请输入您的学号！");
 			passed=false;
 		}
@@ -95,7 +113,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 				curPerson.setID(this.id);
 			}
 		}
-		if (password==null || password=="") {
+		if (password==null || password.equals("")) {
 			addFieldError("password", "请设置您的密码！");
 			passed=false;
 		}
@@ -112,7 +130,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 				curPerson.setPassword(password);
 			}
 		}
-		if (name==null || name=="") {
+		if (name==null || name.equals("")) {
 			addFieldError("name", "请输入您的姓名！");
 			passed=false;
 		}
@@ -125,7 +143,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 				curPerson.setName(name);
 			}
 		}
-		if (phoneNumber==null || phoneNumber=="") {
+		if (phoneNumber==null || phoneNumber.equals("")) {
 			addFieldError("phoneNumber", "请告诉我们您的手机号以方便联系您。");
 			passed=false;
 		}
@@ -138,7 +156,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 				curPerson.setPhoneNumber(phoneNumber);
 			}
 		}
-		if (QQ==null || QQ=="") {
+		if (QQ==null || QQ.equals("")) {
 			addFieldError("QQ", "请告诉我们您的QQ号以方便日后您与社团其他成员的互动。");
 			passed=false;
 		}
@@ -152,12 +170,20 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 			}
 		}
 		//西安交通大学招生简章规定，少年班的入学年龄不得低于14岁
-		if (age<14 || age>100) {
-			addFieldError("age", "您输入的年龄信息有误，请重新输入！");
+		Calendar curtime = Calendar.getInstance();
+		curtime.setTime(new Date());
+		if (birthday.equals("")) {
+			addFieldError("birthday", "请输入您的生日！");
 			passed=false;
 		}
 		else {
-			curPerson.setAge(age);
+			if(!new DateCheck(birthday).getResult()){
+				addFieldError("birthday", "输入的出生日期不得晚于"+(curtime.get(Calendar.YEAR)-14)+"年1月1日，不得早于1970年1月1日");
+				passed=false;
+			}
+			else {
+				//curPerson.setAge(birthday);
+			}
 		}
 		if (gender.equals("0")) {
 			curPerson.setGender(false);
@@ -168,12 +194,12 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		return;
 	}
 	
-	public int getAge() {
-		return age;
+	public String getBirthday() {
+		return birthday;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getId() {

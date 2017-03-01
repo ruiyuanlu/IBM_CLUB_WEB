@@ -158,7 +158,6 @@ public class LoginAction extends ActionSupport implements ServletResponseAware{
 		if(!passed) {
 			tokenCheck();
 		}
-
 	}
 	
 	public String getId() {

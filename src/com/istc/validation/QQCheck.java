@@ -20,7 +20,7 @@ public class QQCheck {
 	 */
 	private boolean checkQQ() {
 		try {
-			String regex = "[1-9][0-9]{4,}";
+			String regex = "[1-9][0-9]{4,15}";
 			result = QQ.matches(regex);
 		} catch (Exception e) {
 			result=false;

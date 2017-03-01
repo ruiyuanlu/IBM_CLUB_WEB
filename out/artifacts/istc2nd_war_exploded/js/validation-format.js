@@ -1,6 +1,10 @@
 document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/sha1.js"></script>');
 document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script>');
-
+/**
+ *引用包和转换改成SHA512即可：
+ * document.write('<script type="text/JavaScript" src="js/CryptoJS-3.1.2/rollups/sha512.js"></script>');
+ * var SHA1encrypt=CryptoJS.SHA512(password);
+ */
 function getRegisterValidation(){
     //alert("complete!");
     //var key=CryptoJS.enc.Utf8.parse($("[name='token']").val());
@@ -25,6 +29,7 @@ function getLoginValidation(){
     //alert(password+"\n"+key);
     var password=CryptoJS.enc.Utf8.parse($("[name='password']").val());
     if(password!=""){
+
         var SHA1encrypt=CryptoJS.SHA1(password);
         $("[name='password']").val(SHA1encrypt);
     }

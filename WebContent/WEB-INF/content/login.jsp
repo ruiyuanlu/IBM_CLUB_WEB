@@ -7,8 +7,6 @@ String info="";
 if(session.getAttribute("infofromAction2jsp")!=null){
 	info=(String)session.getAttribute("infofromAction2jsp");
 }
-//以下的setAttribute是测试能否正常从页面设置session并发回后端
-session.setAttribute("infofromjsp2Action", "这是一段测试从jsp到Servlet能否正常发送session的文字，若该文字在控制台中无乱码地正常显示则没有问题。");
 %>
 
 <html>

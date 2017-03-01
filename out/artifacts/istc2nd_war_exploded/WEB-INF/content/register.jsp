@@ -3,12 +3,12 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>  
-<style type="text/css">  
-    .errorLabel{color: red;}  
-</style>
-<!--底下这行代码是个神奇的玩意儿，明明用不上却不能删……-->
-<script type="text/javascript" src="js/validation-format.js"></script>  
+<head>
+	<title>面试申请</title>
+	<style type="text/css">
+    	.errorLabel{color: red;}
+	</style>
+	<script type="text/javascript" src="js/validation-format.js"></script>
 </head> 
   
   <body>
@@ -24,7 +24,7 @@
 	   	性别：<br/>
 	    <input type="radio" name="gender" value="1" checked> 男<br>
   		<input type="radio" name="gender" value="0"> 女<br>
-  		年龄：<input type="number" name="age" min="14" max="100" value="18"></input><font color="red"><span id="error_age"></span></font><br/>
+  		生日：<input type="date" name="birthday" id="birthday"></input><font color="red"><span id="error_birthday"></span></font><br/>
   		手机号：<input type="text" name="phoneNumber" ></input><font color="red"><span id="error_phoneNumber"></span></font><br/>
   		QQ：<input type="text" name="QQ"></input><font color="red"><span id="error_QQ"></span></font><br/>
 		<input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
@@ -32,4 +32,12 @@
     <button onclick="getRegisterValidation()">注册</button>
 	<font color="red"><ul id="errorMessages"></ul></font>
   </body>
+<script>
+    var curdate = new Date();
+    var maxyear = curdate.getFullYear()-15;
+    var maxbirthday = ""+maxyear+"-12-31";
+    var datepicker = document.getElementById("birthday");
+    datepicker.setAttribute("max",maxbirthday);
+    datepicker.setAttribute("min","1970-01-01");
+</script>
 </html>
