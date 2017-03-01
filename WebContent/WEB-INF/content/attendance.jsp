@@ -27,6 +27,11 @@
     if(signlist.size()!=0){
 %>
 <form id="manualSign">
+    <input type="radio"  name="chooseall" value="attend" onchange="chooseAllAttend()">全部已到
+    <input type="radio"  name="chooseall" value="absent" onchange="chooseAllAbsent()" checked>全部未到
+    <input type="radio"  name="chooseall" value="leave" onchange="chooseAllLeave()">全部请假
+    <input type="radio"  name="chooseall" value="late" onchange="chooseAllLate()">全部迟到
+    <br>
     <%for (int i=0;i<signlist.size();i++){%>
     <%=signlist.get(i).getName()%>(<%=signlist.get(i).getID()%>)
     <input type="radio" name="<%=signlist.get(i).getID()%>" value="attend" >已到
@@ -46,4 +51,26 @@
 <span id="error_manualSign"></span>
 <span id="errorMessages"></span>
 </body>
+<script>
+    function chooseAllAttend() {
+        <%for (int i=0;i<signlist.size();i++){%>
+            document.getElementsByName("<%=signlist.get(i).getID()%>")[0].checked=true;
+        <%}%>
+    }
+    function chooseAllAbsent() {
+        <%for (int i=0;i<signlist.size();i++){%>
+        document.getElementsByName("<%=signlist.get(i).getID()%>")[1].checked=true;
+        <%}%>
+    }
+    function chooseAllLeave() {
+        <%for (int i=0;i<signlist.size();i++){%>
+        document.getElementsByName("<%=signlist.get(i).getID()%>")[2].checked=true;
+        <%}%>
+    }
+    function chooseAllLate() {
+        <%for (int i=0;i<signlist.size();i++){%>
+        document.getElementsByName("<%=signlist.get(i).getID()%>")[3].checked=true;
+        <%}%>
+    }
+</script>
 </html>

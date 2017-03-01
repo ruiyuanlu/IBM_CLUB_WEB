@@ -4,7 +4,6 @@
 document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script>');
 document.write('<script type="text/JavaScript" src="js/qrcode.js"></script>');
 
-
 function refreshQRcode() {
     var url=location.host+"/Sign?tokenfetch=";
     $.post("qrcodeSign", function(json) {
@@ -31,4 +30,11 @@ function refreshQRcode() {
             }
         });
     });
+}
+
+//请各位部长注意，签到的时候务必保证网络畅通。如果关闭的时候网络阻塞，那么token将不会被更新！
+function changeTokenWhileClosing() {
+    $.post("qrcodeSign", function(json) {
+    });
+    return "确认关闭？";
 }

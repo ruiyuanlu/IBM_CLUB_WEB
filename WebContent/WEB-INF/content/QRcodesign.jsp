@@ -18,13 +18,5 @@
 <script>
     refreshQRcode();
     var doRefresh=window.setInterval(refreshQRcode,10000);
-    function changeTokenWhileClosing() {
-        $.post("qrcodeSign", function(json) {
-            $.each(json.actionMessages,function(index,data){
-
-            });
-        });
-        return "确认关闭？";
-    }
 </script>
 </html>
