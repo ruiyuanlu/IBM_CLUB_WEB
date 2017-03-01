@@ -29,11 +29,11 @@ public class Encoder {
     }
 
     /**
-     * SHA1 算法
+     * SHA1 消息摘要算法
      * @param data 摘要的字节数组
      * @return 加密后的字符串
      */
-    private String encodeSHA1(byte[] data){
+    public String encodeSHA1(byte[] data){
         MessageDigest messageDigest = null;
         try {
             messageDigest = MessageDigest.getInstance("SHA");
@@ -44,11 +44,11 @@ public class Encoder {
     }
 
     /**
-     * SHA256 算法
+     * SHA256 消息摘要算法
      * @param data 摘要的字节数组
      * @return 加密后的字符串
      */
-    private String encodeSHA256(byte[] data){
+    public String encodeSHA256(byte[] data){
         MessageDigest messageDigest = null;
         try {
             messageDigest = MessageDigest.getInstance("SHA-256");
@@ -59,11 +59,11 @@ public class Encoder {
     }
 
     /**
-     * SHA384 算法
+     * SHA384 消息摘要算法
      * @param data 摘要的字节数组
      * @return 加密后的字符串
      */
-    private String encodeSHA384(byte[] data){
+    public String encodeSHA384(byte[] data){
         MessageDigest messageDigest = null;
         try {
             messageDigest = MessageDigest.getInstance("SHA-384");
@@ -74,11 +74,11 @@ public class Encoder {
     }
 
     /**
-     * SHA512 算法
+     * SHA512 消息摘要算法
      * @param data 摘要的字节数组
      * @return 加密后的字符串
      */
-    private String encodeSHA512(byte[] data){
+    public String encodeSHA512(byte[] data){
         MessageDigest messageDigest = null;
         try {
             messageDigest = MessageDigest.getInstance("SHA-512");

@@ -1,5 +1,6 @@
 package com.istc.Validation;
 
+import com.istc.Utilities.Encoder;
 import org.apache.struts2.dispatcher.SessionMap;
 
 /**
@@ -24,7 +25,7 @@ public class TokenCheck {
     }
 
     /**
-     * 检查表单是否重复提交
+     * t检查表单是否重复提交
      * 如果 Session 中 token 值与传入 token 不同则说明是重复提交
      * @param session 当前会话
      * @param token 当前的 token
@@ -34,5 +35,10 @@ public class TokenCheck {
      */
     private boolean isResubmit(SessionMap<String, Object> session, String token){
         return session == null || token == null ? true : !token.equals((String)session.get(tokenKey));
+    }
+
+    private String generateNewToken(){
+        String digist = String.valueOf(Math.random());
+        return Encoder.getInstance().encodeSHA512(digist.getBytes());
     }
 }
