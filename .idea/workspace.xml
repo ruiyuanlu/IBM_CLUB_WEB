@@ -2,11 +2,314 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd09bbf0-ad2d-4361-b315-7a3a9c416b6f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Validation/TokenCheck.java" afterPath="$PROJECT_DIR$/src/com/istc/Validation/TokenCheck.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/istc/Utilities/CookieUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/aes-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/aes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/cipher-core-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/cipher-core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/core-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/enc-base64-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/enc-base64.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/enc-utf16-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/enc-utf16.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/evpkdf-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/evpkdf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/format-hex-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/format-hex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/hmac-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/hmac.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/lib-typedarrays-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/lib-typedarrays.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/md5-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/md5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-cfb-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-cfb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ctr-gladman-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ctr-gladman.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ctr-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ctr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ecb-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ecb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ofb-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/mode-ofb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-ansix923-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-ansix923.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-iso10126-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-iso10126.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-iso97971-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-iso97971.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-nopadding-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-nopadding.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-zeropadding-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pad-zeropadding.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pbkdf2-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/pbkdf2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/rabbit-legacy-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/rabbit-legacy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/rabbit-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/rabbit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/rc4-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/rc4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/ripemd160-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/ripemd160.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha1-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha224-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha224.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha256-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha256.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha3-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha384-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha384.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha512-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/sha512.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/tripledes-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/tripledes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/x64-core-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/components/x64-core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/copyright.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/push.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/aes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-md5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-ripemd160.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-sha1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-sha224.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-sha256.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-sha3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-sha384.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/hmac-sha512.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/md5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/pbkdf2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/rabbit-legacy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/rabbit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/rc4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/ripemd160.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/sha1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/sha224.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/sha256.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/sha3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/sha384.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/sha512.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/tripledes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/status.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/QRcodeGenerate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/jquery-3.1.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/manualSignSubmit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/qrcode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/js/validation-format.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/QRcodesign.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/login.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Interviewee.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/Entity/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/ID/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/ID/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Entities/ID/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/IntervieweeDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MessageDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PresidentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/RegisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/DepartmentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/HomeWorkDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/IntervieweeDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MeetingDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MessageDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PresidentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/RegisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/DepartmentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/HomeWorkService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/IntervieweeService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/MeetingService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/MemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/MessageService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/MinisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/PersonService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/PresidentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/RegisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Service/EntityService/UploadedFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Utilities/ClassTypeConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Utilities/DAOFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Utilities/HibernateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Utilities/PageModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Utilities/WordOnlineConverter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Utilities/WordOnlineConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Validation/HomeWorkCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Validation/InjectionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/Validation/SessionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/action/HomeWorkUploadAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/action/InterviewAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/action/RedirectAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/action/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/config/properties/databaseConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/config/xmls/applicationContext-Hibernate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/com/istc/config/xmls/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/classes/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/errorPages/404.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/errorPages/500.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/errorPages/error.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/errorPages/unknownError.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/jsp/fail.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/jsp/interview.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/jsp/logout.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/jsp/success.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/content/jsp/welcome.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/asm-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/asm-commons-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/asm-tree-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/cdi-api-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/classmate-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-collections4-4.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-dbcp2-2.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-fileupload-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-lang3-3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/commons-pool2-2.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/el-api-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/hibernate-core-5.2.4.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/log4j-api-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/log4j-core-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/ognl-3.1.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/ooxml-schemas-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/org.apache.poi.xwpf.converter.core-1.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/org.apache.poi.xwpf.converter.xhtml-1.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/poi-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/poi-examples-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/poi-excelant-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/poi-ooxml-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/poi-ooxml-schemas-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/poi-scratchpad-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-jdbc-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-orm-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/spring-web-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/struts2-core-2.5.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/struts2-json-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/lib/xmlbeans-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/js/jquery-3.1.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_NEW/js/validation-format.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Interviewee.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/ID/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/BaseDAO/BaseDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/IntervieweeDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/MessageDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/PresidentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/RegisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/DepartmentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/HomeWorkDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/IntervieweeDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/MeetingDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/MessageDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/PresidentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/RegisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/DepartmentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/HomeWorkService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/IntervieweeService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/MeetingService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/MemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/MessageService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/MinisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/PersonService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/PresidentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/RegisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/UploadedFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Utilities/ClassTypeConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Utilities/DAOFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Utilities/HibernateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Utilities/PageModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Utilities/WordOnlineConverter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Utilities/WordOnlineConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Validation/HomeWorkCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Validation/InjectionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Validation/SessionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/HomeWorkUploadAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/InterviewAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/LoginAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/RedirectAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/properties/databaseConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/xmls/applicationContext-Hibernate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/xmls/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/IBM_CLUB_WEB/WordOnlineConverterTest$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/IBM_CLUB_WEB/WordOnlineConverterTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/istc/Validation/TokenCheck.java" afterPath="$PROJECT_DIR$/src/com/istc/Utilities/TokenUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,49 +335,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1062">
-              <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+            <state relative-caret-position="-1259">
+              <caret line="75" column="7" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2128#2129#0" expanded="true" />
-                <element signature="e#2183#2184#0" expanded="true" />
-                <element signature="method#setServletResponse#0;class#LoginAction#0" expanded="false" />
+                <element signature="e#5413#5414#0" expanded="true" />
+                <element signature="e#5464#5465#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding>
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#712#713#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="29" column="102" lean-forward="false" selection-start-line="29" selection-start-column="102" selection-end-line="29" selection-end-column="102" />
+            <state relative-caret-position="325">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassTypeConverter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/ClassTypeConverter.java">
+      <file leaf-file-name="aes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/aes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-775">
-              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QRcodesign.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/QRcodesign.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/TokenUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -86,6 +395,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -114,10 +424,15 @@
         <option value="$PROJECT_DIR$/src/com/istc/Utilities/SHAEncoder.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Utilities/Encoder.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Validation/TokenCheck.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" />
         <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/Utilities/CookieUtiles.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/Utilities/CookieUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/Utilities/TokenCheck.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/Utilities/TokenUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/login.jsp" />
       </list>
     </option>
   </component>
@@ -139,6 +454,9 @@
     <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1098" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -179,6 +497,112 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -198,10 +622,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Validation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,24 +664,6 @@
               <option name="myItemId" value="istc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -283,6 +685,12 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Program Files/Git/IBM_CLUB_WEB/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\jsp" />
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\js" />
+    </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.istc_new">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -705,16 +1113,16 @@
       <updated>1488333093405</updated>
       <workItem from="1488333095607" duration="1293000" />
       <workItem from="1488335918255" duration="8096000" />
-      <workItem from="1488354571329" duration="809000" />
+      <workItem from="1488354571329" duration="7434000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10198000" />
+    <option name="totallyTimeSpent" value="16823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -731,6 +1139,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -739,7 +1148,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25669882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25669882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -748,7 +1157,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -781,20 +1189,17 @@
           <caret line="64" column="48" lean-forward="false" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2128#2129#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="method#setServletResponse#0;class#LoginAction#0" expanded="false" />
+            <element signature="e#5413#5414#0" expanded="true" />
+            <element signature="e#5464#5465#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/TokenCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/TokenUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,14 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/WordOnlineConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -1052,20 +1449,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/TokenCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="29" column="102" lean-forward="false" selection-start-line="29" selection-start-column="102" selection-end-line="29" selection-end-column="102" />
           <folding />
         </state>
       </provider>
@@ -1081,24 +1476,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/CookieUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="29" column="102" lean-forward="false" selection-start-line="29" selection-start-column="102" selection-end-line="29" selection-end-column="102" />
+        <state relative-caret-position="288">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/TokenUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1062">
-          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        <state relative-caret-position="-1259">
+          <caret line="75" column="7" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2128#2129#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="method#setServletResponse#0;class#LoginAction#0" expanded="false" />
+            <element signature="e#5413#5414#0" expanded="true" />
+            <element signature="e#5464#5465#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/js/CryptoJS-3.1.2/rollups/aes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/js/QRcodeGenerate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/QRcodesign.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
