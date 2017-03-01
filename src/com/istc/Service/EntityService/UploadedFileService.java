@@ -18,7 +18,7 @@ import java.util.List;
 @Service("uploadedFileService")
 @Transactional(rollbackFor = Exception.class)
 public class UploadedFileService {
-    @Resource
+    @Resource(name = "uploadedFileDAO")
     private transient UploadedFileDAO uploadedFileDAO;
 
     public void addFile(File file, Member owner){
