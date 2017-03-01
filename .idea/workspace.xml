@@ -1,22 +1,440 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d366f211-fee7-4c33-8c73-5b17f9fff70f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Validation/HomeWorkCheck.java" afterPath="$PROJECT_DIR$/src/com/istc/Validation/HomeWorkCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/HomeWorkUploadAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/HomeWorkUploadAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" />
+    <list default="true" id="dd09bbf0-ad2d-4361-b315-7a3a9c416b6f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/IBM_CLUB_WEB_NEW.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/IBM_CLUB_WEB_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/POI.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBMCLUBWEB/IBMCLUBWEB.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB/IBM_CLUB_WEB.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Interviewee.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Entity/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/ID/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Entities/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/IntervieweeDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MessageDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PresidentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/RegisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/DepartmentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/HomeWorkDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/IntervieweeDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MeetingDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MessageDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PresidentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/RegisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/DepartmentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/HomeWorkService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/IntervieweeService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MeetingService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MessageService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MinisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/PersonService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/PresidentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/RegisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/UploadedFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Utilities/ClassTypeConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Utilities/DAOFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Utilities/HibernateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Utilities/PageModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Utilities/WordOnlineConverter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Utilities/WordOnlineConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Validation/HomeWorkCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Validation/InjectionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/Validation/SessionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/HomeWorkUploadAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/InterviewAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/RedirectAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/action/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/properties/databaseConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext-Hibernate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/errorPages/404.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/errorPages/500.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/errorPages/error.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/errorPages/unknownError.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/jsp/fail.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/jsp/interview.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/jsp/logout.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/jsp/success.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/content/jsp/welcome.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/asm-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/asm-commons-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/asm-tree-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/cdi-api-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/classmate-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-collections4-4.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-dbcp2-2.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-fileupload-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-lang3-3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/commons-pool2-2.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/el-api-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/hibernate-core-5.2.4.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/log4j-api-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/log4j-core-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/ognl-3.1.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/ooxml-schemas-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/org.apache.poi.xwpf.converter.core-1.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/org.apache.poi.xwpf.converter.xhtml-1.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/poi-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/poi-examples-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/poi-excelant-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/poi-ooxml-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/poi-ooxml-schemas-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/poi-scratchpad-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-jdbc-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-orm-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/spring-web-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-core-2.5.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-json-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/xmlbeans-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/js/jquery-3.1.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/js/validation-format.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/Entity/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/ID/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/ID/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Entities/ID/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MessageDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PresidentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/RegisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/DepartmentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/HomeWorkDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MeetingDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MessageDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PresidentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/RegisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/DepartmentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/HomeWorkService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/MeetingService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/MemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/MessageService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/MinisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/PersonService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/PresidentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/RegisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Service/EntityService/UploadedFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Utilities/DAOFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Utilities/HibernateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Utilities/PageModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Validation/InjectionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/Validation/SessionCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/action/RedirectAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/action/package-info.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/config/properties/databaseConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/config/xmls/applicationContext-Hibernate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/com/istc/config/xmls/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/classes/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/asm-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/asm-commons-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/asm-tree-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/cdi-api-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/classmate-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-collections4-4.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-dbcp2-2.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-fileupload-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-lang3-3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/commons-pool2-2.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/el-api-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/hibernate-core-5.2.4.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/log4j-api-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/log4j-core-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/ognl-3.1.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-jdbc-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-orm-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/spring-web-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/struts2-core-2.5.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/struts2-json-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istcArchive/istcArchive.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testArtifacts/testArtifacts.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/ID/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/ID/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/ID/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Entities/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/PresidentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/RegisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/DepartmentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/HomeWorkDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MeetingDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/PresidentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/RegisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/DepartmentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/HomeWorkService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MeetingService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/MinisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/PersonService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/PresidentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/RegisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Service/EntityService/UploadedFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Utilities/DAOFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Utilities/HibernateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/Utilities/PageModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/config/properties/databaseConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext-Hibernate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/config/xmls/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/content/jsp/fail.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/content/jsp/logout.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/content/jsp/success.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/asm-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/asm-commons-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/asm-tree-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/cdi-api-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/classmate-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-collections4-4.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-dbcp2-2.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-fileupload-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-lang3-3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/commons-pool2-2.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/el-api-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/freemarker-2.3.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/hibernate-core-5.2.4.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/jandex-2.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/javassist-3.20.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/javax.inject-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/jsr250-api-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/log4j-api-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/log4j-core-2.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/ognl-3.1.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-aop-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-beans-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-context-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-core-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-expression-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-jdbc-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-orm-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-tx-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/spring-web-4.3.6.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-core-2.5.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/testS1S1H_war_exploded/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/ID/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/ID/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/ID/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Entities/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/BaseDAO/BaseDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/HomeWorkDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/PresidentDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/RegisterDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/DepartmentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/HomeWorkDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/MeetingDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/PresidentDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/RegisterDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/DepartmentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/HomeWorkService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/MeetingService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/MemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/MinisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/PersonService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/PresidentService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/RegisterService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Service/EntityService/UploadedFileService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Utilities/DAOFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Utilities/HibernateUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/Utilities/PageModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/action/LoginAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/config/properties/databaseConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/config/xmls/applicationContext-Hibernate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/config/xmls/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/testS1S1H/com/istc/config/xmls/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/IBM_CLUB_WEB/WordOnlineConverterTest$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/IBM_CLUB_WEB/WordOnlineConverterTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Department.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Department.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/HomeWork.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/HomeWork.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Member.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Member.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Minister.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Minister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Person.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Person.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Register.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/Register.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/UploadedFile.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Entities/Entity/UploadedFile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/BaseDAO/BaseDAOImpl.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/BaseDAO/BaseDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/MemberService.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/MemberService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/UploadedFileService.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Service/EntityService/UploadedFileService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Validation/HomeWorkCheck.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/Validation/HomeWorkCheck.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/HomeWorkUploadAction.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/HomeWorkUploadAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/InterviewAction.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/InterviewAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/out/production/IBM_CLUB_WEB/com/istc/action/LoginAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" afterPath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/WordOnlineConverterTest.java" afterPath="$PROJECT_DIR$/tests/WordOnlineConverterTest.java" />
     </list>
-    <ignored path="IBM_CLUB_WEB.iws" />
-    <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,92 +446,13 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="IBM_CLUB_WEB" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="InterviewAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/action/InterviewAction.java">
+    <leaf>
+      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeWorkUploadAction.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/action/HomeWorkUploadAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="e#569#570#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-              <folding>
-                <element signature="e#546#547#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MeetingDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,60 +461,56 @@
       <file leaf-file-name="UploadedFileService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="460">
+              <caret line="59" column="63" lean-forward="false" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordOnlineConverterTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/WordOnlineConverterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2226#2227#0" expanded="true" />
-                <element signature="e#2277#2278#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadedFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java">
+      <file leaf-file-name="UploadedFileDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding>
-                <element signature="e#1622#1623#0" expanded="true" />
-                <element signature="e#1717#1718#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadedFileDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Jsp File" />
-        <option value="package-info" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>not</find>
-      <find>notFound</find>
-      <find>login</find>
-      <find>savePicture</find>
-      <find>interviewees.get(i).</find>
-      <find>interviewees</find>
-      <find>SendMessage</find>
-      <find>ReceiveMessage</find>
-      <find>registers</find>
-      <find>this.departments</find>
-      <find>upload</find>
-      <find>getCan</find>
-      <find>path</find>
-      <find>uploadTime</find>
-      <find>batchsize</find>
-      <find>20</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -188,57 +523,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/istc/action/login.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/LoginActions.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/PersonService.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.java" />
-        <option value="$PROJECT_DIR$/web/js/validation-format.js" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/errorPages/404.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/errorPages/500.jsp" />
-        <option value="$PROJECT_DIR$/src/com/istc/config/xmls/struts.xml" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/errorPages/error.jsp" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/package-info.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/welcome.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/logout.jsp" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/fail.jsp" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.java" />
         <option value="$PROJECT_DIR$/tests/WordOnlineConverterTest.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/WordOnlineConverter.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Interviewee.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Utilities/MemberConverter/IntervieweeToMember.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Utilities/MemberTypeConverter.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/interview.jsp" />
-        <option value="$PROJECT_DIR$/src/com/istc/Utilities/WordOnlineConverter.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/IntervieweeDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Validation/InjectionCheck.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Utilities/ClassTypeConverter.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/IntervieweeDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/IntervieweeService.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/ID/MeetingID.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/HomeWork.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Member.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Register.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Department.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Minister.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/Person.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Validation/HomeWorkCheck.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/HomeWorkUploadAction.java" />
       </list>
     </option>
   </component>
@@ -258,27 +545,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Android</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+    <option name="width" value="1932" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -295,7 +563,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,60 +574,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -472,137 +687,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseDAO" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.14453125" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\jsp" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc\action" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\errorPages" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\js" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc\Validation" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc\config\xmls" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Tomcat Server.istc">
+  <component name="RunManager" selected="Tomcat Server.istc_new">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -660,7 +761,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -792,8 +893,6 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -915,12 +1014,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -936,38 +1029,17 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="WordOnlineConverterTest.test" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="IBM_CLUB_WEB" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WordOnlineConverterTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="istc" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.81" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="false" name="istc_new" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.81" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="IBM_CLUB_WEB:war exploded">
+        <artifact name="IBM_CLUB_WEB_NEW">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_IBM_CLUB_WEB_9" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_IBM_CLUB_WEB_4" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -976,7 +1048,7 @@
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="3242" />
+        <option name="DEBUG_PORT" value="63378" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -1025,146 +1097,73 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="IBM_CLUB_WEB:war exploded" />
+          <artifact name="IBM_CLUB_WEB_NEW" />
         </option>
       </method>
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.WordOnlineConverterTest.test" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.istc" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.istc_new" />
     </list>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d366f211-fee7-4c33-8c73-5b17f9fff70f" name="Default" comment="" />
-      <created>1487838217035</created>
+      <changelist id="dd09bbf0-ad2d-4361-b315-7a3a9c416b6f" name="Default" comment="" />
+      <created>1488333093405</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1487838217035</updated>
-      <workItem from="1487838218890" duration="3225000" />
-      <workItem from="1487844635757" duration="2807000" />
-      <workItem from="1487853059946" duration="3407000" />
-      <workItem from="1487900064845" duration="766000" />
-      <workItem from="1487903043074" duration="6083000" />
-      <workItem from="1487921002093" duration="3205000" />
-      <workItem from="1487942526887" duration="714000" />
-      <workItem from="1487943577182" duration="1221000" />
-      <workItem from="1487947068537" duration="616000" />
-      <workItem from="1487985057788" duration="3386000" />
-      <workItem from="1487988766159" duration="38000" />
-      <workItem from="1487988889648" duration="870000" />
-      <workItem from="1487990159588" duration="2663000" />
-      <workItem from="1488003874543" duration="17065000" />
-      <workItem from="1488157568480" duration="24654000" />
-      <workItem from="1488205107981" duration="6401000" />
+      <updated>1488333093405</updated>
+      <workItem from="1488333095607" duration="1293000" />
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 34m 27s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 35m 02s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 35m 36s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 36m 33s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 37m 04s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 37m 32s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 09h 52m 55s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WordOnlineConverterTest_test - 2017.02.25 at 10h 03m 16s.xml">
-      <configuration name="WordOnlineConverterTest.test" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77128000" />
+    <option name="totallyTimeSpent" value="1293000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1932" height="1092" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973205" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36655948" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25937834" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33118972" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1178,232 +1177,61 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MessageDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/MemberConverter/IntervieweeToMember.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Interviewee.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/PersonDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/PageModel.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/StringBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4011">
-          <caret line="404" column="18" lean-forward="false" selection-start-line="404" selection-start-column="18" selection-end-line="404" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/WordOnlineConverter.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/interview.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="260" column="27" lean-forward="false" selection-start-line="260" selection-start-column="27" selection-end-line="260" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/ClassTypeConverter.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/IntervieweeDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/PersonDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/IntervieweeService.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/IntervieweeDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/ID/MeetingID.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="303" column="46" lean-forward="false" selection-start-line="303" selection-start-column="46" selection-end-line="303" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Register.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/ID/HomeWorkID.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/HomeWork.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/President.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Person.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Minister.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Message.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Member.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Meeting.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Department.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/io/FileOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="193" column="53" lean-forward="false" selection-start-line="193" selection-start-column="47" selection-end-line="193" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/io/OutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/config/xmls/applicationContext-Hibernate.xml" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/config/properties/databaseConfig.properties" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/DAOFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/HibernateUtils.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/InjectionCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/WordOnlineConverterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/HomeWorkCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="37" column="63" lean-forward="true" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="452" column="18" lean-forward="false" selection-start-line="452" selection-start-column="18" selection-end-line="452" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="1924" column="18" lean-forward="false" selection-start-line="1924" selection-start-column="18" selection-end-line="1924" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/InterviewAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="e#1622#1623#0" expanded="true" />
-            <element signature="e#1717#1718#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2226#2227#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MeetingDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MemberDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        <state relative-caret-position="196">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/UploadedFileDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        <state relative-caret-position="200">
+          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/UploadedFileDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="59" column="63" lean-forward="false" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/WordOnlineConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
           <folding>
-            <element signature="e#546#547#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/HomeWorkUploadAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,20 +1240,12 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor>
-            <show-content>
-              <type id="artifact" />
-              <type id="jpa-descriptors" />
-              <type id="library" />
-              <type id="javaee-facet-resources" />
-            </show-content>
-          </artifact-editor>
-          <last-edited>IBM_CLUB_WEB:war exploded</last-edited>
+          <artifact-editor />
+          <last-edited>IBM_CLUB_WEB_NEW</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1433,7 +1253,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Struts 2 (IBM_CLUB_WEB)|Struts 2</last-edited>
+          <last-edited>Web (IBM_CLUB_WEB)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1468,12 +1288,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>IBM_CLUB_WEB</last-edited>
+          <last-edited>Web|IBM_CLUB_WEB</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1493,7 +1312,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>POI</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -4,54 +4,6 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/web.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded" relative="/" />
-        </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/src" />
-        </sourceRoots>
-      </configuration>
-    </facet>
-    <facet type="web" name="Web2">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/web.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded" relative="/" />
-        </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/src" />
-        </sourceRoots>
-      </configuration>
-      <facet type="Struts2" name="Struts 2">
-        <configuration>
-          <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/src/struts.xml</file>
-            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-config-browser-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-convention-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-core-2.5.5.jar!/struts-default.xml</file>
-            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-core-2.5.5.jar!/struts-default.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-core-2.5.5.jar!/struts-default.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-json-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-json-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar!/struts-plugin.xml</file>
-          </fileset>
-          <propertiesKeys disabled="false" />
-        </configuration>
-      </facet>
-    </facet>
-    <facet type="web" name="Web3">
-      <configuration>
-        <descriptors>
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
@@ -60,22 +12,6 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src" />
         </sourceRoots>
-      </configuration>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/out/artifacts/testS1S1H_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext-Hibernate.xml</file>
-          <file>file://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/out/artifacts/IBM_CLUB_WEB_war_exploded/WEB-INF/classes/com/istc/config/xmls/applicationContext-Hibernate.xml</file>
-          <file>file://$MODULE_DIR$/out/production/testS1S1H/com/istc/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/out/production/testS1S1H/com/istc/config/xmls/applicationContext-Hibernate.xml</file>
-          <file>file://$MODULE_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/out/production/IBM_CLUB_WEB/com/istc/config/xmls/applicationContext-Hibernate.xml</file>
-          <file>file://$MODULE_DIR$/src/com/istc/config/xmls/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/com/istc/config/xmls/applicationContext-Hibernate.xml</file>
-        </fileset>
       </configuration>
     </facet>
   </component>
@@ -88,18 +24,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="lib1" level="project" />
-    <orderEntry type="library" name="lib2" level="project" />
-    <orderEntry type="library" name="POI" level="project" />
-    <orderEntry type="module-library" scope="TEST">
-      <library name="JUnit5">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/junit/lib/junit-jupiter-api-5.0.0-M3.jar!/" />
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/junit/lib/opentest4j-1.0.0-M1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>

@@ -9,7 +9,7 @@ import org.apache.poi.xwpf.converter.core.FileURIResolver;
 import org.apache.poi.xwpf.converter.xhtml.XHTMLConverter;
 import org.apache.poi.xwpf.converter.xhtml.XHTMLOptions;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -86,7 +86,7 @@ public class WordOnlineConverterTest {
             }  
         }
     }
-    @Test
+//    @Test
     public void test(){
         try {
             canExtractImage("D:\\testFrameWork.docx","docx");
