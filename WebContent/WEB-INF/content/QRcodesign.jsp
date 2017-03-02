@@ -16,7 +16,8 @@
 <div id="qrcode"></div>
 </body>
 <script>
+    alert("请各位部长注意，签到时务必保证网络畅通！");
     refreshQRcode();
-    var doRefresh=window.setInterval(refreshQRcode,10000);
+    window.setInterval(refreshQRcode,10000);
 </script>
 </html>

@@ -23,10 +23,11 @@ if(session.getAttribute("infofromAction2jsp")!=null){
   
   <body>
     欢迎，<%=((Person)session.getAttribute("personInfo")).getID()%> <br>
-    <a href="fileupload">上传文件测试</a><br/>
+    <a href="fileupload" target="_blank">上传文件测试</a><br/>
     <a href="intervieweeGet" target="_blank">面试功能测试</a><br/>
     <a href="fetchRestPerson" target="_blank">手动签到</a><br>
     <a href="QRcodesign" target="_blank">开始扫码签到</a><br>
+    <a href="MemberMaintenance?dept=1" target="_blank">人员管理测试</a><br>
     <a href="Logout">登出</a>
   </body>
 </html>

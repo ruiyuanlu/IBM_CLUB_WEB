@@ -50,7 +50,6 @@ function jsonSerialize(json,success,url){
         $.each(json.actionErrors,function(index,data){  
             $("#errorMessages").append(data);
         });
-        $("[name='password']").val("");
         return;  
     }  
     if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError

@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * Created by Morn Wu on 2017/2/23.
  */
-@AllowedMethods({"mainpage","login","register","error","exit","welcome","fileupload","QRcodesign"})
+@AllowedMethods({"mainpage","login","register","error","exit","welcome","fileupload","QRcodesign","MemberMaintenance"})
 public class RedirectAction extends ActionSupport implements SessionAware,ServletRequestAware,ServletResponseAware {
 
     Map<String, Object> session;
@@ -96,6 +96,11 @@ public class RedirectAction extends ActionSupport implements SessionAware,Servle
     @Action(value="QRcodesign", results={@Result(name="QRcodesign",location="QRcodesign.jsp")})
     public String QRcodesign() {
         return "QRcodesign";
+    }
+
+    @Action(value="MemberMaintenance", results={@Result(name="MemberMaintenance",location="membermaintenance.jsp")})
+    public String memberMaintenance() {
+        return "MemberMaintenance";
     }
 
     @Override

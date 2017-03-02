@@ -16,6 +16,7 @@ import com.istc.bean.Person;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
+import org.apache.struts2.json.annotations.JSON;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -159,13 +160,15 @@ public class LoginAction extends ActionSupport implements ServletResponseAware{
 			tokenCheck();
 		}
 	}
-	
+
+	@JSON(serialize = false)
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
+	@JSON(serialize = false)
 	public String getPassword() {
 		return password;
 	}
@@ -180,6 +183,7 @@ public class LoginAction extends ActionSupport implements ServletResponseAware{
 	}
 	@Override
 	public void setServletResponse(HttpServletResponse httpServletResponse) {this.response=httpServletResponse;}
+	@JSON(serialize = false)
 	public String getRemember() {return remember;}
 	public void setRemember(String remember) {this.remember = remember;}
 }

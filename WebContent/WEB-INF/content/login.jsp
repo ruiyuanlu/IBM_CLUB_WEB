@@ -11,10 +11,11 @@ if(session.getAttribute("infofromAction2jsp")!=null){
 
 <html>
 <head>  
-<style type="text/css">  
-    .errorLabel{color: red;}  
-</style>
-<script type="text/javascript" src="js/validation-format.js"></script>
+	<style type="text/css">
+   		.errorLabel{color: red;}
+	</style>
+	<script type="text/javascript" src="js/validation-format.js"></script>
+	<title>登录</title>
 </head>
   
   <body>

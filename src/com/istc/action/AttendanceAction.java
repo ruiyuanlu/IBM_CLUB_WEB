@@ -42,7 +42,6 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
     public String qrcodeSign(){
         signtoken= TokenCheck.generateNewToken();
         System.out.println("token变化："+signtoken);
-        this.addActionMessage(signtoken);
         return INPUT;
     }
 
@@ -59,7 +58,7 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
             int restmembersize=deptmember.size();
             for (int i=0;i<restmembersize;i++){
                 //根据获得的situation相关信息写入数据库相应的签到对象
-                //Situation有3种值：attend（出席），absent（缺席），leave（请假），late（迟到）
+                //Situation有4种值：attend（出席），absent（缺席），leave（请假），late（迟到）
                 String situation=(String) request.getParameter(deptmember.get(deptmember.size()-1).getID());
                 System.out.println(situation);
                 deptmember.remove(deptmember.get(deptmember.size()-1));
@@ -127,4 +126,7 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
         this.session=arg0;
     }
 
+    public static String getSigntoken() {
+        return signtoken;
+    }
 }
