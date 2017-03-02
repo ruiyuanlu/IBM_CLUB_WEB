@@ -12,6 +12,6 @@
 </head>
 <body>
 这里是主页
-<a href="loginPage">登陆</a>
+<a href="loginRedirect">登陆</a>
 </body>
 </html>

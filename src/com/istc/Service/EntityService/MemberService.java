@@ -22,10 +22,11 @@ public class MemberService {
     }
 
     public Member get(Member member){
+        if(member == null)return null;
         return memberDAO.get(member);
     }
 
     public boolean exist(Member member){
-        return get(member) != null;
+        return member == null ? false : get(member) != null;
     }
 }

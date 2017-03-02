@@ -1,6 +1,6 @@
 package com.istc.Utilities;
 
-import org.apache.struts2.dispatcher.SessionMap;
+import java.util.Map;
 
 /**
  * Created by lurui on 2017/3/1 0001.
@@ -28,12 +28,13 @@ public class TokenUtils {
      * 如果 Session 中 token 值与传入 token 不同则说明是重复提交
      * @param session 当前会话
      * @param token 当前的 token
-     * @return true 如果 session 或 token 为 null
+     * @return false 如果 session 或 token 为 null
      * @return true 如果 session 中的 token 与传入的 token 不相等
      * @return false 如果 session 和 token 均不为空且 session 中的 token 与传入的 token 相等
      */
-    public boolean isResubmit(SessionMap<String, Object> session, String token){
-        return session == null || token == null ? true : !token.equals((String)session.get(tokenKey));
+    public boolean isResubmit(Map session, String token){
+        System.out.println("token in isResubmit:"+session.get(tokenKey));
+        return token != null && session != null && !token.equals((String)session.get(tokenKey));
     }
 
     public String generateNewToken(){

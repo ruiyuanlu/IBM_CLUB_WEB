@@ -8,12 +8,15 @@ import com.istc.Service.EntityService.MemberService;
 import com.istc.Utilities.CookieUtils;
 import com.istc.Utilities.TokenUtils;
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Result;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -23,8 +26,10 @@ import java.util.Map;
 /**
  * 用于实现页面的重定向
  */
+@Controller("redirectAction")
+@Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-//@AllowedMethods({"mainpage","welcome","login","register","fileupload"})
+@AllowedMethods({"mainpage","success","welcome","loginRedirect","register","fileupload"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -39,36 +44,47 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
     private HttpServletRequest request;
     private HttpServletResponse response;
 
-    @Action(value="welcome", results={@Result(name="welcome",location="jsp/welcome.jsp")})
+    public RedirectAction(){
+        System.out.println("进入RedirectAction");
+    }
+
+    @Action(value = SUCCESS, results = {@Result(name = "success", location = "jsp/success.jsp")})
+    public String success(){
+        return SUCCESS;
+    }
+
+    @Action(value="welcome", results={@Result(name="welcome", location="jsp/welcome.jsp")})
     public String welcome() {
         if(session.get(tokenKey) != null)
             session.remove(tokenKey);
         return "welcome";
     }
 
-    @Action(value="mainpage", results={@Result(name="mainpage",location="mainPage.jsp")})
+    @Action(value="mainpage", results={@Result(name="mainpage", location="jsp/mainPage.jsp")})
     public String mainpage() {
+        System.out.println("进入mainpage转发");
         if(isLogin())
             session.remove(tokenKey);// 用完后删除token
         return "mainpage";
     }
 
-    @Action(value="login", results={
-                    @Result(name="login",location="login.jsp"),
-                    @Result(name = "mainpage",location = "mainPage.jsp")
+    @Action(value="loginRedirect", results={
+                    @Result(name="loginRedirect", location="jsp/loginPage.jsp"),
+                    @Result(name = "mainpage", location = "jsp/mainPage.jsp")
             })
-    public String login() {
+    public String loginRedirect() {
+        System.out.println("进入转发的login");
         if (isLogin()){
             System.out.println("重复登录，直接进入主页");
             return "mainpage";
         }
-        session.put("token", TokenUtils.getInstance().generateNewToken());
-        return "login";
+        session.put(tokenKey, TokenUtils.getInstance().generateNewToken());
+        return "loginRedirect";
     }
 
     @Action(value="register", results={
                     @Result(name="register",location="register.jsp"),
-                    @Result(name = "mainpage",location = "mainPage.jsp")
+                    @Result(name = "mainpage",location = "jsp/mainPage.jsp")
             })
     public String register() {
         if (isLogin()){
@@ -94,9 +110,11 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
      * 防止用户在登录的情况下仍然访问登录和注册页面
      */
     private boolean isLogin(){
+        System.out.println("    进入isLogin");
         if(session.get(loginKey) != null) return true;
         CookieUtils cookieUtil = CookieUtils.getInstance();
         Member member = cookieUtil.getMemberIDAndPasswordFromCookie(request);
+        System.out.println("    member 是 "+member);
         if (memberService.exist(member)){
             cookieUtil.updateCookieValidTime(request,response);
             session.put(loginKey,member);
