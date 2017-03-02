@@ -8,7 +8,6 @@ import com.istc.Service.EntityService.MemberService;
 import com.istc.Utilities.CookieUtils;
 import com.istc.Utilities.TokenUtils;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -24,7 +23,6 @@ import java.util.Map;
 /**
  * 用于实现页面的重定向
  */
-@ParentPackage("all")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
 //@AllowedMethods({"mainpage","welcome","login","register","fileupload"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
@@ -90,8 +88,6 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
     public String QRcodesign() {
         return "QRcodesign";
     }
-
-
 
     /**
      * 判断用户登陆状态
