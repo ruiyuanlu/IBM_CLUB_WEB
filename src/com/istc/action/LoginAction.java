@@ -8,6 +8,7 @@ import com.istc.validation.InjectionCheck;
 import com.istc.validation.TokenCheck;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -28,13 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  * 该session在浏览网站的过程中全程存在，代表用户处于登录状态。<br>
  */
 @ParentPackage("needajax")
-@Action(
-		value="Login",
-        results={
-				@Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
-				@Result(name="invalid.token", location="login.jsp")
-        }
-)
+@AllowedMethods({"memberLogin"})
 public class LoginAction extends ActionSupport implements ServletResponseAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
@@ -55,8 +50,13 @@ public class LoginAction extends ActionSupport implements ServletResponseAware{
 	 * 通过用户名和密码检验身份并产生session
 	 * @throws Exception 
 	 */
-
-	public String execute(){
+	@Action(
+			value="memberLogin",
+			results={
+					@Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+			}
+	)
+	public String memberLogin(){
 		tokenCheck();
 
 		//在这里嵌入数据库相关代码
@@ -138,8 +138,7 @@ public class LoginAction extends ActionSupport implements ServletResponseAware{
 		session.put("token", curtoken);
 	}
 
-	@Override
-	public void validate(){
+	public void validateMemberLogin(){
 		if (id==null || id.equals("")) {
 			addFieldError("id", "请输入学号！");
 			passed=false;

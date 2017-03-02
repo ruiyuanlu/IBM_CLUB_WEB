@@ -43,7 +43,7 @@
 	<package name="needajax" extends="json-default">
 		<interceptors>
             <interceptor name="loginInteceptor" class="com.istc.validation.SessionCheck" >
-                <param name="includeMethods">fetchRestPerson,manualSign</param>
+                <param name="excludeMethods">memberLogin,memberRegister</param>
             </interceptor>
             <interceptor-stack name="ajaxStack">
             	<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>

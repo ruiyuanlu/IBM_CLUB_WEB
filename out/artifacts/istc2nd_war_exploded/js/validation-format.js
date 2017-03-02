@@ -16,7 +16,7 @@ function getRegisterValidation(){
     //$("[name='repassword']").val(rpwEncrypt);
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Register",$("#register").serialize(), function(json) {  
+    $.post("memberRegister",$("#register").serialize(), function(json) {
     	jsonSerialize(json,"注册成功！单击确定按钮返回首页。","mainpage");
     });
 }
@@ -35,7 +35,7 @@ function getLoginValidation(){
     }
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Login",$("#login").serialize(), function(json) {
+    $.post("memberLogin",$("#login").serialize(), function(json) {
     	jsonSerialize(json,"登录成功！","mainpage");
     });
 }
@@ -51,7 +51,7 @@ function jsonSerialize(json,success,url){
             $("#errorMessages").append(data);
         });
         return;  
-    }  
+    }
     if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
         $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个  
             $("#error_"+index).html(value[0]);  

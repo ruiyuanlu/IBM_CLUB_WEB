@@ -11,6 +11,7 @@ import java.util.Map;
 import com.istc.bean.Person;
 import com.istc.validation.*;
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
@@ -21,12 +22,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * 注册
  */
 @ParentPackage("needajax")
-@Action(
-		value="Register", 
-        results={
-				@Result(name="input", type="json", params={"ignoreHierarchy", "false"})
-        }
-) 
+@AllowedMethods({"memberRegister"})
 public class RegisterAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private String id;
@@ -51,8 +47,14 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		// TODO Auto-generated method stub
 		this.session=arg0;
 	}
-	@Override
-	public String execute() {
+
+    @Action(
+            value="memberRegister",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"})
+            }
+    )
+    public String memberRegister() {
 		tokenCheck();
 		//以下是测试代码
 		System.out.println(birthday);
@@ -92,9 +94,8 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 
 	}
 	
-	
-	@Override
-	public void validate(){
+
+	public void validateMemberRegister(){
 		System.out.println("验证器");
 		//
 		if (id==null || id.equals("")) {

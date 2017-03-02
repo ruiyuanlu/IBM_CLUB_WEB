@@ -103,6 +103,11 @@ public class RedirectAction extends ActionSupport implements SessionAware,Servle
         return "MemberMaintenance";
     }
 
+    @Action(value="personInfoMaintenance", results={@Result(name="personInfoMaintenance",location="personinfomanagement.jsp")})
+    public String personInfoMaintenance() {
+        return "personInfoMaintenance";
+    }
+
     @Override
     public void setServletRequest(HttpServletRequest httpServletRequest) {
         this.request=httpServletRequest;
