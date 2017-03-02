@@ -5,7 +5,6 @@ package com.istc.Utilities;
  */
 
 import com.istc.Entities.Entity.Member;
-import com.sun.deploy.net.HttpResponse;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -17,7 +17,10 @@ public class Person implements Serializable{
     private Integer age;
     @Column(name = "name",length = 45)
     protected String name;
+    @Lob
     protected String description;
+    @Column(length = 60)
+    protected String password;
     @Column(name = "qq",length = 20)
     protected String QQ;
     @Column(name = "phone",length = 20)
@@ -63,6 +66,14 @@ public class Person implements Serializable{
     }
     private int getPeopleVersion() {
         return peopleVersion;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     private void setPeopleVersion(int peopleVersion) {

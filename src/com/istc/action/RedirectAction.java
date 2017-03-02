@@ -28,6 +28,7 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
     private static final long serialVersionUID = 186336L;
 
     private static final String loginKey = "member";
+    private static final String tokenKey = "token";
 
     private Map<String, Object> session;
     private HttpServletRequest request;
@@ -42,7 +43,7 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
     public String mainpage() {
         try{
             directLogin();
-            session.remove("token");
+            session.remove(tokenKey);// 用完后删除
         }
         finally {
             return "mainpage";
@@ -58,21 +59,13 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
      * 防止用户在登录的情况下仍然访问登录和注册页面
      */
     private boolean directLogin(){
-        try {
-            if(session.get(loginKey)!=null){
-                return true;
-            }
-            else {
-                if (CookieUtils.checkCookie(request)){
-                    response=CookieUtils.updateCookie(request,response);
-                    System.out.println("cookie更新");
-                    session.put("personInfo",CookieUtils.getPersonInCookie(request));
-                    return true;
-                }
-            }
-        }
-        catch (Exception e){
-            return  false;
+        if(session.get(loginKey)!=null) return true;
+        CookieUtils cookieUtil = CookieUtils.getInstance();
+        if (cookieUtil.checkCookie(request)){
+            response=CookieUtils.updateCookie(request,response);
+            System.out.println("cookie更新");
+            session.put("personInfo",CookieUtils.getPersonInCookie(request));
+            return true;
         }
         return false;
     }
