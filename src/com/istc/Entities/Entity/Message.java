@@ -7,6 +7,7 @@ package com.istc.Entities.Entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.*;
 
 /**
  * 站内消息实体类
@@ -20,7 +21,7 @@ public class Message implements Serializable{
     @OneToOne
     private Member sender;
     @OneToMany
-    private Member receiver;
+    private Set<Member> receivers;
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar sendTime;
     @Lob
@@ -46,12 +47,22 @@ public class Message implements Serializable{
         this.messageContentJson = messageContentJson;
     }
 
-    public Member getReceiver() {
-        return receiver;
+    public Set<Member> getReceivers() {
+        return receivers;
     }
 
-    public void setReceiver(Member receiver) {
-        this.receiver = receiver;
+    public void setReceivers(Set<Member> receivers) {
+        this.receivers = receivers;
+    }
+
+    public void addReceiver(Member member){
+        if(this.receivers == null)receivers = new HashSet<>();
+        receivers.add(member);
+    }
+
+    public void deleteReceiver(Member member){
+        if(this.receivers == null) return;
+        this.receivers.remove(member);
     }
 
     public Member getSender() {
@@ -75,7 +86,7 @@ public class Message implements Serializable{
         return "Message{" +
                 "id=" + id +
                 ", sender=" + sender +
-                ", receiver=" + receiver +
+                ", receivers=" + receivers +
                 ", sendTime=" + sendTime +
                 ", messageContentJson=" + messageContentJson +
                 '}';
@@ -90,7 +101,7 @@ public class Message implements Serializable{
 
         if (id != null ? !id.equals(message.id) : message.id != null) return false;
         if (sender != null ? !sender.equals(message.sender) : message.sender != null) return false;
-        if (receiver != null ? !receiver.equals(message.receiver) : message.receiver != null) return false;
+        if (receivers != null ? !receivers.equals(message.receivers) : message.receivers != null) return false;
         if (sendTime != null ? !sendTime.equals(message.sendTime) : message.sendTime != null) return false;
         return messageContentJson != null ? messageContentJson.equals(message.messageContentJson) : message.messageContentJson == null;
 
@@ -100,7 +111,7 @@ public class Message implements Serializable{
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (sender != null ? sender.hashCode() : 0);
-        result = 31 * result + (receiver != null ? receiver.hashCode() : 0);
+        result = 31 * result + (receivers != null ? receivers.hashCode() : 0);
         result = 31 * result + (sendTime != null ? sendTime.hashCode() : 0);
         result = 31 * result + (messageContentJson != null ? messageContentJson.hashCode() : 0);
         return result;

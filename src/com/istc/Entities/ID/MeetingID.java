@@ -19,6 +19,15 @@ public class MeetingID implements java.io.Serializable{
 
     public MeetingID() {
     }
+    public MeetingID(Integer deptID, Integer times){
+        this.times = times;
+        this.dept = new Department(deptID);
+    }
+
+    public MeetingID(Department deptID, int times) {
+        this.dept = deptID;
+        this.times = times;
+    }
 
     @Override
     public String toString() {
@@ -26,11 +35,6 @@ public class MeetingID implements java.io.Serializable{
                 "dept=" + dept +
                 ", times=" + times +
                 '}';
-    }
-
-    public MeetingID(Department deptID, int times) {
-        this.dept = deptID;
-        this.times = times;
     }
 
     public Department getDept() {
