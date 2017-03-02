@@ -1,20 +1,19 @@
-package com.istc.Entities.Entity;
+package Entities.Entity;
 
-import com.istc.Entities.ID.HomeWorkID;
+import Entities.ID.HomeWorkID;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.*;
 import java.util.Calendar;
 
 @Entity
-public class HomeWork implements Serializable{
+public class HomeWork {
     @Id
     private HomeWorkID homeWorkID;
     @Basic
     private int fileID;
-    @Column(length = 603)
-    private String homeWorkRequirement;
+    @Lob
+    private Clob homeWorkRequirement;
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar beginTime;
     @Temporal(value = TemporalType.TIMESTAMP)
@@ -25,6 +24,10 @@ public class HomeWork implements Serializable{
 
     public HomeWork() {
         this.homeWorkID = new HomeWorkID();
+    }
+
+    public HomeWork(Department dept, Member member, int times) {
+        this.homeWorkID = new HomeWorkID(dept, member, times);
     }
 
     private int getHomeWorkVersion() {
@@ -43,12 +46,12 @@ public class HomeWork implements Serializable{
         this.homeWorkID.setHomeWorkSubmitter(homeWorkSubmitter);
     }
 
-    public Department getDeptID() {
-        return homeWorkID.getDepartment();
+    public Department getDept() {
+        return homeWorkID.getDept();
     }
 
-    public void setDeptID(Department deptID) {
-        this.homeWorkID.setDepartment(deptID);
+    public void setDept(Department dept) {
+        this.homeWorkID.setDept(dept);
     }
 
     public HomeWorkID getHomeWorkID() {
@@ -79,11 +82,11 @@ public class HomeWork implements Serializable{
         this.fileID = fileID;
     }
 
-    public String getHomeWorkRequirement() {
+    public Clob getHomeWorkRequirement() {
         return homeWorkRequirement;
     }
 
-    public void setHomeWorkRequirement(String homeWorkRequirement) {
+    public void setHomeWorkRequirement(Clob homeWorkRequirement) {
         this.homeWorkRequirement = homeWorkRequirement;
     }
 
@@ -103,43 +106,4 @@ public class HomeWork implements Serializable{
         this.endTime = endTime;
     }
 
-    @Override
-    public String toString() {
-        return "HomeWork{" +
-                "beginTime=" + beginTime +
-                ", homeWorkID=" + homeWorkID +
-                ", fileID=" + fileID +
-                ", homeWorkRequirement=" + homeWorkRequirement +
-                ", endTime=" + endTime +
-                ", homeWorkVersion=" + homeWorkVersion +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof HomeWork)) return false;
-
-        HomeWork homeWork = (HomeWork) o;
-
-        if (fileID != homeWork.fileID) return false;
-        if (homeWorkVersion != homeWork.homeWorkVersion) return false;
-        if (homeWorkID != null ? !homeWorkID.equals(homeWork.homeWorkID) : homeWork.homeWorkID != null) return false;
-        if (homeWorkRequirement != null ? !homeWorkRequirement.equals(homeWork.homeWorkRequirement) : homeWork.homeWorkRequirement != null)
-            return false;
-        if (beginTime != null ? !beginTime.equals(homeWork.beginTime) : homeWork.beginTime != null) return false;
-        return endTime != null ? endTime.equals(homeWork.endTime) : homeWork.endTime == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = homeWorkID != null ? homeWorkID.hashCode() : 0;
-        result = 31 * result + fileID;
-        result = 31 * result + (homeWorkRequirement != null ? homeWorkRequirement.hashCode() : 0);
-        result = 31 * result + (beginTime != null ? beginTime.hashCode() : 0);
-        result = 31 * result + (endTime != null ? endTime.hashCode() : 0);
-        result = 31 * result + homeWorkVersion;
-        return result;
-    }
 }

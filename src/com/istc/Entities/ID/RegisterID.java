@@ -1,9 +1,10 @@
-package com.istc.Entities.ID;
+package Entities.ID;
 
-import com.istc.Entities.Entity.Department;
+import Entities.Entity.Department;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
 
-import javax.persistence.Embeddable;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * Created by lurui on 2016/11/21 0021.
@@ -11,10 +12,17 @@ import javax.persistence.OneToOne;
 @Embeddable
 public class RegisterID implements java.io.Serializable{
     private int times;
-    @OneToOne
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @Cascade(CascadeType.SAVE_UPDATE)
     private Department department;
 
     public RegisterID(){
+    }
+
+    public RegisterID(Department department, int times) {
+        this.department = department;
+        this.times = times;
     }
 
     public Department getDepartment() {
@@ -50,13 +58,5 @@ public class RegisterID implements java.io.Serializable{
         int result = times;
         result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "RegisterID{" +
-                "department=" + department +
-                ", times=" + times +
-                '}';
     }
 }
