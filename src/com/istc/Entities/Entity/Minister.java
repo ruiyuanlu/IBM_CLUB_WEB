@@ -1,4 +1,4 @@
-package Entities.Entity;
+package com.istc.Entities.Entity;
 
 import org.hibernate.annotations.*;
 import org.hibernate.annotations.CascadeType;

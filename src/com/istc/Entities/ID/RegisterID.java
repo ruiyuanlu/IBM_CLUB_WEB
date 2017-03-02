@@ -1,6 +1,6 @@
-package Entities.ID;
+package com.istc.Entities.ID;
 
-import Entities.Entity.Department;
+import com.istc.Entities.Entity.Department;
 import org.hibernate.annotations.*;
 import org.hibernate.annotations.CascadeType;
 

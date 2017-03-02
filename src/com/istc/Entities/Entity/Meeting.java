@@ -1,7 +1,6 @@
-package Entities.Entity;
+package com.istc.Entities.Entity;
 
-import Entities.ID.MeetingID;
-import org.hibernate.annotations.Cascade;
+import com.istc.Entities.ID.MeetingID;
 
 import javax.persistence.*;
 
@@ -10,7 +9,7 @@ public class Meeting {
 
     @Id
     private MeetingID meetingID;
-    @Basic
+    @Lob
     private String meetingContent;
     private String location;
 

@@ -1,4 +1,4 @@
-package Entities.Entity;
+package com.istc.Entities.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;

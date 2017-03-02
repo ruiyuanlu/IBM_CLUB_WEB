@@ -1,6 +1,6 @@
-package Entities.Entity;
+package com.istc.Entities.Entity;
 
-import Entities.ID.RegisterID;
+import com.istc.Entities.ID.RegisterID;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;

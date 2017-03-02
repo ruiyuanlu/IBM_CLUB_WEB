@@ -1,17 +1,13 @@
-package Entities.Entity;
+package com.istc.Entities.Entity;
 
 
-import com.sun.istack.internal.NotNull;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import java.sql.Clob;
 import java.util.Calendar;
-import java.util.HashSet;
 import java.util.Set;
-import org.hibernate.annotations.CascadeType.*;
 
 /**
  * Created by lurui on 2016/11/21 0021.

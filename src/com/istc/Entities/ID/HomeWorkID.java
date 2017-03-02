@@ -1,7 +1,7 @@
-package Entities.ID;
+package com.istc.Entities.ID;
 
-import Entities.Entity.Department;
-import Entities.Entity.Member;
+import com.istc.Entities.Entity.Department;
+import com.istc.Entities.Entity.Member;
 
 import javax.persistence.*;
 

@@ -1,9 +1,9 @@
-package Entities.Entity;
+package com.istc.Entities.Entity;
 
-import Entities.ID.HomeWorkID;
+
+import com.istc.Entities.ID.HomeWorkID;
 
 import javax.persistence.*;
-import java.sql.*;
 import java.util.Calendar;
 
 @Entity
@@ -13,7 +13,7 @@ public class HomeWork {
     @Basic
     private int fileID;
     @Lob
-    private Clob homeWorkRequirement;
+    private String homeWorkRequirement;
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar beginTime;
     @Temporal(value = TemporalType.TIMESTAMP)
@@ -82,11 +82,11 @@ public class HomeWork {
         this.fileID = fileID;
     }
 
-    public Clob getHomeWorkRequirement() {
+    public String getHomeWorkRequirement() {
         return homeWorkRequirement;
     }
 
-    public void setHomeWorkRequirement(Clob homeWorkRequirement) {
+    public void setHomeWorkRequirement(String homeWorkRequirement) {
         this.homeWorkRequirement = homeWorkRequirement;
     }
 
