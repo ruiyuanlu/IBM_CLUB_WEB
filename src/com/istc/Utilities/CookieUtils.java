@@ -76,6 +76,13 @@ public class CookieUtils {
         return member;
     }
 
+    public void updateCookieValidTime(HttpServletRequest request, HttpServletResponse response){
+        if(request == null || response == null)return;
+        Cookie[] cookies = request.getCookies();
+        if(cookies == null || cookies.length <= 0)return;
+        updateValidTime(cookies, response, ValidTime, id, password);
+    }
+
     /**
      * 更新 cookie 的有效期，此方法不可为 public
      * 使用此方法前应先检查 cookies 不为 null 或 length == 0
@@ -85,8 +92,8 @@ public class CookieUtils {
      */
     private void updateValidTime(Cookie[] cookies, HttpServletResponse response, int validTime, String... cookieNames){
         for(Cookie cookie: cookies)
-            for(String attr: cookieNames)
-                if(attr.equals(cookie.getName())){
+            for(String name: cookieNames)
+                if(name.equals(cookie.getName())){
                     cookie.setMaxAge(validTime);//更新指定 cookie 的有效时间为从现在开始2周
                     response.addCookie(cookie);
                     break;

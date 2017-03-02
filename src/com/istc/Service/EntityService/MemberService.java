@@ -24,4 +24,8 @@ public class MemberService {
     public Member get(Member member){
         return memberDAO.get(member);
     }
+
+    public boolean exist(Member member){
+        return get(member) != null;
+    }
 }

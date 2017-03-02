@@ -3,7 +3,10 @@ package com.istc.action;
 /**
  * Created by lurui on 2017/2/24 0024.
  */
+import com.istc.Entities.Entity.Member;
+import com.istc.Service.EntityService.MemberService;
 import com.istc.Utilities.CookieUtils;
+import com.istc.Utilities.TokenUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
@@ -13,6 +16,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
@@ -25,6 +29,9 @@ import java.util.Map;
 //@AllowedMethods({"mainpage","welcome","login","register","fileupload"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
+    @Resource(name = "memberService")
+    private MemberService memberService;
+
     private static final long serialVersionUID = 186336L;
 
     private static final String loginKey = "member";
@@ -36,35 +43,67 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
 
     @Action(value="welcome", results={@Result(name="welcome",location="jsp/welcome.jsp")})
     public String welcome() {
+        if(session.get(tokenKey) != null)
+            session.remove(tokenKey);
         return "welcome";
     }
 
-    @Action(value="mainpage", results={@Result(name="mainpage",location="mainpage.jsp")})
+    @Action(value="mainpage", results={@Result(name="mainpage",location="mainPage.jsp")})
     public String mainpage() {
-        try{
-            directLogin();
-            session.remove(tokenKey);// 用完后删除
-        }
-        finally {
-            return "mainpage";
-        }
+        if(isLogin())
+            session.remove(tokenKey);// 用完后删除token
+        return "mainpage";
     }
 
+    @Action(value="login", results={
+                    @Result(name="login",location="login.jsp"),
+                    @Result(name = "mainpage",location = "mainPage.jsp")
+            })
+    public String login() {
+        if (isLogin()){
+            System.out.println("重复登录，直接进入主页");
+            return "mainpage";
+        }
+        session.put("token", TokenUtils.getInstance().generateNewToken());
+        return "login";
+    }
 
+    @Action(value="register", results={
+                    @Result(name="register",location="register.jsp"),
+                    @Result(name = "mainpage",location = "mainPage.jsp")
+            })
+    public String register() {
+        if (isLogin()){
+            System.out.println("无需注册，直接进入主页");
+            return "mainpage";
+        }
+        session.put("token", TokenUtils.getInstance().generateNewToken());
+        return "register";
+    }
 
+    @Action(value="fileupload", results={@Result(name="fileupload",location="fileupload.jsp")})
+    public String fileupload() {
+        return "fileupload";
+    }
+
+    @Action(value="QRcodesign", results={@Result(name="QRcodesign",location="QRcodesign.jsp")})
+    public String QRcodesign() {
+        return "QRcodesign";
+    }
 
 
 
     /**
+     * 判断用户登陆状态
      * 防止用户在登录的情况下仍然访问登录和注册页面
      */
-    private boolean directLogin(){
-        if(session.get(loginKey)!=null) return true;
+    private boolean isLogin(){
+        if(session.get(loginKey) != null) return true;
         CookieUtils cookieUtil = CookieUtils.getInstance();
-        if (cookieUtil.checkCookie(request)){
-            response=CookieUtils.updateCookie(request,response);
-            System.out.println("cookie更新");
-            session.put("personInfo",CookieUtils.getPersonInCookie(request));
+        Member member = cookieUtil.getMemberIDAndPasswordFromCookie(request);
+        if (memberService.exist(member)){
+            cookieUtil.updateCookieValidTime(request,response);
+            session.put(loginKey,member);
             return true;
         }
         return false;
