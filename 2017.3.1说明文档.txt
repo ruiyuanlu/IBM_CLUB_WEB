@@ -1,0 +1,8 @@
+在旧版本strutsHibernate分支上，进行了与分支HibernateRebuilded相同重建工作。但是
+    需要在SSH框架下运行。
+    进行的修改：
+    1.将所有为单向关联的关系改为双向。同时去掉了one2many关系中的关系表，改为通过外键关联呢
+    2.将“部门”与“部长”关系改为many2many（原为many2one），可以更自由地修改关系增添对象
+    3.去除实体类中HashCode()中的对类型为Set<>的参数的运算。
+    4.将部分one2many的级联属性由ALL改为SAVE_UPDATE
+    5.修正了Register类与member的关系（为many2many），补全member对register的操作函数

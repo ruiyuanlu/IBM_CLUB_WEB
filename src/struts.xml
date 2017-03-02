@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!--Struts.xml 必须放在src目录下-->
+    <!-- 配置Struts 时如果同时使用 annotation 和 xml 同时使用时不能出现下面这句话
+        <constant name="struts.action.extension" value="do, action, jsp, html"/>
+        否则会有bug
+    -->
+
+    <!-- 以下配置均可以注释掉 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <constant name="struts.convention.classes.reload" value="true"/>
+    <constant name="struts.serve.static.browserCache" value="false"/>
+
+    <!--&lt;!&ndash; 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 &ndash;&gt;-->
+    <constant name="struts.multipart.maxSize" value="1073741824"/>
+
+    <!--全局包-->
+    <package name="all" namespace="/" extends="struts-default">
+        <!--该拦截器栈用于检测session是否合法-->
+        <interceptors>
+            <interceptor name="loginInterceptor" class="com.istc.Validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor">
+                    <param name="excludeMethods">login</param>
+                </interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="loginStack"></default-interceptor-ref>
+        <global-results>
+            <result name="exit">/WEB-INF/content/jsp/logout.jsp</result>
+            <result name="error" type="redirect">/WEB-INF/content/errorPages/error.jsp</result>
+        </global-results>
+    </package>
+
+    <!--Ajax 包-->
+    <package name="ajax" extends="json-default,struts-default">
+        <interceptors>
+            <interceptor-stack name="ajaxStack">
+                <interceptor-ref name="jsonValidationWorkflowStack"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="ajaxStack"/>
+    </package>
+    
+</struts>
