@@ -13,7 +13,5 @@
   
   <body>
     出错啦！<br>
-    错误原因：<br>
-    <s:property value="%{exception.message}"/>
   </body>
 </html>

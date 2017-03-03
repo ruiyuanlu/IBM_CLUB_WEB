@@ -1,1 +1,3 @@
-<% response.sendRedirect("mainpage"); %>
+<script>
+    window.location.assign("mainpage");
+</script>

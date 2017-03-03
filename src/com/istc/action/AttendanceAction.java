@@ -12,6 +12,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,13 +21,14 @@ import java.util.Map;
  * 部长管理考勤信息
  */
 @ParentPackage("needajax")
-@AllowedMethods({"fetchRestPerson", "manualSign", "qrcodeSign"})
+@AllowedMethods({"fetchRestPerson", "manualSignSubmit", "qrcodeSign"})
 public class AttendanceAction extends ActionSupport implements SessionAware,ServletRequestAware {
 
     public static List<Person> deptmember =new ArrayList<Person>();
     Map<String, Object> session;
     public static String signtoken;
     private HttpServletRequest request;
+    private Map<String,Object> jsonresult=new HashMap<String,Object>();
 
 
     static {
@@ -48,12 +50,12 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
 
 
     @Action(
-            value="manualSign",
+            value="manualSignSubmit",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
     )
-    public String manualSign(){
+    public String manualSignSubmit(){
         try {
             System.out.println("人数："+deptmember.size());
             int restmembersize=deptmember.size();
@@ -75,13 +77,13 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
     @Action(
             value="fetchRestPerson",
             results={
-                    @Result(name="input", location = "attendance.jsp"),
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
     )
     public String fetchRestPerson(){
         //这里主要是数据库的代码
         try {
-            session.put("signlist",deptmember);
+            jsonresult.put("deptmember",deptmember);
             if (deptmember.size()==0){
                 addActionError("所有人员的签到状态已经更新完毕！");
             }
@@ -98,21 +100,25 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
         Person curPerson = new Person();
         curPerson.setID("2141601033");
         curPerson.setName("张三");
+        curPerson.setAge(18);
         deptmember.add(curPerson);
 
         curPerson=new Person();
         curPerson.setID("2141601022");
         curPerson.setName("李四");
+        curPerson.setAge(18);
         deptmember.add(curPerson);
 
         curPerson=new Person();
         curPerson.setID("2141601011");
         curPerson.setName("王五");
+        curPerson.setAge(18);
         deptmember.add(curPerson);
 
         curPerson=new Person();
         curPerson.setID("2141601044");
         curPerson.setName("赵六");
+        curPerson.setAge(18);
         deptmember.add(curPerson);
     }
 
@@ -125,6 +131,10 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
     public void setSession(Map<String, Object> arg0) {
         // TODO Auto-generated method stub
         this.session=arg0;
+    }
+
+    public Map<String, Object> getJsonresult() {
+        return jsonresult;
     }
 
     public static String getSigntoken() {

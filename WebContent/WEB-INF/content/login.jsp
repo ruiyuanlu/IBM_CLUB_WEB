@@ -19,7 +19,6 @@ if(session.getAttribute("infofromAction2jsp")!=null){
 </head>
   
   <body>
-  <%=info %>
 	<form id="login" onsubmit="return false;">
 		学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
 	   	密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
