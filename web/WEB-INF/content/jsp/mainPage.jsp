@@ -12,6 +12,7 @@
 </head>
 <body>
 这里是主页
-<a href="loginRedirect">登陆</a>
+<a href="loginRedirect">登陆</a> <br/>
+<a href="registerRedirect">注册</a> <br/>
 </body>
 </html>

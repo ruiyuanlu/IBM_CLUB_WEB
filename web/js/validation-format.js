@@ -3,10 +3,10 @@
 document.write('<script type="text/JavaScript" src="/js/CryptoJS-3.1.2/rollups/sha512.js"></script>');
 document.write('<script type="text/JavaScript" src="/js/jquery-3.1.1.js"></script>');
 
-function getRegisterValidation(){
+function registerValidation(){
     $("#errorMessages").html("");
-    $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Register",$("#register").serialize(), function(json) {  
+    $('.errorLabel').html('').removeClass('errorLabel');
+    $.post("register",$("#register").serialize(), function(json) {
     	jsonSerialize(json,"注册成功！单击确定按钮返回首页。","mainpage");
     });
 }
@@ -20,7 +20,6 @@ function loginValidation(){
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');//删除错误信息
     $.post("login",$("#login").serialize(), function(json) { // post url为login，去login 为 id 的get请求并序列化，调用json解析
-        // jsonSerialize(json,"登录成功！","mainpage");//actio
         jsonSerialize(json,"登录成功！","success");//action
     });
 }
@@ -40,7 +39,7 @@ function jsonSerialize(json, result, url){
     if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
         $.each(json.fieldErrors,function(key, value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个
             $("#error_"+ key).html(value[0]);
-            $("#error_"+ key).addClass("errorLabel");
+            $("#error_"+ key).addClass("errorLabel");//添加错误信息到 DOM 节点中
         });
         return;
     }

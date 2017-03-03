@@ -82,17 +82,17 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         return "loginRedirect";
     }
 
-    @Action(value="register", results={
+    @Action(value="registerRedirect", results={
                     @Result(name="register",location="register.jsp"),
                     @Result(name = "mainpage",location = "jsp/mainPage.jsp")
             })
-    public String register() {
+    public String registerRedirect() {
         if (isLogin()){
             System.out.println("无需注册，直接进入主页");
             return "mainpage";
         }
-        session.put("token", TokenUtils.getInstance().generateNewToken());
-        return "register";
+        session.put(tokenKey, TokenUtils.getInstance().generateNewToken());
+        return "registerRedirect";
     }
 
     @Action(value="fileupload", results={@Result(name="fileupload",location="fileupload.jsp")})
