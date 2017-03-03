@@ -41,48 +41,52 @@
             });
             return;
         }
-        //这儿麻烦前端帮忙在json.jsonresult.deptmember为空的时候判断一下
+        if(json.jsonresult.deptmember.length==0){
+            document.getElementById("signsubmit").disabled=true;
+            alert("当前不可签到！");
+            window.close();
+        }
         var form=document.getElementById("manualSign");
-       for(var i=0;i<json.jsonresult.deptmember.length;i++){
-           var hint = document.createElement("SPAN");
-           form.appendChild(hint);
-           hint.appendChild(document.createTextNode(json.jsonresult.deptmember[i].ID+" "+json.jsonresult.deptmember[i].name+" "));
-           var attendinput = document.createElement("INPUT");
-           var attendhint = document.createElement("SPAN");
-           form.appendChild(attendhint);
-           attendhint.appendChild(document.createTextNode("已到"));
-           attendinput.setAttribute("type","radio");
-           attendinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
-           attendinput.setAttribute("value","attend");
-           form.appendChild(attendinput);
-           var absentinput = document.createElement("INPUT");
-           var absenthint = document.createElement("SPAN");
-           form.appendChild(absenthint);
-           absenthint.appendChild(document.createTextNode("未到"));
-           absentinput.setAttribute("type","radio");
-           absentinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
-           absentinput.setAttribute("value","absent");
-           absentinput.checked = true;
-           form.appendChild(absentinput);
-           var leaveinput = document.createElement("INPUT");
-           var leavehint = document.createElement("SPAN");
-           form.appendChild(leavehint);
-           leavehint.appendChild(document.createTextNode("请假"));
-           leaveinput.setAttribute("type","radio");
-           leaveinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
-           leaveinput.setAttribute("value","leave");
-           form.appendChild(leaveinput);
-           var lateinput = document.createElement("INPUT");
-           var latehint = document.createElement("SPAN");
-           form.appendChild(latehint);
-           latehint.appendChild(document.createTextNode("迟到"));
-           lateinput.setAttribute("type","radio");
-           lateinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
-           lateinput.setAttribute("value","late");
-           form.appendChild(lateinput);
-           var br=document.createElement("BR");
-           form.appendChild(br);
-       }
+        for(var i=0;i<json.jsonresult.deptmember.length;i++){
+            var hint = document.createElement("SPAN");
+            form.appendChild(hint);
+            hint.appendChild(document.createTextNode(json.jsonresult.deptmember[i].ID+" "+json.jsonresult.deptmember[i].name+" "));
+            var attendinput = document.createElement("INPUT");
+            var attendhint = document.createElement("SPAN");
+            form.appendChild(attendhint);
+            attendhint.appendChild(document.createTextNode("已到"));
+            attendinput.setAttribute("type","radio");
+            attendinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
+            attendinput.setAttribute("value","attend");
+            form.appendChild(attendinput);
+            var absentinput = document.createElement("INPUT");
+            var absenthint = document.createElement("SPAN");
+            form.appendChild(absenthint);
+            absenthint.appendChild(document.createTextNode("未到"));
+            absentinput.setAttribute("type","radio");
+            absentinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
+            absentinput.setAttribute("value","absent");
+            absentinput.checked = true;
+            form.appendChild(absentinput);
+            var leaveinput = document.createElement("INPUT");
+            var leavehint = document.createElement("SPAN");
+            form.appendChild(leavehint);
+            leavehint.appendChild(document.createTextNode("请假"));
+            leaveinput.setAttribute("type","radio");
+            leaveinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
+            leaveinput.setAttribute("value","leave");
+            form.appendChild(leaveinput);
+            var lateinput = document.createElement("INPUT");
+            var latehint = document.createElement("SPAN");
+            form.appendChild(latehint);
+            latehint.appendChild(document.createTextNode("迟到"));
+            lateinput.setAttribute("type","radio");
+            lateinput.setAttribute("name",json.jsonresult.deptmember[i].ID);
+            lateinput.setAttribute("value","late");
+            form.appendChild(lateinput);
+            var br=document.createElement("BR");
+            form.appendChild(br);
+        }
     });
 </script>
 </html>

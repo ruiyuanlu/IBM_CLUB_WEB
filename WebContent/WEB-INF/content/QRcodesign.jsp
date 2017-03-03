@@ -16,7 +16,15 @@
 <div id="qrcode"></div>
 </body>
 <script>
-    alert("请各位部长注意，签到时务必保证网络畅通！");
+    $.post("qrcodeSign", function(json) {
+        if (json.jsonresult.allsigned == true) {
+            alert("所有部员已经签到完毕，点确认关闭页面。")
+            window.close();
+        }
+        else {
+            alert("请各位部长注意，签到时务必保证网络畅通！");
+        }
+    })
     refreshQRcode();
     window.setInterval(refreshQRcode,10000);
 </script>

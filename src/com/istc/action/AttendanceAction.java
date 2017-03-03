@@ -84,9 +84,8 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
         //这里主要是数据库的代码
         try {
             jsonresult.put("deptmember",deptmember);
-            if (deptmember.size()==0){
-                addActionError("所有人员的签到状态已经更新完毕！");
-            }
+            if (deptmember.size()==0)
+                jsonresult.put("allsigned","true");
             return INPUT;
         }
         catch (Exception e){

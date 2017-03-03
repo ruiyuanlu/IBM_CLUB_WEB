@@ -23,10 +23,11 @@ function jsonSerialize(json){
         $.each(json.actionErrors,function(index,data){
             alert(data);
             $("[name='manualsign']").val("");
-            window.close();
             return;
         });
     }
+    alert("所有人员的签到信息已经更新完毕！");
+    window.close();
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)

@@ -7,6 +7,10 @@ document.write('<script type="text/JavaScript" src="js/qrcode.js"></script>');
 function refreshQRcode() {
     var url=location.host+"/Sign?tokenfetch=";
     $.post("qrcodeSign", function(json) {
+        if (json.jsonresult.allsigned == true){
+            alert("所有部员已经签到完毕，点确认关闭页面。")
+            window.close();
+        }
         $.each(json.actionMessages,function(index,data){
             var qrcode;
             var token=null;
