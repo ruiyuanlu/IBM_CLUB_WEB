@@ -86,7 +86,9 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
             @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
     })
     public String login() throws Exception{
-        tokenCheck();//validate方法会被执行两次导致token变化，因此只能放在login方法中
+        newToken = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
+        System.out.println("新的token："+newToken);
+
         Member member = (Member) session.get(loginKey);
         if(member == null){
             member = new Member();
@@ -131,18 +133,6 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
         if (!injectionChecker.isValid(password)) {
             addFieldError("password","请不要在输入的信息中包含特殊符号（* ' ; - + / % #）");
         }
-    }
-
-    /**
-     * token检查，避免登陆时的重复提交
-     */
-    public void tokenCheck(){
-        if(tokenUtil.isResubmit(session, token))
-            addFieldError(tokenKey, "请勿重复提交信息哦(●'◡'●)");
-        newToken = tokenUtil.generateNewToken();
-        System.out.println(newToken);
-        session.put(tokenKey, newToken);
-        addActionMessage(newToken);
     }
 
     @Override

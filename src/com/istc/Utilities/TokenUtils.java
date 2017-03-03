@@ -1,5 +1,7 @@
 package com.istc.Utilities;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import java.util.Map;
 
 /**
@@ -37,8 +39,27 @@ public class TokenUtils {
         return token != null && session != null && !token.equals((String)session.get(tokenKey));
     }
 
+    /**
+     * 产生新的 token
+     * @return
+     */
     public String generateNewToken(){
         String digist = String.valueOf(Math.random());
         return Encoder.getInstance().encodeSHA512(digist.getBytes());
+    }
+
+    /**
+     * 通用 token 检查功能，防止表单重复提交
+     * @param action
+     * @param session
+     * @param curToken
+     * @return 检查现有 token，并返回新的 token
+     */
+    public String tokenCheck(ActionSupport action, Map<String, Object> session, String curToken){
+        if(isResubmit(session, curToken))
+            action.addFieldError(tokenKey, "请勿重复提交信息哦(●'◡'●)");
+        String newToken = generateNewToken();
+        session.put(tokenKey, newToken);
+        return newToken;
     }
 }
