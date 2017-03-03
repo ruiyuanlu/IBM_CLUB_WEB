@@ -87,8 +87,6 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
     })
     public String login() throws Exception{
         newToken = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
-        System.out.println("新的token："+newToken);
-
         Member member = (Member) session.get(loginKey);
         if(member == null){
             member = new Member();

@@ -41,7 +41,7 @@ public class TokenUtils {
 
     /**
      * 产生新的 token
-     * @return
+     * @return 新的 token
      */
     public String generateNewToken(){
         String digist = String.valueOf(Math.random());

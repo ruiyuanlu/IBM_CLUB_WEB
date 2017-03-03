@@ -28,7 +28,6 @@ function loginValidation(){
 function jsonSerialize(json, result, url){
     $("[name = 'password']").val("");//清空password和repassword的值
     $("[name = 'repassword']").val("");
-    alert(json.newToken);
     $([name = 'token']).val(json.newToken);//将后端的新的token写入前端, json中的newToken属性定义在loginAction类中
 
     if(json.actionErrors && json.actionErrors.length > 0){//判断有没有actionErrors
