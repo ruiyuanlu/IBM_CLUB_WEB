@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("redirectAction")
 @Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-@AllowedMethods({"mainpage","success","welcome","loginRedirect","register","fileupload"})
+@AllowedMethods({"mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -83,16 +83,17 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
     }
 
     @Action(value="registerRedirect", results={
-                    @Result(name="register",location="register.jsp"),
+                    @Result(name="register",location="jsp/register.jsp"),
                     @Result(name = "mainpage",location = "jsp/mainPage.jsp")
             })
     public String registerRedirect() {
+        System.out.println("进入registerRedirect");
         if (isLogin()){
             System.out.println("无需注册，直接进入主页");
             return "mainpage";
         }
         session.put(tokenKey, TokenUtils.getInstance().generateNewToken());
-        return "registerRedirect";
+        return "register";
     }
 
     @Action(value="fileupload", results={@Result(name="fileupload",location="fileupload.jsp")})

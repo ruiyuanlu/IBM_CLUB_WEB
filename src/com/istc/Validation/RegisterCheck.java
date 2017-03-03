@@ -43,6 +43,7 @@ public class RegisterCheck {
             synchronized (RegisterCheck.class){
                 if(self == null) {
                     self = new RegisterCheck();
+                    typeMethodEnumMap = new EnumMap<Type, Method>(Type.class);
                     Class clazz = RegisterCheck.class;
                     try {
                         for(Type t: Type.values())

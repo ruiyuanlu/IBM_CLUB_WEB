@@ -16,5 +16,4 @@ public interface IntervieweeDAO<E extends Interviewee, PK extends Serializable> 
 
     List<Interviewee> get(String[] ids);
 
-    public boolean exist(String id);
 }

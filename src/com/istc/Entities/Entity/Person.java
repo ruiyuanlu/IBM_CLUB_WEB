@@ -20,7 +20,7 @@ public class Person implements Serializable{
     protected String name;
     @Lob
     protected String description;
-    @Column(length = 60)
+    @Column(length = 128)
     protected String password;
     @Column(name = "qq",length = 20)
     protected String QQ;
@@ -31,7 +31,7 @@ public class Person implements Serializable{
     @Transient
     private final static Boolean MALE = true;
     @Version
-    private int peopleVersion;
+    private Integer peopleVersion;
 
     public Person() {
     }
@@ -65,7 +65,8 @@ public class Person implements Serializable{
                 ", peopleVersion=" + peopleVersion +
                 '}';
     }
-    private int getPeopleVersion() {
+
+    private Integer getPeopleVersion() {
         return peopleVersion;
     }
 
@@ -77,7 +78,7 @@ public class Person implements Serializable{
         this.password = password;
     }
 
-    private void setPeopleVersion(int peopleVersion) {
+    private void setPeopleVersion(Integer peopleVersion) {
         this.peopleVersion = peopleVersion;
     }
 

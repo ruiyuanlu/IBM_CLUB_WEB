@@ -2,6 +2,7 @@ package com.istc.action;
 
 import com.istc.Entities.Entity.Interviewee;
 import com.istc.Service.EntityService.IntervieweeService;
+import com.istc.Service.EntityService.PersonService;
 import com.istc.Utilities.CookieUtils;
 import com.istc.Utilities.Encoder;
 import com.istc.Utilities.TokenUtils;
@@ -35,6 +36,8 @@ public class RegisterAction extends ActionSupport implements SessionAware{
     private static final long serialVersionUID = 187387589387L;
     private static final boolean MALE = true;
 
+    @Resource(name = "personService")
+    private PersonService personService;
     @Resource(name = "intervieweeService")
     private IntervieweeService intervieweeService;
 
@@ -91,7 +94,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         // id 检查
         if (id == null || id.equals(""))addFieldError("id", "请输入您的学号！");
         else if(!registerUtil.isValid(Type.ID, id))addFieldError("id", "您的学号输入有误，请检查并重新输入!");
-        else if(intervieweeService.exist(id))addFieldError("id", "您的学号已经被注册过! 请登录或尝试找回密码!");
+        else if(personService.exist(id))addFieldError("id", "您的学号已经被注册过! 请登录或尝试找回密码!");
         // 密码检查
         else if(password == null || password.equals(""))addFieldError("password", "请输入您的密码!");
         else if(!registerUtil.isValid(Type.PASSWORD, password))addFieldError("password", "密码中只允许使用数字、字母和下划线。长度不小于6位，不大于30位!");

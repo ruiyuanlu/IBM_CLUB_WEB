@@ -49,4 +49,8 @@ public class PersonService {
         return personDAO.exist(person);
     }
 
+    public Boolean exist(String id){
+        return personDAO.exist(id);
+    }
+
 }

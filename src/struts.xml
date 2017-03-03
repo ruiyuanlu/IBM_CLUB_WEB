@@ -30,7 +30,7 @@
             <interceptor name="loginInterceptor" class="com.istc.Validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
             <interceptor-stack name="loginStack">
                 <interceptor-ref name="loginInterceptor">
-                    <param name="excludeMethods">mainpage,loginRedirect</param>
+                    <param name="excludeMethods">mainpage, loginRedirect, registerRedirect</param>
                 </interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>
             </interceptor-stack>
