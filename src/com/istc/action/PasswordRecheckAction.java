@@ -26,6 +26,7 @@ public class PasswordRecheckAction extends ActionSupport implements SessionAware
             }
     )
     public String recheck(){
+        System.out.println(redirecttarget);
         if (password.equals("456789"))
             return SUCCESS;
         else
@@ -51,5 +52,6 @@ public class PasswordRecheckAction extends ActionSupport implements SessionAware
     @Override
     public void setSession(Map<String, Object> map) {
         redirecttarget=(String) map.get("redirecttarget");
+        map.remove("redirecttarget");
     }
 }

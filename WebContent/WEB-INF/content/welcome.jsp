@@ -27,8 +27,8 @@ if(session.getAttribute("infofromAction2jsp")!=null){
     <a href="intervieweeGet" target="_blank">面试功能测试</a><br/>
     <a href="fetchRestPerson" target="_blank">手动签到</a><br>
     <a href="QRcodesign" target="_blank">开始扫码签到</a><br>
-    <a href="MemberMaintenance?dept=1" target="_blank">人员管理测试</a><br>
-    <a href="personInfoMaintenance" target="_blank">用户信息管理测试</a><br>
+    <a href="membermaintenance?dept=1" target="_blank">人员管理测试</a><br>
+    <a href="personinfomanagement" target="_blank">用户信息管理测试</a><br>
     <a href="Logout">登出</a>
   </body>
 </html>

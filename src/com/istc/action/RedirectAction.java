@@ -98,12 +98,12 @@ public class RedirectAction extends ActionSupport implements SessionAware,Servle
         return "QRcodesign";
     }
 
-    @Action(value="MemberMaintenance", results={@Result(name="MemberMaintenance",location="membermaintenance.jsp")})
+    @Action(value="membermaintenance", results={@Result(name="MemberMaintenance",location="membermaintenance.jsp")})
     public String memberMaintenance() {
         return "MemberMaintenance";
     }
 
-    @Action(value="personInfoMaintenance", results={@Result(name="personInfoMaintenance",location="personinfomanagement.jsp")})
+    @Action(value="personinfomanagement", results={@Result(name="personInfoMaintenance",location="personinfomanagement.jsp")})
     public String personInfoMaintenance() {
         return "personInfoMaintenance";
     }
