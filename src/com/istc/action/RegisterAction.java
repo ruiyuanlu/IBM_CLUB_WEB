@@ -34,7 +34,6 @@ import com.istc.Validation.RegisterCheck.Type;
 public class RegisterAction extends ActionSupport implements SessionAware{
 
     private static final long serialVersionUID = 187387589387L;
-    private static final boolean MALE = true;
 
     @Resource(name = "personService")
     private PersonService personService;
