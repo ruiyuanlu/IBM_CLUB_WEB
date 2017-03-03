@@ -22,17 +22,22 @@
 		<!--该拦截器栈用于检测session是否合法-->
 		<interceptors>
 			<!--该拦截器栈用于检测session是否合法-->
-            <interceptor name="loginInteceptor" class="com.istc.validation.SessionCheck" >
+            <interceptor name="loginInterceptor" class="com.istc.validation.SessionCheck" >
 				<param name="excludeMethods">mainpage,login,register,error,exit</param>
 			</interceptor>
+			<interceptor name="SensitivityInterceptor" class="com.istc.validation.SensitivityCheck">
+				<param name="includeMethods">QRcodesign</param>
+			</interceptor>
             <interceptor-stack name="loginStack">
-            	<interceptor-ref name="loginInteceptor"></interceptor-ref>  
+            	<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="SensitivityInterceptor"></interceptor-ref>
             	<interceptor-ref name="defaultStack"></interceptor-ref>  
             </interceptor-stack>  
 		</interceptors>
 		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
 		<global-results>
 			<result name="exit">/WEB-INF/content/timeout.jsp</result>
+			<result name="recheck">/WEB-INF/content/recheck.jsp</result>
 			<result name="error" type="redirect">error</result>
 		</global-results>
 		<!--开启通配符的使用，用于动态方法调用-->

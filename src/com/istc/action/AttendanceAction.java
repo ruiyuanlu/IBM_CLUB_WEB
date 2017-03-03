@@ -42,6 +42,7 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
     public String qrcodeSign(){
         signtoken= TokenCheck.generateNewToken();
         System.out.println("token变化："+signtoken);
+        addActionMessage(signtoken);
         return INPUT;
     }
 
