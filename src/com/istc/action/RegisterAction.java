@@ -2,8 +2,6 @@ package com.istc.action;
 
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
@@ -32,7 +30,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 	private String repassword;
 	private String QQ;
 	private String phoneNumber;
-	private String gender;
+	private boolean gender;
 	private String token;
 	private Person curPerson=new Person();
 	private boolean passed=true;
@@ -57,6 +55,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
     public String memberRegister() {
 		tokenCheck();
 		//以下是测试代码
+		System.out.println("Gender"+gender);
 		System.out.println(birthday);
 		SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
 		Calendar curbirthday = Calendar.getInstance();
@@ -186,9 +185,6 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 				//curPerson.setAge(birthday);
 			}
 		}
-		if (gender.equals("0")) {
-			curPerson.setGender(false);
-		}
 		if (!passed){
 			tokenCheck();
 		}
@@ -250,11 +246,11 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getGender() {
+	public boolean isGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(boolean gender) {
 		this.gender = gender;
 	}
 

@@ -6,7 +6,7 @@ document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script
 function manualSignSubmit(){
     var confirmbox=confirm("是否确认提交？提交后不可修改！");
     if (confirmbox == true){
-        $.post("manualSign",$("#manualSign").serialize(), function(json) {
+        $.post("manualSignSubmit",$("#manualSign").serialize(), function(json) {
             jsonSerialize(json);
         });
     }
