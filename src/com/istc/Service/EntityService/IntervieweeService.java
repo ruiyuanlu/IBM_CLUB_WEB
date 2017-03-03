@@ -22,6 +22,10 @@ public class IntervieweeService {
     @Resource(name = "memberDAO")
     private transient MemberDAO memberDAO;
 
+    public boolean exist(String id){
+        return intervieweeDAO.exist(id);
+    }
+
     public List<Interviewee> getRestInterviewees(){
         return intervieweeDAO.findAll();
     }
@@ -40,5 +44,9 @@ public class IntervieweeService {
             return;
         }
         memberDAO.save(members);
+    }
+
+    public void add(Interviewee interviewee){
+        intervieweeDAO.save(interviewee);
     }
 }

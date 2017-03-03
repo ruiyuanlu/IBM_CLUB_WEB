@@ -3,6 +3,7 @@ package com.istc.Entities.Entity;
 import com.istc.Entities.ID.MeetingID;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Entity
@@ -51,8 +52,8 @@ public class Meeting {
     }
     public void setStartTime(Integer year, Integer month, Integer day, Integer hour, Integer min, Integer sec){
         startTime.set(Calendar.YEAR, year);
-        startTime.set(Calendar.MONTH, month);
-        startTime.set(Calendar.DATE, day);
+        startTime.set(Calendar.MONTH, month - 1);//month 是 当前月 -1
+        startTime.set(Calendar.DAY_OF_MONTH, day);
         startTime.set(Calendar.HOUR, hour);
         startTime.set(Calendar.MINUTE, min);
         startTime.set(Calendar.SECOND, sec);

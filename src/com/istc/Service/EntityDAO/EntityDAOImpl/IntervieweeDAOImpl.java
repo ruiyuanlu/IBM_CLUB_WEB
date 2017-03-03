@@ -42,4 +42,9 @@ public class IntervieweeDAOImpl<E extends Interviewee, PK extends Serializable> 
             strb.append(" or i.id = ").append(ids[i]);
         return (List<Interviewee>)this.getSession().createQuery(strb.toString()).list();
     }
+
+    @Override
+    public boolean exist(String id) {
+        return get(id) != null;
+    }
 }
