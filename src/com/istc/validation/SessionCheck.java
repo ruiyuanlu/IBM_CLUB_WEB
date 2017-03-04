@@ -29,6 +29,8 @@ public class SessionCheck extends MethodFilterInterceptor {
 		HttpServletResponse response=ServletActionContext.getResponse();
 
 		System.out.println("拦截器启动。");
+		String actionname=ai.getProxy().getActionName();
+		System.out.println("目标action："+actionname);
 		Person userinfo = null;
 		//验证Session是否过期
 		if (!request.isRequestedSessionIdValid()) {

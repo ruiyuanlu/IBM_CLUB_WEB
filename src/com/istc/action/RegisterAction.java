@@ -95,7 +95,6 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 	
 
 	public void validateMemberRegister(){
-		System.out.println("验证器");
 		//
 		if (id==null || id.equals("")) {
 			addFieldError("id", "请输入您的学号！");

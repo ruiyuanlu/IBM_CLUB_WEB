@@ -11,11 +11,20 @@ function changePasswordValidation(){
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');
     $.post("changePassword",$("#changePassword").serialize(), function(json) {
-        jsonSerialize(json,"密码修改成功！请重新登录！","login");
+        jsonSerialize(json,"密码修改成功！请重新登录！");
+        window.location.assign("login");
     });
 }
 
-function jsonSerialize(json,success,url){
+function changeInfoValidation(){
+    $("#errorMessages").html("");
+    $('.errorLabel').html('').removeClass('errorLabel');
+    $.post("modifyInfo",$("#modifyInfo").serialize(), function(json) {
+        jsonSerialize(json,"修改个人信息成功",false);
+    });
+}
+
+function jsonSerialize(json,success){
     $("[name='password']").val("");
     $("[name='repassword']").val("");
     if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors
@@ -31,8 +40,8 @@ function jsonSerialize(json,success,url){
         });
         return;
     }
-    alert(success);//既没有actionError有没有fieldError则登陆成功
-    window.location.assign(url);
+    alert(success);
+    window.location.reload();
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)

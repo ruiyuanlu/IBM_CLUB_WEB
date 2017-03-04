@@ -20,7 +20,7 @@
 	  	  学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
 	   	密码:<input type="password" name="password" onkeypress="checkCapsLock(event)"/><font color="red"><span id="error_password"></span></font><br/>
 	   	确认密码：<input type="password" name="repassword" onkeypress="checkCapsLock(event)"/><font color="red"><span id="error_repassword"></span></font><br/>
-	  	  姓名:<input type="text" name="name" ></input><font color="red"><span id="error_name"></span></font><br/>
+		姓名:<input type="text" name="name" ></input><font color="red"><span id="error_name"></span></font><br/>
 	   	性别：<br/>
 	    <input type="radio" name="gender" value="true" checked> 男<br>
   		<input type="radio" name="gender" value="false"> 女<br>

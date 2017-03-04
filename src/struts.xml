@@ -27,13 +27,13 @@
 			</interceptor>
 			<interceptor name="SensitivityInterceptor" class="com.istc.validation.SensitivityCheck">
 				<!--该拦截器用于标记哪些操作需要再次验证身份-->
-				<param name="includeMethods"></param>
+				<!--这里includeMethods对有些action无效，暂时使用if限制进行过滤-->
 			</interceptor>
             <interceptor-stack name="loginStack">
             	<interceptor-ref name="loginInterceptor"></interceptor-ref>
 				<interceptor-ref name="SensitivityInterceptor"></interceptor-ref>
             	<interceptor-ref name="defaultStack"></interceptor-ref>  
-            </interceptor-stack>  
+            </interceptor-stack>
 		</interceptors>
 		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
 		<global-results>

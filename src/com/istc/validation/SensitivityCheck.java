@@ -18,11 +18,15 @@ public class SensitivityCheck extends MethodFilterInterceptor{
     @Override
     protected String doIntercept(ActionInvocation ai) throws Exception {
         HttpSession session= ServletActionContext.getRequest().getSession();
-        System.out.println("检测到敏感操作，拦截器启动。");
         String actionname=ai.getProxy().getActionName();
-        System.out.println("目标action："+actionname);
-        session.setAttribute("redirecttarget",actionname);
-        return "recheck";
+        if (actionname.equals("memmodify")){
+            System.out.println("检测到敏感操作，目标action："+actionname);
+            session.setAttribute("redirecttarget",actionname);
+            return "recheck";
+        }
+        else{
+            return ai.invoke();
+        }
     }
 
 }
