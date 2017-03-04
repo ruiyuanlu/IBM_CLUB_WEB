@@ -35,7 +35,6 @@ public class TokenUtils {
      * @return false 如果 session 和 token 均不为空且 session 中的 token 与传入的 token 相等
      */
     public boolean isResubmit(Map session, String token){
-        System.out.println("token in isResubmit:"+session.get(tokenKey));
         return token != null && session != null && !token.equals((String)session.get(tokenKey));
     }
 

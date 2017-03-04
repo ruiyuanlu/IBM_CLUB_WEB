@@ -34,6 +34,7 @@ import com.istc.Validation.RegisterCheck.Type;
 public class RegisterAction extends ActionSupport implements SessionAware{
 
     private static final long serialVersionUID = 187387589387L;
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     @Resource(name = "personService")
     private PersonService personService;
@@ -77,7 +78,6 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         interviewee.setQQ(QQ);
         interviewee.setPhoneNumber(phoneNumber);
         interviewee.setGender(gender);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar birth = Calendar.getInstance();
         try {
             birth.setTime(sdf.parse(birthday));
