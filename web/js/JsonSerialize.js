@@ -9,7 +9,7 @@ document.write("<script type='text/javascript' src='/js/jquery-3.1.1.js'></scrip
  * @param result
  */
 function postForm2Action(action, formId, result, url, clearedFieldsNames){
-    // $('#errorMessages').val("");
+    $('#errorMessages').val("");
     $('.errorLabel').html('').removeClass('errorLabel');
     $.post(action, $(formId).serialize(), function(json){
         clearFieldsByName(clearedFieldsNames);//清空指定的域

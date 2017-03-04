@@ -9,7 +9,6 @@
     }
 
     function loginValidation(){
-        alert("执行了")
         var password = CryptoJS.enc.Utf8.parse($("[name='password']").val());
         if(password != ""){
             var SHA512encrypt = CryptoJS.SHA512(password); //如果在前端直接执行 toUpperCase 不知道为什么就跪了
