@@ -18,12 +18,13 @@
 人员添加：
 <form id="addPerson">
     学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
-    密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
-    确认密码：<input type="password" name="repassword" /><font color="red"><span id="error_repassword"></span></font><br/>
+    密码:<input type="password" name="password" onkeydown="checkCapsLock()"/><font color="red"><span id="error_password"></span></font><br/>
+    确认密码：<input type="password" name="repassword" onkeydown="checkCapsLock()"/><font color="red"><span id="error_repassword"></span></font><br/>
     姓名:<input type="text" name="name" ></input><font color="red"><span id="error_name"></span></font><br/>
     <input type="hidden" name="dept">
 </form>
 <button onclick="addPersonValidation()">注册</button>
+<div id ="capStatus" style="visibility: hidden"><font color="red">已打开大写锁定</font></div>
 <font color="red"><ul id="errorMessages"></ul></font>
 </body>
 <script>

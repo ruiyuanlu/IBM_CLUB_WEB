@@ -38,11 +38,7 @@ function refreshQRcode() {
 
 //请各位部长注意，签到的时候务必保证网络畅通。如果关闭的时候网络阻塞，那么token将不会被更新！
 function changeTokenWhileClosing() {
-    var allsigned = false;
     $.post("qrcodeSign", function(json) {
-        allsigned = json.jsonresult.allsigned;
     });
-    if (allsigned == false) {
-        return "确认关闭？";
-    }
+    return "确认关闭？";
 }

@@ -21,11 +21,12 @@ if(session.getAttribute("infofromAction2jsp")!=null){
   <body>
 	<form id="login" onsubmit="return false;">
 		学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
-	   	密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
+	   	密码:<input type="password" name="password" onkeypress="checkCapsLock(event)"/><font color="red"><span id="error_password"></span></font><br/>
 		<input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
 		<input type="checkbox" name="remember" value="true">下次自动登录
 	</form>
   <button onclick="getLoginValidation()">登录</button>
-  <font color="red"><span id="errorMessages"></span></font>
+    <div id ="capStatus" style="visibility: hidden"><font color="red">已打开大写锁定</font></div>
+<font color="red"><span id="errorMessages"></span></font>
   </body>
 </html>

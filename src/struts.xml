@@ -26,7 +26,8 @@
 				<param name="excludeMethods">mainpage,login,register,error,exit</param>
 			</interceptor>
 			<interceptor name="SensitivityInterceptor" class="com.istc.validation.SensitivityCheck">
-				<param name="includeMethods">QRcodesign</param>
+				<!--该拦截器用于标记哪些操作需要再次验证身份-->
+				<param name="includeMethods"></param>
 			</interceptor>
             <interceptor-stack name="loginStack">
             	<interceptor-ref name="loginInterceptor"></interceptor-ref>

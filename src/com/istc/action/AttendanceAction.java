@@ -44,7 +44,11 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
     public String qrcodeSign(){
         signtoken= TokenCheck.generateNewToken();
         System.out.println("token变化："+signtoken);
-        addActionMessage(signtoken);
+        if (deptmember.size() == 0){
+            jsonresult.put("allsigned",true);
+        }
+        else
+            addActionMessage(signtoken);
         return INPUT;
     }
 
@@ -84,8 +88,6 @@ public class AttendanceAction extends ActionSupport implements SessionAware,Serv
         //这里主要是数据库的代码
         try {
             jsonresult.put("deptmember",deptmember);
-            if (deptmember.size()==0)
-                jsonresult.put("allsigned","true");
             return INPUT;
         }
         catch (Exception e){

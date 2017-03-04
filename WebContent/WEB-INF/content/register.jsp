@@ -18,8 +18,8 @@
   面试通过后您可以用该页面填写的信息登录。<br/>
 	<form id="register">
 	  	  学号:<input type="text" name="id"></input><font color="red"><span id="error_id"></span></font><br/>
-	   	密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
-	   	确认密码：<input type="password" name="repassword" /><font color="red"><span id="error_repassword"></span></font><br/>
+	   	密码:<input type="password" name="password" onkeypress="checkCapsLock(event)"/><font color="red"><span id="error_password"></span></font><br/>
+	   	确认密码：<input type="password" name="repassword" onkeypress="checkCapsLock(event)"/><font color="red"><span id="error_repassword"></span></font><br/>
 	  	  姓名:<input type="text" name="name" ></input><font color="red"><span id="error_name"></span></font><br/>
 	   	性别：<br/>
 	    <input type="radio" name="gender" value="true" checked> 男<br>
@@ -30,6 +30,7 @@
 		<input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
     </form>  
     <button onclick="getRegisterValidation()">注册</button>
+  <div id ="capStatus" style="visibility: hidden"><font color="red">已打开大写锁定</font></div>
 	<font color="red"><ul id="errorMessages"></ul></font>
   </body>
 <script>

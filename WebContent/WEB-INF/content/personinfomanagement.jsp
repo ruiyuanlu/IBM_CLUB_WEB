@@ -14,10 +14,11 @@
 <body>
 <h1>密码修改</h1>
 <form id="changePassword">
-    旧密码:<input type="password" name="oldpassword"></input><font color="red"><span id="error_oldpassword"></span></font><br/>
-    密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
-    确认密码：<input type="password" name="repassword" /><font color="red"><span id="error_repassword"></span></font><br/>
+    旧密码:<input type="password" name="oldpassword" onkeydown="checkCapsLock()" /><font color="red"><span id="error_oldpassword"></span></font><br/>
+    密码:<input type="password" name="password" onkeydown="checkCapsLock()"/><font color="red"><span id="error_password"></span></font><br/>
+    确认密码：<input type="password" name="repassword" onkeydown="checkCapsLock()" /><font color="red"><span id="error_repassword"></span></font><br/>
 </form>
 <button onclick="changePasswordValidation()">修改密码</button>
+<div id ="capStatus" style="visibility: hidden"><font color="red">已打开大写锁定</font></div>
 </body>
 </html>
