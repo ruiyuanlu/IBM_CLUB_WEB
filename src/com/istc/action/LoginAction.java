@@ -1,7 +1,8 @@
 package com.istc.action;
 
 import com.istc.Entities.Entity.Member;
-import com.istc.Service.EntityService.MemberService;
+import com.istc.Entities.Entity.Person;
+import com.istc.Service.EntityService.PersonService;
 import com.istc.Utilities.CookieUtils;
 import com.istc.Validation.InjectionCheck;
 import com.istc.Utilities.TokenUtils;
@@ -37,8 +38,8 @@ import java.util.Map;
 public class LoginAction extends ActionSupport implements ServletResponseAware,SessionAware {
     private static final long serialVersionUID = 6473585621724667329L;
 
-    @Resource(name = "memberService")
-    private MemberService memberService;
+    @Resource(name = "personService")
+    private PersonService personService;
 
     //配置 Session
     private Map<String, Object> session;
@@ -87,22 +88,22 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
     })
     public String login() throws Exception{
         newToken = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
-        Member member = (Member) session.get(loginKey);
-        if(member == null){
-            member = new Member();
-            member.setID(id);
-            member.setPassword(password);
+        Person person = (Member) session.get(loginKey);
+        if(person == null){
+            person = new Member();
+            person.setID(id);
+            person.setPassword(password.toUpperCase());//前端不知道为什么执行大小写转换会跪
         }
-        member = memberService.get(member);
-        if(member == null){
+        person = personService.get(person);
+        if(person == null){
             addActionError("学号或密码错误!");
             return INPUT;
         }
         //登陆成功, 放入 session 中, 如果前端传入的参数允许存储cookie, 则操作存储 cookie
-        session.put(loginKey, member);
+        session.put(loginKey, person);
         session.remove(tokenKey);
         System.out.print(autoLogin);
-        if(autoLogin) cookieUtil.addCookieToResponse(member, response);
+        if(autoLogin) cookieUtil.addCookieToResponse(person, response);
         return INPUT;
     }
 

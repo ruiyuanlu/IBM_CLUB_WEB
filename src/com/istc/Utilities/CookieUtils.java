@@ -5,6 +5,7 @@ package com.istc.Utilities;
  */
 
 import com.istc.Entities.Entity.Member;
+import com.istc.Entities.Entity.Person;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -36,13 +37,13 @@ public class CookieUtils {
     /**
      * 生成本次登陆的 cookie 记录并加入到 response中
      * 修改自 generateCookie方法
-     * @param member
+     * @param person
      * @param response
      */
-    public void addCookieToResponse(Member member, HttpServletResponse response){
+    public void addCookieToResponse(Person person, HttpServletResponse response){
         Cookie[] cookies = new Cookie[2];
-        cookies[0] = new Cookie(id, member.getID());
-        cookies[1] = new Cookie(password, member.getPassword());
+        cookies[0] = new Cookie(id, person.getID());
+        cookies[1] = new Cookie(password, person.getPassword());
         updateValidTime(cookies, response, ValidTime, id, password);//cookie 内容保存 2 周
     }
 

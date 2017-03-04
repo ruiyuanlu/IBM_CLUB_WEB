@@ -9,7 +9,7 @@ document.write("<script type='text/javascript' src='/js/jquery-3.1.1.js'></scrip
  * @param result
  */
 function postForm2Action(action, formId, result, url, clearedFieldsNames){
-    $('#errorMessages').val('');
+    // $('#errorMessages').val("");
     $('.errorLabel').html('').removeClass('errorLabel');
     $.post(action, $(formId).serialize(), function(json){
         clearFieldsByName(clearedFieldsNames);//清空指定的域
@@ -22,6 +22,7 @@ function postForm2Action(action, formId, result, url, clearedFieldsNames){
  * @param fieldsName
  */
 function clearFieldsByName(fieldsName) {
+    if(isEmpty(fieldsName)) return;
     for (var i = 0; i < fieldsName.length; i++) {
         field = fieldsName[i];
         $("[name = field]").val('');
@@ -38,7 +39,6 @@ function hasErrors(json){
 
     if(json.actionErrors && !isEmpty(json.actionErrors)){//判断有没有actionErrors
         $.each(json.actionErrors,function(key,value){
-            alert("key:"+key+"\nvalue:"+value);
             $("#errorMessages").append(value);
         });
         $("[name='password']").val("");
