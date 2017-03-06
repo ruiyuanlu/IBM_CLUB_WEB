@@ -11,4 +11,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("registerDAO")
 public class RegisterDAOImpl extends BaseDAOImpl<Register, RegisterID> implements RegisterDAO {
+    @Override
+    public boolean saveOrUpdate(Register register) {
+        if(register == null || register.getRegisterID() == null)return false;
+        getSession().saveOrUpdate(register);
+        return true;
+    }
 }

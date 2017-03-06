@@ -57,6 +57,9 @@ public class SignAction extends ActionSupport implements SessionAware {
     public String refreshQRCode(){
         token = tokenUtils.generateNewToken();
         addActionMessage(token);
+        System.out.println("deptID:"+deptID+"\ttimes:"+times);
+        deptID = deptID;
+        times = times;
         return INPUT;
     }
 
@@ -82,6 +85,23 @@ public class SignAction extends ActionSupport implements SessionAware {
 
 
     //getter and stter
+
+
+    public int getDeptID() {
+        return deptID;
+    }
+
+    public void setDeptID(int deptID) {
+        this.deptID = deptID;
+    }
+
+    public int getTimes() {
+        return times;
+    }
+
+    public void setTimes(int times) {
+        this.times = times;
+    }
 
     public String getToken() {
         return token;

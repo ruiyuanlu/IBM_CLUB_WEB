@@ -35,6 +35,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 
     private static final long serialVersionUID = 187387589387L;
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    private static final String loginKey = "member";
 
     @Resource(name = "personService")
     private PersonService personService;
@@ -86,6 +87,8 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         interviewee.setBirthday(birth);//设置年龄
         //存入数据库
         intervieweeService.add(interviewee);
+        //加入 session，自动成为登陆状态
+        session.put(loginKey, interviewee);
         return INPUT;
     }
 

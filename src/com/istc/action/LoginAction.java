@@ -46,6 +46,9 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
     private String id;
     private String password;
 
+    //用户之前访问的页面
+    private String prePage;
+
     //配置 token
     private HttpServletResponse response;
     private String token;
@@ -60,6 +63,7 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
     //定义全局常量
     private final String loginKey = "member";
     private final String tokenKey = "token";
+    private final String prePageKey = "prePage";
 
     /**
      * 初始化自定义检查工具
@@ -84,7 +88,7 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
             //全部使用json返回则有两种写法，1.只return INPUT，并留下INPUT的这种配置
             //2.@Result中不写name属性，type=json，不写返回值
             //使用json方式后，跳转请求由前端的 js 或者 jquery 发出，而不再由 struts 执行
-            @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"})
+            @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"}),
     })
     public String login() throws Exception{
         newToken = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
@@ -102,8 +106,17 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
         //登陆成功, 放入 session 中, 如果前端传入的参数允许存储cookie, 则操作存储 cookie
         session.put(loginKey, person);
         session.remove(tokenKey);
-        System.out.print(autoLogin);
         if(autoLogin) cookieUtil.addCookieToResponse(person, response);
+
+        //获取用户之前访问的页面,这由全局拦截器 sessionCheck 提供
+        prePage = (String)session.get(prePageKey);
+        System.out.println("之前访问的页面为: "+prePage);
+        if(prePage == null){
+            //不是由拦截器跳转, 而是直接登陆
+            return INPUT;
+        }
+        System.out.println("小心: 要跳转啦\n"+prePage);
+//        return "direct2prePage";
         return INPUT;
     }
 
@@ -182,5 +195,13 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
     @Override
     public void setSession(Map<String, Object> map) {
         this.session = map;
+    }
+
+    public String getPrePage() {
+        return prePage;
+    }
+
+    public void setPrePage(String prePage) {
+        this.prePage = prePage;
     }
 }

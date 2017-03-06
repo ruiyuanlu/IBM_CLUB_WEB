@@ -19,7 +19,7 @@ public class RegisterService {
 
     public boolean add(Register register){
         if(register == null || register.getRegisterID() == null)return false;
-        registerDAO.save(register);
+        registerDAO.saveOrUpdate(register);
         return true;
     }
 

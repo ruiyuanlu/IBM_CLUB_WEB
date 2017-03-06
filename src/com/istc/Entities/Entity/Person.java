@@ -126,7 +126,6 @@ public class Person implements Serializable{
         return this.gender == MALE;
     }
 
-
     public String getName() {
         return name;
     }

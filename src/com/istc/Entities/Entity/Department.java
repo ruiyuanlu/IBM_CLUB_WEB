@@ -47,8 +47,6 @@ public class Department {
 
     @OneToMany(mappedBy = "registerID.department")
     private Set<Register> registers;
-    @Column(length = 128)
-    private String deptToken;// SHA512 加密后的长度
 
     public Department() {
     }
@@ -97,7 +95,6 @@ public class Department {
                 ", meetings=" + meetings +
                 ", homeWorks=" + homeWorks +
                 ", registers=" + registers +
-                ", deptToken='" + deptToken + '\'' +
                 '}';
     }
 
@@ -107,14 +104,6 @@ public class Department {
 
     public void setMinisters(Set<Minister> ministers) {
         this.ministers = ministers;
-    }
-
-    public String getDeptToken() {
-        return deptToken;
-    }
-
-    public void setDeptToken(String deptToken) {
-        this.deptToken = deptToken;
     }
 
     public Set<Register> getRegisters() {

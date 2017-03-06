@@ -1,9 +1,10 @@
 package com.istc.Entities.Entity;
 
 import com.istc.Entities.ID.RegisterID;
-import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,11 +17,11 @@ public class Register {
     @Id
     private RegisterID registerID;
 
-    @ManyToMany( fetch = FetchType.LAZY)
+    @ManyToMany
+//    @Cascade(org.hibernate.annotations.CascadeType.MERGE)
     @JoinTable(name = "register_member",
             joinColumns = {@JoinColumn(name = "register_dept"),@JoinColumn(name = "register_times")},
             inverseJoinColumns = {@JoinColumn(name = "member_id")})
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Set<Member> members;
 
     @Version

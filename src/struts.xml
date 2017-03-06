@@ -41,6 +41,7 @@
             <result name="error" type="redirect">/WEB-INF/content/errorPages/error.jsp</result>
             <result name="loginRedirect" type="redirect">loginRedirect</result>
         </global-results>
+
     </package>
 
     <!--Ajax 包-->

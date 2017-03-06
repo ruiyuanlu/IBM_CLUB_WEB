@@ -16,7 +16,8 @@
 <div id="qrcode"></div>
 </body>
 <script>
+    deptID=1;times=1;
     refreshQRcode();
-    var doRefresh=window.setInterval(refreshQRcode,10000);
+    window.setInterval(refreshQRcode,10000);
 </script>
 </html>
