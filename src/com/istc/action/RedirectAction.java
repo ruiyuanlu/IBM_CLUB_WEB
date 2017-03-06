@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("redirectAction")
 @Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-@AllowedMethods({"mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
+@AllowedMethods({"signRedirect","mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -46,6 +46,11 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
 
     public RedirectAction(){
         System.out.println("进入RedirectAction");
+    }
+
+    @Action(value = "signRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
+    public String signRedirect(){
+        return "sign";
     }
 
     @Action(value = SUCCESS, results = {@Result(name = "success", location = "jsp/success.jsp")})

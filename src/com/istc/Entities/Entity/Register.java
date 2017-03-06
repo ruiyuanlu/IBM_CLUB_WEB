@@ -4,8 +4,12 @@ import com.istc.Entities.ID.RegisterID;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 签到，和前端的sign一致
+ */
 @Entity
 public class Register {
 
@@ -28,6 +32,11 @@ public class Register {
 
     public Register(Department dept, int times) {
         this.registerID = new RegisterID(dept,times);
+    }
+
+    public void addMember(Member member){
+        if(this.members == null)members = new HashSet<>();
+        members.add(member);
     }
 
     @Override

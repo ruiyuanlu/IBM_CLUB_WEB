@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>扫码签到</title>
-    <script type="text/JavaScript" src="js/QRcodeGenerate.js"></script>
+    <script type="text/JavaScript" src="/js/QRcodeGenerate.js"></script>
 </head>
 <body onbeforeunload="changeTokenWhileClosing()">
 <div id="signurl"></div>
