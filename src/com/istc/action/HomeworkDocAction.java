@@ -49,7 +49,7 @@ public class HomeworkDocAction extends ActionSupport{
 	    	String targetpath="";
 	    	try {
 	    		//设置文件存储目录
-		        String root = ServletActionContext.getServletContext().getRealPath("/file/homework"); 
+                String root = ServletActionContext.getServletContext().getRealPath("/file/homework");
 		        InputStream is = new FileInputStream(file);
 		        //如果目录不存在则自动创建
 		        File homeworkdir=new File(root);

@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @ParentPackage("needajax")
 @AllowedMethods({"addPerson","changePassword","fetchAllPerson","deletePersonSubmit","resetPasswordSubmit","fetchPersonInfo","modifyInfo"})
-public class MemberAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
+public class PersonnelAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
     private HttpServletRequest request;
     private HttpServletResponse response;
