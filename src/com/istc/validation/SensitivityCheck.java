@@ -28,5 +28,4 @@ public class SensitivityCheck extends MethodFilterInterceptor{
             return ai.invoke();
         }
     }
-
 }

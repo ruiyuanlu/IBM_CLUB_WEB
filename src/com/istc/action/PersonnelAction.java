@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 用于管理成员信息的增删改查，其中手动增加成员仅可以由部长级以上成员完成
+ * 用于管理成员信息的增删改查
  */
 @ParentPackage("needajax")
 @AllowedMethods({"addPerson","changePassword","fetchAllPerson","deletePersonSubmit","resetPasswordSubmit","fetchPersonInfo","modifyInfo"})
@@ -34,7 +34,7 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
     private String oldpassword;
     private String password;
     private String repassword;
-    private String dept;
+    private int dept;
     private boolean gender;
     private String birthday;
     private String QQ;
@@ -55,6 +55,7 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
             }
     )
     public String addPerson(){
+        //特定部长权限
         try{
             System.out.println(id+" "+password+" "+name+" "+dept);
             Person p=new Person();
@@ -132,6 +133,7 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
 
     public void validateChangePassword(){
         //此处有从数据库获取旧密码的步骤，这里先用假数据测试，用户ID的来源是session
+        //((Person)session.get("personInfo")).getID();
         String oldpasswordfromdatabase="456789";
         if (oldpassword==null || oldpassword.equals("")){
             addFieldError("oldpassword","请输入旧密码！");
@@ -191,6 +193,7 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
                 //在数据库中删除对应人员
                 for (int j = 0; j < deptmember.size(); j++) {
                     if(deleted[i].trim().equals(deptmember.get(j).getID().trim())){
+                        System.out.println(dept+" "+deleted[i]);
                         deptmember.remove(j);
                         break;
                     }
@@ -357,11 +360,11 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
         this.repassword = repassword;
     }
 
-    public String getDept() {
+    public int getDept() {
         return dept;
     }
 
-    public void setDept(String dept) {
+    public void setDept(int dept) {
         this.dept = dept;
     }
 

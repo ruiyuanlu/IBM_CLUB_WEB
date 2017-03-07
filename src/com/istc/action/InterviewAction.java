@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 面试模块
+ * 部长级及以上权限
  */
 @AllowedMethods({"intervieweeGet", "intervieweeCheck"})
 @Result(name="input",location="interview.jsp")

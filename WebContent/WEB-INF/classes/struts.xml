@@ -29,7 +29,7 @@
 			</interceptor>
             <interceptor-stack name="loginStack">
             	<interceptor-ref name="loginInterceptor"></interceptor-ref>
-				<interceptor-ref name="SensitivityInterceptor"></interceptor-ref>
+				<!--<interceptor-ref name="SensitivityInterceptor"></interceptor-ref>-->
             	<interceptor-ref name="defaultStack"></interceptor-ref>  
             </interceptor-stack>
 		</interceptors>
@@ -49,9 +49,12 @@
             <interceptor name="loginInteceptor" class="com.istc.validation.SessionCheck" >
                 <param name="excludeMethods">memberLogin,memberRegister</param>
             </interceptor>
+            <interceptor name="SpecificMinisterInteceptor" class="com.istc.validation.SpecificMinisterCheck" >
+            </interceptor>
             <interceptor-stack name="ajaxStack">
             	<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
                 <interceptor-ref name="loginInteceptor"></interceptor-ref>
+                <interceptor-ref name="SpecificMinisterInteceptor"></interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>
             </interceptor-stack>  
 		</interceptors>

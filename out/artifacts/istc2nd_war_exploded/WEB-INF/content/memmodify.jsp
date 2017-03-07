@@ -29,12 +29,15 @@
 <br>
 <font color="red"><span id="error_fetchPerson"></span></font>
 <form id="membermamage" action="" onsubmit="return false">
-
+    <input type="hidden" name="dept">
 </form>
 <font color="red"><span id="error_deletePerson"></span></font><br>
 <button id="deletesubmit" onclick="deletePerson()">确定删除</button>
 </body>
 <script>
+    var dept=document.getElementsByName("dept");
+    dept[0].setAttribute("value",GetQueryString("dept"));
+    dept[1].setAttribute("value",GetQueryString("dept"));
     $.post("fetchAllPerson", function(json){
         if(isEmpty(json.jsonresult.deptmember)){
             document.getElementById("deletesubmit").disabled=true;

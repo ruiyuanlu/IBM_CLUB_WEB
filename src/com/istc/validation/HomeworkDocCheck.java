@@ -10,6 +10,7 @@ import java.util.Map;
 
 /**
  * 作业文件上传检验
+ * 普通部员权限
  */
 
 public class HomeworkDocCheck {

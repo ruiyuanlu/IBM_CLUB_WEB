@@ -3,6 +3,16 @@
  */
 document.write('<script type="text/JavaScript" src="js/jquery-3.1.1.js"></script>');
 
+
+function GetQueryString(name)
+{
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null)
+        return  unescape(r[2]);
+    return null;
+}
+
 function addPersonValidation(){
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');
