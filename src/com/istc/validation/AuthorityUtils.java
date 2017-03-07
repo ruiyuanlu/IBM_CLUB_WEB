@@ -2,6 +2,7 @@ package com.istc.validation;
 
 import com.istc.bean.Person;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -20,41 +21,25 @@ public class AuthorityUtils {
         return AuthorityUtilsHolder.instance;
     }
 
-
-    /**
-     * 检查当前操作是否是本人（正式部员）
-     */
-    public boolean operateByMyself(Map<String, Object> session){
-        boolean result=false;
-        String id=((Person)session.get("personInfo")).getID();
-        //从数据库中获取密码
-        String password=((Person)session.get("personInfo")).getPassword();
-        if (true){
-            result=true;
-        }
-        return result;
-    }
-
     /**
      * 检查当前操作是否是当前部的部长
      */
-    public boolean operateByMinister(Map<String, Object> session,int dept){
-        boolean result=false;
+    public boolean operateBySpecificMinister(Map<String,Object> session){
         String id = ((Person)session.get("personInfo")).getID();
         if(id!=null && !id.equals("")){
             if (true){
-                result = true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
     /**
      * 检查当前操作是否是部长级成员
      */
-    public boolean operateByMinisterGroup(Map<String, Object> session){
+    public boolean operateByMinisterGroup(HttpSession session){
         boolean result=false;
-        String id = ((Person)session.get("personInfo")).getID();
+        String id = ((Person)session.getAttribute("personInfo")).getID();
         if(id!=null && !id.equals("")){
             if (true){
                 result = true;
@@ -66,16 +51,13 @@ public class AuthorityUtils {
     /**
      * 检查当前操作是否是主席
      */
-    public boolean operateByPresidentGroup(Map<String, Object> session){
-        boolean result=false;
-        String id = ((Person)session.get("personInfo")).getID();
+    public boolean operateByPresidentGroup(HttpSession session){
+        String id = ((Person)session.getAttribute("personInfo")).getID();
         if(id!=null && !id.equals("")){
             if (true){
-                result = true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
-
-
 }
