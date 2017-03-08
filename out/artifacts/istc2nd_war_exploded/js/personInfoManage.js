@@ -11,8 +11,7 @@ function changePasswordValidation(){
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');
     $.post("changePassword",$("#changePassword").serialize(), function(json) {
-        jsonSerialize(json,"密码修改成功！请重新登录！");
-        window.location.assign("login");
+        jsonSerialize(json,"密码修改成功！请重新登录！",true,"login",false);
     });
 }
 
@@ -20,11 +19,11 @@ function changeInfoValidation(){
     $("#errorMessages").html("");
     $('.errorLabel').html('').removeClass('errorLabel');
     $.post("modifyInfo",$("#modifyInfo").serialize(), function(json) {
-        jsonSerialize(json,"修改个人信息成功",false);
+        jsonSerialize(json,"修改个人信息成功",false,"",true);
     });
 }
 
-function jsonSerialize(json,success){
+function jsonSerialize(json,success,needredirect,url,needreload){
     $("[name='password']").val("");
     $("[name='repassword']").val("");
     if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors
@@ -41,7 +40,10 @@ function jsonSerialize(json,success){
         return;
     }
     alert(success);
-    window.location.reload();
+    if (needredirect == true)
+        window.location.assign(url);
+    if (needreload == true)
+        window.location.reload();
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)

@@ -5,29 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5339fe84-28b1-453d-b9b3-dc9a8649b96a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/js/deptmanagement.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Department.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Department.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Department.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/HomeWork.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Meeting.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Member.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Minister.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Person.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/President.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Register.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/UploadedFile.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/DepartmentAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/DepartmentAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/RedirectAction.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/action/RedirectAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/validation/ValidationUtils.class" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/com/istc/validation/ValidationUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Department.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/Entities/Department.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/DepartmentAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/DepartmentAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/RedirectAction.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/action/RedirectAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/validation/ValidationUtils.class" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/com/istc/validation/ValidationUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/welcome.jsp" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/WEB-INF/content/welcome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/Department.java" afterPath="$PROJECT_DIR$/src/Entities/Department.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/js/deptmanagement.js" afterPath="$PROJECT_DIR$/WebContent/js/deptmanagement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/js/membermaintenance.js" afterPath="$PROJECT_DIR$/WebContent/js/membermaintenance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/js/personInfoManage.js" afterPath="$PROJECT_DIR$/WebContent/js/personInfoManage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/js/personInfoManage.js" afterPath="$PROJECT_DIR$/out/artifacts/istc2nd_war_exploded/js/personInfoManage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/LoginAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/validation/ValidationUtils.java" afterPath="$PROJECT_DIR$/src/com/istc/validation/ValidationUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/WebContent/WEB-INF/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,78 +61,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="DepartmentAction.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="209">
-                    <caret line="131" column="39" lean-forward="false" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="RegisterAction.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1577">
-                    <caret line="96" column="41" lean-forward="false" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="memmodify.jsp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="551">
-                    <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="61" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="personinfomanagement.jsp" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="836">
-                    <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Department.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/Entities/Department.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="95">
-                    <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="membermaintenance.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/WebContent/js/membermaintenance.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1007">
-                    <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -120,7 +69,71 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5225">
               <caret line="292" column="5" lean-forward="false" selection-start-line="292" selection-start-column="5" selection-end-line="292" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#13355#13356#0" expanded="false" />
+                <element signature="e#13387#13388#0" expanded="false" />
+                <element signature="e#13416#13417#0" expanded="false" />
+                <element signature="e#13441#13442#0" expanded="false" />
+                <element signature="e#13477#13478#0" expanded="false" />
+                <element signature="e#13505#13506#0" expanded="false" />
+                <element signature="e#13536#13537#0" expanded="false" />
+                <element signature="e#13563#13564#0" expanded="false" />
+                <element signature="e#13603#13604#0" expanded="false" />
+                <element signature="e#13635#13636#0" expanded="false" />
+                <element signature="e#13699#13700#0" expanded="false" />
+                <element signature="e#13730#13731#0" expanded="false" />
+                <element signature="e#13778#13779#0" expanded="false" />
+                <element signature="e#13818#13819#0" expanded="false" />
+                <element signature="e#13855#13856#0" expanded="false" />
+                <element signature="e#13888#13889#0" expanded="false" />
+                <element signature="e#13940#13941#0" expanded="false" />
+                <element signature="e#13984#13985#0" expanded="false" />
+                <element signature="e#14012#14013#0" expanded="false" />
+                <element signature="e#14039#14040#0" expanded="false" />
+                <element signature="e#14076#14077#0" expanded="false" />
+                <element signature="e#14108#14109#0" expanded="false" />
+                <element signature="e#14146#14147#0" expanded="false" />
+                <element signature="e#14180#14181#0" expanded="false" />
+                <element signature="e#14234#14235#0" expanded="false" />
+                <element signature="e#14280#14281#0" expanded="false" />
+                <element signature="e#14345#14346#0" expanded="false" />
+                <element signature="e#14375#14376#0" expanded="false" />
+                <element signature="e#14423#14424#0" expanded="false" />
+                <element signature="e#14461#14462#0" expanded="false" />
+                <element signature="e#14511#14512#0" expanded="false" />
+                <element signature="e#14544#14545#0" expanded="false" />
+                <element signature="e#14609#14610#0" expanded="false" />
+                <element signature="e#14653#14654#0" expanded="false" />
+                <element signature="e#14689#14690#0" expanded="false" />
+                <element signature="e#14721#14722#0" expanded="false" />
+                <element signature="e#14771#14772#0" expanded="false" />
+                <element signature="e#14813#14814#0" expanded="false" />
+                <element signature="e#14846#14847#0" expanded="false" />
+                <element signature="e#14875#14876#0" expanded="false" />
+                <element signature="e#14920#14921#0" expanded="false" />
+                <element signature="e#14956#14957#0" expanded="false" />
+                <element signature="e#14991#14992#0" expanded="false" />
+                <element signature="e#15022#15023#0" expanded="false" />
+                <element signature="e#15070#15071#0" expanded="false" />
+                <element signature="e#15110#15111#0" expanded="false" />
+                <element signature="e#15139#15140#0" expanded="false" />
+                <element signature="e#15164#15165#0" expanded="false" />
+                <element signature="e#15200#15201#0" expanded="false" />
+                <element signature="e#15228#15229#0" expanded="false" />
+                <element signature="e#15266#15267#0" expanded="false" />
+                <element signature="e#15300#15301#0" expanded="false" />
+                <element signature="e#15354#15355#0" expanded="false" />
+                <element signature="e#15400#15401#0" expanded="false" />
+                <element signature="e#15439#15440#0" expanded="false" />
+                <element signature="e#15472#15473#0" expanded="false" />
+                <element signature="e#15526#15527#0" expanded="false" />
+                <element signature="e#15570#15571#0" expanded="false" />
+                <element signature="e#15660#15661#0" expanded="false" />
+                <element signature="e#15707#15708#0" expanded="false" />
+                <element signature="e#15801#15802#0" expanded="false" />
+                <element signature="e#15850#15851#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,7 +143,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="608">
               <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1039#1040#0" expanded="false" />
+                <element signature="e#1068#1069#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +157,25 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1957">
               <caret line="125" column="33" lean-forward="false" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="33" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3129#3130#0" expanded="false" />
+                <element signature="e#3163#3164#0" expanded="false" />
+                <element signature="e#3293#3294#0" expanded="false" />
+                <element signature="e#3328#3329#0" expanded="false" />
+                <element signature="e#3458#3459#0" expanded="false" />
+                <element signature="e#3493#3494#0" expanded="false" />
+                <element signature="e#3623#3624#0" expanded="false" />
+                <element signature="e#3658#3659#0" expanded="false" />
+                <element signature="e#3830#3831#0" expanded="false" />
+                <element signature="e#3876#3877#0" expanded="false" />
+                <element signature="e#4022#4023#0" expanded="false" />
+                <element signature="e#4061#4062#0" expanded="false" />
+                <element signature="e#4151#4152#0" expanded="false" />
+                <element signature="e#4198#4199#0" expanded="false" />
+                <element signature="e#4291#4292#0" expanded="false" />
+                <element signature="e#4340#4341#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,9 +185,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="532">
               <caret line="28" column="55" lean-forward="false" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
-              <folding>
-                <marker date="1488973977950" expanded="true" signature="113:114" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,7 +193,7 @@
       <file leaf-file-name="SpecificMinisterCheck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/validation/SpecificMinisterCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="171">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
@@ -180,21 +213,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personInfoManage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="personInfoManage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebContent/js/personInfoManage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deptManagement.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="133">
+              <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -203,24 +226,9 @@
       <file leaf-file-name="ValidationUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/validation/ValidationUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="-152">
               <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-              <folding>
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deptmanagement.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebContent/js/deptmanagement.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -293,9 +301,7 @@
         <option value="$PROJECT_DIR$/src/com/istc/action/RegisterAction.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/MemberAction.java" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/membermaintenance.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp" />
         <option value="$PROJECT_DIR$/src/com/istc/action/HomeworkDocAction.java" />
-        <option value="$PROJECT_DIR$/WebContent/js/personInfoManage.js" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/AuthorityCheck.java" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/AuthorityUtils.java" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/MinisterCheck.java" />
@@ -304,9 +310,7 @@
         <option value="$PROJECT_DIR$/src/com/istc/validation/HomeworkDocCheck.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/MeetingAction.java" />
-        <option value="$PROJECT_DIR$/WebContent/js/membermaintenance.js" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/SensitivityCheck.java" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/SpecificMinisterCheck.java" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/SpecificMemberCheck.java" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/interview.jsp" />
@@ -318,10 +322,14 @@
         <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/com/istc/validation/ValidationUtils.java" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/welcome.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/js/deptmanagement.js" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java" />
         <option value="$PROJECT_DIR$/src/Entities/Department.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java" />
+        <option value="$PROJECT_DIR$/WebContent/js/deptmanagement.js" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/js/personInfoManage.js" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp" />
+        <option value="$PROJECT_DIR$/WebContent/js/membermaintenance.js" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp" />
       </list>
     </option>
   </component>
@@ -365,8 +373,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -421,46 +427,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebContent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebContent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -493,74 +459,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="validation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc2nd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="istc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1171,15 +1077,16 @@
       <workItem from="1488962990902" duration="2108000" />
       <workItem from="1488967284666" duration="7436000" />
       <workItem from="1488974873917" duration="32000" />
+      <workItem from="1488976263972" duration="1226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222162000" />
+    <option name="totallyTimeSpent" value="223388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1196,6 +1103,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1204,7 +1112,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25455928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="-25" y="47" width="360" height="765" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25835866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="-25" y="47" width="360" height="765" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1212,7 +1120,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32614556" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32459018" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1234,14 +1141,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/QRcodesign.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/js/QRcodeGenerate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1373,7 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1402,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,7 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="21" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,10 +1342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#756#757#0" expanded="false" />
-            <element signature="e#776#777#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1457,9 +1349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1467,7 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1520">
           <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1483,7 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1491,7 +1378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1499,15 +1385,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="61" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
+            <element signature="e#1068#1069#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1515,7 +1397,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5225">
           <caret line="292" column="5" lean-forward="false" selection-start-line="292" selection-start-column="5" selection-end-line="292" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#13355#13356#0" expanded="false" />
+            <element signature="e#13387#13388#0" expanded="false" />
+            <element signature="e#13416#13417#0" expanded="false" />
+            <element signature="e#13441#13442#0" expanded="false" />
+            <element signature="e#13477#13478#0" expanded="false" />
+            <element signature="e#13505#13506#0" expanded="false" />
+            <element signature="e#13536#13537#0" expanded="false" />
+            <element signature="e#13563#13564#0" expanded="false" />
+            <element signature="e#13603#13604#0" expanded="false" />
+            <element signature="e#13635#13636#0" expanded="false" />
+            <element signature="e#13699#13700#0" expanded="false" />
+            <element signature="e#13730#13731#0" expanded="false" />
+            <element signature="e#13778#13779#0" expanded="false" />
+            <element signature="e#13818#13819#0" expanded="false" />
+            <element signature="e#13855#13856#0" expanded="false" />
+            <element signature="e#13888#13889#0" expanded="false" />
+            <element signature="e#13940#13941#0" expanded="false" />
+            <element signature="e#13984#13985#0" expanded="false" />
+            <element signature="e#14012#14013#0" expanded="false" />
+            <element signature="e#14039#14040#0" expanded="false" />
+            <element signature="e#14076#14077#0" expanded="false" />
+            <element signature="e#14108#14109#0" expanded="false" />
+            <element signature="e#14146#14147#0" expanded="false" />
+            <element signature="e#14180#14181#0" expanded="false" />
+            <element signature="e#14234#14235#0" expanded="false" />
+            <element signature="e#14280#14281#0" expanded="false" />
+            <element signature="e#14345#14346#0" expanded="false" />
+            <element signature="e#14375#14376#0" expanded="false" />
+            <element signature="e#14423#14424#0" expanded="false" />
+            <element signature="e#14461#14462#0" expanded="false" />
+            <element signature="e#14511#14512#0" expanded="false" />
+            <element signature="e#14544#14545#0" expanded="false" />
+            <element signature="e#14609#14610#0" expanded="false" />
+            <element signature="e#14653#14654#0" expanded="false" />
+            <element signature="e#14689#14690#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="false" />
+            <element signature="e#14771#14772#0" expanded="false" />
+            <element signature="e#14813#14814#0" expanded="false" />
+            <element signature="e#14846#14847#0" expanded="false" />
+            <element signature="e#14875#14876#0" expanded="false" />
+            <element signature="e#14920#14921#0" expanded="false" />
+            <element signature="e#14956#14957#0" expanded="false" />
+            <element signature="e#14991#14992#0" expanded="false" />
+            <element signature="e#15022#15023#0" expanded="false" />
+            <element signature="e#15070#15071#0" expanded="false" />
+            <element signature="e#15110#15111#0" expanded="false" />
+            <element signature="e#15139#15140#0" expanded="false" />
+            <element signature="e#15164#15165#0" expanded="false" />
+            <element signature="e#15200#15201#0" expanded="false" />
+            <element signature="e#15228#15229#0" expanded="false" />
+            <element signature="e#15266#15267#0" expanded="false" />
+            <element signature="e#15300#15301#0" expanded="false" />
+            <element signature="e#15354#15355#0" expanded="false" />
+            <element signature="e#15400#15401#0" expanded="false" />
+            <element signature="e#15439#15440#0" expanded="false" />
+            <element signature="e#15472#15473#0" expanded="false" />
+            <element signature="e#15526#15527#0" expanded="false" />
+            <element signature="e#15570#15571#0" expanded="false" />
+            <element signature="e#15660#15661#0" expanded="false" />
+            <element signature="e#15707#15708#0" expanded="false" />
+            <element signature="e#15801#15802#0" expanded="false" />
+            <element signature="e#15850#15851#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1523,23 +1469,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1577">
           <caret line="96" column="41" lean-forward="false" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/js/membermaintenance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4670#4671#0" expanded="false" />
+            <element signature="e#4692#4693#0" expanded="false" />
+            <element signature="e#4737#4738#0" expanded="false" />
+            <element signature="e#4768#4769#0" expanded="false" />
+            <element signature="e#4794#4795#0" expanded="false" />
+            <element signature="e#4810#4811#0" expanded="false" />
+            <element signature="e#4842#4843#0" expanded="false" />
+            <element signature="e#4861#4862#0" expanded="false" />
+            <element signature="e#4889#4890#0" expanded="false" />
+            <element signature="e#4907#4908#0" expanded="false" />
+            <element signature="e#4944#4945#0" expanded="false" />
+            <element signature="e#4967#4968#0" expanded="false" />
+            <element signature="e#4999#5000#0" expanded="false" />
+            <element signature="e#5021#5022#0" expanded="false" />
+            <element signature="e#5066#5067#0" expanded="false" />
+            <element signature="e#5097#5098#0" expanded="false" />
+            <element signature="e#5131#5132#0" expanded="false" />
+            <element signature="e#5155#5156#0" expanded="false" />
+            <element signature="e#5204#5205#0" expanded="false" />
+            <element signature="e#5239#5240#0" expanded="false" />
+            <element signature="e#5266#5267#0" expanded="false" />
+            <element signature="e#5282#5283#0" expanded="false" />
+            <element signature="e#5315#5316#0" expanded="false" />
+            <element signature="e#5334#5335#0" expanded="false" />
+            <element signature="e#5369#5370#0" expanded="false" />
+            <element signature="e#5394#5395#0" expanded="false" />
+            <element signature="e#5445#5446#0" expanded="false" />
+            <element signature="e#5482#5483#0" expanded="false" />
+            <element signature="e#5512#5513#0" expanded="false" />
+            <element signature="e#5532#5533#0" expanded="false" />
+            <element signature="e#5574#5575#0" expanded="false" />
+            <element signature="e#5601#5602#0" expanded="false" />
+            <element signature="e#5630#5631#0" expanded="false" />
+            <element signature="e#5649#5650#0" expanded="false" />
+            <element signature="e#5687#5688#0" expanded="false" />
+            <element signature="e#5712#5713#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1547,7 +1515,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1957">
           <caret line="125" column="33" lean-forward="false" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3129#3130#0" expanded="false" />
+            <element signature="e#3163#3164#0" expanded="false" />
+            <element signature="e#3293#3294#0" expanded="false" />
+            <element signature="e#3328#3329#0" expanded="false" />
+            <element signature="e#3458#3459#0" expanded="false" />
+            <element signature="e#3493#3494#0" expanded="false" />
+            <element signature="e#3623#3624#0" expanded="false" />
+            <element signature="e#3658#3659#0" expanded="false" />
+            <element signature="e#3830#3831#0" expanded="false" />
+            <element signature="e#3876#3877#0" expanded="false" />
+            <element signature="e#4022#4023#0" expanded="false" />
+            <element signature="e#4061#4062#0" expanded="false" />
+            <element signature="e#4151#4152#0" expanded="false" />
+            <element signature="e#4198#4199#0" expanded="false" />
+            <element signature="e#4291#4292#0" expanded="false" />
+            <element signature="e#4340#4341#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1566,15 +1552,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="28" column="55" lean-forward="false" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
-          <folding>
-            <marker date="1488973977950" expanded="true" signature="113:114" ph="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Department.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Department.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/validation/SpecificMinisterCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="171">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
@@ -1582,37 +1582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/deptManagement.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/validation/ValidationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="131" column="39" lean-forward="false" selection-start-line="131" selection-start-column="39" selection-end-line="131" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/js/personInfoManage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="261">
+          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1620,17 +1591,60 @@
     <entry file="file://$PROJECT_DIR$/WebContent/js/deptmanagement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Department.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/validation/ValidationUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="-152">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/DepartmentAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2602">
+          <caret line="214" column="12" lean-forward="false" selection-start-line="214" selection-start-column="12" selection-end-line="214" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#976#988#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/memmodify.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="26" column="86" lean-forward="true" selection-start-line="26" selection-start-column="86" selection-end-line="26" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/js/membermaintenance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-201">
+          <caret line="52" column="14" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/content/personinfomanagement.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="46" column="24" lean-forward="false" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/js/personInfoManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
           <folding />
         </state>
       </provider>

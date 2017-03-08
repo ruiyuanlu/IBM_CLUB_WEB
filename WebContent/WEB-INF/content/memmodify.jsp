@@ -38,44 +38,48 @@
     var dept=document.getElementsByName("dept");
     dept[0].setAttribute("value",GetQueryString("dept"));
     dept[1].setAttribute("value",GetQueryString("dept"));
-    $.post("fetchAllPerson", function(json){
-        if(isEmpty(json.jsonresult.deptmember)){
-            document.getElementById("deletesubmit").disabled=true;
-            alert("当前部门没有成员！");
-        }
-        if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors
-            $.each(json.actionErrors,function(index,data){
-                $("#errorMessages").append(data);
-            });
-            return;
-        }
-        if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
-            $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个
-                $("#error_"+index).html(value[0]);
-                $("#error_"+index).addClass("errorLabel");
-            });
-            return;
-        }
-        var form=document.getElementById("membermamage");
-        for(var i=0;i<json.jsonresult.deptmember.length;i++){
-            var hint = document.createElement("SPAN");
-            form.appendChild(hint);
-            hint.appendChild(document.createTextNode(json.jsonresult.deptmember[i].ID+" "+json.jsonresult.deptmember[i].name+" "));
-            var deleteinput = document.createElement("INPUT");
-            var deletehint = document.createElement("SPAN");
-            form.appendChild(deleteinput);
-            deleteinput.setAttribute("type","checkbox");
-            deleteinput.setAttribute("name","deleted");
-            deleteinput.setAttribute("value",json.jsonresult.deptmember[i].ID);
-            form.appendChild(deletehint);
-            deletehint.appendChild(document.createTextNode("删除 "));
-            var reset = document.createElement("BUTTON");
-            reset.appendChild(document.createTextNode("重置密码"));
-            reset.setAttribute("onclick","resetPassword("+json.jsonresult.deptmember[i].ID+")");
-            form.appendChild(reset);
-            var br=document.createElement("BR");
-            form.appendChild(br);
-        }
-    });
+    function refetch() {
+        var elem=document.getElementById("membermanage");
+        elem.innerHTML="";
+        $.post("fetchAllPerson", function(json){
+            if(isEmpty(json.jsonresult.deptmember)){
+                document.getElementById("deletesubmit").disabled=true;
+                alert("当前部门没有成员！");
+            }
+            if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors
+                $.each(json.actionErrors,function(index,data){
+                    $("#errorMessages").append(data);
+                });
+                return;
+            }
+            if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
+                $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个
+                    $("#error_"+index).html(value[0]);
+                    $("#error_"+index).addClass("errorLabel");
+                });
+                return;
+            }
+            var form=document.getElementById("membermamage");
+            for(var i=0;i<json.jsonresult.deptmember.length;i++){
+                var hint = document.createElement("SPAN");
+                form.appendChild(hint);
+                hint.appendChild(document.createTextNode(json.jsonresult.deptmember[i].ID+" "+json.jsonresult.deptmember[i].name+" "));
+                var deleteinput = document.createElement("INPUT");
+                var deletehint = document.createElement("SPAN");
+                form.appendChild(deleteinput);
+                deleteinput.setAttribute("type","checkbox");
+                deleteinput.setAttribute("name","deleted");
+                deleteinput.setAttribute("value",json.jsonresult.deptmember[i].ID);
+                form.appendChild(deletehint);
+                deletehint.appendChild(document.createTextNode("删除 "));
+                var reset = document.createElement("BUTTON");
+                reset.appendChild(document.createTextNode("重置密码"));
+                reset.setAttribute("onclick","resetPassword("+json.jsonresult.deptmember[i].ID+")");
+                form.appendChild(reset);
+                var br=document.createElement("BR");
+                form.appendChild(br);
+            }
+        });
+    }
 </script>
 </html>

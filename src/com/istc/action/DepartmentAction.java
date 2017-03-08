@@ -7,7 +7,7 @@ import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
-import Entities.Department;
+import com.istc.Entities.Entity.Department;
 
 import java.text.SimpleDateFormat;
 import java.util.*;

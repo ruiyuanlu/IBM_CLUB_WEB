@@ -9,7 +9,7 @@ function deleteDept(id) {
         $.post("deleteDept", {deptdeleted: id}, function(json){
             if (json.jsonresult.deleteresult == true){
                 alert("删除成功！");
-                window.location.reload();
+                refetch();
             }
             else {
                 alert("删除失败！");
@@ -45,7 +45,7 @@ function jsonSerialize(json,success){
         return;
     }
     alert(success);
-    window.location.reload();
+    refetch();
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)

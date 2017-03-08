@@ -34,37 +34,41 @@
     var curtimeString = formatDate(curdate);
     datepicker.setAttribute("max",curtimeString);
     datepicker.setAttribute("min","1970-01-01");
-    $.post("fetchAllDept", function(json) {
-        if(isEmpty(json.jsonresult.deptlist)){
-            document.getElementById("deletesubmit").disabled=true;
-            alert("当前社团没有部门！");
-        }
-        if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors
-            $.each(json.actionErrors,function(index,data){
-                $("#errorMessages").append(data);
-            });
-            return;
-        }
-        if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
-            $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个
-                $("#error_"+index).html(value[0]);
-                $("#error_"+index).addClass("errorLabel");
-            });
-            return;
-        }
-        var form=document.getElementById("deptmanage");
-        for(var i=0;i<json.jsonresult.deptlist.length;i++){
-            var hint = document.createElement("SPAN");
-            form.appendChild(hint);
-            hint.appendChild(document.createTextNode(json.jsonresult.deptlist[i].deptID+" "+json.jsonresult.deptlist[i].deptName+" "+json.jsonresult.deptlist[i].introduction+" "+json.jsonresult.deptlist[i].establishTime));
-            var reset = document.createElement("BUTTON");
-            reset.appendChild(document.createTextNode("删除"));
-            reset.setAttribute("onclick","deleteDept("+json.jsonresult.deptlist[i].deptID+")");
-            form.appendChild(reset);
-            var br=document.createElement("BR");
-            form.appendChild(br);
-        }
-    });
-
+    refetch();
+    function refetch() {
+        var elem = document.getElementById("deptmanage");
+        elem.innerHTML = "";
+        $.post("fetchAllDept", function(json) {
+            if(isEmpty(json.jsonresult.deptlist)){
+                document.getElementById("deletesubmit").disabled=true;
+                alert("当前社团没有部门！");
+            }
+            if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors
+                $.each(json.actionErrors,function(index,data){
+                    $("#errorMessages").append(data);
+                });
+                return;
+            }
+            if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
+                $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个
+                    $("#error_"+index).html(value[0]);
+                    $("#error_"+index).addClass("errorLabel");
+                });
+                return;
+            }
+            var form=document.getElementById("deptmanage");
+            for(var i=0;i<json.jsonresult.deptlist.length;i++){
+                var hint = document.createElement("SPAN");
+                form.appendChild(hint);
+                hint.appendChild(document.createTextNode(json.jsonresult.deptlist[i].deptID+" "+json.jsonresult.deptlist[i].deptName+" "+json.jsonresult.deptlist[i].introduction+" "+json.jsonresult.deptlist[i].establishTime));
+                var reset = document.createElement("BUTTON");
+                reset.appendChild(document.createTextNode("删除"));
+                reset.setAttribute("onclick","deleteDept("+json.jsonresult.deptlist[i].deptID+")");
+                form.appendChild(reset);
+                var br=document.createElement("BR");
+                form.appendChild(br);
+            }
+        });
+    }
 </script>
 </html>

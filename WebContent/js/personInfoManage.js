@@ -43,7 +43,7 @@ function jsonSerialize(json,success,needredirect,url,needreload){
     if (needredirect == true)
         window.location.assign(url);
     if (needreload == true)
-        window.location.reload();
+        refetch();
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)
