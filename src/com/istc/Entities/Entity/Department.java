@@ -48,6 +48,9 @@ public class Department {
     @OneToMany(mappedBy = "registerID.department")
     private Set<Register> registers;
 
+    @OneToMany(mappedBy = "department")
+    private Set<HomeWorkIssue> homeWorkIssues;
+
     public Department() {
     }
 
@@ -193,5 +196,11 @@ public class Department {
         this.deptName = deptName;
     }
 
+    public Set<HomeWorkIssue> getHomeWorkIssues() {
+        return homeWorkIssues;
+    }
 
+    public void setHomeWorkIssues(Set<HomeWorkIssue> homeWorkIssues) {
+        this.homeWorkIssues = homeWorkIssues;
+    }
 }

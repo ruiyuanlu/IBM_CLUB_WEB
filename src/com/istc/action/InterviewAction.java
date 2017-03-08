@@ -54,8 +54,9 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	
 	/**
 	 * 从数据库获取面试人员列表
+	 * 最后返回一个能用json解析的对象数组
 	 */
-	@Action(value="intervieweeGet")
+	@Action(value="intervieweeGet",results = {@Result(name = INPUT, type = "json", params = {"IgnoreHierarchy","false"})})
 	public String intervieweeGet() throws Exception{
 		try {
 			session.put("interviewList", intervieweeService.getRestInterviewees());
