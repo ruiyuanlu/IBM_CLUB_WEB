@@ -1,5 +1,6 @@
 package com.istc.action;
 
+import com.istc.validation.ValidationUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
@@ -8,6 +9,7 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 import Entities.Department;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -17,19 +19,18 @@ import java.util.*;
  */
 
 @ParentPackage("needajax")
-@AllowedMethods({"addDept","modifyDept","deleteDept","fetchDept"})
+@AllowedMethods({"addDept","modifyDept","deleteDept","fetchAllDept"})
 public class DepartmentAction extends ActionSupport implements SessionAware {
 
     private Map<String, Object> session;
-    private int deptID;
+    private int dept;
     private String introduction;
     private String deptName;
-    private Calendar establishTime;
+    private String establishTime;
     private boolean usecurrenttime; //用户选择是否使用当前时间作为部门创建时间
     public static List<Department> deptlist=new ArrayList<Department>();
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
     private String deptdeleted;
-    private String deptMinisterID;
 
     @Action(
             value="addDept",
@@ -40,11 +41,19 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
     public String addDept(){
         try {
             Department d=new Department();
-            d.setDeptID(deptID);
+            d.setDeptID(dept);
             d.setDeptName(deptName);
-            d.setEstablishTime(establishTime);
-            d.setIntroduction(introduction);
-            System.out.println(deptID+" "+introduction+" "+establishTime+" "+deptMinisterID);
+            if (usecurrenttime){
+                d.setEstablishTime(Calendar.getInstance());
+            }
+            else {
+                SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+                Calendar set = Calendar.getInstance();
+                set.setTime(sdf.parse(establishTime));
+                d.setEstablishTime(set);
+            }
+            d.setIntroduction(ValidationUtils.getInstance().replaceString(introduction));
+            System.out.println(dept +" "+introduction+" "+establishTime);
             deptlist.add(d);
         }
         catch (Exception e){
@@ -54,7 +63,42 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
     }
 
     public void validateAddDept(){
-
+        if (dept < 1 || dept > 100){
+            addFieldError("dept","请选择1-100以内的任意整数");
+        }
+        else {
+            //以下if判断条件需要在数据库中搜索当前id是否已经存在
+/*        if (){
+            addFieldError("dept","当前ID已被使用，请选择其它ID！");
+        }*/
+        }
+        if (deptName == null || deptName.equals("")){
+            addFieldError("deptName","请键入部门名称！");
+        }
+        else {
+            if (!ValidationUtils.getInstance().checkCHNandENGname(deptName,3,20)){
+                addFieldError("deptName","仅限中英文字符，长度在3-20之间");
+            }
+        }
+        if (introduction == null || introduction.equals("")){
+            addFieldError("introduction","请键入该部门简介！");
+        }
+        else {
+            //之后可以任意控制简介的最大长度
+            if (introduction.length() > 100){
+                addFieldError("introduction","请控制简介在100字以内");
+            }
+        }
+        if(!usecurrenttime){
+            if (establishTime == null || establishTime.equals("")){
+                addFieldError("introduction","请填写部门创建时间，或选择由系统自动将当前时间设为创建时间。");
+            }
+            else {
+                if(ValidationUtils.getInstance().checkIfAfterThanNow(establishTime)){
+                    addFieldError("establishTime","您输入的时间格式不正确，请重新检查后输入！");
+                }
+            }
+        }
     }
 
     @Action(
@@ -64,12 +108,17 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
             }
     )
     public String modifyDept(){
-        System.out.println("修改后的部门简介："+introduction);
+        //通过deptID搜索
+        try {
+            //如果用户提交的新简介为空那么认为不需要修改
+            if(!(introduction == null || introduction.equals(""))){
+                System.out.println("修改后的部门简介："+introduction);
+            }
+        }
+        catch (Exception e){
+            addFieldError("modifyDept","修改失败！");
+        }
         return INPUT;
-    }
-
-    public void validateModifyDept(){
-
     }
 
     @Action(
@@ -79,16 +128,29 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
             }
     )
     public String deleteDept(){
+        //通过deptID搜索
+        try {
+            for (Department d:deptlist){
+                if (d.getDeptID().equals(dept)){
+                    deptlist.remove(d);
+                    break;
+                }
+            }
+        }
+        catch (Exception e){
+            addFieldError("deleteDept","删除失败！");
+        }
         return INPUT;
     }
 
     @Action(
-            value="fetchDept",
+            value="fetchAllDept",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
     )
-    public String fetchDept(){
+    public String fetchAllDept(){
+        //部长级则返回其所管辖的所有部门的信息，主席级则返回所有部门信息，拒绝部员级用户执行
         try {
             jsonresult.put("dept",deptlist);
         }
@@ -103,12 +165,12 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
         this.session=map;
     }
 
-    public int getDeptID() {
-        return deptID;
+    public int getDept() {
+        return dept;
     }
 
-    public void setDeptID(int deptID) {
-        this.deptID = deptID;
+    public void setDept(int dept) {
+        this.dept = dept;
     }
 
     public String getIntroduction() {
@@ -149,5 +211,13 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
 
     public void setDeptdeleted(String deptdeleted) {
         this.deptdeleted = deptdeleted;
+    }
+
+    public String getEstablishTime() {
+        return establishTime;
+    }
+
+    public void setEstablishTime(String establishTime) {
+        this.establishTime = establishTime;
     }
 }
