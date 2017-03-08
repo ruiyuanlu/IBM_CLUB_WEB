@@ -11,10 +11,13 @@ document.write("<script type='text/javascript' src='/js/jquery-3.1.1.js'></scrip
 function postForm2Action(action, formId, result, url, clearedFieldsNames){
     $('#errorMessages').val("");
     $('.errorLabel').html('').removeClass('errorLabel');
-    $.post(action, $(formId).serialize(), function(json){
+    $.post(action, $(formId).serialize(), function(json){//action == LoginAction
         clearFieldsByName(clearedFieldsNames);//清空指定的域
         checkJsonAndAssign(json, result, url);//判定json的返回值是否包含错误信息，如一切正常，则跳转
     });
+    //$.ajax{
+    // url: LoginAction
+    //}
 }
 
 /**
