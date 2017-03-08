@@ -1,0 +1,11 @@
+[
+    {
+        "name" :"luruiyuan",
+        "rank" :"admin",
+        "id"   :2141600000
+    },{
+        "name" :"luruiyuan2",
+        "rank" :"user",
+        "id"   :2141600001
+    }
+]
