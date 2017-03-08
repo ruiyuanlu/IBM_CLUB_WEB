@@ -29,6 +29,7 @@ if(session.getAttribute("infofromAction2jsp")!=null){
     <a href="QRcodesign" target="_blank">开始扫码签到</a><br>
     <a href="memmodify?&dept=1" target="_blank">人员管理测试</a><br>
     <a href="personinfomanagement" target="_blank">用户信息管理测试</a><br>
+    <a href="deptmanagement" target="_blank">部门管理</a><br>
     <a href="Logout">登出</a>
   </body>
 </html>

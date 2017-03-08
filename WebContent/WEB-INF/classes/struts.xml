@@ -54,7 +54,7 @@
             <interceptor-stack name="ajaxStack">
             	<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
                 <interceptor-ref name="loginInteceptor"></interceptor-ref>
-                <interceptor-ref name="SpecificMinisterInteceptor"></interceptor-ref>
+                <!--<interceptor-ref name="SpecificMinisterInteceptor"></interceptor-ref>-->
                 <interceptor-ref name="defaultStack"></interceptor-ref>
             </interceptor-stack>  
 		</interceptors>

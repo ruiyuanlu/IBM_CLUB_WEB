@@ -17,7 +17,17 @@ import java.util.Map;
 /**
  * Created by Morn Wu on 2017/2/23.
  */
-@AllowedMethods({"mainpage","login","register","error","exit","welcome","memmodify","personinfomanagement","fileupload","QRcodesign"})
+@AllowedMethods({"mainpage",
+        "login",
+        "register",
+        "error",
+        "exit",
+        "welcome",
+        "memmodify",
+        "personinfomanagement",
+        "fileupload",
+        "QRcodesign",
+        "deptmanagement"})
 public class RedirectAction extends ActionSupport implements SessionAware,ServletRequestAware,ServletResponseAware {
 
     Map<String, Object> session;
@@ -111,6 +121,11 @@ public class RedirectAction extends ActionSupport implements SessionAware,Servle
     @Action(value="personinfomanagement", results={@Result(name="personInfoMaintenance",location="personinfomanagement.jsp")})
     public String personInfoMaintenance() {
         return "personInfoMaintenance";
+    }
+
+    @Action(value="deptmanagement", results={@Result(name="deptManagement",location="deptManagement.jsp")})
+    public String deptManagement() {
+        return "deptManagement";
     }
 
     @Override

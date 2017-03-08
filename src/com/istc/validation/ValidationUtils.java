@@ -19,13 +19,17 @@ public class ValidationUtils {
     }
 
     public boolean checkIfAfterThanNow(String date) {
-        boolean result=false;
+        date=date.trim();
+        boolean result;
         SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
         Calendar dateset = Calendar.getInstance();
         try {
             dateset.setTime(sdf.parse(date));
-            if (!dateset.after(Calendar.getInstance())){
-                result = true;
+            if (dateset.after(Calendar.getInstance()) || dateset.YEAR < 1970){
+                result = false;
+            }
+            else {
+                result=true;
             }
         } catch (Exception e) {
             result=false;

@@ -27,10 +27,13 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
     private String introduction;
     private String deptName;
     private String establishTime;
-    private boolean usecurrenttime; //用户选择是否使用当前时间作为部门创建时间
     public static List<Department> deptlist=new ArrayList<Department>();
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
     private String deptdeleted;
+
+    static {
+        addtemp();
+    }
 
     @Action(
             value="addDept",
@@ -42,16 +45,11 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
         try {
             Department d=new Department();
             d.setDeptID(dept);
-            d.setDeptName(deptName);
-            if (usecurrenttime){
-                d.setEstablishTime(Calendar.getInstance());
-            }
-            else {
-                SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
-                Calendar set = Calendar.getInstance();
-                set.setTime(sdf.parse(establishTime));
-                d.setEstablishTime(set);
-            }
+            d.setDeptName(ValidationUtils.getInstance().replaceString(deptName));
+            SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+            Calendar set = Calendar.getInstance();
+            set.setTime(sdf.parse(establishTime));
+            d.setEstablishTime(set);
             d.setIntroduction(ValidationUtils.getInstance().replaceString(introduction));
             System.out.println(dept +" "+introduction+" "+establishTime);
             deptlist.add(d);
@@ -76,8 +74,8 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
             addFieldError("deptName","请键入部门名称！");
         }
         else {
-            if (!ValidationUtils.getInstance().checkCHNandENGname(deptName,3,20)){
-                addFieldError("deptName","仅限中英文字符，长度在3-20之间");
+            if (deptName.length() < 3 || deptName.length() > 10){
+                addFieldError("deptName","控制长度在3-10字符之间");
             }
         }
         if (introduction == null || introduction.equals("")){
@@ -86,19 +84,18 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
         else {
             //之后可以任意控制简介的最大长度
             if (introduction.length() > 100){
-                addFieldError("introduction","请控制简介在100字以内");
+                addFieldError("introduction","请控制简介在100字符以内");
             }
         }
-        if(!usecurrenttime){
-            if (establishTime == null || establishTime.equals("")){
-                addFieldError("introduction","请填写部门创建时间，或选择由系统自动将当前时间设为创建时间。");
-            }
-            else {
-                if(ValidationUtils.getInstance().checkIfAfterThanNow(establishTime)){
-                    addFieldError("establishTime","您输入的时间格式不正确，请重新检查后输入！");
-                }
+        if (establishTime == null || establishTime.equals("")){
+            addFieldError("establishTime","请填写部门创建时间！");
+        }
+        else {
+            if(ValidationUtils.getInstance().checkIfAfterThanNow(establishTime)){
+                addFieldError("establishTime","您输入的时间不正确，请重新检查后输入！");
             }
         }
+
     }
 
     @Action(
@@ -130,9 +127,10 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
     public String deleteDept(){
         //通过deptID搜索
         try {
-            for (Department d:deptlist){
-                if (d.getDeptID().equals(dept)){
-                    deptlist.remove(d);
+            for (int i=0;i<deptlist.size();i++){
+                if (deptlist.get(i).getDeptID()==Integer.parseInt(deptdeleted.trim())){
+                    deptlist.remove(i);
+                    jsonresult.put("deleteresult",true);
                     break;
                 }
             }
@@ -152,7 +150,7 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
     public String fetchAllDept(){
         //部长级则返回其所管辖的所有部门的信息，主席级则返回所有部门信息，拒绝部员级用户执行
         try {
-            jsonresult.put("dept",deptlist);
+            jsonresult.put("deptlist",deptlist);
         }
         catch (Exception e){
             addFieldError("fetchDept","获取部门信息失败！");
@@ -197,14 +195,6 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
         this.jsonresult = jsonresult;
     }
 
-    public boolean isUsecurrenttime() {
-        return usecurrenttime;
-    }
-
-    public void setUsecurrenttime(boolean usecurrenttime) {
-        this.usecurrenttime = usecurrenttime;
-    }
-
     public String getDeptdeleted() {
         return deptdeleted;
     }
@@ -219,5 +209,20 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
 
     public void setEstablishTime(String establishTime) {
         this.establishTime = establishTime;
+    }
+
+    private static void addtemp(){
+        Department d=new Department();
+        d.setEstablishTime(Calendar.getInstance());
+        d.setDeptName("Java部");
+        d.setIntroduction("这个是Java部");
+        d.setDeptID(1);
+        deptlist.add(d);
+        d=new Department();
+        d.setEstablishTime(Calendar.getInstance());
+        d.setDeptName("python部");
+        d.setIntroduction("这个是python部");
+        d.setDeptID(2);
+        deptlist.add(d);
     }
 }
