@@ -17,7 +17,7 @@ public class Department {
     @Id
     private int deptID;
     @Lob
-    private Clob introduction;
+    private String introduction;
     @NotNull
     private String deptName;
     @Temporal(value = TemporalType.TIMESTAMP)
@@ -83,11 +83,11 @@ public class Department {
         return;
     }
 
-    public Clob getIntroduction() {
+    public String getIntroduction() {
         return introduction;
     }
 
-    public void setIntroduction(Clob introduction) {
+    public void setIntroduction(String introduction) {
         this.introduction = introduction;
     }
 

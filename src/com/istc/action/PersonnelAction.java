@@ -23,7 +23,18 @@ import javax.servlet.http.HttpServletResponse;
  * 用于管理成员信息的增删改查
  */
 @ParentPackage("needajax")
-@AllowedMethods({"addPerson","changePassword","fetchAllPerson","deletePersonSubmit","resetPasswordSubmit","fetchPersonInfo","modifyInfo"})
+@AllowedMethods({"addPerson",
+        "changePassword",
+        "fetchAllPerson",
+        "deletePersonSubmit",
+        "resetPasswordSubmit",
+        "fetchPersonInfo",
+        "modifyInfo",
+        "chooseDept",
+        "upgradeToMinister",
+        "upgradeToPresident",
+        "getRegisterStatus",
+        "changeRegisterStatus"})
 public class PersonnelAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
     private HttpServletRequest request;
@@ -40,12 +51,35 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
     private String QQ;
     private String phoneNumber;
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
-    public static List<Person> deptmember =new ArrayList<Person>();
     private String[] deleted;
     private String needreset;
+    private String[] deptchosen;
+
+    public static List<Person> deptmember =new ArrayList<Person>();
+    public static boolean registerAvailable = false;
 
     static {
         addtemp();
+    }
+
+    @Action(
+            value="chooseDept",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public String chooseDept(){
+        //数据库获取当前该部员所属的部门信息list
+        //如果为空，允许进行选择
+        if(true){
+            try{
+                jsonresult.put("chooseDept",true);
+            }
+            catch (Exception e){
+                addFieldError("chooseDept","部门选择失败！");
+            }
+        }
+        return INPUT;
     }
 
     @Action(
@@ -322,6 +356,89 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
         return;
     }
 
+    @Action(
+            value="upgradeToPresident",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public String upgradeToMinister(){
+        try {
+            for (int  i= 0; i < deptmember.size(); i++) {
+                if(id.trim().equals(deptmember.get(i).getID().trim())){
+                    System.out.println("已将部长"+id+"提拔为主席");
+                    deptmember.remove(i);
+                    break;
+                }
+            }
+        }
+        catch (Exception e){
+            addFieldError("upgradeToPresident","主席提拔失败！");
+        }
+        return INPUT;
+    }
+
+    @Action(
+            value="upgradeToPresident",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public String upgradeToPresident(){
+        try {
+            for (int  i= 0; i < deptmember.size(); i++) {
+                if(id.trim().equals(deptmember.get(i).getID().trim())){
+                    System.out.println("已将"+id+"提拔为ID为"+dept+"部门的部长");
+                    deptmember.remove(i);
+                    break;
+                }
+            }
+        }
+        catch (Exception e){
+            addFieldError("upgradeToMinister","部长提拔失败！");
+        }
+        return INPUT;
+    }
+
+    @Action(
+            value="getRegisterStatus",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public String getRegisterStatus(){
+        //获取当前是否可以注册的状态
+        try {
+            jsonresult.put("RegisterStatus",registerAvailable);
+        }
+        catch (Exception e){
+            addFieldError("RegisterStatus","无法获取当前注册状态信息！");
+        }
+        return INPUT;
+    }
+
+    @Action(
+            value="changeRegisterStatus",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public String changeRegisterStatus(){
+        //修改当前是否可以注册的状态
+        try {
+            if(registerAvailable){
+                registerAvailable = false;
+            }
+            else {
+                registerAvailable = true;
+            }
+        }
+        catch (Exception e){
+            addFieldError("RegisterStatus","修改注册状态信息失败！");
+        }
+        return INPUT;
+    }
+
     @Override
     public void setSession(Map<String, Object> map) {
         this.session=map;
@@ -431,6 +548,14 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String[] getDeptchosen() {
+        return deptchosen;
+    }
+
+    public void setDeptchosen(String[] deptchosen) {
+        this.deptchosen = deptchosen;
     }
 
     @Override
