@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.*;
 
@@ -25,6 +26,8 @@ import java.lang.reflect.*;
  * pkClass 对应实体类主键的类型
  */
 public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
+
+    private static final Integer batchSize = 20;//指定 hibernate 批处理的大小
 
     @Resource(name = "sessionFactory")
     protected SessionFactory sessionFactory;
@@ -37,7 +40,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
         Type[] types = ((ParameterizedType)this.getClass().getGenericSuperclass()).getActualTypeArguments();
         this.eClass = (Class<E>)types[0];
         this.pkClass = (Class<PK>)types[1];
-    }
+}
 
     /**
      * 使用session工厂获取session
@@ -109,7 +112,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
         Session session = getSession();
         for(int i = 0; i < entities.length; i++){
             session.save(entities[i]);
-            if( i % 20 == 0){
+            if( i % batchSize == 0){
                 session.flush();
                 session.clear();
             }

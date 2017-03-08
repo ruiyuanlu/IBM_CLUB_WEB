@@ -10,14 +10,21 @@ import javax.persistence.*;
  */
 @Embeddable
 public class HomeWorkID implements java.io.Serializable{
-    @ManyToOne
-    private Department department;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Department dept;
     private int times;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member homeWorkSubmitter;
 
     public HomeWorkID() {
+    }
+
+    public HomeWorkID(Department dept, Member homeWorkSubmitter, int times) {
+        this.dept = dept;
+        this.homeWorkSubmitter = homeWorkSubmitter;
+        this.times = times;
     }
 
     public Member getHomeWorkSubmitter() {
@@ -28,10 +35,9 @@ public class HomeWorkID implements java.io.Serializable{
         this.homeWorkSubmitter = homeWorkSubmitter;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Department getDept() {
+        return dept;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -41,30 +47,21 @@ public class HomeWorkID implements java.io.Serializable{
         HomeWorkID that = (HomeWorkID) o;
 
         if (times != that.times) return false;
-        if (department != null ? !department.equals(that.department) : that.department != null) return false;
+        if (dept != null ? !dept.equals(that.dept) : that.dept != null) return false;
         return homeWorkSubmitter != null ? homeWorkSubmitter.equals(that.homeWorkSubmitter) : that.homeWorkSubmitter == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = department != null ? department.hashCode() : 0;
+        int result = dept != null ? dept.hashCode() : 0;
         result = 31 * result + times;
         result = 31 * result + (homeWorkSubmitter != null ? homeWorkSubmitter.hashCode() : 0);
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "HomeWorkID{" +
-                "department=" + department +
-                ", times=" + times +
-                ", homeWorkSubmitter=" + homeWorkSubmitter +
-                '}';
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDept(Department deptID) {
+        this.dept = deptID;
     }
 
     public int getTimes() {

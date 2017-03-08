@@ -21,6 +21,17 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+    <!-- 配置Spring懒加载模式，注意，OSIV 的 mapping 一定要配置在 Struts 上面，否则无效 -->
+    <filter>
+        <filter-name>OpenSessionInFiewFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>OpenSessionInFiewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!--添加Struts过滤器 首先定义一个过滤器名称和过滤器类-->
     <!--配置 struts 文件路径 struts 配置文件的文件夹通过 contextConfigLocation 参数给出-->
     <filter>
@@ -47,6 +58,10 @@
     <error-page>
         <error-code>400</error-code>
         <location>/WEB-INF/content/errorPages/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/content/errorPages/403.jsp</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>

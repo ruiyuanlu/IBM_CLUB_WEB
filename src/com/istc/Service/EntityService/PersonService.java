@@ -45,8 +45,19 @@ public class PersonService {
         return personDAO.get(person);
     }
 
+    public Person get(String id){
+        return  personDAO.get(id);
+    }
+    public void  update(Person person){
+        personDAO.edit(person);
+    }
+
     public Boolean exist(Person person){
         return personDAO.exist(person);
+    }
+
+    public Boolean exist(String id){
+        return personDAO.exist(id);
     }
 
 }

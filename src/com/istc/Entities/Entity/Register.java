@@ -1,24 +1,27 @@
 package com.istc.Entities.Entity;
 
 import com.istc.Entities.ID.RegisterID;
-import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 签到，和前端的sign一致
+ */
 @Entity
-public class Register implements Serializable{
+public class Register {
 
     @Id
     private RegisterID registerID;
 
-    @ManyToMany( fetch = FetchType.LAZY)
+    @ManyToMany
+//    @Cascade(org.hibernate.annotations.CascadeType.MERGE)
     @JoinTable(name = "register_member",
             joinColumns = {@JoinColumn(name = "register_dept"),@JoinColumn(name = "register_times")},
             inverseJoinColumns = {@JoinColumn(name = "member_id")})
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Set<Member> members;
 
     @Version
@@ -28,34 +31,15 @@ public class Register implements Serializable{
         this.registerID = new RegisterID();
     }
 
+    public Register(Department dept, int times) {
+        this.registerID = new RegisterID(dept,times);
+    }
+
     public void addMember(Member member){
-        if(member == null)return;
-        if(this.members == null) this.members = new HashSet<>();
-        if(member != null)this.members.add(member);
+        if(this.members == null)members = new HashSet<>();
+        members.add(member);
     }
 
-
-    public void addMembers(Member[] members){
-        if(members == null)return;
-        if(this.members == null) this.members = new HashSet<>();
-        for(Member member: members)
-            if(member != null)this.members.add(member);
-    }
-
-
-    public void deleteMembers(Member member){
-        if(member == null || this.members == null)return;
-        if(member != null)this.members.remove(member);
-    }
-
-
-    public void deleteMembers(Member[] members){
-        if(members == null || this.members == null)return;
-        for(Member member: members)
-            if(member != null)this.members.remove(member);
-    }
-
-//  getters and stters and equals and toString
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,17 +56,9 @@ public class Register implements Serializable{
     @Override
     public int hashCode() {
         int result = registerID != null ? registerID.hashCode() : 0;
+        result = 31 * result + (members != null ? members.hashCode() : 0);
         result = 31 * result + registerVersion;
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Register{" +
-                "members=" + members +
-                ", registerID=" + registerID +
-                ", registerVersion=" + registerVersion +
-                '}';
     }
 
     public void setDepartment(Department department) {

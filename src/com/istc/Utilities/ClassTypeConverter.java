@@ -29,11 +29,11 @@ public class ClassTypeConverter {
      * @return
      */
     public static ClassTypeConverter getInstance(){
-        if(self == null){
+        if(self == null)
             synchronized(ClassTypeConverter.class){
-                self = new ClassTypeConverter();
+                if(self == null)
+                    self = new ClassTypeConverter();
             }
-        }
         return self;
     }
 

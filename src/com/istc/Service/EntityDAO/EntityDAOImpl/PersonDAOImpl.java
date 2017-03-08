@@ -25,8 +25,14 @@ public class PersonDAOImpl<E extends Person, PK extends Serializable> extends Ba
         return p == null ? null : p.getPassword().equals(person.getPassword()) ? p : null;
     }
 
+
     @Override
     public Boolean exist(E person) {
         return get(person) != null;
+    }
+
+    @Override
+    public Boolean exist(String id) {
+        return this.get(id) != null;
     }
 }

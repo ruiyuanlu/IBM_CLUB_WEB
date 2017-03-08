@@ -17,11 +17,18 @@ public class DepartmentService {
     @Resource
     private transient DepartmentDAO departmentDAO;
 
+    public void add(Department department){
+        departmentDAO.save(department);
+    }
+    public void update(Department department){
+        departmentDAO.edit(department);
+    }
+
     public Department get(Integer deptID){
-        return departmentDAO.get(deptID);
+        return (Department) departmentDAO.get(deptID);
     }
 
     public Department get(Department dept){
-        return departmentDAO.get(dept.getDeptID());
+        return (Department) departmentDAO.get(dept.getDeptID());
     }
 }

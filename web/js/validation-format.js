@@ -1,42 +1,18 @@
-function getRegisterValidation(){
-    //alert("complete!");
-    $("#errorMessages").html("");  
-    $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Register",$("#register").serialize(), function(json) {
-    	jsonSerialize(json,"注册成功！稍后返回首页。","mainpage");
-    });
-}
+    // js 文件夹必须放在web根目录下，并用/js访问其中资源
+    // 导入包特定的加密算法，要有特定的包
+    document.write('<script type="text/JavaScript" src="/js/CryptoJS-3.1.2/rollups/sha512.js"></script>');
+    document.write('<script type="text/JavaScript" src="/js/jquery-3.1.1.js"></script>');
+    document.write('<script type="text/JavaScript" src="/js/JsonSerialize.js"></script>');
 
-function getLoginValidation(){
-    //alert("complete!");
-    $("#errorMessages").html("");
-    $('.errorLabel').html('').removeClass('errorLabel');  
-    $.post("Login",$("#login").serialize(), function(json) {
-    	jsonSerialize(json,"登录成功！","welcome");
-    });
-}
+    function registerValidation(){
+        postForm2Action("register", "#register", "注册成功! 单击确定返回首页!", "mainpage", ["password", "repassword"]);//用[]代表数组，否则会被拆开成一个个字母
+    }
 
-function jsonSerialize(json,success,url){
-    if(json.actionErrors && json.actionErrors.length>0){//判断有没有actionErrors  
-        $.each(json.actionErrors,function(index,data){  
-            $("#errorMessages").append("<li>"+data+"</li>");  
-        });  
-        return;  
-    }  
-    if(json.fieldErrors && !isEmpty(json.fieldErrors)){//判断有没有fieldError
-        $.each(json.fieldErrors,function(index,value){//index就是field的name,value就是该filed对应的错误列表，这里取第一个  
-            $("#error_"+index).html(value[0]);  
-            $("#error_"+index).addClass("errorLabel");  
-        });  
-        return;  
-    }  
-    alert(success);//既没有actionError有没有fieldError则登陆成功
-    window.location.assign(url);
-}
-
-function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)  
-    for(var p in obj){  
-        return false;  
-    }  
-    return true;  
-}  
+    function loginValidation(){
+        var password = CryptoJS.enc.Utf8.parse($("[name='password']").val());
+        if(password != ""){
+            var SHA512encrypt = CryptoJS.SHA512(password); //如果在前端直接执行 toUpperCase 不知道为什么就跪了
+            $("[name = 'password']").val(SHA512encrypt);
+        }
+        postForm2Action("login", "#login", "登录成功!", "success");
+    }

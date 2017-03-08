@@ -10,12 +10,16 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
 
 /**
  * 面试模块
  */
+@Controller("interviewAction")
+@Scope(scopeName = "prototype")
 @AllowedMethods({"intervieweeGet", "intervieweeCheck"})
 @Result(name="input",location="interview.jsp")
 public class InterviewAction extends ActionSupport implements SessionAware{

@@ -12,41 +12,44 @@ import javax.persistence.ManyToOne;
  */
 @Embeddable
 public class MeetingID implements java.io.Serializable{
+    private int times;
     @ManyToOne
     @Cascade(CascadeType.SAVE_UPDATE)
-    private Department department;
-
-    private Integer times;
-
-    public MeetingID(Integer deptID, Integer times) {
-        this.department = new Department();
-        department.setDeptID(deptID);
-        this.times = times;
-    }
-
-    public MeetingID(Department department, Integer times) {
-        this.department = department;
-        this.times = times;
-    }
+    private Department dept;
 
     public MeetingID() {
     }
-
-
-
-    public Department getDepartment() {
-        return department;
+    public MeetingID(Integer deptID, Integer times){
+        this.times = times;
+        this.dept = new Department(deptID);
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public MeetingID(Department deptID, int times) {
+        this.dept = deptID;
+        this.times = times;
     }
 
-    public Integer getTimes() {
+    @Override
+    public String toString() {
+        return "MeetingID{" +
+                "dept=" + dept +
+                ", times=" + times +
+                '}';
+    }
+
+    public Department getDept() {
+        return dept;
+    }
+
+    public void setDept(Department deptID) {
+        this.dept = deptID;
+    }
+
+    public int getTimes() {
         return times;
     }
 
-    public void setTimes(Integer times) {
+    public void setTimes(int times) {
         this.times = times;
     }
 
@@ -58,22 +61,14 @@ public class MeetingID implements java.io.Serializable{
         MeetingID meetingID = (MeetingID) o;
 
         if (times != meetingID.times) return false;
-        return department != null ? department.equals(meetingID.department) : meetingID.department == null;
+        return dept != null ? dept.equals(meetingID.dept) : meetingID.dept == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = times;
-        result = 31 * result + (department != null ? department.hashCode() : 0);
+        result = 31 * result + (dept != null ? dept.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "MeetingID{" +
-                "department=" + department +
-                ", times=" + times +
-                '}';
     }
 }

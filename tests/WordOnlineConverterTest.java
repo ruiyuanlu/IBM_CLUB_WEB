@@ -9,7 +9,7 @@ import org.apache.poi.xwpf.converter.core.FileURIResolver;
 import org.apache.poi.xwpf.converter.xhtml.XHTMLConverter;
 import org.apache.poi.xwpf.converter.xhtml.XHTMLOptions;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -21,6 +21,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -86,7 +88,7 @@ public class WordOnlineConverterTest {
             }  
         }
     }
-    @Test
+//    @Test
     public void test(){
         try {
             canExtractImage("D:\\testFrameWork.docx","docx");
@@ -98,5 +100,10 @@ public class WordOnlineConverterTest {
         } catch (TransformerException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args){
+
+
     }
 }

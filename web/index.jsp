@@ -16,7 +16,7 @@ import="java.util.*, java.lang.*" %>
         .errorLabel{color:red;}
     </style>
 
-    <title>登陆页面</title>
+    <title>这里是IBM学生俱乐部网站首页</title>
 
       <sj:head jquerytheme="cupertino" ajaxcache="true" compressed="false"/>
       <script type="text/javascript" src="js/validation-format.js"></script>
@@ -33,18 +33,12 @@ import="java.util.*, java.lang.*" %>
       并存储到 LoginAction 的 Map<String, Object> session 这个成员变量
       因此封装了获取资源的过程
       --%>
-  <%--<form action="login" method="post" name="person">--%>
-    <%--用户名: <input type="text" value="请输入用户名" name="id"/>${}--%>
-    <%--密 码 : <input type="password" name="password"/>--%>
-    <%--<br/>--%>
-    <%--<input type="submit" value="登陆"/>--%>
-  <%--</form>--%>
 
-  <form id="login" action="login" method="post">
-      学号:<input type="text" name="id"/><li color="red" border="0"><s:fielderror fieldName="id" /></li>
-      密码:<input type="password" name="password"/><li color="red" border="0"><s:fielderror fieldName="password" /></li>
-      <s:token/>
-      <input type="submit" value="登陆"/>
-  </form>
+  <%--<a href="loginTest">登陆链接</a>--%>
+  <%--<jsp:forward page="WEB-INF/content/jsp/loginPage.jsp">forward方式的登陆链接</jsp:forward>--%>
+
+  <%response.sendRedirect("jsp/mainPage");%>
+  <%--<%response.sendRedirect("mainpage");%>--%>
+
   </body>
 </html>

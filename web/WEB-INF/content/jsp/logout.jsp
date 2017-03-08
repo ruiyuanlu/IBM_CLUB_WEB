@@ -12,6 +12,6 @@
 </head>
 <body>
 <h1>注销完成</h1><br/>
-<a href="login">登陆</a>
+<a href="loginRedirect">登陆</a>
 </body>
 </html>

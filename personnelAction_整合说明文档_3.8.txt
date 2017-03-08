@@ -1,0 +1,11 @@
+整合了personnelAction，加入了数据库操作
+问题：
+1.在personnelAction中的fetchPersonInfo中从数据库获取含有类型为calendar的birthday
+将calendar.toString值直接赋给当前成员的birthday，可能不符合我们约定的模板
+2.未进行完整的测试
+变化：
+1.personnel中输入合法性检验使用了统一的接口registercheck.isvaild()
+2.在member mininster department的DAO和Serice中增补了方法
+3.在personnel中增添了新的私有方法，集成功能防止代码冗余。
+其他：
+未加入最新的数据模型homeworkIssue。作业发布

@@ -11,6 +11,9 @@ import java.util.List;
 public interface IntervieweeDAO<E extends Interviewee, PK extends Serializable> extends PersonDAO<Interviewee, String> {
     Boolean isPassed(String id);
     Boolean isPassed(E interviewee);
+
     void delete(String [] intervieweesIDs);
+
     List<Interviewee> get(String[] ids);
+
 }

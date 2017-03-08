@@ -14,5 +14,7 @@ import java.io.Serializable;
  */
 public interface PersonDAO<E extends Person, PK extends Serializable> extends BaseDAO<Person, String> {
     Person get(E person);
+    Person get(String id);
     Boolean exist(E person);
+    Boolean exist(String id);
 }

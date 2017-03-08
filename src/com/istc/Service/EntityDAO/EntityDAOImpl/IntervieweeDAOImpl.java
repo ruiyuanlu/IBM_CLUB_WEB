@@ -29,17 +29,18 @@ public class IntervieweeDAOImpl<E extends Interviewee, PK extends Serializable> 
 
     @Override
     public void delete(String[] intervieweeIDs) {
-        StringBuilder strb = new StringBuilder("delete from Interviewee where id = " + intervieweeIDs[0]);
+        StringBuilder strb = new StringBuilder("delete from Interviewee i where i.id = ").append(intervieweeIDs[0]);
         for(int i = 1; i < intervieweeIDs.length; i++)
-            strb.append("or id = " + intervieweeIDs[i]);
+            strb.append(" or i.id = ").append(intervieweeIDs[i]);
         this.excuteUpdate(strb.toString());
     }
 
     @Override
     public List<Interviewee> get(String[] ids) {
-        StringBuilder strb = new StringBuilder("select i from Interviewee i where i.id = " + ids[0]);
+        StringBuilder strb = new StringBuilder("from Interviewee i where i.id = ").append(ids[0]);
         for(int i = 1; i < ids.length; i++)
-            strb.append("or i.id = " + ids[i]);
+            strb.append(" or i.id = ").append(ids[i]);
         return (List<Interviewee>)this.getSession().createQuery(strb.toString()).list();
     }
+
 }

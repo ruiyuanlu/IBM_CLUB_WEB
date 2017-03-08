@@ -1,8 +1,10 @@
 package com.istc.Entities.Entity;
 
-import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,31 +28,6 @@ public class Minister extends Member implements Serializable{
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Set<Department> manageDepts;
 
-    public void addManageDept(Department department){
-        if(department == null)return;
-        if(this.manageDepts == null) this.manageDepts = new HashSet<>();
-        if(department != null)this.manageDepts.add(department);
-    }
-
-    public void addManageDepts(Department[] departments){
-        if(departments == null)return;
-        if(this.manageDepts == null) this.manageDepts = new HashSet<>();
-        for(Department department: departments)
-            if(department != null)this.manageDepts.add(department);
-    }
-
-    public void deleteManageDept(Department department){
-        if(department == null || this.manageDepts == null)return;
-        if(department != null)this.manageDepts.remove(department);
-    }
-
-    public void deleteManageDepts(Department[] departments){
-        if(departments == null || this.manageDepts == null)return;
-        for(Department department: departments)
-            if(department != null)this.manageDepts.remove(department);
-    }
-
-    //getters and setters
     public Minister(){
     }
 
@@ -62,28 +39,4 @@ public class Minister extends Member implements Serializable{
         this.manageDepts = manageDepts;
     }
 
-    @Override
-    public String toString() {
-        return super.toString()+"Minister{" +
-                "manageDepts=" + manageDepts +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Minister)) return false;
-        if (!super.equals(o)) return false;
-
-        Minister minister = (Minister) o;
-
-        return manageDepts != null ? manageDepts.equals(minister.manageDepts) : minister.manageDepts == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        return result;
-    }
 }
