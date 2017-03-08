@@ -31,7 +31,7 @@ if(session.getAttribute("interviewList")!=null)
        <input type="checkbox" name="passed" value=<%=interviewees.get(i).getID()%>></input>通过
        <br/>
         <%}%>
-	    <input type="submit" value="提交"/>   
+	    <input type="submit" value="提交"/>
     </form>
   <%}%>  
   </body>

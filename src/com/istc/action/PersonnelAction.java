@@ -357,7 +357,7 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
     }
 
     @Action(
-            value="upgradeToPresident",
+            value="upgradeToMinister",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
