@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0e70d03-ae2f-43a0-a695-8a5b7dccddcf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/membermaintenance.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/content/jsp/membermaintenance.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOInterfaces/MinisterDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/content/jsp/memmodify.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/memmodify.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/JsonSerialize.js" afterPath="$PROJECT_DIR$/web/js/JsonSerialize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +32,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
               <caret line="11" column="143" lean-forward="false" selection-start-line="11" selection-start-column="143" selection-end-line="11" selection-end-column="143" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#531#532#0" expanded="false" />
+                <element signature="e#574#575#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,6 +47,25 @@
             <state relative-caret-position="450">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedirectAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+              <folding>
+                <element signature="e#1985#1986#0" expanded="true" />
+                <element signature="e#2030#2031#0" expanded="true" />
+                <element signature="e#2180#2181#0" expanded="true" />
+                <element signature="e#2219#2220#0" expanded="true" />
+                <element signature="e#2385#2386#0" expanded="true" />
+                <element signature="e#2428#2429#0" expanded="true" />
+                <element signature="e#2570#2571#0" expanded="true" />
+                <element signature="e#2607#2608#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,7 +93,7 @@
       <file leaf-file-name="MinisterDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="350">
               <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
@@ -88,7 +103,7 @@
       <file leaf-file-name="memmodify.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/memmodify.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-393">
+            <state relative-caret-position="725">
               <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding />
             </state>
@@ -98,7 +113,7 @@
       <file leaf-file-name="MinisterService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MinisterService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="525">
               <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               <folding>
                 <element signature="e#917#918#0" expanded="true" />
@@ -108,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="385">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,16 +138,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
               <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -209,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/com/istc/Utilities/CookieUtils.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/sign.jsp" />
         <option value="$PROJECT_DIR$/web/js/validation-format.js" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/SignAction.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/QRcodesign.jsp" />
         <option value="$PROJECT_DIR$/web/js/QRcodeGenerate.js" />
@@ -245,6 +249,7 @@
         <option value="$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/DepartmentDAOImpl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
       </list>
     </option>
   </component>
@@ -288,9 +293,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -603,17 +608,17 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\jsp" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc\action" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web" />
-      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\js" />
       <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web" />
       <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc\action" />
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\WEB-INF\content\jsp" />
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\src\com\istc" />
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web" />
+      <recent name="D:\Program Files\Git\IBM_CLUB_WEB\web\js" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.istc_new">
@@ -1071,11 +1076,12 @@
       <workItem from="1488613119053" duration="819000" />
       <workItem from="1488788047770" duration="19658000" />
       <workItem from="1488938935997" duration="10165000" />
+      <workItem from="1489047703115" duration="561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151423000" />
+    <option name="totallyTimeSpent" value="151984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -1096,26 +1102,26 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.47642016" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3118971" sideWeight="0.7277599" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3118971" sideWeight="0.7277599" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29635584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3006431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.46784565" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.47642016" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.46784565" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1139,11 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#equals#0;class#Register#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Register#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1323,7 +1324,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,14 +1339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1411,7 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="1193" column="3" lean-forward="true" selection-start-line="1193" selection-start-column="3" selection-end-line="1193" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,9 +1410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="11" column="77" lean-forward="false" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
-          <folding>
-            <element signature="e#4#36#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1429,10 +1417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1900">
           <caret line="78" column="29" lean-forward="false" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-            <marker date="1489046139905" expanded="true" signature="2028:2140" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1448,15 +1432,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
           <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <marker date="1489046545050" expanded="true" signature="463:525" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="975">
           <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
@@ -1464,7 +1445,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MinisterDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="350">
           <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
@@ -1488,7 +1469,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MinisterService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="525">
           <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
           <folding>
             <element signature="e#917#918#0" expanded="true" />
@@ -1517,13 +1498,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="11" column="143" lean-forward="false" selection-start-line="11" selection-start-column="143" selection-end-line="11" selection-end-column="143" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#531#532#0" expanded="false" />
+            <element signature="e#574#575#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/memmodify.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-393">
+        <state relative-caret-position="725">
           <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding />
         </state>
@@ -1540,8 +1525,25 @@
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="e#1985#1986#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2219#2220#0" expanded="true" />
+            <element signature="e#2385#2386#0" expanded="true" />
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2607#2608#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

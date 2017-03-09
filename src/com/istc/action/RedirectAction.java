@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("redirectAction")
 @Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-@AllowedMethods({"signRedirect","mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
+@AllowedMethods({"deptManagement", "personInfoManagement", "memberModify", "homeworkManagement", "signRedirect","mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -46,6 +46,26 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
 
     public RedirectAction(){
         System.out.println("进入RedirectAction");
+    }
+
+    @Action(value = "personInfoManagement", results = {@Result(name = "personInfoManagement", location = "jsp/memberInfoManagement.jsp")})
+    public String personInfoManagement(){
+        return "personInfoManagement";
+    }
+
+    @Action(value="deptManagement", results={@Result(name="deptManagement",location="jsp/deptManagement.jsp")})
+    public String deptManagement() {
+        return "deptManagement";
+    }
+
+    @Action(value="homeworkManagement", results={@Result(name="homeworkManagement",location="jsp/homeworkManagement.jsp")})
+    public String homeworkManagement() {
+        return "homeworkManagement";
+    }
+
+    @Action(value="memberModify", results={@Result(name="memberModify",location="jsp/memberModify.jsp")})
+    public String memberModify() {
+        return "memberModify";
     }
 
     @Action(value = "signRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
