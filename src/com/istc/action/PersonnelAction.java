@@ -79,9 +79,11 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
     private CookieUtils cookieUtil;
     private RegisterCheck registerUtil;
     private Encoder encoder;
-//    static {
-//        addtemp();
-//    }
+
+    //定义全局常量
+    private final String loginKey = "member";
+    private final String tokenKey = "token";
+    private final String prePageKey = "prePage";
 public PersonnelAction(){
     tokenUtil = TokenUtils.getInstance();
     cookieUtil = CookieUtils.getInstance();
@@ -175,10 +177,10 @@ public PersonnelAction(){
     public String changePassword(){
         try {
             /**
-             * 假定struts已经把private string id设置为当前操作部长的id, 并且将要修改的新密码放入private String password
+             * 假定struts已经把要修改的新密码放入private String password
              * 旧密码置入private string oldpassword
              */
-            this.id=((Person)session.get("personInfo")).getID();
+            id= ((Person)session.get(loginKey)).getID();
             Minister minitemp=ministerService.get(id);
             oldpassword=minitemp.getPassword();
             minitemp.setPassword(password);
@@ -199,7 +201,7 @@ public PersonnelAction(){
     public void validateChangePassword(){
         //此处有从数据库获取旧密码的步骤，这里先用假数据测试，用户ID的来源是session
         //已补充数据库操作，但前提是struts已能够通过session   GET到操作者ID
-        this.id=((Person)session.get("personInfo")).getID();
+        this.id=((Person)session.get(loginKey)).getID();
         Minister minitemp=ministerService.get(id);
         String oldPasswordFromDatabase=minitemp.getPassword();
         if (oldpassword==null || oldpassword.equals("")){
@@ -305,25 +307,13 @@ public PersonnelAction(){
             }
     )
     /**
-     * 取当前操作者的信息，即((Minister)session.get("personInfo")).getID()的id
+     * 取当前操作者的信息，即((Person)session.get(loginKey)).getID()的id
      */
     public String fetchPersonInfo(){
         //这里主要是数据库的代码
         try {
-            this.id=((Member)session.get("personInfo")).getID();
+            this.id=((Person)session.get(loginKey)).getID();
             Member curMember=ministerService.get(id);
-            setPassword(curMember.getPassword());
-            setPhoneNumber(curMember.getPhoneNumber());
-            setName(curMember.getName());
-            setQQ(curMember.getQQ());
-            //这里会将部员参加的第一个部门展示出来，没有则赋0，在查询时切记检验
-           if (curMember.getEnterDepts().iterator().hasNext())
-               setDept(curMember.getEnterDepts().iterator().next().getDeptID());
-           else
-               setDept(0);
-           //按我们规定的 日历模板来显示
-            setBirthday(simpleDateFormat.format(curMember.getBirthday()));
-            setGender(curMember.getGender());
             jsonresult.put("curPerson",curMember);
             return INPUT;
         }
@@ -344,7 +334,7 @@ public PersonnelAction(){
      */
     public String modifyInfo(){
         try {//
-            this.id=((Member)session.get("personInfo")).getID();
+            this.id=((Person)session.get(loginKey)).getID();
             Member member_on=new Member();
             member_on.setID(id);
              member_on=memberService.get(id);
@@ -410,36 +400,6 @@ public PersonnelAction(){
         }
         return;
     }
-//    /**
-//     * fill函数为私有函数，取出id为dept的部门全部成员于deptmember
-//     */
-//    private void  fill(){//修改为使用for的，并封装在service
-//        deptMember.clear();
-//        Set<Member> members=departmentService.get(dept).getMembers();
-//        Iterator<Member> memberIterator=members.iterator();
-////        while (memberIterator.hasNext()){
-////            deptMember.add(memberIterator.next());
-////        }
-//        for(Member member: members){
-//
-//        }
-//    }
-//    /**
-//     * fulfill函数为私有函数，用于从当前session取得id并取出该操作者下辖所有部门的全部成员，置于list<Member> deptmember中
-//     */
-//    private void fulfill(){
-//        deptMember.clear();
-//        this.id=((Person)session.get("personInfo")).getID();
-//        Set<Department> departments=ministerService.get(id).getManageDepts();
-//        Iterator<Department> departmentIterator=departments.iterator();
-//        while (departmentIterator.hasNext()){
-//            Set<Member> members=departmentIterator.next().getMembers();
-//            Iterator<Member> memberIterator=members.iterator();
-//            while (memberIterator.hasNext()){
-//                deptMember.add(memberIterator.next());
-//            }
-//        }
-//    }
 
     @Override
     public void setSession(Map<String, Object> map) {
