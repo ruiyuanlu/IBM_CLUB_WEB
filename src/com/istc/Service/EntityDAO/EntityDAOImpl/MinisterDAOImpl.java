@@ -15,9 +15,9 @@ import java.io.Serializable;
 public class MinisterDAOImpl<E extends Minister, PK extends Serializable> extends BaseDAOImpl<Minister, String> implements MinisterDAO<E, PK> {
 
     @Override
-    public Minister get(String id) {
-        if(id == null)return null;
-        return (Minister) this.getSession().createQuery("from Minister m where m.id =:id").setParameter("id", id).uniqueResult();
+    public Minister get(Minister minister) {
+        Minister minister1 = this.get(minister.getID());
+        return minister1 == null ? null : minister1.getPassword().equals(minister.getPassword()) ? minister1 : null;
     }
 
     @Override

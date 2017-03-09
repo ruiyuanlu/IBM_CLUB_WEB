@@ -10,6 +10,7 @@ import java.io.Serializable;
  * Created by lurui on 2017/2/4 0004.
  */
 public interface MinisterDAO<E extends Minister, PK extends Serializable> extends BaseDAO<Minister, String> {
+    Minister get(Minister minister);
     Minister get(String id);
     Boolean exist(E minister);
     Boolean exist(String id);

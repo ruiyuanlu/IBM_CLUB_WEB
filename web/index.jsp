@@ -37,8 +37,8 @@ import="java.util.*, java.lang.*" %>
   <%--<a href="loginTest">登陆链接</a>--%>
   <%--<jsp:forward page="WEB-INF/content/jsp/loginPage.jsp">forward方式的登陆链接</jsp:forward>--%>
 
-  <%response.sendRedirect("/build/index.html");%>
-  <%--<%response.sendRedirect("mainpage");%>--%>
+  <%--<%response.sendRedirect("/build/index.html");%>--%>
+  <%response.sendRedirect("mainpage");%>
 
   </body>
 </html>

@@ -12,7 +12,8 @@
     <style type="text/css">
         .errorLabel{color: red;}
     </style>
-    <script type="text/JavaScript" src="js/membermaintenance.js"></script>
+    <script type="text/JavaScript" src="/js/membermaintenance.js"></script>
+    <script type="text/JavaScript" src="/js/JsonSerialize.js"></script>
 </head>
 <body>
 人员添加：

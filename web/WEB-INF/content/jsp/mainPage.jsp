@@ -15,5 +15,6 @@
 <a href="loginRedirect">登陆</a> <br/>
 <a href="registerRedirect">注册</a> <br/>
 <a href="signRedirect">扫码签到</a> <br/>
+<a href="signRedirect">扫码签到</a> <br/>
 </body>
 </html>

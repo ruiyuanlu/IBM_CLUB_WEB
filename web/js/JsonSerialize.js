@@ -76,5 +76,6 @@ function isEmpty(obj) {
 function checkJsonAndAssign(json, result, url) {
     if(hasErrors(json))return;
     alert(result);
-    window.location.assign(url);
+    if(url && !isEmpty(url)) window.location.assign(url);
+
 }
