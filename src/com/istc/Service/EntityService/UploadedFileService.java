@@ -22,15 +22,18 @@ public class UploadedFileService {
     private transient UploadedFileDAO uploadedFileDAO;
 
     public void addFile(File file, Member owner){
-        Integer count = getFileCount() + 1;
-        UploadedFile uploadedFile = null;
-        try {
-            uploadedFile = new UploadedFile(file, count, owner, 1);
-        } catch (IOException e) {
-            System.out.println("获取路径失败!");
-            e.printStackTrace();
+
+        if (file!=null&&owner!=null&&owner.getID()!=null) {
+            Integer count = getFileCount() + 1;
+            UploadedFile uploadedFile = null;
+            try {
+                uploadedFile = new UploadedFile(file, count, owner, 1);
+            } catch (IOException e) {
+                System.out.println("获取路径失败!");
+                e.printStackTrace();
+            }
+            uploadedFileDAO.save(uploadedFile);
         }
-        uploadedFileDAO.save(uploadedFile);
     }
 
     /**

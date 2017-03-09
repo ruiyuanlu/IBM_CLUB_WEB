@@ -29,8 +29,8 @@ import java.util.*;
 /**
  * 用于管理成员信息的增删改查，其中手动增加成员仅可以由部长级以上成员完成
  */
-//@ParentPackage这里我看不太懂
-@ParentPackage("needajax")
+
+@ParentPackage("ajax")
 @AllowedMethods({"addMember","changePassword","fetchAllPerson","deletePersonSubmit","resetPasswordSubmit","fetchPersonInfo","modifyInfo"})
 public class PersonnelAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
@@ -68,7 +68,8 @@ public class PersonnelAction extends ActionSupport implements SessionAware,Servl
     private List<Member> deptMember;
 
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
-//    public static List<Person> deptmember =new ArrayList<Person>();
+    //默认重置密码为111111，用以部长重置部员
+    public static final String defaultPassword="111111";
 
     private String[] deleted;
     private String needreset;
@@ -185,7 +186,8 @@ public PersonnelAction(){
             System.out.println("修改前的密码："+oldpassword);
             System.out.println("修改后的密码："+password);
             this.session.clear();
-            cookieUtil.clearCookie(request,response);//返回值为void，不会给response
+            cookieUtil.clearCookie(request,response);//返回值为void，不会给response/
+
             System.out.println("session和cookie均被清除");
         }
         catch (Exception e){
@@ -235,13 +237,17 @@ public PersonnelAction(){
          * 需要注意的问题：部门对部长为多对多关系，可能一个部长下属多个部门
          * 这里将下属部门id为int dept的部门所有成员返回
          */
-        //fill函数为私有函数，用于从当前id为 dept部门取出全部成员，置于list<Member> deptmember中
-            fill();
+        if (!departmentService.exist(dept)){
+            addFieldError("fetchPerson","并没有这个部门！");
+            return INPUT;
+        }
+            deptMember = departmentService.getInsideMembers(dept);
         try {
             jsonresult.put("deptmember",deptMember);
             if (deptMember.size()==0){
                 addFieldError("fetchPerson","该部门暂无成员！");
                 jsonresult.put("hasmember","false");
+
             }
             return INPUT;
         }
@@ -259,10 +265,8 @@ public PersonnelAction(){
     )
     public String deletePersonSubmit(){
         try {
-            //在数据库中删除对应人员。因为人员与部门为多对多双向管理，所以这里是用的方法是直接删除member
-            for (int i = 0; i < deleted.length; i++) {
-                memberService.remove(deleted[i]);
-            }
+            //在数据库中删除对应人员。因为人员与部门为多对多双向管理，所以这里是用的方法是使用字符串拼接直接删除member
+            memberService.remove(deleted);
         }
         catch (Exception e){
             addFieldError("deletePerson","删除人员失败！");
@@ -277,13 +281,13 @@ public PersonnelAction(){
             }
     )
     /**
-     * 修改id为needreset的member密码为 111111
+     * 修改id为needreset的member密码为defaultPassword= "111111"
      */
     public String resetPasswordSubmit(){
-            fill();
+
         try {       Member curmember=memberService.get(needreset.trim());
                     System.out.println("修改前的密码："+curmember.getPassword());
-                    curmember.setPassword("111111");
+                    curmember.setPassword(defaultPassword);
                     memberService.update(curmember);
                     System.out.println("重置后的密码："+memberService.get(needreset.trim()).getPassword());
                     jsonresult.put("resetresult",true);
@@ -301,22 +305,26 @@ public PersonnelAction(){
             }
     )
     /**
-     * 取id为private string id的一个人(person)的信息
+     * 取当前操作者的信息，即((Minister)session.get("personInfo")).getID()的id
      */
     public String fetchPersonInfo(){
         //这里主要是数据库的代码
         try {
-            this.id=((Person)session.get("personInfo")).getID();
-            Person p=personService.get(id);
-            setPassword(p.getPassword());
-            setPhoneNumber(p.getPhoneNumber());
-            setName(p.getName());
-            setQQ(p.getQQ());
-            //问题：这样返回birthday得到的String是按照我们约定的模板的么
-            setBirthday(p.getBirthday().toString());
-            setGender(p.getGender());
-
-            jsonresult.put("curPerson",p);
+            this.id=((Member)session.get("personInfo")).getID();
+            Member curMember=ministerService.get(id);
+            setPassword(curMember.getPassword());
+            setPhoneNumber(curMember.getPhoneNumber());
+            setName(curMember.getName());
+            setQQ(curMember.getQQ());
+            //这里会将部员参加的第一个部门展示出来，没有则赋0，在查询时切记检验
+           if (curMember.getEnterDepts().iterator().hasNext())
+               setDept(curMember.getEnterDepts().iterator().next().getDeptID());
+           else
+               setDept(0);
+           //按我们规定的 日历模板来显示
+            setBirthday(simpleDateFormat.format(curMember.getBirthday()));
+            setGender(curMember.getGender());
+            jsonresult.put("curPerson",curMember);
             return INPUT;
         }
         catch (Exception e){
@@ -335,20 +343,20 @@ public PersonnelAction(){
      * 修改person类型对象并保存
      */
     public String modifyInfo(){
-        try {
-            this.id=((Person)session.get("personInfo")).getID();
-            Person person=new Person();
-            person.setID(id);
-             person=personService.get(id);
-             person.setPassword(password);
-             person.setQQ(QQ);
-            person.setGender(gender);
-            person.setPhoneNumber(phoneNumber);
+        try {//
+            this.id=((Member)session.get("personInfo")).getID();
+            Member member_on=new Member();
+            member_on.setID(id);
+             member_on=memberService.get(id);
+             member_on.setPassword(password);
+             member_on.setQQ(QQ);
+            member_on.setGender(gender);
+            member_on.setPhoneNumber(phoneNumber);
             Calendar calendar=Calendar.getInstance();
             calendar.setTime(simpleDateFormat.parse(birthday));
-            person.setBirthday(calendar);
-            personService.update(person);
-            System.out.println(name+" "+gender+" "+birthday+" "+phoneNumber+" "+QQ);
+            member_on.setBirthday(calendar);
+            personService.update(member_on);
+            System.out.println(member_on);
         }
         catch (Exception e){
             addFieldError("fetchPersonInfo","修改用户信息失败！");
@@ -357,7 +365,7 @@ public PersonnelAction(){
     }
 
     public void validateModifyInfo(){
-        if (name==null || name.equals("")) {
+        if (name==null || name.equals("")) {//！！！修改错误信息返回，使用registeraction
             addFieldError("name", "请输入您的姓名！");
         }
         else {
@@ -382,20 +390,19 @@ public PersonnelAction(){
         }
         else {
             if (!registerUtil.isValid(RegisterCheck.Type.QQ,QQ)) {
-                addFieldError("QQ", "请输入正确的QQ号码！");
+                addFieldError("QQ", "您的QQ号输入有误，请检查并重新输入!");
             }
             else {
             }
         }
         //西安交通大学招生简章规定，少年班的入学年龄不得低于14岁
         Calendar curtime = Calendar.getInstance();
-        curtime.setTime(new Date());
         if (birthday.equals("")) {
-            addFieldError("birthday", "请输入您的生日！");
+            addFieldError("birthday", "请输入您的生日以便社团成员为您庆祝生日!");
         }
         else {
             if(!registerUtil.isValid(RegisterCheck.Type.BIRTHDAY,birthday)){
-                addFieldError("birthday", "输入的出生日期不得晚于"+(curtime.get(Calendar.YEAR)-14)+"年1月1日，不得早于1970年1月1日");
+                addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
             }
             else {
                 //curPerson.setAge(birthday);
@@ -403,33 +410,36 @@ public PersonnelAction(){
         }
         return;
     }
-    /**
-     * fill函数为私有函数，取出id为dept的部门全部成员于deptmember
-     */
-    private void  fill(){
-        deptMember.clear();
-        Set<Member> members=departmentService.get(dept).getMembers();
-        Iterator<Member> memberIterator=members.iterator();
-        while (memberIterator.hasNext()){
-            deptMember.add(memberIterator.next());
-        }
-    }
-    /**
-     * fulfill函数为私有函数，用于从当前session取得id并取出该操作者下辖所有部门的全部成员，置于list<Member> deptmember中
-     */
-    private void fulfill(){
-        deptMember.clear();
-        this.id=((Person)session.get("personInfo")).getID();
-        Set<Department> departments=ministerService.get(id).getManageDepts();
-        Iterator<Department> departmentIterator=departments.iterator();
-        while (departmentIterator.hasNext()){
-            Set<Member> members=departmentIterator.next().getMembers();
-            Iterator<Member> memberIterator=members.iterator();
-            while (memberIterator.hasNext()){
-                deptMember.add(memberIterator.next());
-            }
-        }
-    }
+//    /**
+//     * fill函数为私有函数，取出id为dept的部门全部成员于deptmember
+//     */
+//    private void  fill(){//修改为使用for的，并封装在service
+//        deptMember.clear();
+//        Set<Member> members=departmentService.get(dept).getMembers();
+//        Iterator<Member> memberIterator=members.iterator();
+////        while (memberIterator.hasNext()){
+////            deptMember.add(memberIterator.next());
+////        }
+//        for(Member member: members){
+//
+//        }
+//    }
+//    /**
+//     * fulfill函数为私有函数，用于从当前session取得id并取出该操作者下辖所有部门的全部成员，置于list<Member> deptmember中
+//     */
+//    private void fulfill(){
+//        deptMember.clear();
+//        this.id=((Person)session.get("personInfo")).getID();
+//        Set<Department> departments=ministerService.get(id).getManageDepts();
+//        Iterator<Department> departmentIterator=departments.iterator();
+//        while (departmentIterator.hasNext()){
+//            Set<Member> members=departmentIterator.next().getMembers();
+//            Iterator<Member> memberIterator=members.iterator();
+//            while (memberIterator.hasNext()){
+//                deptMember.add(memberIterator.next());
+//            }
+//        }
+//    }
 
     @Override
     public void setSession(Map<String, Object> map) {

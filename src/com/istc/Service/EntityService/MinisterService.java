@@ -18,6 +18,7 @@ public class MinisterService {
     @Resource
     private transient MinisterDAO ministerDAO;
     public void update(Minister minister){
+        if (minister!=null&&minister.getID()!=null)
         ministerDAO.edit(minister);
     }
 
