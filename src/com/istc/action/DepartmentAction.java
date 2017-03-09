@@ -6,7 +6,6 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.interceptor.SessionAware;
 import com.istc.Entities.Entity.Department;
 
 import java.text.SimpleDateFormat;
@@ -20,9 +19,8 @@ import java.util.*;
 
 @ParentPackage("needajax")
 @AllowedMethods({"addDept","modifyDept","deleteDept","fetchAllDept"})
-public class DepartmentAction extends ActionSupport implements SessionAware {
+public class DepartmentAction extends ActionSupport{
 
-    private Map<String, Object> session;
     private int dept;
     private String introduction;
     private String deptName;
@@ -91,7 +89,7 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
             addFieldError("establishTime","请填写部门创建时间！");
         }
         else {
-            if(ValidationUtils.getInstance().checkIfAfterThanNow(establishTime)){
+            if(ValidationUtils.getInstance().checkIfDateAfterThanNow(establishTime)){
                 addFieldError("establishTime","您输入的时间不正确，请重新检查后输入！");
             }
         }
@@ -156,11 +154,6 @@ public class DepartmentAction extends ActionSupport implements SessionAware {
             addFieldError("fetchDept","获取部门信息失败！");
         }
         return INPUT;
-    }
-
-    @Override
-    public void setSession(Map<String, Object> map) {
-        this.session=map;
     }
 
     public int getDept() {

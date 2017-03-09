@@ -18,18 +18,42 @@ public class ValidationUtils {
         return ValidationUtils.ValidationUtilsHolder.instance;
     }
 
-    public boolean checkIfAfterThanNow(String date) {
+    public boolean checkIfDateAfterThanNow(String date) {
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+        return checkBeforeAfterThanNow(date,sdf,false);
+    }
+
+    public boolean checkIfDatetimeAfterThanNow(String date){
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        return checkBeforeAfterThanNow(date,sdf,false);
+    }
+
+    public boolean checkIfDatetimeBeforeThanNow(String date){
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        return checkBeforeAfterThanNow(date,sdf,true);
+    }
+
+    private boolean checkBeforeAfterThanNow(String date,SimpleDateFormat sdf,boolean checkbefore){
         date=date.trim();
         boolean result;
-        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
         Calendar dateset = Calendar.getInstance();
         try {
             dateset.setTime(sdf.parse(date));
-            if (dateset.after(Calendar.getInstance()) || dateset.YEAR < 1970){
-                result = false;
+            if (checkbefore){
+                if (!dateset.after(Calendar.getInstance())){
+                    result = true;
+                }
+                else {
+                    result=false;
+                }
             }
             else {
-                result=true;
+                if (dateset.after(Calendar.getInstance())){
+                    result = true;
+                }
+                else {
+                    result=false;
+                }
             }
         } catch (Exception e) {
             result=false;
@@ -47,6 +71,39 @@ public class ValidationUtils {
             return false;
         }
         return result;
+    }
+
+    public boolean checkIfDaysDelayAtLeast(String starttime,String endtime,int daysdelay){
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        endtime=endtime.trim();
+        starttime=starttime.trim();
+        Calendar endtimeset = Calendar.getInstance();
+        Calendar starttimeset = Calendar.getInstance();
+        try {
+            endtimeset.setTime(sdf.parse(endtime));
+            starttimeset.setTime(sdf.parse(starttime));
+            return dateTimeDaysDelayCheck(starttimeset,endtimeset,daysdelay);
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean checkIfDaysDelayThanNowAtLeast(String endtime,int daysdelay){
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        Calendar endtimeset = Calendar.getInstance();
+        try {
+            endtimeset.setTime(sdf.parse(endtime));
+            return dateTimeDaysDelayCheck(Calendar.getInstance(),endtimeset,daysdelay);
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
+    private boolean dateTimeDaysDelayCheck(Calendar start,Calendar end, int daysdelay){
+        start.add(Calendar.DAY_OF_YEAR,daysdelay);
+        return !start.after(end);
     }
 
     public String replaceString(String needcheck){

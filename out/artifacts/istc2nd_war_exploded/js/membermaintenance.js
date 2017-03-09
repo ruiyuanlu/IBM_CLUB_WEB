@@ -50,7 +50,7 @@ function jsonSerialize(json,success){
         return;
     }
     alert(success);
-    window.location.reload();
+    refetch();
 }
 
 function isEmpty(obj){//判断对象是否为空(处理Object obj = {}这种情况认为isEmpty=true)

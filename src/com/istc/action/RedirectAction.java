@@ -128,6 +128,11 @@ public class RedirectAction extends ActionSupport implements SessionAware,Servle
         return "deptManagement";
     }
 
+    @Action(value="homeworkmanagement", results={@Result(name="homeworkManagement",location="homeworkManagement.jsp")})
+    public String homeworkManagement() {
+        return "homeworkManagement";
+    }
+
     @Override
     public void setServletRequest(HttpServletRequest httpServletRequest) {
         this.request=httpServletRequest;

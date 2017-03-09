@@ -43,23 +43,26 @@
     var datepicker = document.getElementById("birthday");
     datepicker.setAttribute("max",maxbirthday);
     datepicker.setAttribute("min","1970-01-01");
-    $.post("fetchPersonInfo",function(json) {
-        var id=document.getElementById("curpersonid");
-        id.appendChild(document.createTextNode("学号："+json.jsonresult.curPerson.ID));
-        var name=document.getElementsByName("name")[0];
-        name.setAttribute("value",json.jsonresult.curPerson.name);
-        var male=document.getElementsByName("gender")[0];
-        var female=document.getElementsByName("gender")[1];
-        if (json.jsonresult.curPerson.gender == true){
-            male.checked=true;
-        }
-        else {
-            female.checked=true;
-        }
-        var phonenumber = document.getElementsByName("phoneNumber")[0];
-        phonenumber.setAttribute("value",json.jsonresult.curPerson.phoneNumber);
-        var QQ=document.getElementsByName("QQ")[0];
-        QQ.setAttribute("value",json.jsonresult.curPerson.QQ);
-    });
+    refetch();
+    function refetch() {
+        $.post("fetchPersonInfo",function(json) {
+            var id=document.getElementById("curpersonid");
+            id.appendChild(document.createTextNode("学号："+json.jsonresult.curPerson.ID));
+            var name=document.getElementsByName("name")[0];
+            name.setAttribute("value",json.jsonresult.curPerson.name);
+            var male=document.getElementsByName("gender")[0];
+            var female=document.getElementsByName("gender")[1];
+            if (json.jsonresult.curPerson.gender == true){
+                male.checked=true;
+            }
+            else {
+                female.checked=true;
+            }
+            var phonenumber = document.getElementsByName("phoneNumber")[0];
+            phonenumber.setAttribute("value",json.jsonresult.curPerson.phoneNumber);
+            var QQ=document.getElementsByName("QQ")[0];
+            QQ.setAttribute("value",json.jsonresult.curPerson.QQ);
+        });
+    }
 </script>
 </html>
