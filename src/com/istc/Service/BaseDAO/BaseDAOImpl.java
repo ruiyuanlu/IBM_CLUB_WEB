@@ -40,7 +40,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
         Type[] types = ((ParameterizedType)this.getClass().getGenericSuperclass()).getActualTypeArguments();
         this.eClass = (Class<E>)types[0];
         this.pkClass = (Class<PK>)types[1];
-    }
+}
 
     /**
      * 使用session工厂获取session

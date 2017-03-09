@@ -21,30 +21,43 @@ public class MeetingService {
      * 增删改查
      */
     public void add(Meeting meeting){
+        if (meeting!=null&&meeting.getMeetingID()!=null)
         meetingDAO.save(meeting);
     }
 
     public void delete(Meeting meeting){
+        if (meeting!=null&&meeting.getMeetingID()!=null)
         meetingDAO.delete(meeting.getMeetingID());
     }
 
     public void delete(Integer deptID, Integer meetingTimes){
+        if (deptID!=0&&deptID!=null&&meetingTimes!=0&&meetingTimes!=null)
         delete(new Meeting(deptID, meetingTimes));
     }
     public void edit(Meeting meeting){
+        if (meeting!=null&&meeting.getMeetingID()!=null)
         meetingDAO.edit(meeting);
     }
 
     public Meeting get(Meeting meeting){
-        return meetingDAO.get(meeting.getMeetingID());
+        if (meeting!=null&&meeting.getMeetingID()!=null)
+            return meetingDAO.get(meeting.getMeetingID());
+        else
+            return null;
     }
 
     public Meeting get(Integer departmentId, Integer meetingTimes){
-        return meetingDAO.get(departmentId, meetingTimes);
+        if (departmentId!=0&&departmentId!=null&&meetingTimes!=0&&meetingTimes!=null)
+            return meetingDAO.get(departmentId, meetingTimes);
+        else
+            return null;
     }
 
     public List<Meeting> getMeetingsByDepartmetId(Integer departmentId){
-        return meetingDAO.getByDepartmentId(departmentId);
+        if (departmentId!=0&&departmentId!=null)
+            return meetingDAO.getByDepartmentId(departmentId);
+        else
+            return null;
     }
 
     /**
@@ -52,7 +65,10 @@ public class MeetingService {
      * @return 最近一次例会
      */
     public Meeting getLatest(Integer departmentId){
-        return meetingDAO.getLatest(departmentId);
+        if (departmentId!=0&&departmentId!=null)
+            return meetingDAO.getLatest(departmentId);
+        else
+            return null;
     }
     /**
      * 获取最早的一次例会
@@ -63,6 +79,9 @@ public class MeetingService {
     }
 
     public Integer countDepartmentMeetingsById(Integer departmentId){
-        return meetingDAO.departmentMeetingsTotalCount(departmentId);
+        if (departmentId!=0&&departmentId!=null)
+            return meetingDAO.departmentMeetingsTotalCount(departmentId);
+        else
+            return 0;
     }
 }

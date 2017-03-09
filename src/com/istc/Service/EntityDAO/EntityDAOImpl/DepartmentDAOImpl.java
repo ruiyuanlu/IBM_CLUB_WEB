@@ -10,4 +10,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("departmentDAO")
 public class DepartmentDAOImpl extends BaseDAOImpl<Department, Integer> implements DepartmentDAO {
+    @Override
+    public Boolean exist(int dept) {
+        return this.get(dept)!=null;
+    }
 }

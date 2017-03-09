@@ -21,7 +21,8 @@ public class MemberDAOImpl<E extends Member, PK extends Serializable> extends Pe
     @Override
     public Member get(String id){
         if(id == null)return null;
-        return (Member)this.getSession().createQuery("from Member m where m.id =:id").setParameter("id", id).uniqueResult();
+        StringBuilder stringBuilder=new StringBuilder("from Member m where m.id =:id");
+        return (Member)this.getSession().createQuery(stringBuilder.toString()).setParameter("id", id).uniqueResult();
     }
 
     @Override
@@ -31,10 +32,18 @@ public class MemberDAOImpl<E extends Member, PK extends Serializable> extends Pe
     }
 
     @Override
+    public void deleteMembers(String[] ids) {
+        StringBuilder strb = new StringBuilder("delete from Member m where m.id = ").append(ids[0]);
+        for(int i = 1; i < ids.length; i++)
+            strb.append(" or m.id = ").append(ids[i]);
+        this.getSession().createQuery(strb.toString()).executeUpdate();
+    }
+
+    @Override
     public Member[] get(String[] ids){
         StringBuilder strb = new StringBuilder("from Member m where m.id = ").append(ids[0]);
         for(int i = 1; i < ids.length; i++)
-            strb.append(" and m.id = ").append(ids[i]);
+            strb.append(" or m.id = ").append(ids[i]);
         List<Member> list = (List<Member>)this.getSession().createQuery(strb.toString()).list();
         if(list == null || list.size() <= 0)return null;
         Member[] members = new Member[list.size()];

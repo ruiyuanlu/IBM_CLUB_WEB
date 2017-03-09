@@ -1,6 +1,7 @@
 package com.istc.Service.EntityDAO.EntityDAOInterfaces;
 
 import com.istc.Entities.Entity.Member;
+import com.istc.Entities.Entity.Person;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,4 +14,7 @@ public interface MemberDAO<E extends Member, PK extends Serializable> extends Pe
     Member get(String id);
     Member get(Member member);
     Member[] get(String[] ids);
+    void delete(String id);
+    void deleteMembers(String[] id);
+
 }

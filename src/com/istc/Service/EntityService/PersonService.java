@@ -42,14 +42,28 @@ public class PersonService {
     }
 
     public Person get(Person person){
+        if (person!=null&&person.getID()!=null)
         return personDAO.get(person);
+        else return null;
+    }
+
+    public Person get(String id){
+        if(id!=null)
+        return  personDAO.get(id);
+        else return null;
+    }
+    public void  update(Person person){
+        if (person!=null&&person.getID()!=null)
+        personDAO.edit(person);
     }
 
     public Boolean exist(Person person){
+        if (person==null)return false;
         return personDAO.exist(person);
     }
 
     public Boolean exist(String id){
+        if (id==null)return false;
         return personDAO.exist(id);
     }
 
