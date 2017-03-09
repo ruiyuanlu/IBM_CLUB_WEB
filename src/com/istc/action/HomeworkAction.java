@@ -98,7 +98,8 @@ public class HomeworkAction extends ActionSupport{
             }
     )
     public String modifyHomework(){
-        //已过有效提交日期的作业不能修改
+        //注意：使用这个action需要表单，并且通过js将该例会原本的信息写入表单中以便于用户操作
+        //隐藏域为部门id
         try {
             for(int i=0;i<homeworklist.size();i++){
                 if (homeworklist.get(i).getId() == id){
@@ -126,6 +127,7 @@ public class HomeworkAction extends ActionSupport{
         return INPUT;
     }
 
+    //该验证函数直接使用的是添加函数的验证器，这意味着如果修改后截止时间在当前时间之后的两天内，则必须重新指定截止日期以满足要求
     public void validateModifyHomework(){
         validateAddHomework();
     }
