@@ -16,5 +16,6 @@
 <a href="registerRedirect">注册</a> <br/>
 <a href="signRedirect">扫码签到</a> <br/>
 <a href="signRedirect">扫码签到</a> <br/>
+<a href="memberInfoManagementRedirect">成员信息修改</a> <br/>
 </body>
 </html>

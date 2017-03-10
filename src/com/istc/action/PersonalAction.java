@@ -180,10 +180,10 @@ public PersonalAction(){
              * 旧密码置入private string oldpassword
              */
             id= ((Person)session.get(loginKey)).getID();
-            Minister minitemp=ministerService.get(id);
-            oldpassword=minitemp.getPassword();
-            minitemp.setPassword(password);
-            ministerService.update(minitemp);
+            Person person= personService.get(id);
+            oldpassword=person.getPassword();
+            person.setPassword(password);
+            personService.update(person);
             System.out.println("修改前的密码："+oldpassword);
             System.out.println("修改后的密码："+password);
             this.session.clear();
@@ -200,9 +200,10 @@ public PersonalAction(){
     public void validateChangePassword(){
         //此处有从数据库获取旧密码的步骤，这里先用假数据测试，用户ID的来源是session
         //已补充数据库操作，但前提是struts已能够通过session   GET到操作者ID
-        this.id=((Person)session.get(loginKey)).getID();
-        Minister minitemp=ministerService.get(id);
-        String oldPasswordFromDatabase=minitemp.getPassword();
+        this.id = ((Person)session.get(loginKey)).getID();
+        Person person = personService.get(id);
+        if(!personService.exist(id))addFieldError("id", "当前用户不存在");
+        String oldPasswordFromDatabase = person.getPassword();
         if (oldpassword==null || oldpassword.equals("")){
             addFieldError("oldpassword","请输入旧密码！");
         }
@@ -312,7 +313,7 @@ public PersonalAction(){
         //这里主要是数据库的代码
         try {
             this.id=((Person)session.get(loginKey)).getID();
-            Member curMember=ministerService.get(id);
+            Member curMember= memberService.get(id);
             jsonresult.put("curPerson",curMember);
             return INPUT;
         }

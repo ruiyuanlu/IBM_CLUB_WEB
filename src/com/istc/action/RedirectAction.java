@@ -48,28 +48,28 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         System.out.println("进入RedirectAction");
     }
 
-    @Action(value = "personInfoManagement", results = {@Result(name = "personInfoManagement", location = "jsp/memberInfoManagement.jsp")})
-    public String personInfoManagement(){
+    @Action(value = "memberInfoManagementRedirect", results = {@Result(name = "personInfoManagement", location = "jsp/memberInfoManagement.jsp")})
+    public String memberInfoManagementRedirect(){
         return "personInfoManagement";
     }
 
-    @Action(value="deptManagement", results={@Result(name="deptManagement",location="jsp/deptManagement.jsp")})
-    public String deptManagement() {
+    @Action(value="deptManagementRedirect", results={@Result(name="deptManagement",location="jsp/deptManagement.jsp")})
+    public String deptManagementRedirect() {
         return "deptManagement";
     }
 
-    @Action(value="homeworkManagement", results={@Result(name="homeworkManagement",location="jsp/homeworkManagement.jsp")})
-    public String homeworkManagement() {
+    @Action(value="homeworkManagementRedirect", results={@Result(name="homeworkManagement",location="jsp/homeworkManagement.jsp")})
+    public String homeworkManagementRedirect() {
         return "homeworkManagement";
     }
 
-    @Action(value="memberModify", results={@Result(name="memberModify",location="jsp/memberModify.jsp")})
-    public String memberModify() {
+    @Action(value="memberModifyRedirect", results={@Result(name="memberModify",location="jsp/memberModify.jsp")})
+    public String memberModifyRedirect() {
         return "memberModify";
     }
 
-    @Action(value = "signRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
-    public String signRedirect(){
+    @Action(value = "signRedirectRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
+    public String signRedirectRedirect(){
         return "sign";
     }
 
