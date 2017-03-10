@@ -27,7 +27,7 @@ public interface BaseDAO<E, PK extends Serializable> {
      * 根据主键删除一个实例
      * @param id 主键，类型可以是int，也可以是泛型: ID
      */
-    public void delete(PK id);
+    public void delete(E id);
 
     /**
      * 编辑指定实例的属性

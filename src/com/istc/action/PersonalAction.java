@@ -108,6 +108,7 @@ public PersonalAction(){
         System.out.println(id+" "+password+" "+name+" "+dept);
         Member p=new Member();
         p.setID(id);
+        password= encoder.encodeSHA512(password.getBytes());
         p.setPassword(password);
         p.setName(name);
         p.setGender(gender);
@@ -119,11 +120,13 @@ public PersonalAction(){
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        System.out.println(p.toString());
         p.setBirthday(calendar);
         //以更新部门的方式完成部员添加，建立了关系
         Department depart0=departmentService.get(dept);
-        depart0.getMembers().add(p);
-        departmentService.update(depart0);
+        if (depart0==null||depart0.getDeptID()==null)return INPUT;
+        p.addDepartment(depart0);
+        memberService.save(p);
         return INPUT;
     }
 
@@ -135,12 +138,11 @@ public PersonalAction(){
             if (!registerUtil.isValid(RegisterCheck.Type.ID,id)) {
                 addFieldError("id", "学号输入有误，请检查并重新输入。");
             }
-            else if (memberService.exist(id)) {
-			addFieldError("id", "您的学号已经被注册过！请登录或尝试找回密码。");
-		}
-            else {
+//由person变为member本身id就是存在于数据库的
+//            else if (memberService.exist(id)) {
+//			addFieldError("id", "该学号已经被注册过！请登陆或尝试找回密码。");
+//		}
 
-            }
         }
         if (password==null || password.equals("")) {
             addFieldError("password", "请设置密码！");
@@ -198,27 +200,21 @@ public PersonalAction(){
     }
 
     public void validateChangePassword(){
-        //此处有从数据库获取旧密码的步骤，这里先用假数据测试，用户ID的来源是session
-        //已补充数据库操作，但前提是struts已能够通过session   GET到操作者ID
+        //此处有从数据库获取旧密码的步骤，用户ID的来源是session
+        //struts能够通过session   GET到操作者ID
         this.id = ((Person)session.get(loginKey)).getID();
         Person person = personService.get(id);
         if(!personService.exist(id))addFieldError("id", "当前用户不存在");
-        String oldPasswordFromDatabase = person.getPassword();
+        String passwordFD = person.getPassword();
+        //密码合法性检查
         if (oldpassword==null || oldpassword.equals("")){
             addFieldError("oldpassword","请输入旧密码！");
-        }
-        else {
-            if (!oldpassword.equals(oldPasswordFromDatabase)){
-                addFieldError("oldpassword","您输入的旧密码不正确！");
-            }
         }
         if (password==null || password.equals("")){
             addFieldError("password","请键入新密码！");
         }
         else {
-            if (oldPasswordFromDatabase.equals(password)){
-                addFieldError("password","请键入与旧密码不同的新密码！");
-            }
+
             if (!registerUtil.isValid(RegisterCheck.Type.PASSWORD,password)){
                 addFieldError("password","密码中只允许使用数字、字母和下划线。长度不小于6位，不大于30位。");
             }
@@ -226,6 +222,17 @@ public PersonalAction(){
                 addFieldError("repassword","两次输入的密码不一致！");
             }
         }
+        //后台加密并检验密码正确性
+        password= encoder.encodeSHA512(password.getBytes());
+        oldpassword= encoder.encodeSHA512(oldpassword.getBytes());
+        System.out.println("user input:"+oldpassword);
+        System.out.println("DB input  :"+passwordFD);
+        if (passwordFD.equals(password)){
+                addFieldError("password","请键入与旧密码不同的新密码！");
+            }
+        if (!oldpassword.equals(passwordFD)){
+                addFieldError("oldpassword","您输入的旧密码不正确！");
+            }
     }
 
     @Action(
@@ -288,10 +295,10 @@ public PersonalAction(){
     public String resetPasswordSubmit(){
 
         try {       Member curmember=memberService.get(needreset.trim());
-                    System.out.println("修改前的密码："+curmember.getPassword());
+                    System.out.println("修改前的密码加密："+curmember.getPassword());
                     curmember.setPassword(defaultPassword);
                     memberService.update(curmember);
-                    System.out.println("重置后的密码："+memberService.get(needreset.trim()).getPassword());
+                    System.out.println("重置后的密码加密："+memberService.get(needreset.trim()).getPassword());
                     jsonresult.put("resetresult",true);
         }
         catch (Exception e){
@@ -333,13 +340,14 @@ public PersonalAction(){
      * 修改person类型对象并保存
      */
     public String modifyInfo(){
-        try {//
-            this.id=((Person)session.get(loginKey)).getID();
-            Member member_on=new Member();
-            member_on.setID(id);
-             member_on=memberService.get(id);
-             member_on.setPassword(password);
-             member_on.setQQ(QQ);
+        try {
+            id= ((Person)session.get(loginKey)).getID();
+            Member member_on;
+            member_on=memberService.get(id);
+            if (member_on==null){
+                 addFieldError("fetchPersonInfo","您的id不存在！");
+                 return INPUT;}
+            member_on.setQQ(QQ);
             member_on.setGender(gender);
             member_on.setPhoneNumber(phoneNumber);
             Calendar calendar=Calendar.getInstance();
@@ -349,20 +357,19 @@ public PersonalAction(){
             System.out.println(member_on);
         }
         catch (Exception e){
+            e.printStackTrace();
             addFieldError("fetchPersonInfo","修改用户信息失败！");
         }
         return INPUT;
     }
 
     public void validateModifyInfo(){
-        if (name==null || name.equals("")) {//！！！修改错误信息返回，使用registeraction
+        if (name==null || name.equals("")) {
             addFieldError("name", "请输入您的姓名！");
         }
         else {
             if (!registerUtil.isValid(RegisterCheck.Type.NAME,name)) {
                 addFieldError("name", "请输入正确的姓名信息！");
-            }
-            else {
             }
         }
         if (phoneNumber==null || phoneNumber.equals("")) {
@@ -371,8 +378,6 @@ public PersonalAction(){
         else {
             if (!registerUtil.isValid(RegisterCheck.Type.PHONE_NUMBER,phoneNumber)) {
                 addFieldError("phoneNumber", "请输入有效的大陆手机号码！");
-            }
-            else {
             }
         }
         if (QQ==null || QQ.equals("")) {
@@ -395,7 +400,6 @@ public PersonalAction(){
                 addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
             }
             else {
-                //curPerson.setAge(birthday);
             }
         }
         return;
@@ -523,34 +527,5 @@ public PersonalAction(){
         this.response=httpServletResponse;
     }
 
-//    public static void addtemp() {
-//        //原则上是从数据库中获取数据，这里为了测试用假数据
-//        Person curPerson = new Person();
-//        curPerson.setID("2141601033");
-//        curPerson.setPassword("102030");
-//        curPerson.setName("张三");
-//        curPerson.setAge(18);
-//        deptmember.add(curPerson);
-//
-//        curPerson=new Person();
-//        curPerson.setID("2141601022");
-//        curPerson.setPassword("qwerty");
-//        curPerson.setName("李四");
-//        curPerson.setAge(18);
-//        deptmember.add(curPerson);
-//
-//        curPerson=new Person();
-//        curPerson.setPassword("asdfgh");
-//        curPerson.setID("2141601011");
-//        curPerson.setName("王五");
-//        curPerson.setAge(18);
-//        deptmember.add(curPerson);
-//
-//        curPerson=new Person();
-//        curPerson.setID("2141601044");
-//        curPerson.setPassword("567890");
-//        curPerson.setName("赵六");
-//        curPerson.setAge(18);
-//        deptmember.add(curPerson);
-//    }
+
 }

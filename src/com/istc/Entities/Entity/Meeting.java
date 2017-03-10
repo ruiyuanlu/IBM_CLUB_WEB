@@ -3,7 +3,6 @@ package com.istc.Entities.Entity;
 import com.istc.Entities.ID.MeetingID;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Entity
