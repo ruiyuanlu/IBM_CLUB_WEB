@@ -133,6 +133,11 @@ public class RedirectAction extends ActionSupport implements SessionAware,Servle
         return "homeworkManagement";
     }
 
+    @Action(value="scoring", results={@Result(name="scoring",location="scoring.jsp")})
+    public String scoring() {
+        return "scoring";
+    }
+
     @Override
     public void setServletRequest(HttpServletRequest httpServletRequest) {
         this.request=httpServletRequest;

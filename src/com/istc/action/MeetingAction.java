@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.istc.Entities.Entity.Meeting;
+import com.istc.Entities.ID.MeetingID;
 import com.istc.validation.ValidationUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
@@ -42,13 +43,12 @@ public class MeetingAction extends ActionSupport{
     public String addMeeting(){
 	    try{
 	        //传过来的Datetime格式如下
+            int lastid=meetinglist.get(meetinglist.size()-1).getMeetingID().getTimes();
             SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
             Calendar starttime = Calendar.getInstance();
             starttime.setTime(sdf.parse(startTime));
             Meeting m=new Meeting();
-            m.setLocation(ValidationUtils.getInstance().replaceString(location));
-            m.setMeetingContent(ValidationUtils.getInstance().replaceString(meetingContent));
-            m.setStartTime(starttime);
+            //修改这个对象
             meetinglist.add(m);
         }
         catch (Exception e){

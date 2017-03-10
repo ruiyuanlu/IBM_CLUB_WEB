@@ -27,6 +27,7 @@ public class HomeWork {
 
     public HomeWork() {
         this.homeWorkID = new HomeWorkID();
+        score = -1;
     }
 
     public HomeWork(Department dept, Member member, int times) {

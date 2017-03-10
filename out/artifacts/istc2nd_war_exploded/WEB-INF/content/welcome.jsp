@@ -31,6 +31,7 @@ if(session.getAttribute("infofromAction2jsp")!=null){
     <a href="personinfomanagement" target="_blank">用户信息管理测试</a><br>
     <a href="deptmanagement" target="_blank">部门管理</a><br>
     <a href="homeworkmanagement?dept=1" target="_blank">作业管理</a><br>
+    <a href="scoring?dept=1" target="_blank">作业评分</a><br>
     <a href="Logout">登出</a>
   </body>
 </html>

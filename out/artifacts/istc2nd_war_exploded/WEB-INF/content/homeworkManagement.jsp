@@ -71,10 +71,11 @@
                 deleteinput.setAttribute("value",json.jsonresult.homeworklist[i].id);
                 form.appendChild(deletehint);
                 deletehint.appendChild(document.createTextNode("删除 "));
-                var reset = document.createElement("BUTTON");
-                reset.appendChild(document.createTextNode("修改作业信息"));
-                reset.setAttribute("onclick","modifyHomework("+GetQueryString("dept")+","+json.jsonresult.homeworklist[i].id+")");
-                form.appendChild(reset);
+                //暂时不知道修改应该如何实现，先留下了接口，验证器设置为和添加作业相同的模式
+/*                var modify = document.createElement("BUTTON");
+                modify.appendChild(document.createTextNode("修改作业信息"));
+                modify.setAttribute("onclick","modifyHomework("+GetQueryString("dept")+","+json.jsonresult.homeworklist[i].id+")");
+                form.appendChild(modify);*/
                 var br=document.createElement("BR");
                 form.appendChild(br);
             }
