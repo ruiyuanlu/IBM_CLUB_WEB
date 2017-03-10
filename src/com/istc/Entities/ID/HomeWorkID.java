@@ -1,6 +1,7 @@
 package com.istc.Entities.ID;
 
 import com.istc.Entities.Entity.Department;
+import com.istc.Entities.Entity.HomeWorkIssue;
 import com.istc.Entities.Entity.Member;
 
 import javax.persistence.*;

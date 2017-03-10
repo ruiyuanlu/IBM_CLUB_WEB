@@ -95,24 +95,24 @@ public class RegisterAction extends ActionSupport implements SessionAware{
     public void validateRegister(){
         // id 检查
         if (id == null || id.equals(""))addFieldError("id", "请输入您的学号！");
-        else if(!registerUtil.isValid(Type.ID, id))addFieldError("id", "您的学号输入有误，请检查并重新输入!");
-        else if(personService.exist(id))addFieldError("id", "您的学号已经被注册过! 请登录或尝试找回密码!");
+        if(!registerUtil.isValid(Type.ID, id))addFieldError("id", "您的学号输入有误，请检查并重新输入!");
+        if(personService.exist(id))addFieldError("id", "您的学号已经被注册过! 请登录或尝试找回密码!");
         // 密码检查
-        else if(password == null || password.equals(""))addFieldError("password", "请输入您的密码!");
-        else if(!registerUtil.isValid(Type.PASSWORD, password))addFieldError("password", "密码中只允许使用数字、字母和下划线。长度不小于6位，不大于30位!");
-        else if(!password.equals(repassword))addFieldError("repassword", "两次输入的密码不一致!");
+        if(password == null || password.equals(""))addFieldError("password", "请输入您的密码!");
+        if(!registerUtil.isValid(Type.PASSWORD, password))addFieldError("password", "密码中只允许使用数字、字母和下划线。长度不小于6位，不大于30位!");
+        if(!password.equals(repassword))addFieldError("repassword", "两次输入的密码不一致!");
         // 姓名检查
-        else if(name == null || name.equals(""))addFieldError("name", "请输入您的姓名!");
-        else if(!registerUtil.isValid(Type.NAME, name))addFieldError("name", "请输入正确的姓名信息!");
+        if(name == null || name.equals(""))addFieldError("name", "请输入您的姓名!");
+        if(!registerUtil.isValid(Type.NAME, name))addFieldError("name", "请输入正确的姓名信息!");
         // 号码检查
-        else if(phoneNumber == null || phoneNumber.equals(""))addFieldError("phoneNumber", "请告诉我们您的手机号以方便联系您!");
-        else if(!registerUtil.isValid(Type.PHONE_NUMBER, phoneNumber))addFieldError("phoneNumber", "请输入有效的手机号码!");
+        if(phoneNumber == null || phoneNumber.equals(""))addFieldError("phoneNumber", "请告诉我们您的手机号以方便联系您!");
+        if(!registerUtil.isValid(Type.PHONE_NUMBER, phoneNumber))addFieldError("phoneNumber", "请输入有效的手机号码!");
         // QQ 号检查
-        else if(QQ == null || QQ.equals(""))addFieldError("QQ", "请告诉我们您的QQ号以方便日后您与社团其他成员的互动!");
-        else if(!registerUtil.isValid(Type.QQ, QQ))addFieldError("QQ", "您的QQ号输入有误，请检查并重新输入!");
+        if(QQ == null || QQ.equals(""))addFieldError("QQ", "请告诉我们您的QQ号以方便日后您与社团其他成员的互动!");
+        if(!registerUtil.isValid(Type.QQ, QQ))addFieldError("QQ", "您的QQ号输入有误，请检查并重新输入!");
         // 生日检查
-        else if(birthday == null || birthday.equals(""))addFieldError("birthday", "请输入您的生日以便社团成员为您庆祝生日!");
-        else if(!registerUtil.isValid(Type.BIRTHDAY, birthday))addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
+        if(birthday == null || birthday.equals(""))addFieldError("birthday", "请输入您的生日以便社团成员为您庆祝生日!");
+        if(!registerUtil.isValid(Type.BIRTHDAY, birthday))addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
     }
 
     public String getId() {

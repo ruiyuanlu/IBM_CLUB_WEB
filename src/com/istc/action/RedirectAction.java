@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("redirectAction")
 @Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-@AllowedMethods({"signRedirect","mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
+@AllowedMethods({"deptManagement", "personInfoManagement", "memberModify", "homeworkManagement", "signRedirect","mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -48,8 +48,28 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         System.out.println("进入RedirectAction");
     }
 
-    @Action(value = "signRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
-    public String signRedirect(){
+    @Action(value = "memberInfoManagementRedirect", results = {@Result(name = "personInfoManagement", location = "jsp/memberInfoManagement.jsp")})
+    public String memberInfoManagementRedirect(){
+        return "personInfoManagement";
+    }
+
+    @Action(value="deptManagementRedirect", results={@Result(name="deptManagement",location="jsp/deptManagement.jsp")})
+    public String deptManagementRedirect() {
+        return "deptManagement";
+    }
+
+    @Action(value="homeworkManagementRedirect", results={@Result(name="homeworkManagement",location="jsp/homeworkManagement.jsp")})
+    public String homeworkManagementRedirect() {
+        return "homeworkManagement";
+    }
+
+    @Action(value="memberModifyRedirect", results={@Result(name="memberModify",location="jsp/memberModify.jsp")})
+    public String memberModifyRedirect() {
+        return "memberModify";
+    }
+
+    @Action(value = "signRedirectRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
+    public String signRedirectRedirect(){
         return "sign";
     }
 

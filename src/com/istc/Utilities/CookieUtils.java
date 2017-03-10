@@ -52,7 +52,7 @@ public class CookieUtils {
      * @param request
      * @param response
      */
-    public  void clearCookie(HttpServletRequest request, HttpServletResponse response){
+    public void clearCookie(HttpServletRequest request, HttpServletResponse response){
         Cookie[] cookies = request.getCookies();
         if(cookies == null || cookies.length == 0)return;
         updateValidTime(cookies, response, 0, id, password);//清除 cookie 内容

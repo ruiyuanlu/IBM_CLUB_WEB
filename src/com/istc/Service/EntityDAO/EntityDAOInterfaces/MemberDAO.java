@@ -15,6 +15,6 @@ public interface MemberDAO<E extends Member, PK extends Serializable> extends Pe
     Member get(Member member);
     Member[] get(String[] ids);
     void delete(String id);
-    void deleteSet(String[] id);
+    void deleteMembers(String[] id);
 
 }

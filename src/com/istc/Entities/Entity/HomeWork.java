@@ -12,12 +12,15 @@ public class HomeWork {
     private HomeWorkID homeWorkID;
     @Basic
     private int fileID;
-    @Lob
-    private String homeWorkRequirement;
+
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar beginTime;
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar endTime;
+    //-1代表作业没被看过，看过不打分则为 -1
+    private Integer score;
+    @ManyToOne
+    private HomeWorkIssue homeWorkIssue;
     @Version
     private int homeWorkVersion;
 
@@ -28,6 +31,18 @@ public class HomeWork {
 
     public HomeWork(Department dept, Member member, int times) {
         this.homeWorkID = new HomeWorkID(dept, member, times);
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        if(score < 0 || score > 100){
+            score = 0;
+            return;
+        }
+        this.score = score;
     }
 
     private int getHomeWorkVersion() {
@@ -82,14 +97,6 @@ public class HomeWork {
         this.fileID = fileID;
     }
 
-    public String getHomeWorkRequirement() {
-        return homeWorkRequirement;
-    }
-
-    public void setHomeWorkRequirement(String homeWorkRequirement) {
-        this.homeWorkRequirement = homeWorkRequirement;
-    }
-
     public Calendar getBeginTime() {
         return beginTime;
     }
@@ -106,4 +113,11 @@ public class HomeWork {
         this.endTime = endTime;
     }
 
+    public HomeWorkIssue getHomeWorkIssue() {
+        return homeWorkIssue;
+    }
+
+    public void setHomeWorkIssue(HomeWorkIssue homeWorkIssue) {
+        this.homeWorkIssue = homeWorkIssue;
+    }
 }

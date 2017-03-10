@@ -32,7 +32,7 @@ public class MemberDAOImpl<E extends Member, PK extends Serializable> extends Pe
     }
 
     @Override
-    public void deleteSet(String[] ids) {
+    public void deleteMembers(String[] ids) {
         StringBuilder strb = new StringBuilder("delete from Member m where m.id = ").append(ids[0]);
         for(int i = 1; i < ids.length; i++)
             strb.append(" or m.id = ").append(ids[i]);

@@ -6,6 +6,7 @@ import com.istc.Entities.Entity.Interviewee;
 import com.istc.Service.EntityService.IntervieweeService;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -21,6 +22,7 @@ import javax.annotation.Resource;
 @Controller("interviewAction")
 @Scope(scopeName = "prototype")
 @AllowedMethods({"intervieweeGet", "intervieweeCheck"})
+@ParentPackage("ajax")
 @Result(name="input",location="interview.jsp")
 public class InterviewAction extends ActionSupport implements SessionAware{
 	
@@ -54,8 +56,9 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	
 	/**
 	 * 从数据库获取面试人员列表
+	 * 最后返回一个能用json解析的对象数组
 	 */
-	@Action(value="intervieweeGet")
+	@Action(value="intervieweeGet",results = {@Result(name = INPUT, type = "json", params = {"IgnoreHierarchy","false"})})
 	public String intervieweeGet() throws Exception{
 		try {
 			session.put("interviewList", intervieweeService.getRestInterviewees());

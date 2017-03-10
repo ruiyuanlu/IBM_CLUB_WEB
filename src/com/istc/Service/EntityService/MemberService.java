@@ -2,7 +2,6 @@ package com.istc.Service.EntityService;
 
 import com.istc.Entities.Entity.Member;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.MemberDAO;
-import com.istc.Utilities.DAOFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +26,10 @@ public class MemberService {
         if (member!=null&&member.getID()!=null)
         memberDAO.edit(member);
     }
+    public void save(Member member){
+        if (member!=null&&member.getID()!=null)
+            memberDAO.save(member);
+    }
 
     public Member get(Member member){
         if (member!=null&&member.getID()!=null)
@@ -40,7 +43,7 @@ public class MemberService {
     }
     public void remove(String[] ids){
         if (ids!=null&&ids[0]!=null)
-            memberDAO.deleteSet(ids);
+            memberDAO.deleteMembers(ids);
     }
 
     public boolean exist(Member member){

@@ -52,6 +52,10 @@ public class PersonService {
         return  personDAO.get(id);
         else return null;
     }
+    public void  remove(Person person){
+        if (person!=null&&person.getID()!=null)
+            personDAO.delete(person);
+    }
     public void  update(Person person){
         if (person!=null&&person.getID()!=null)
         personDAO.edit(person);
