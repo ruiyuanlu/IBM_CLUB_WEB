@@ -1,7 +1,7 @@
 package com.istc.action;
 
 import com.istc.Entities.Entity.Member;
-import com.istc.Service.EntityService.IntervieweeService;
+import com.istc.Entities.Entity.Person;
 import com.istc.Service.EntityService.MemberService;
 import com.istc.Service.EntityService.UploadedFileService;
 import com.istc.Validation.HomeWorkCheck;
@@ -11,6 +11,7 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -18,45 +19,56 @@ import javax.annotation.Resource;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Map;
 
 /**
  * Created by lurui on 2017/2/27 0027.
  */
 @Controller("homeWorkUploadAction")
 @Scope("prototype")
-@AllowedMethods("homeWorkUpload")
-public class HomeWorkUploadAction extends ActionSupport{
+@AllowedMethods({"fileUpload"})
+public class HomeWorkUploadAction extends ActionSupport implements SessionAware{
 
     private static final Integer buffSize = 2 << 10;//文件上传缓冲区大小: 2M
+    private static final String loginKey = "member";
 
     //注意，file并不是指前端jsp上传过来的文件本身，而是文件上传过来存放在临时文件夹下面的文件
-    private File file;
+    private File upload;
     //提交过来的file的名字
-    private String fileName;
+    private String uploadFileName;
+
     //提交过来的file的MIME类型, struts 会自动注入这个属性
-    private String fileContentType;
+    private String uploadContentType;
     private String extend;
     //文件提交者的ID
     private String ownerID;
+
+    private Map<String, Object> sessoin;
+
+    private InputStream inputStream;
+
 
     @Resource(name = "uploadedFileService")
     private UploadedFileService uploadedFileService;
     @Resource(name = "memberService")
     private MemberService memberService;
 
-    @Action(value = "homeWorkUpload",results = {
-            @Result(name = SUCCESS, location = "jsp/fileupload.jsp"),
-            @Result(name = INPUT, location = "fileupload", type = "redirect"),
-            @Result(name = "invalid.token", location = "fileupload", type = "redirect")
+    public HomeWorkUploadAction() {
+        System.out.println("进入上传类的构造器");
+    }
+
+    @Action(value = "fileUpload",results = {
+            @Result(name = SUCCESS, location = "jsp/fileUploadSuccess.jsp" ),
+            @Result(name = INPUT, location  = "jsp/fileUploadFail.jsp"),
+//            @Result(name = "invalid.token", location = "fileupload", type = "redirect")
         },
-            interceptorRefs = {
-                @InterceptorRef("tokenSession"),@InterceptorRef("defaultStack")
-            }
+        interceptorRefs = {@InterceptorRef("fileUploadStack")}
     )
-    public String homeWorkUpload(){
-        InputStream is = null;
+    public String fileUpload(){
+        System.out.println("进入fileUpload");
+        if (validateFileUpload().equals(INPUT)) return INPUT;
         try {
-            is = new FileInputStream(file);
+            inputStream = new FileInputStream(upload);
         } catch (FileNotFoundException e) {
             addFieldError("uploadError", "上传的文件不存在，请检查路径是否正确");
             return INPUT;
@@ -64,58 +76,101 @@ public class HomeWorkUploadAction extends ActionSupport{
         String rootPath = ServletActionContext.getServletContext().getRealPath("/uploadFiles/homeWorks");//获取绝对路径
         //检查并创建文件夹
         File dir = new File(rootPath);
-        if(!dir.exists())dir.mkdir();
-        String currentTime = new SimpleDateFormat("YYYY_MM_RR_hh_mm_ss_SSS").format(Calendar.getInstance());//获取当前时间
-        String fileSaveName= currentTime + "-" + fileName + "." + extend;//存储名 = 时间戳 + 文件名 + 扩展名
+        if(!dir.exists())dir.mkdirs();
+        String currentTime = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss_SSS").format(Calendar.getInstance().getTime());//获取当前时间
+        extend = uploadFileName.substring(uploadFileName.indexOf('.') + 1);
+        String fileSaveName= currentTime + "-" + uploadFileName + "." + extend;//存储名 = 时间戳 + 文件名 + 扩展名
+        System.out.println("文件名 " + uploadFileName);
         //上传
-        File targetFile = new File(rootPath, fileSaveName);//创建一个空文件
-        OutputStream os = null;
-        try {
-            os = new FileOutputStream(targetFile, false);
-        } catch (FileNotFoundException e) {
-            addFieldError("uploadError", "服务器创建文件异常, 请联系技术人员进行解决");
-            try {
-                is.close();
-            } catch (IOException e1) {
-                System.out.println("HomeWorkUploadAction中文件输入流关闭异常");
-            }
-        }
-        //向服务器写入数据
-        try {
-            byte[] buff = new byte[buffSize];
-            int i = is.read(buff, 0, buffSize);
-            while( i != -1){
-                os.write(buff, 0, i);
-                i = is.read(buff, 0, buffSize);
-            }
-        } catch (IOException e) {
-            addFieldError("uploadError", "文件上传失败!");
-        }
-        try {
-            is.close();
-            os.close();
-        } catch (IOException e) {
-            addFieldError("uploadError", "上传异常");
-            System.out.println("上传文件关闭输入输出流时异常");
-            return INPUT;
-        }
+        File targetFile = new File(rootPath+ '/' , fileSaveName);//创建一个空文件
+        //将文件从暂存区复制到真正存储的区域
+        copy(upload, targetFile);
         //向数据库中添加记录
+        ownerID = ((Person)sessoin.get(loginKey)).getID();
         Member owner = memberService.get(ownerID);
-        uploadedFileService.addFile(file, owner);
+        uploadedFileService.addFile(targetFile, owner);
         return SUCCESS;
     }
 
-    public void validateHomeWorkUpload(){
+    public String validateFileUpload(){
+        System.out.println("进入fileUpload 检查");
         HomeWorkCheck check = HomeWorkCheck.getInstance();
-        if(!check.isFileExsits(file)){
+        if(!check.isFileExsits(upload)){
+            System.out.println("isFileExsits 检查");
             addFieldError("uploadError", "请选择要上传的文件!");
-            return;
-        }else if(!check.isFileLengthOK(file)){
+            return INPUT;
+        }else if(!check.isFileLengthOK(upload)){
+            System.out.println("isFileLengthOK 检查");
+
             addFieldError("uploadError", "文件过大, 无法上传!");
-            return;
-        }else if((extend = check.getFileExtend(file)) == null){
-            addFieldError("uploadError", "不支持上传所选文件格式的文件!");
-            return;
+            return INPUT;
         }
+        return SUCCESS;
+    }
+
+    private static void copy(File src, File dst) {
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = new BufferedInputStream(new FileInputStream(src), buffSize);
+            out = new BufferedOutputStream(new FileOutputStream(dst), buffSize);
+            byte[] buffer = new byte[buffSize];
+            int len = 0;
+            while ((len = in.read(buffer)) > 0) out.write(buffer, 0, len);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (null != in) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (null != out) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public File getUpload() {
+        return upload;
+    }
+
+    public void setUpload(File upload) {
+        this.upload = upload;
+    }
+
+    public String getUploadFileName() {
+        return uploadFileName;
+    }
+
+    public void setUploadFileName(String uploadFileName) {
+        this.uploadFileName = uploadFileName;
+    }
+
+    public String getUploadContentType() {
+        return uploadContentType;
+    }
+
+    public void setUploadContentType(String uploadContentType) {
+        this.uploadContentType = uploadContentType;
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        this.sessoin = map;
+    }
+
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 }

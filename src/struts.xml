@@ -22,6 +22,10 @@
 
     <!--&lt;!&ndash; 设置全局文件上传大小限制为1GB，具体的限制可以通过在具体的action内解决 &ndash;&gt;-->
     <constant name="struts.multipart.maxSize" value="1073741824"/>
+    <!--设置文件的上传路径-->
+    <constant name="struts.multipart.saveDir" value="/home/Files/"/>
+    <!--设置文件上传解析器-->
+    <!--<constant name="struts.multipart.parser" value="cos"/>-->
 
     <!--全局包-->
     <package name="all" namespace="/" extends="struts-default">
@@ -54,5 +58,5 @@
         </interceptors>
         <default-interceptor-ref name="ajaxStack"/>
     </package>
-    
+
 </struts>

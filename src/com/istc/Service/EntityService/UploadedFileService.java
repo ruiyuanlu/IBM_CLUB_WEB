@@ -56,7 +56,7 @@ public class UploadedFileService {
 
     public File getFile(Integer fileID){
         UploadedFile file = uploadedFileDAO.get(fileID);
-        return file == null ? null : new File(file.getFileCanonicalPath());
+        return file == null ? null : file.createFile();
     }
 
     public File[] getFiles(Integer[] fileIDs){
@@ -70,5 +70,9 @@ public class UploadedFileService {
 
     public Integer getFileCount(){
         return uploadedFileDAO.totalCount();
+    }
+
+    public UploadedFile getUploadedFileById(int id){
+        return uploadedFileDAO.get(id);
     }
 }

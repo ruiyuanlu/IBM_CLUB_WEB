@@ -154,7 +154,7 @@ ClientBin/
 # RIA/Silverlight projects
 Generated_Code/
 
-# Backup & report files from converting an old project file to a newer
+# Backup & report files from converting an old project upload to a newer
 # Visual Studio version. Backup files are not needed, because we have git ;-)
 _UpgradeReport_Files/
 Backup*/
@@ -169,14 +169,14 @@ App_Data/*.ldf
 ## Windows detritus
 #############
 
-# Windows image file caches
+# Windows image upload caches
 Thumbs.db
 ehthumbs.db
 
-# Folder config file
+# Folder config upload
 Desktop.ini
 
-# Recycle Bin used on file shares
+# Recycle Bin used on upload shares
 $RECYCLE.BIN/
 
 # Mac crap
