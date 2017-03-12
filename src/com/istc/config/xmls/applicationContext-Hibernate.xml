@@ -24,7 +24,7 @@
 
     <!--配置数据源，根据所用连接池不同有不同的class-->
         <!--使用druid-->
-    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
+    <!--<bean entity="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
     <!--这里使用了dbcp2.x连接池-->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <!--驱动和连接属性-->

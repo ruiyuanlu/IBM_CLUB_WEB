@@ -48,6 +48,9 @@ document.write('<script type="text/jsp" src="/WEB-INF/content/jsp/memberInfoMana
 function changePasswordValidation(){
     postForm2Action("changePassword", "#changePassword", "密码修改成功！请重新登录！","loginRedirect");
 }
+function personUpgradeValidation(){
+    postForm2Action("personUpgrade","#personUpgrade","成员设置成功！")
+}
 
 function changeInfoValidation(){
     postForm2Action("modifyInfo", "#modifyInfo", "修改个人信息成功!");

@@ -27,7 +27,7 @@ public class MeetingService {
 
     public void delete(Meeting meeting){
         if (meeting!=null&&meeting.getMeetingID()!=null)
-        meetingDAO.delete(meeting.getMeetingID());
+        meetingDAO.delete(meeting);
     }
 
     public void delete(Integer deptID, Integer meetingTimes){

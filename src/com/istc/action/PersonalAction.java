@@ -1,10 +1,7 @@
 package com.istc.action;
 
 import com.istc.Entities.Entity.*;
-import com.istc.Service.EntityService.DepartmentService;
-import com.istc.Service.EntityService.MemberService;
-import com.istc.Service.EntityService.MinisterService;
-import com.istc.Service.EntityService.PersonService;
+import com.istc.Service.EntityService.*;
 import com.istc.Validation.*;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -28,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * 用于管理成员信息的增删改查，其中手动增加成员仅可以由部长级以上成员完成
@@ -35,7 +33,7 @@ import java.util.*;
 @Controller("personnelAction")
 @Scope("prototype")
 @ParentPackage("ajax")
-@AllowedMethods({"addMember","changePassword","fetchAllPerson","deletePersonSubmit","resetPasswordSubmit","fetchPersonInfo","modifyInfo"})
+@AllowedMethods({"addMember","changePassword","personUpgrade","fetchAllPerson","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
 public class PersonalAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
     private HttpServletRequest request;
@@ -46,8 +44,8 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     private Map<String, Object> session;
 
 
-    @Resource(name = "ministerService")
-    private MinisterService ministerService;
+    @Resource(name = "intervieweeService")
+    private IntervieweeService intervieweeService;
     @Resource(name = "personService")
     private PersonService personService;
     @Resource(name = "departmentService")
@@ -70,6 +68,13 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     private String newToken;
     //部长下属所有部员or部长下属部门id为dept的所有成员
     private List<Member> deptMember;
+    //要升级为部员成员id组，字符串
+    private String readyIntervieweeIdLine;
+    //要升级为部员成员id组,action中分割得到
+    private String[] readyIntervieweeId;
+
+
+
 
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
     //默认重置密码为111111，用以部长重置部员
@@ -101,7 +106,7 @@ public PersonalAction(){
             }
     )
     /**
-     * addMember为直接添加部门成员，不是从person转变为member
+     * addMember为直接添加部门成员，不是从person转变为member，通过添加含有所属部门的部员来建立关系
      */
     public String addMember(){
         newToken = tokenUtil.tokenCheck(this, session, token);
@@ -120,14 +125,12 @@ public PersonalAction(){
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        System.out.println(p.toString());
         p.setBirthday(calendar);
-        //以更新部门的方式完成部员添加，建立了关系
-        personService.remove(p);
-        memberService.save(p);
         Department depart0=departmentService.get(dept);
         if (depart0==null||depart0.getDeptID()==null)return INPUT;
-        depart0.getMembers().add(p);
-        departmentService.update(depart0);
+        p.addDepartment(depart0);
+        memberService.save(p);
         return INPUT;
     }
 
@@ -139,11 +142,9 @@ public PersonalAction(){
             if (!registerUtil.isValid(RegisterCheck.Type.ID,id)) {
                 addFieldError("id", "学号输入有误，请检查并重新输入。");
             }
-//由person变为member本身id就是存在于数据库的
-//            else if (memberService.exist(id)) {
-//			addFieldError("id", "该学号已经被注册过！请登陆或尝试找回密码。");
-//		}
-
+            if (memberService.exist(id)){
+                addFieldError("id","该学号仍为preson或member，请删除后添加");
+            }
         }
         if (password==null || password.equals("")) {
             addFieldError("password", "请设置密码！");
@@ -155,8 +156,6 @@ public PersonalAction(){
             else if (!password.equals(repassword)) {
                 addFieldError("repassword", "两次输入的密码不一致！");
             }
-            else {
-            }
         }
         if (name==null || name.equals("")) {
             addFieldError("name", "请输入姓名！");
@@ -164,8 +163,6 @@ public PersonalAction(){
         else {
             if (!registerUtil.isValid(RegisterCheck.Type.NAME,name)) {
                 addFieldError("name", "请输入正确的姓名信息！");
-            }
-            else {
             }
         }
     }
@@ -242,6 +239,8 @@ public PersonalAction(){
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
     )
+
+
     public String fetchAllPerson(){
         /**
          * 需要注意的问题：部门对部长为多对多关系，可能一个部长下属多个部门
@@ -268,21 +267,51 @@ public PersonalAction(){
     }
 
     @Action(
-            value="deletePersonSubmit",
+            value="personUpgrade",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
     )
-    public String deletePersonSubmit(){
+    /**
+     * 将传入interviwee等人升级为部门为dept的member
+     */
+    public String personUpgrade(){
+        intervieweeService.setIntervieweesToMembers(readyIntervieweeId);
+        return INPUT;
+    }
+    public void  validatePersonUpgrade(){
+        //要通过人员的id的分割
+        if (readyIntervieweeIdLine==null)
+            addFieldError("personUpgrade","请输入面试者ID！");
+        readyIntervieweeId=readyIntervieweeIdLine.split(",");
+        if (readyIntervieweeId==null||readyIntervieweeId[0]==null){
+            addFieldError("personUpgrade","输入面试者ID格式有误");
+        }
+        else  for (int i=0;i<readyIntervieweeId.length;i++){
+            if (!intervieweeService.exist(readyIntervieweeId[i])){
+                addFieldError("personUpgrade","所选成员中有的不是interviewee!");
+                break;
+            }
+        }
+    }
+
+    @Action(
+            value="deleteMemberSubmit",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public String deleteMemberSubmit(){
         try {
             //在数据库中删除对应人员。因为人员与部门为多对多双向管理，所以这里是用的方法是使用字符串拼接直接删除member
             memberService.remove(deleted);
         }
         catch (Exception e){
-            addFieldError("deletePerson","删除人员失败！");
+            addFieldError("deleteMember","删除人员失败！");
         }
         return INPUT;
     }
+
 
     @Action(
             value="resetPasswordSubmit",
@@ -309,7 +338,7 @@ public PersonalAction(){
     }
 
     @Action(
-            value="fetchPersonInfo",
+            value="fetchMemberInfo",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
@@ -317,8 +346,8 @@ public PersonalAction(){
     /**
      * 取当前操作者的信息，即((Person)session.get(loginKey)).getID()的id
      */
-    public String fetchPersonInfo(){
-        //这里主要是数据库的代码
+    public String fetchMemberInfo(){
+
         try {
             this.id=((Person)session.get(loginKey)).getID();
             Member curMember= memberService.get(id);
@@ -326,7 +355,7 @@ public PersonalAction(){
             return INPUT;
         }
         catch (Exception e){
-            addFieldError("fetchPersonInfo","成员获取失败！");
+            addFieldError("fetchMemberInfo","成员获取失败！");
             return INPUT;
         }
     }
@@ -338,7 +367,7 @@ public PersonalAction(){
             }
     )
     /**
-     * 修改person类型对象并保存
+     * 修改Member类型对象并保存
      */
     public String modifyInfo(){
         try {
@@ -515,6 +544,22 @@ public PersonalAction(){
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getReadyIntervieweeIdLine() {
+        return readyIntervieweeIdLine;
+    }
+
+    public void setReadyIntervieweeIdLine(String readyIntervieweeIdLine) {
+        this.readyIntervieweeIdLine = readyIntervieweeIdLine;
+    }
+
+    public String[] getReadyIntervieweeId() {
+        return readyIntervieweeId;
+    }
+
+    public void setReadyIntervieweeId(String[] readyIntervieweeId) {
+        this.readyIntervieweeId = readyIntervieweeId;
     }
 
     @Override

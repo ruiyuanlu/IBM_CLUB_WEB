@@ -30,6 +30,10 @@ public class MemberService {
         if (member!=null&&member.getID()!=null)
             memberDAO.save(member);
     }
+    public  void save(Member[] members){
+        if (members!=null&&members[0].getID()!=null)
+        memberDAO.save(members);
+    }
 
     public Member get(Member member){
         if (member!=null&&member.getID()!=null)
@@ -37,9 +41,9 @@ public class MemberService {
         else return null;
 
     }
-    public void remove(String id){
-        if (id!=null)
-        memberDAO.delete(id);
+    public void remove(Member member){
+        if (member !=null)
+        memberDAO.delete(member);
     }
     public void remove(String[] ids){
         if (ids!=null&&ids[0]!=null)

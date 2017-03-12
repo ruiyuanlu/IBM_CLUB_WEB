@@ -4,18 +4,14 @@ package com.istc.Service.BaseDAO;
  * Created by lurui on 2017/2/3 0003.
  */
 
-import com.istc.Utilities.HibernateUtils;
 import com.istc.Utilities.PageModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
-import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.*;
 
@@ -51,12 +47,15 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     }
 
     @Override
-    public void delete(PK id) {
-        getSession().delete(id);
+    public void delete(E entity) {
+        Session session = getSession();
+        session.delete(entity);
+        session.flush();
     }
 
     @Override
     public void edit(E entity) {
+        getSession().clear();
         getSession().merge(entity);
     }
 
@@ -110,6 +109,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
     @Override
     public void save(E[] entities) {
         Session session = getSession();
+        session.clear();
         for(int i = 0; i < entities.length; i++){
             session.save(entities[i]);
             if( i % batchSize == 0){

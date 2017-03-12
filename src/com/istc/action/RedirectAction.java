@@ -121,7 +121,7 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         return "register";
     }
 
-    @Action(value="fileupload", results={@Result(name="fileupload",location="fileupload.jsp")})
+    @Action(value="upload", results={@Result(name="fileupload",location="jsp/fileupload.jsp")})
     public String fileupload() {
         return "fileupload";
     }

@@ -12,7 +12,7 @@ The files in rollups folder is concatenation of one or more files in components 
 
 ### Install
 
-If you are not using bower then just include the .js file from rollups folder for whatever algorithm you want to use. UTF8 encoder is included in each rollup js. If you need UTF16 or Base64 encoder then also add corresponding files from components folder (see following example).
+If you are not using bower then just include the .js upload from rollups folder for whatever algorithm you want to use. UTF8 encoder is included in each rollup js. If you need UTF16 or Base64 encoder then also add corresponding files from components folder (see following example).
 
 Using Bower:
 
@@ -69,14 +69,14 @@ You can convert string to word arrays using various encoders. And word array in 
 </script>	
 ```
 
-The UTF8 encoder/decoder is included in core.js and hence is available in rollup files for algorithms. However if you need UTF16 and Base64 encoder then you need to include corresponding file from components folder (see below for MD5 hash with Base64 example).
+The UTF8 encoder/decoder is included in core.js and hence is available in rollup files for algorithms. However if you need UTF16 and Base64 encoder then you need to include corresponding upload from components folder (see below for MD5 hash with Base64 example).
 
 
 ### Using with AMD/RequireJS 
 CryptoJS does not have built-in support for AMD/RequireJS yet. However adding shims is almost trivial. For use with RequireJS, using files in components is probably more desirable instead of files in rollups folder because you probably already have setup RequireJS optimizer or other build process. To build the shim for RequireJS follow this steps:
 
 - Identify algorithms and encoder/decoders you need.
-- Look up relationship between components and rollups file here: https://code.google.com/p/crypto-js/source/browse/tags/3.1.2/builder/build.yml
+- Look up relationship between components and rollups upload here: https://code.google.com/p/crypto-js/source/browse/tags/3.1.2/builder/build.yml
 - Write a shim for this relationship.
 
 Here's the example: Let's say we want to use MD5 with Base64 encoder. The shim would look like this
@@ -105,4 +105,4 @@ require.config({
 ```
 
 ### Copyrights
-Please see copyrights.txt which is copy of corresponding file from Google Code project.
+Please see copyrights.txt which is copy of corresponding upload from Google Code project.

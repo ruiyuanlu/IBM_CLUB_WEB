@@ -7,9 +7,10 @@
           <element id="module-output" name="IBM_CLUB_WEB" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="antlr-2.7.7" />
+          <element id="library" level="project" name="lib" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="IBM_CLUB_WEB/web/Web2" />
       <element id="javaee-facet-resources" facet="IBM_CLUB_WEB/web/Web" />
     </root>
   </artifact>

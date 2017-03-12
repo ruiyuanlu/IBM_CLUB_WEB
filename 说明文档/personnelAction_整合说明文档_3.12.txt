@@ -1,0 +1,30 @@
+在personnalAction中加入面试者升级为成员（无部门）的批量操作方法，测试通过
+变化：
+1.新加入的升级操作
+2.注意！BaseDaoImpl中的方法变更
+	@Override
+    public void save(E[] entities) {
+        Session session = getSession();
+        session.clear();       //本行新填入，
+        for(int i = 0; i < entities.length; i++){
+            session.save(entities[i]);
+            if( i % batchSize == 0){
+                session.flush();
+                session.clear();
+            }
+        }
+    }
+    @Override
+    public void save(E[] entities) {
+        Session session = getSession();
+        session.clear();
+        for(int i = 0; i < entities.length; i++){
+            session.save(entities[i]);
+            if( i % batchSize == 0){
+                session.flush();
+                session.clear();
+            }
+        }
+    }
+若不进行此变更，会出现问题：another object with same identies is assgined to the session，
+进行测试和网上了解 ，此情况为有两个有相同主键的不同实体对象，hibernate不知道该保存哪一个，通过session.clear()，可以清除session中之前的同id对象
