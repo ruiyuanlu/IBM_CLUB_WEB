@@ -21,13 +21,13 @@ public class UploadedFileService {
     @Resource(name = "uploadedFileDAO")
     private transient UploadedFileDAO uploadedFileDAO;
 
-    public void addFile(File file, Member owner){
+    public void addFile(File file, String fileName, Member owner){
 
         if (file!=null&&owner!=null&&owner.getID()!=null) {
             Integer count = getFileCount() + 1;
             UploadedFile uploadedFile = null;
             try {
-                uploadedFile = new UploadedFile(file, count, owner, 1);
+                uploadedFile = new UploadedFile(file, count, fileName, owner, 1);
             } catch (IOException e) {
                 System.out.println("获取路径失败!");
                 e.printStackTrace();
@@ -41,12 +41,12 @@ public class UploadedFileService {
      * @param files 上传的文件列表
      * @param owners 每个文件的上传者
      */
-    public void addFiles(File[] files, Member[] owners){
+    public void addFiles(File[] files, String[] fileNames, Member[] owners){
         Integer count = getFileCount() + 1;
         UploadedFile[] uploadedFiles = new UploadedFile[files.length];
         try {
             for(int i = 0; i < files.length; i++,count++ )
-                uploadedFiles[i] = new UploadedFile(files[i], count, owners[i],1);
+                uploadedFiles[i] = new UploadedFile(files[i], count, fileNames[i], owners[i],1);
         } catch (IOException e) {
             System.out.println("获取路径失败!");
             e.printStackTrace();

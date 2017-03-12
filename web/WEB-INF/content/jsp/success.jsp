@@ -16,5 +16,6 @@
 <br/>
 <%--这里不能直接写为logout.jsp,而要写为.aciton或者.do之类的后缀名--%>
 <a href="logout">注销</a>
+<a href="main">返回主页</a>
 </body>
 </html>

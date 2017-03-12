@@ -1,7 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee2ac216-32f2-426a-93ac-57de19f8d2c6" name="默认的" comment="" />
+    <list default="true" id="ee2ac216-32f2-426a-93ac-57de19f8d2c6" name="默认的" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/antlr_2_7_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownload.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownloadFail.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Department.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/HomeWork.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/HomeWorkID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Meeting.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/MeetingID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Member.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Minister.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/President.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/RegisterID.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/Entities/UploadedFile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/HomeworkDocAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/InterviewAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/Login.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/MeetingAction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/Redirect.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/Register.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/WordOnlineConverter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/action/WordOnlineConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/validation/HomeworkDocCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/validation/PasswordCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/validation/PhoneNumberCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/club/istc/validation/QQCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/struts.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/template/simple/actionerror.ftl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/classes/template/simple/actionmessage.ftl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/curvesapi-1.04.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/ooxml-schemas-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.poi.xwpf.converter.core-1.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.poi.xwpf.converter.xhtml-1.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/poi-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/poi-excelant-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/poi-ooxml-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/poi-ooxml-schemas-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/poi-scratchpad-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/xmlbeans-2.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/error.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/fileupload.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/mainpage.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/register.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/welcome.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/HomeworkDocAction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/InterviewAction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/Login.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/MeetingAction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/Redirect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/Register.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/action/WordOnlineConverter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/validation/HomeworkDocCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/validation/PasswordCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/validation/PhoneNumberCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/validation/QQCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/validation/SessionCheck.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/club/istc/validation/SessionValidation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/template/simple/actionerror.ftl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/template/simple/actionmessage.ftl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/说明文档/阶段性说明文档2-by吴晨.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/IBM_CLUB_WEB_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/IBM_CLUB_WEB_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" afterPath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" afterPath="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" afterPath="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/FileAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/FileAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/content/jsp/success.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/success.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,24 +90,98 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="FileUploadAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileUploadAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+            <state relative-caret-position="2100">
+              <caret line="131" column="50" lean-forward="false" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#FileUploadAction#0;class#FileUploadAction#0" expanded="false" />
+                <element signature="e#2095#2366#0" expanded="false" />
+                <element signature="method#fileUpload#0;class#FileUploadAction#0" expanded="false" />
                 <element signature="method#validateFileUpload#0;class#FileUploadAction#0" expanded="false" />
+                <element signature="method#getDownloadFileName#0;class#FileUploadAction#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/FileUtils.java">
+      <file leaf-file-name="RegisterAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state relative-caret-position="300">
+              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadedFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="54" column="11" lean-forward="false" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadedFileService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileDownloadFail.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownloadFail.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/istc/config/xmls/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-141">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileDownload.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownload.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/success.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -44,56 +192,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
               <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2212#2213#0" expanded="false" />
-                <element signature="e#2235#2236#0" expanded="false" />
-                <element signature="e#2283#2284#0" expanded="false" />
-                <element signature="e#2316#2317#0" expanded="false" />
-                <element signature="e#2380#2381#0" expanded="false" />
-                <element signature="e#2404#2405#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/struts.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1525">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionCheck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1375">
-              <caret line="63" column="35" lean-forward="false" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fileupload.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/fileupload.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/istc/action/FileAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2000">
-              <caret line="80" column="55" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="80" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -104,8 +202,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -123,6 +221,10 @@
       <find>存在</find>
       <find>rootpath</find>
       <find>isDirectory()</find>
+      <find>delete</find>
+      <find>getfilena</find>
+      <find>downloadFileName</find>
+      <find>main</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,20 +243,24 @@
         <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/PersonalAction.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/FileDownloadAction.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileUploadSuccess.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/upload.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileUploadFail.jsp" />
         <option value="$PROJECT_DIR$/src/com/istc/config/xmls/applicationContext-Hibernate.xml" />
         <option value="$PROJECT_DIR$/src/com/istc/action/InterviewAction.java" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileupload.jsp" />
-        <option value="$PROJECT_DIR$/src/com/istc/action/FileAction.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/HomeWorkUploadAction.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/struts.xml" />
         <option value="$PROJECT_DIR$/src/com/istc/Utilities/FileUtils.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/success.jsp" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/FileAction.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp" />
+        <option value="$PROJECT_DIR$/src/com/istc/action/RedirectAction.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownload.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownloadFail.jsp" />
+        <option value="$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java" />
+        <option value="$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java" />
         <option value="$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java" />
       </list>
     </option>
@@ -196,8 +302,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -234,94 +339,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IBM_CLUB_WEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -362,7 +379,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Utilities" />
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="istc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xmls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IBM_CLUB_WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="istc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,13 +455,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/xmlbeans-2.6.0.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -404,6 +470,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../JavaScript/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="D:\Program Files\JavaScript\nodejs\node.exe" />
+    <property name="SearchEverywhereHistoryKey" value="Upl&#9;FILE&#9;file://D:/Program Files/Git/IBM_CLUB_WEB/src/com/istc/Entities/Entity/UploadedFile.java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -854,14 +921,15 @@
       <workItem from="1489230713812" duration="19760000" />
       <workItem from="1489283030148" duration="11054000" />
       <workItem from="1489321623116" duration="73000" />
+      <workItem from="1489324972964" duration="3039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35694000" />
+    <option name="totallyTimeSpent" value="38733000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -879,16 +947,18 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25723472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26045015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30653805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -896,13 +966,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="设计师" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38682634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="控制板" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30653805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -951,7 +1019,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -960,48 +1028,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/MemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/SignAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Department.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2325">
-          <caret line="119" column="16" lean-forward="false" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityDAO/EntityDAOImpl/MemberDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
@@ -1082,38 +1108,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/BaseDAO/BaseDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="94" column="47" lean-forward="true" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/PersonalAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-332">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1243">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1177,21 +1175,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="121" column="5" lean-forward="false" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/IntervieweeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -1220,14 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="107" column="33" lean-forward="true" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1244,17 +1219,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#validateFileUpload#0;class#FileUploadAction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/Utilities/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -1263,36 +1227,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/InterviewAction.java">
+    <entry file="file://$PROJECT_DIR$/src/club/istc/action/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2212#2213#0" expanded="false" />
-            <element signature="e#2235#2236#0" expanded="false" />
-            <element signature="e#2283#2284#0" expanded="false" />
-            <element signature="e#2316#2317#0" expanded="false" />
-            <element signature="e#2380#2381#0" expanded="false" />
-            <element signature="e#2404#2405#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="100">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/FileAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="63" column="35" lean-forward="false" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+        <state relative-caret-position="299">
+          <caret line="233" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/LoginAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="107" column="33" lean-forward="true" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/mainPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RedirectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#1971#1972#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+            <element signature="e#2172#2173#0" expanded="true" />
+            <element signature="e#2213#2214#0" expanded="true" />
+            <element signature="method#welcome#0;class#RedirectAction#0" expanded="false" />
+            <element signature="method#main#0;class#RedirectAction#0" expanded="false" />
+            <element signature="e#3926#4136#0" expanded="false" />
+            <element signature="method#loginRedirect#0;class#RedirectAction#0" expanded="false" />
+            <element signature="e#4442#4647#0" expanded="false" />
+            <element signature="method#registerRedirect#0;class#RedirectAction#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1305,10 +1286,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/istc/action/FileAction.java">
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/PersonalAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="80" column="55" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="80" selection-end-column="55" />
+        <state relative-caret-position="475">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Validation/SessionCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="63" column="35" lean-forward="false" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="46" column="65" lean-forward="false" selection-start-line="46" selection-start-column="65" selection-end-line="46" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/success.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/InterviewAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/content/jsp/fileDownloadFail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/config/xmls/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Entities/Entity/UploadedFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="54" column="11" lean-forward="false" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/Service/EntityService/UploadedFileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/FileUploadAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="131" column="50" lean-forward="false" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FileUploadAction#0;class#FileUploadAction#0" expanded="false" />
+            <element signature="e#2095#2366#0" expanded="false" />
+            <element signature="method#fileUpload#0;class#FileUploadAction#0" expanded="false" />
+            <element signature="method#validateFileUpload#0;class#FileUploadAction#0" expanded="false" />
+            <element signature="method#getDownloadFileName#0;class#FileUploadAction#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/istc/action/RegisterAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1367,12 +1454,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>IBM_CLUB_WEB</last-edited>
+          <last-edited>Spring|IBM_CLUB_WEB</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

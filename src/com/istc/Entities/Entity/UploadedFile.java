@@ -21,7 +21,7 @@ import java.util.Calendar;
 public class UploadedFile implements Serializable{
     @Id
     private int fileID;
-    private String fileName;
+    private String fileRealName;
     /**文件扩展名used to save filename extension;*/
     private String fileExtention;
 
@@ -42,18 +42,18 @@ public class UploadedFile implements Serializable{
     public UploadedFile() {
     }
 
-    public UploadedFile(File file, Integer fileID, Member owner)throws IOException{
+    public UploadedFile(File file, Integer fileID, String fileRealName, Member owner)throws IOException{
         if(file == null)return;
         this.fileID = fileID;
         this.fileCanonicalPath = file.getCanonicalPath();
-        this.fileName = file.getName();
-        this.fileExtention = fileName.substring(fileName.lastIndexOf('.'));
+        this.fileRealName = fileRealName;
+        this.fileExtention = fileRealName.substring(fileRealName.lastIndexOf('.'));
         this.fileOwner = owner;
         this.uploadTime = Calendar.getInstance();
     }
 
-    public UploadedFile(File file, Integer fileID, Member fileOwner, Integer requiredAuthority) throws IOException{
-        this(file, fileID, fileOwner);
+    public UploadedFile(File file, Integer fileID, String fileRealName, Member fileOwner, Integer requiredAuthority) throws IOException{
+        this(file, fileID, fileRealName, fileOwner);
         this.requiredAuthority = requiredAuthority;
     }
 
@@ -82,12 +82,12 @@ public class UploadedFile implements Serializable{
         this.fileID = fileID;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getFileRealName() {
+        return fileRealName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setFileRealName(String fileRealName) {
+        this.fileRealName = fileRealName;
     }
 
     public String getFileExtention() {
@@ -140,7 +140,7 @@ public class UploadedFile implements Serializable{
         if (fileID != that.fileID) return false;
         if (requiredAuthority != that.requiredAuthority) return false;
         if (fileVersion != that.fileVersion) return false;
-        if (fileName != null ? !fileName.equals(that.fileName) : that.fileName != null) return false;
+        if (fileRealName != null ? !fileRealName.equals(that.fileRealName) : that.fileRealName != null) return false;
         if (fileExtention != null ? !fileExtention.equals(that.fileExtention) : that.fileExtention != null)
             return false;
         if (fileCanonicalPath != null ? !fileCanonicalPath.equals(that.fileCanonicalPath) : that.fileCanonicalPath != null) return false;
@@ -152,7 +152,7 @@ public class UploadedFile implements Serializable{
     @Override
     public int hashCode() {
         int result = fileID;
-        result = 31 * result + (fileName != null ? fileName.hashCode() : 0);
+        result = 31 * result + (fileRealName != null ? fileRealName.hashCode() : 0);
         result = 31 * result + (fileExtention != null ? fileExtention.hashCode() : 0);
         result = 31 * result + requiredAuthority;
         result = 31 * result + (fileCanonicalPath != null ? fileCanonicalPath.hashCode() : 0);
@@ -166,7 +166,7 @@ public class UploadedFile implements Serializable{
     public String toString() {
         return "UploadedFile{" +
                 "fileID=" + fileID +
-                ", fileName='" + fileName + '\'' +
+                ", fileRealName='" + fileRealName + '\'' +
                 ", fileExtention='" + fileExtention + '\'' +
                 ", requiredAuthority=" + requiredAuthority +
                 ", fileCanonicalPath='" + fileCanonicalPath + '\'' +
