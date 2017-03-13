@@ -103,6 +103,7 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
 
     @Override
     public void save(E entity) {
+        getSession().clear();
         getSession().save(entity);
     }
 
