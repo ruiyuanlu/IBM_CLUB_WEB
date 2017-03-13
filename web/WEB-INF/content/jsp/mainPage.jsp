@@ -15,7 +15,6 @@
 <a href="loginRedirect">登陆</a> <br/>
 <a href="registerRedirect">注册</a> <br/>
 <a href="signRedirect">扫码签到</a> <br/>
-<a href="signRedirect">扫码签到</a> <br/>
 <a href="memberInfoManagementRedirect">成员信息修改</a> <br/>
 <a href="uploadRedirect">文件上传</a><br/>
 <a href="downloadRedirect">文件下载</a><br/>

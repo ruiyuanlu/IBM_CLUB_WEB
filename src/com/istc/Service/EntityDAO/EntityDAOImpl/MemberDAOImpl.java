@@ -14,10 +14,7 @@ import java.util.List;
  */
 @Repository("memberDAO")
 public class MemberDAOImpl<E extends Member, PK extends Serializable> extends BaseDAOImpl<Member, String> implements MemberDAO<E, PK>{
-    @Override
-    public void save(E[] members) {
-        this.save(members);
-    }
+
 
     @Override
     public Member get(String id){

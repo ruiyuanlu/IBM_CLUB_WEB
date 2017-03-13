@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by lurui on 2017/2/25 0025.
@@ -32,21 +33,24 @@ public class IntervieweeService {
         return intervieweeDAO.findAll();
     }
 
+
     public void setIntervieweesToMembers(String[] intervieweeIDs) {
         if (intervieweeIDs[0] != null) {
+            //vicky认为需要检查这些intervieweeIDs是否存在，但会影响该方法性能
             List<Interviewee> list = intervieweeDAO.get(intervieweeIDs);
-            intervieweeDAO.delete(intervieweeIDs);
+
             ClassTypeConverter converter = ClassTypeConverter.getInstance();
             Member[] members = null;
             try {
                 members = (Member[]) converter.convert(list, Member.class);
             } catch (Exception e) {
-                System.out.println("IntervieweeService.java 文件中的成员类型转换失败\n" +
-                        "设定converter设定阈值时访问异常");
                 e.printStackTrace();
-                return;
             }
+
+
+            intervieweeDAO.delete(intervieweeIDs);
             memberDAO.save(members);
+
         }
     }
 //即使是申请面试也需要基本id（primarily key）

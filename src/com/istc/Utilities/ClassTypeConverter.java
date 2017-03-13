@@ -4,6 +4,7 @@ package com.istc.Utilities;
  * Created by lurui on 2017/2/25 0025.
  */
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
@@ -45,14 +46,14 @@ public class ClassTypeConverter {
      * @return 返回目标类型的对象数组
      * @throws Exception
      */
-    public Object[] convert(List froms, Class<?> targetClazz)throws Exception{
-        Object[] res = new Object[froms.size()];
+    public Object convert(List froms, Class<?> targetClazz)throws Exception{
+        Object array = Array.newInstance(targetClazz, froms.size());
         for(int i = 0; i < froms.size(); i++){
             Object target = Class.forName(targetClazz.getName()).newInstance();
             convert(froms.get(i), target);
-            res[i] = target;
+            Array.set(array, i, target);
         }
-        return res;
+        return array;
     }
 
     /**

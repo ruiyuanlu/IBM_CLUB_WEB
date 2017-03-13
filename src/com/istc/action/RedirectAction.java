@@ -78,8 +78,8 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         return "memberModify";
     }
 
-    @Action(value = "signRedirectRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
-    public String signRedirectRedirect(){
+    @Action(value = "signRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
+    public String signRedirect(){
         return "sign";
     }
 
