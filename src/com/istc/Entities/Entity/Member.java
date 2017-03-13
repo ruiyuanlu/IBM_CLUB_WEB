@@ -41,7 +41,6 @@ public class Member extends Person {
     //多对多中如果设置为级联是save_update, 则会将集合中的数据作为数据库中没有的数据进行插入
     //这样，在甲方保存时，乙方不但会被保存在关系表，还会被重新插入，这可能导致乙方表中出现重复主键的错误
     @ManyToMany
-//    @Cascade(org.hibernate.annotations.CascadeType.MERGE)
     @JoinTable(name = "register_member",
             joinColumns = {@JoinColumn(name = "member_id")},
             inverseJoinColumns ={@JoinColumn(name = "register_dept"),@JoinColumn(name = "register_times")} )

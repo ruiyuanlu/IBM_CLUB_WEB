@@ -34,8 +34,8 @@ public class Department {
 //    @ManyToMany( fetch = FetchType.LAZY,mappedBy = "enterDepts")//多对多关系由其中任意一方管理, 另一方设置mappedBy,也可以由双方都可管理
     @ManyToMany
     @JoinTable(name = "dept_member",
-            joinColumns = {@JoinColumn(name = "mem_id")},
-            inverseJoinColumns = {@JoinColumn(name = "dept_id")})
+            joinColumns = {@JoinColumn(name = "dept_id")},
+            inverseJoinColumns = {@JoinColumn(name = "mem_id")})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Set<Member> members;
 
