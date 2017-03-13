@@ -30,14 +30,20 @@ public class DepartmentService {
         departmentDAO.edit(department);
     }
     public List<Member> getInsideMembers(int deptID){
+        System.out.println("deptID="+deptID);
+        System.out.println("deptID="+deptID);
         if (deptID==0)
             return null;
        Department department= (Department)departmentDAO.get(deptID);
+
        Set<Member> memberSet=department.getMembers();
+
        List<Member> result=new ArrayList<Member>();
+
        for (Member member:memberSet){
            result.add(member);
        }
+
        return result;
     }
     public boolean exist(int dept){

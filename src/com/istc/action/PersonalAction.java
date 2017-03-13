@@ -33,7 +33,7 @@ import java.util.stream.Stream;
 @Controller("personnelAction")
 @Scope("prototype")
 @ParentPackage("ajax")
-@AllowedMethods({"addMember","changePassword","personUpgrade","fetchAllPerson","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
+@AllowedMethods({"addMember","changePassword","personUpgrade","chooseDept","fetchAllPerson","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
 public class PersonalAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
     private HttpServletRequest request;
@@ -128,13 +128,15 @@ public PersonalAction(){
         System.out.println(p.toString());
         p.setBirthday(calendar);
         Department depart0=departmentService.get(dept);
-        if (depart0==null||depart0.getDeptID()==null)return INPUT;
         p.addDepartment(depart0);
         memberService.save(p);
         return INPUT;
     }
 
     public void validateAddMember(){
+        if (dept==0||!departmentService.exist(dept)){
+            addFieldError("dept", "不存在该部门！");
+        }
         if (id==null || id.equals("")) {
             addFieldError("id", "请输入学号！");
         }
@@ -234,6 +236,29 @@ public PersonalAction(){
     }
 
     @Action(
+            value="chooseDept",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    public  String chooseDept(){
+        Member tommy;
+        tommy=memberService.get(id);
+        tommy.getEnterDepts().add(departmentService.get(dept));
+        memberService.update(tommy);
+        return INPUT;
+    }
+    public  void  validateChooseDept(){
+        id = ((Person)session.get(loginKey)).getID();
+        if (id==null||!memberService.exist(id))addFieldError("id","您不是member类成员！");
+        if (!departmentService.exist(dept))addFieldError("dept","您要加入的部门不存在");
+        for (Department department:memberService.get(id).getEnterDepts()){
+            if (department.getDeptID()==dept)
+                addFieldError("dept","您已加入该部门");
+        }
+    }
+
+    @Action(
             value="fetchAllPerson",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
@@ -251,6 +276,8 @@ public PersonalAction(){
             return INPUT;
         }
             deptMember = departmentService.getInsideMembers(dept);
+        System.out.println("deptMember.toString()"+deptMember.toString());
+        System.out.println("deptMember.size()    "+deptMember.size());
         try {
             jsonresult.put("deptmember",deptMember);
             if (deptMember.size()==0){

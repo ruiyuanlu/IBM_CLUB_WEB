@@ -55,7 +55,6 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
 
     @Override
     public void edit(E entity) {
-        getSession().clear();
         getSession().merge(entity);
     }
 

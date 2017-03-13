@@ -42,7 +42,7 @@
 document.write('<script type="text/JavaScript" src="/js/CryptoJS-3.1.2/rollups/sha512.js"></script>');
 document.write('<script type="text/JavaScript" src="/js/jquery-3.1.1.js"></script>');
 document.write('<script type="text/JavaScript" src="/js/JsonSerialize.js"></script>');
-document.write('<script type="text/jsp" src="/WEB-INF/content/jsp/memberInfoManagement.jsp"></script>');
+// document.write('<script type="text/jsp" src="/WEB-INF/content/jsp/memberInfoManagement.jsp"></script>');
 
 
 function changePasswordValidation(){
@@ -56,7 +56,16 @@ function changeInfoValidation(){
     postForm2Action("modifyInfo", "#modifyInfo", "修改个人信息成功!");
     refetch();
 }
+function chooseDeptValidation(){
+    postForm2Action("chooseDept","#chooseDept","部门选择完成！")
+}
 
+
+function fetchAllPersonValidation(){
+
+    postForm2Action("fetchAllPerson", "#fetchAllPerson", "请查看network响应!");
+
+}
 function addMemberValidation(){
 
     postForm2Action("addMember", "#addMember", "添加部员成功!");

@@ -13,11 +13,6 @@
           <root url="file://$MODULE_DIR$/src" />
         </sourceRoots>
       </configuration>
-      <facet type="Struts2" name="Struts 2">
-        <configuration>
-          <propertiesKeys disabled="false" />
-        </configuration>
-      </facet>
     </facet>
     <facet type="web" name="Web2">
       <configuration>
@@ -42,7 +37,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="tmo" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5">
         <CLASSES>
