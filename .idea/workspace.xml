@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee2ac216-32f2-426a-93ac-57de19f8d2c6" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/content/jsp/QRcodeOutOfRange.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/IBM_CLUB_WEB_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/IBM_CLUB_WEB_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" afterPath="$PROJECT_DIR$/IBM_CLUB_WEB.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/istc/action/SignAction.java" afterPath="$PROJECT_DIR$/src/com/istc/action/SignAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/QRcodeGenerate.js" afterPath="$PROJECT_DIR$/web/js/QRcodeGenerate.js" />
-    </list>
+    <list default="true" id="ee2ac216-32f2-426a-93ac-57de19f8d2c6" name="默认的" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,7 +42,7 @@
       <file leaf-file-name="SignAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/istc/action/SignAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="1200">
               <caret line="67" column="84" lean-forward="false" selection-start-line="67" selection-start-column="84" selection-end-line="67" selection-end-column="84" />
               <folding />
             </state>
@@ -682,12 +675,12 @@
       <workItem from="1489324972964" duration="3635000" />
       <workItem from="1489366913180" duration="1149000" />
       <workItem from="1489370149355" duration="283000" />
-      <workItem from="1489370693552" duration="12342000" />
+      <workItem from="1489370693552" duration="12457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53103000" />
+    <option name="totallyTimeSpent" value="53218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="1718" height="978" extended-state="6" />
@@ -713,7 +706,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32841328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32841328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1171,7 +1164,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/istc/action/SignAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="1200">
           <caret line="67" column="84" lean-forward="false" selection-start-line="67" selection-start-column="84" selection-end-line="67" selection-end-column="84" />
           <folding />
         </state>
