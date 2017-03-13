@@ -47,8 +47,7 @@
     生日：<input type="date" name="birthday" id="birthday"/><font color="red"><span id="error_birthday"></span></font><br/>
     手机号：<input type="text" name="phoneNumber"/><font color="red"><span id="error_phoneNumber"></span></font><br/>
     QQ：<input type="text" name="QQ"/><font color="red"><span id="error_QQ"></span></font><br/>
-    部门:<br>
-    <input type="number" name="dept"><font color="red"><span id="error_dept"></span></font><br/>
+    部门:<input type="number" name="dept"><font color="red"><span id="error_dept"></span></font><br/>
     密码:<input type="password" name="password" onkeydown="checkCapsLock()"/><font color="red"><span id="error_password"></span></font><br/>
     确认密码：<input type="password" name="repassword" onkeydown="checkCapsLock()" /><font color="red"><span id="error_repassword"></span></font><br/>
 </form>

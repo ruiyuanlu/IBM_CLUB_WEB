@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("homeWorkUploadAction")
 @Scope("prototype")
 @AllowedMethods({"fileUpload"})
-public class FileUploadAction extends ActionSupport implements SessionAware{
+public class FileUploadAndDownloadAction extends ActionSupport implements SessionAware{
 
     private static final String loginKey = "member";
 
@@ -61,7 +61,7 @@ public class FileUploadAction extends ActionSupport implements SessionAware{
     private String downloadFileName;
     private File download;
 
-    public FileUploadAction() {
+    public FileUploadAndDownloadAction() {
         System.out.println("进入上传类的构造器");
         fileUtil = FileUtils.getInstance();
     }
