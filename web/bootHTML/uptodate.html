@@ -1,119 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-   <head>
-   	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8"/>
-       
-        <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/default.css">
-        <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
-        <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="js/fileinput.js" type="text/javascript"></script>
-        <!--简体中文-->
-        <script src="js/locales/zh.js" type="text/javascript"></script>
-        <!--繁体中文-->
-        <script src="js/locales/zh-TW.js" type="text/javascript"></script>
-        <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <link href="css/bootstrap.min.css" rel="stylesheet"> 
-  <link href="css/bootstrap.css" rel="stylesheet"> 
-
-   <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-
-  <link rel="stylesheet" href="responsive-nav.js-master/responsive-nav.css">
-  <script src="responsive-nav.js-master/responsive-nav.js"></script>
-
-<link rel="icon" href="">
-<title>IBM-FILE</title>
-<style type="text/css">
-html,body{margin:0;padding:0;height:100%} 
-.container{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;} 
-
-.footer{position:absolute;bottom:0;width:99%;height:60px;text-align: center;/*footer的高度*/} </style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <script src="./js/jquery-2.1.0.min.js" type="text/javascript"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./responsive-nav.js-master/responsive-nav.css">
+    <script src="./responsive-nav.js-master/responsive-nav.js"></script>
+    <link rel="icon" href="">
+    <title>IBM-FILE</title>
+    <style type="text/css">
+        html,body{margin:0;padding:0;height:100%}
+        .container{min-height:100%;height:auto !important;height:100%;/*ie6不识别min-height,如上述处理*/position:relative;}
+.       footer{position:absolute;bottom:0;width:99%;height:60px;text-align: center;/*footer的高度*/}
+    </style>
 </head>
 <body style="background-color:#f1f1f1;">
 	<div id="container">
-<div class="row">
-  <div class="col-md-12" style="background-color:#f1f1f1;text-align:center;">
- <nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">IBM-XJTU</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">登录 <span class="sr-only">(current)</span></a></li>
-        <li><a href="signin.html">注册</a></li>
-      </ul>
-          <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" >关于我们</a></li>
-  
-      </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group" >
-          <input type="text" class="form-control" placeholder="Search">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#f1f1f1;text-align:center;">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">IBM-XJTU</a>
+                        </div>
+                           <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">登录 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="signin.html">注册</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#" >关于我们</a></li>
+                            </ul>
+                            <form class="navbar-form navbar-right">
+                                <div class="form-group" >
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-primary">搜索</button>
+                            </form>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">搜索</button>
-      </form>
-  
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-  </div>
-
-</div>
-<div class="row">
-  <div class="cl-md-12" style="text-align:center;">
-
-    <h2><del>请扫描二维码！</del></h2>
-  </div>
-  </div>
-
-
-
-
-<div class="row">
-<div class="col-md-12">
-<div class="row">
-
-<div class="col-md-3">
-</div>
-
-<div class="col-md-6" style="background-color:#fafafa;text-align:center;border-radius:10px;border:1px solid #d3d3d3;">
-  
-<h2>二维码已过期。</h2>
-<img src="./imgs/hj.jpg">
-</div>
-
-<div class="col-md-3">
-</div>
-
-</div>
-</div>
-</div>
-
-
-
-<div class="footer" style="text-align:center;">
- <p> Copyright © IBM·西安交大 &middot; <a href="index.html">加入</a> &middot; <a href="#">联系</a></p>
-</div>
-
-</div>
-
-
-</div>
-
-
+        <div class="row">
+            <div class="cl-md-12" style="text-align:center;">
+                <h2><del>请扫描二维码！</del></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6" style="background-color:#fafafa;text-align:center;border-radius:10px;border:1px solid #d3d3d3;">
+                        <h2>二维码已过期。</h2>
+                        <img src="./imgs/hj.jpg">
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <footer style="text-align:center;">
+        <p> Copyright © IBM·西安交大 &middot; <a href="index.jsp">加入</a> &middot; <a href="#">联系</a></p>
+    </footer>
 </body>
 </html>
