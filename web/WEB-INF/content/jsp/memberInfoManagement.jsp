@@ -12,6 +12,17 @@
     <script type="text/JavaScript" src="/js/memberInfoManagement.js"></script>
 </head>
 <body>
+<h1>删除部员</h1>
+<form id="deleteMemberSubmit">
+    <input type="text" name="deletedLine"/>
+    <p>（若有多个要删除者，请以   ，  隔开）</p>
+</form>
+<button onclick="deleteMemberSubmitValidation()">提交人员</button>
+<font color="red"><span id="error_deleteMember"></span></font>
+<font color="red"><span id="error_deleted"></span></font>
+<br/>
+
+
 <h1>面试者通过</h1>
 <form id="personUpgrade">
     <input type="text" name="readyIntervieweeIdLine"/>

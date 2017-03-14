@@ -70,7 +70,7 @@ public class Member extends Person {
     public int hashCode() {
         int result = super.hashCode();
         result = 31 * result + (authority != null ? authority.hashCode() : 0);
-        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
+//        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
         return result;
     }
 

@@ -79,7 +79,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
     //默认重置密码为111111，用以部长重置部员
     public static final String defaultPassword="111111";
-
+    private String deletedLine;
     private String[] deleted;
     private String needreset;
 
@@ -363,7 +363,20 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
         return INPUT;
     }
     public void  validateDeleteMemberSubmit(){
-
+        if (deletedLine==null)
+            addFieldError("deleted","请输入要删除者ID！");
+        else {
+            deleted = deletedLine.split(",");
+            if (deleted == null | deleted[0] == null) {
+                addFieldError("deleted", "输入删除者ID格式有误");
+            }
+            else for (String id:deleted){
+                if (!memberService.exist(id)){
+                    addFieldError("deleted","被删除者有的不为member");
+                    break;
+                }
+            }
+        }
     }
 
 
@@ -471,8 +484,6 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
             if (!registerUtil.isValid(RegisterCheck.Type.QQ,QQ)) {
                 addFieldError("QQ", "您的QQ号输入有误，请检查并重新输入!");
             }
-            else {
-            }
         }
         //西安交通大学招生简章规定，少年班的入学年龄不得低于14岁
         Calendar curtime = Calendar.getInstance();
@@ -482,8 +493,6 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
         else {
             if(!registerUtil.isValid(RegisterCheck.Type.BIRTHDAY,birthday)){
                 addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
-            }
-            else {
             }
         }
         return;
@@ -504,6 +513,14 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
 
     public String getName() {
         return name;
+    }
+
+    public String getDeletedLine() {
+        return deletedLine;
+    }
+
+    public void setDeletedLine(String deletedLine) {
+        this.deletedLine = deletedLine;
     }
 
     public void setName(String name) {

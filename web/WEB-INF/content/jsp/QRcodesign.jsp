@@ -28,10 +28,10 @@
     <div class="modal-content">
         <div class="row">
         <div class="col s4"></div>
-        <div class="col s4">
-            <h4>标题</h4>
-            <div id="qrcode" ></div>
-        </div>
+        <%--<div class="col s4">--%>
+            <%--<h4>快来扫码呦！</h4>--%>
+            <%--<div id="qrcode"/>--%>
+        <%--</div>--%>
         <div class="col s4"></div>
         </div>
     </div>
@@ -64,7 +64,10 @@
 
 
 <div id="signurl"></div>
-
+<div class="col s4">
+    <h4>快来扫码呦！</h4>
+    <div id="qrcode"/>
+</div>
 </body>
 <script>
     deptID=1;times=1;

@@ -33,6 +33,8 @@ public class IntervieweeDAOImpl<E extends Interviewee, PK extends Serializable> 
         for(int i = 1; i < intervieweeIDs.length; i++)
             strb.append(" or i.id = ").append(intervieweeIDs[i]);
         this.excuteUpdate(strb.toString());
+        this.getSession().flush();
+        this.getSession().clear();
     }
 
     @Override

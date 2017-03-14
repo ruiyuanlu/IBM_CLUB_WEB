@@ -103,15 +103,12 @@ public class BaseDAOImpl<E, PK extends Serializable> implements BaseDAO<E, PK> {
 
     @Override
     public void save(E entity) {
-        getSession().clear();
         getSession().save(entity);
     }
 
     @Override
     public void save(E[] entities) {
         Session session = getSession();
-        session.flush();
-        session.clear();
         for(int i = 0; i < entities.length; i++){
             session.save(entities[i]);
             if( i % batchSize == 0){
