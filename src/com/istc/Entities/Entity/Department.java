@@ -81,7 +81,6 @@ public class Department {
         result = 31 * result + (introduction != null ? introduction.hashCode() : 0);
         result = 31 * result + (deptName != null ? deptName.hashCode() : 0);
         result = 31 * result + (establishTime != null ? establishTime.hashCode() : 0);
-        result = 31 * result + (ministers != null ? ministers.hashCode() : 0);
         return result;
     }
 
