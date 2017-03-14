@@ -35,12 +35,16 @@
             <interceptor name="loginInterceptor" class="com.istc.Validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
             <interceptor-stack name="loginStack">
                 <interceptor-ref name="loginInterceptor">
-                    <param name="excludeMethods">main, loginRedirect, registerRedirect</param>
+                    <param name="excludeMethods">main, loginRedirect, registerRedirect, noSuchAction</param>
                 </interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>
             </interceptor-stack>
         </interceptors>
-        <default-interceptor-ref name="loginStack"></default-interceptor-ref>
+        <default-interceptor-ref name="loginStack"/>
+
+        <!--定义默认的 action，此 action 定义在 RedirectAction 中 用于拦截未知 action-->
+        <default-action-ref name="noSuchAction"/>
+
         <global-results>
             <result name="exit">/WEB-INF/content/jsp/logout.jsp</result>
             <result name="error" type="redirect">/WEB-INF/content/errorPages/error.jsp</result>
@@ -48,6 +52,7 @@
         </global-results>
 
     </package>
+
 
     <!--Ajax 包-->
     <package name="ajax" extends="json-default,struts-default">

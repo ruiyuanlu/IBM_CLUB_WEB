@@ -34,7 +34,7 @@ import java.util.Map;
 @Namespace("")
 @ParentPackage("ajax")
 @SuppressWarnings("serial")
-@AllowedMethods({"loginC","logout"})
+@AllowedMethods({"login","logout"})
 public class LoginAction extends ActionSupport implements ServletResponseAware,SessionAware {
     private static final long serialVersionUID = 6473585621724667329L;
 

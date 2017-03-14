@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet"> 
+ 
+  <link href="css/signin.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+    <link rel="icon" href="">
+<title>IBM</title>
+
+<style type="text/css">
+.container.marketing.block
+{background-color: #fff;padding:66px 1.57%;margin-top:-40px ;}
+</style>
+</head>
+<body >
+<div class="navbar-wrapper">
+      <div class="container">
+  <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <script type="text/javascript">
+//权限判断并禁止链接
+var change=function(link)
+{
+   //删除href属性,使其成为文本元素
+     link.removeAttribute("href");
+      //设置disabled属性
+     link.setAttribute("disabled", "disabled");
+}
+var CheckAuthority=function(){
+  //var targetEle=document.getElementByld(username).Authority;
+  var targetEle=0;
+  if(targetEle>10){
+  }
+  else if(targetEle>1){    
+    change(mannageDebt);
+  }
+  else{
+    change(registNew);
+    change(mannageDebt);
+    change(mannageFile);
+change(mannageMember);
+  }
+}
+ window.load=CheckAuthority();
+ </script>
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing block">
+
+      <!-- Three columns of text below the carousel -->
+        <div class="col-lg-9">
+          <h2 style="font-size:120px;" >500</h2>
+        </div><!-- /.col-lg-4 -->
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">纳尼！<span class="text-muted">服务器出了问题！</span></h2>
+          <p class="lead" style="font-size:25px;font-weight:bold;">WHAT?</p>
+          <p class="lead" style="font-size:35px;font-weight:bold;">皮皮虾！！我们走！</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="./imgs/ppx.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+    
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">回到开始</a></p>
+        <p> Copyright © IBM·西安交大 &middot; <a href="index.html">加入</a> &middot; <a href="#">联系</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+     
+
+
+</body>
+</html>

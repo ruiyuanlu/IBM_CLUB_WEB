@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("redirectAction")
 @Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-@AllowedMethods({"uploadRedirect", "deptManagement", "personInfoManagement", "memberModify", "homeworkManagement", "signRedirect","main", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
+@AllowedMethods({"noSuchAction", "uploadRedirect", "deptManagement", "personInfoManagement", "memberModify", "homeworkManagement", "signRedirect","main", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -46,6 +46,11 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
 
     public RedirectAction(){
         System.out.println("进入RedirectAction");
+    }
+
+    @Action(value = "noSuchAction", results = {@Result(name = "actionNotFound", location = "/bootHTML/404.html")})
+    public String noSuchAction(){
+        return "actionNotFound";
     }
 
     @Action(value = "uploadRedirect", results = {@Result(name = "uploadRedirect", location = "jsp/fileupload.jsp")})
