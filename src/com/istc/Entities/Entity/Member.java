@@ -32,17 +32,15 @@ public class Member extends Person {
     @Basic
     private Integer authority;
 
-    @ManyToMany(fetch = FetchType.EAGER )//猜测？有mappedBy的一方是多对多关系中不维护关系的一方 正确
-    @JoinTable(name = "dept_member",
-            joinColumns = {@JoinColumn(name = "mem_id")},
-            inverseJoinColumns = {@JoinColumn(name = "dept_id")})
+    @ManyToMany(fetch = FetchType.LAZY )//猜测？有mappedBy的一方是多对多关系中不维护关系的一方 正确
+    @JoinTable(name = "dept_member",joinColumns = {@JoinColumn(name = "mem_id")},
+    inverseJoinColumns = {@JoinColumn(name = "dept_id")})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Set<Department> enterDepts;
 
     //多对多中如果设置为级联是save_update, 则会将集合中的数据作为数据库中没有的数据进行插入
     //这样，在甲方保存时，乙方不但会被保存在关系表，还会被重新插入，这可能导致乙方表中出现重复主键的错误
     @ManyToMany
-//    @Cascade(org.hibernate.annotations.CascadeType.MERGE)
     @JoinTable(name = "register_member",
             joinColumns = {@JoinColumn(name = "member_id")},
             inverseJoinColumns ={@JoinColumn(name = "register_dept"),@JoinColumn(name = "register_times")} )

@@ -39,33 +39,23 @@ public class IntervieweeService {
             //vicky认为需要检查这些intervieweeIDs是否存在，但会影响该方法性能
             List<Interviewee> list = intervieweeDAO.get(intervieweeIDs);
 
-                ClassTypeConverter converter = ClassTypeConverter.getInstance();
-                Member[] members ;
-                 try {
-                     Object[] temp =  converter.convert(list, Member.class);
-                     members=new Member[temp.length];
-                     for (int i=0;i<temp.length;i++){
-                         members[i]=(Member) temp[i];
-                     }
-                 }
-                   catch (IllegalAccessException e) {
-                     e.printStackTrace();
-                     return;
-                 } catch (InstantiationException e) {
-                     e.printStackTrace();
-                     return;
-                 } catch (ClassNotFoundException e) {
-                     e.printStackTrace();
-                     return;
-                 }
+            ClassTypeConverter converter = ClassTypeConverter.getInstance();
+            Member[] members = null;
+            try {
+                members = (Member[]) converter.convert(list, Member.class);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
             intervieweeDAO.delete(intervieweeIDs);
             memberDAO.save(members);
 
         }
     }
-//即使是申请面试也需要基本id（primarily key）
+    //即使是申请面试也需要基本id（primarily key）
     public void add(Interviewee interviewee){
         if (interviewee!=null&&interviewee.getID()!=null)
-        intervieweeDAO.save(interviewee);
+            intervieweeDAO.save(interviewee);
     }
 }

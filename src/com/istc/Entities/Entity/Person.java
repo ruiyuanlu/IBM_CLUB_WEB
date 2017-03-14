@@ -55,7 +55,7 @@ public class Person implements Serializable{
     @Override
     public String toString() {
         return "Person{" +
-                "birthday=" + birthday +
+//                "birthday=" + birthday +
                 ", ID='" + ID + '\'' +
                 ", name='" + name + '\'' +
                 ", description=" + description +

@@ -22,7 +22,7 @@
     确认密码：<input type="password" name="repassword" /><font color="red"><span id="error_repassword"></span></font><br/>
     姓名:<input type="text" name="name"/><font color="red"><span id="error_name"></span></font><br/>
     性别：<br/>
-    <input type="radio" name="gender" value="true" checked/> 男<br/>
+    <input type="radio" name="gender" value="true" checked="true"/> 男<br/>
     <input type="radio" name="gender" value="false"/> 女<br/>
     生日：<input type="date" name="birthday" id="birthday"/><font color="red"><span id="error_birthday"></span></font><br/>
     手机号：<input type="text" name="phoneNumber"/><font color="red"><span id="error_phoneNumber"></span></font><br/>

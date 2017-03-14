@@ -63,9 +63,17 @@ public class SignAction extends ActionSupport implements SessionAware {
         return INPUT;
     }
 
-    @Action(value = "memberSign", results = {@Result(name = INPUT, type = "json", params = {"ignoreHierarchy","false"})})
+    @Action(value = "memberSign", results = {@Result(name = INPUT, type = "json", params = {"ignoreHierarchy","false"}),
+            @Result(name = "login", location = "loginRedirect", type = "redirect"),
+            @Result(name = "QRcodeOutOfRange", location = "jsp/QRcodeOutOfRange.jsp")
+    })
     public String memberSign(){
         Person person =(Person) session.get(loginKey);
+        if(person == null)return "login";
+        if(tokenUtils.isResubmit(session, token)){
+            addActionMessage("你的二维码过期了哦，快去扫描新的吧～～");
+            return "QRcodeOutOfRange";
+        }
         Member member = new Member();
         try {
             typeConverter.convert(person, member);
@@ -82,11 +90,7 @@ public class SignAction extends ActionSupport implements SessionAware {
         return INPUT;
     }
 
-
-
     //getter and stter
-
-
     public int getDeptID() {
         return deptID;
     }

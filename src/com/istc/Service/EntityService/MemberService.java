@@ -30,10 +30,6 @@ public class MemberService {
         if (member!=null&&member.getID()!=null)
             memberDAO.save(member);
     }
-    public  void save(Member[] members){
-        if (members!=null&&members[0].getID()!=null)
-        memberDAO.save(members);
-    }
 
     public Member get(Member member){
         if (member!=null&&member.getID()!=null)

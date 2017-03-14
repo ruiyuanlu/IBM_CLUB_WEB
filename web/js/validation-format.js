@@ -5,7 +5,7 @@
     document.write('<script type="text/JavaScript" src="/js/JsonSerialize.js"></script>');
 
     function registerValidation(){
-        postForm2Action("register", "#register", "注册成功! 单击确定返回首页!", "mainpage", ["password", "repassword"]);//用[]代表数组，否则会被拆开成一个个字母
+        postForm2Action("register", "#register", "注册成功! 单击确定返回首页!", "main", ["password", "repassword"]);//用[]代表数组，否则会被拆开成一个个字母
     }
 
     function loginValidation(){

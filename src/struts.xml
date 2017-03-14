@@ -5,6 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+
     <!--Struts.xml 必须放在src目录下-->
     <!-- 配置Struts 时如果同时使用 annotation 和 xml 同时使用时不能出现下面这句话
         <constant name="struts.action.extension" value="do, action, jsp, html"/>
@@ -34,7 +35,7 @@
             <interceptor name="loginInterceptor" class="com.istc.Validation.SessionCheck" /><!--该拦截器栈用于检测session是否合法-->
             <interceptor-stack name="loginStack">
                 <interceptor-ref name="loginInterceptor">
-                    <param name="excludeMethods">mainpage, loginRedirect, registerRedirect</param>
+                    <param name="excludeMethods">main, loginRedirect, registerRedirect</param>
                 </interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>
             </interceptor-stack>

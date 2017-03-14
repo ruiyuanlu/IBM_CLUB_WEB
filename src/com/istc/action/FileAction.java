@@ -274,7 +274,7 @@
 //        return f;
 //    }
 //
-//    public String getFileName() {
+//    public String getFileRealName() {
 //        try {
 //            //在之前的action过程中编码已经有所变化
 //            // @contentDisposition "attachment;filename=\"${fileName}\";包含中文的fileName需要重新转回URL编码再返回才能
@@ -291,7 +291,7 @@
 //        this.inputStream = inputStream;
 //    }
 //
-//    public void setFileName(String fileName) {
+//    public void setFileRealName(String fileName) {
 //        this.fileName = fileName;
 //    }
 //

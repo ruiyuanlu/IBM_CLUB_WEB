@@ -29,7 +29,7 @@ import java.util.Map;
 @Controller("redirectAction")
 @Scope("prototype")
 //有的部署时没有 @AllowedMethods 时无法找到注册的方法
-@AllowedMethods({"deptManagement", "personInfoManagement", "memberModify", "homeworkManagement", "signRedirect","mainpage", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
+@AllowedMethods({"uploadRedirect", "deptManagement", "personInfoManagement", "memberModify", "homeworkManagement", "signRedirect","main", "success", "welcome", "loginRedirect", "registerRedirect", "register", "fileupload", "memberInfoManagement"})
 public class RedirectAction extends ActionSupport implements SessionAware, ServletResponseAware, ServletRequestAware{
 
     @Resource(name = "memberService")
@@ -46,6 +46,16 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
 
     public RedirectAction(){
         System.out.println("进入RedirectAction");
+    }
+
+    @Action(value = "uploadRedirect", results = {@Result(name = "uploadRedirect", location = "jsp/fileupload.jsp")})
+    public String uploadRedirect(){
+        return "uploadRedirect";
+    }
+
+    @Action(value = "downloadRedirect", results = {@Result(name = "downloadRedirect", location = "jsp/fileDownload.jsp")})
+    public String downloadRedirect(){
+        return "downloadRedirect";
     }
 
     @Action(value = "memberInfoManagementRedirect", results = {@Result(name = "personInfoManagement", location = "jsp/memberInfoManagement.jsp")})
@@ -68,8 +78,8 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         return "memberModify";
     }
 
-    @Action(value = "signRedirectRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
-    public String signRedirectRedirect(){
+    @Action(value = "signRedirect", results = {@Result(name = "sign",location = "jsp/QRcodesign.jsp")})
+    public String signRedirect(){
         return "sign";
     }
 
@@ -85,23 +95,23 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         return "welcome";
     }
 
-    @Action(value="mainpage", results={@Result(name="mainpage", location="jsp/mainPage.jsp")})
-    public String mainpage() {
+    @Action(value="main", results={@Result(name="main", location="jsp/mainPage.jsp")})
+    public String main() {
         System.out.println("进入mainpage转发");
         if(isLogin())
             session.remove(tokenKey);// 用完后删除token
-        return "mainpage";
+        return "main";
     }
 
     @Action(value="loginRedirect", results={
                     @Result(name="loginRedirect", location="jsp/loginPage.jsp"),
-                    @Result(name = "mainpage", location = "jsp/mainPage.jsp")
+                    @Result(name = "main", location = "jsp/mainPage.jsp")
             })
     public String loginRedirect() {
         System.out.println("进入转发的login");
         if (isLogin()){
             System.out.println("重复登录，直接进入主页");
-            return "mainpage";
+            return "main";
         }
         session.put(tokenKey, TokenUtils.getInstance().generateNewToken());
         return "loginRedirect";
@@ -109,13 +119,13 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
 
     @Action(value="registerRedirect", results={
                     @Result(name="register",location="jsp/register.jsp"),
-                    @Result(name = "mainpage",location = "jsp/mainPage.jsp")
+                    @Result(name = "main",location = "jsp/mainPage.jsp")
             })
     public String registerRedirect() {
         System.out.println("进入registerRedirect");
         if (isLogin()){
             System.out.println("无需注册，直接进入主页");
-            return "mainpage";
+            return "main";
         }
         session.put(tokenKey, TokenUtils.getInstance().generateNewToken());
         return "register";

@@ -4,6 +4,7 @@ package com.istc.Utilities;
  * Created by lurui on 2017/2/25 0025.
  */
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.List;
@@ -45,14 +46,14 @@ public class ClassTypeConverter {
      * @return 返回目标类型的对象数组
      * @throws Exception
      */
-    public Object[] convert(List froms, Class<?> targetClazz) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-        Object[] res = new Object[froms.size()];
+    public Object convert(List froms, Class<?> targetClazz)throws Exception{
+        Object array = Array.newInstance(targetClazz, froms.size());
         for(int i = 0; i < froms.size(); i++){
             Object target = Class.forName(targetClazz.getName()).newInstance();
             convert(froms.get(i), target);
-            res[i] = target;
+            Array.set(array, i, target);
         }
-        return res;
+        return array;
     }
 
     /**
@@ -62,7 +63,7 @@ public class ClassTypeConverter {
      * @param target
      * @throws Exception
      */
-    public void convert(Object from, Object target) throws IllegalAccessException {
+    public void convert(Object from, Object target) throws Exception{
         //清理内存并初始化
         clear(stackFrom, stackTarget);
         init(stackFrom, from);
@@ -76,7 +77,7 @@ public class ClassTypeConverter {
             stack.push(clazz);
     }
 
-    private void excuteConvert(Object from, Object target, Stack<Class<?>> s1, Stack<Class<?>> s2) throws IllegalAccessException {
+    private void excuteConvert(Object from, Object target, Stack<Class<?>> s1, Stack<Class<?>> s2) throws IllegalAccessException{
         while( !s1.empty() && !s2.empty()){
             Class<?> clazz1 = s1.pop();
             Class<?> clazz2 = s2.pop();

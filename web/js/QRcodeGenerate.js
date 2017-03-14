@@ -6,7 +6,7 @@ document.write('<script type="text/JavaScript" src="/js/qrcode.js"></script>');
 var deptID, times;
 
 function refreshQRcode() {
-    var url=location.host+"/memberSign?token=";
+    var url="http://" +  location.host + "/memberSign?token=";
     $.post("refreshQRCode", {
         deptID: deptID,
         times: times

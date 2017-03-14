@@ -1,0 +1,9 @@
+个人信息修改（member级别）
+密码修改（Person级别，所有人可用）【自我修改】、
+面试者通过（可批量）（interviewee->无部门member）、
+部门选择（有部门或无部门member->有部门member）、
+取出剩余面试者（返回jsonresult中含所有interviewee）、
+部员添加（无->有部门member）、
+部员删除（可批量）（删除对应memberID的member）
+查询一个部门所有人（传入部门ID，返回jsonresult中含有一个类型为List<>的interviewee的集合）
+联调成功版本。

@@ -56,9 +56,19 @@ function changeInfoValidation(){
     postForm2Action("modifyInfo", "#modifyInfo", "修改个人信息成功!");
     refetch();
 }
+function getRestIntervieweesValidation(){
+    postForm2Action("getRestInterviewees","","请查看network响应!！")
+}
+
+function deleteMemberSubmitValidation(){
+
+    postForm2Action("deleteMemberSubmit", "#deleteMemberSubmit", "删除部员完成!");
+
+}
 function chooseDeptValidation(){
     postForm2Action("chooseDept","#chooseDept","部门选择完成！")
 }
+
 
 
 function fetchAllPersonValidation(){

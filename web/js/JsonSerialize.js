@@ -39,7 +39,6 @@ function clearFieldsByName(fieldsName) {
  */
 function hasErrors(json){
     $("[name = 'token']").val(json.newToken);//将后端的新的token写入前端, json中的newToken属性定义在loginAction类中
-
     if(json.actionErrors && !isEmpty(json.actionErrors)){//判断有没有actionErrors
         $.each(json.actionErrors,function(key,value){
             $("#errorMessages").append(value);
@@ -75,7 +74,7 @@ function isEmpty(obj) {
  */
 function checkJsonAndAssign(json, result, url) {
     if(hasErrors(json))return;
-    alert(result);
+    // alert(result);
     if(url && !isEmpty(url)) window.location.assign(url);
 
 }

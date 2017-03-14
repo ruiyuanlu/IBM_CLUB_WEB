@@ -2,6 +2,7 @@ package com.istc.action;
 
 import com.istc.Entities.Entity.Member;
 import com.istc.Entities.Entity.Person;
+import com.istc.Entities.Entity.UploadedFile;
 import com.istc.Service.EntityService.MemberService;
 import com.istc.Service.EntityService.UploadedFileService;
 import com.istc.Utilities.FileUtils;
@@ -28,7 +29,7 @@ import java.util.Map;
 @Controller("homeWorkUploadAction")
 @Scope("prototype")
 @AllowedMethods({"fileUpload"})
-public class FileUploadAction extends ActionSupport implements SessionAware{
+public class FileUploadAndDownloadAction extends ActionSupport implements SessionAware{
 
     private static final String loginKey = "member";
 
@@ -54,7 +55,13 @@ public class FileUploadAction extends ActionSupport implements SessionAware{
     @Resource(name = "memberService")
     private MemberService memberService;
 
-    public FileUploadAction() {
+    //下载配置
+    private InputStream downloadStream;
+    private int downloadFileID;
+    private String downloadFileName;
+    private File download;
+
+    public FileUploadAndDownloadAction() {
         System.out.println("进入上传类的构造器");
         fileUtil = FileUtils.getInstance();
     }
@@ -75,7 +82,7 @@ public class FileUploadAction extends ActionSupport implements SessionAware{
             return INPUT;
         }
         String currentTime = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss_SSS").format(Calendar.getInstance().getTime());//获取当前时间
-        extend = uploadFileName.substring(uploadFileName.indexOf('.') + 1);
+        extend = uploadFileName.substring(uploadFileName.lastIndexOf('.') + 1);
         String fileSaveName= currentTime + "-" + uploadFileName + "." + extend;//存储名 = 时间戳 + 文件名 + 扩展名
         //上传
         String rootPath = ServletActionContext.getServletContext().getRealPath("/uploadFiles/homeWorks");//获取绝对路径
@@ -88,7 +95,7 @@ public class FileUploadAction extends ActionSupport implements SessionAware{
         //向数据库中添加记录
         ownerID = ((Person)sessoin.get(loginKey)).getID();
         Member owner = memberService.get(ownerID);
-        uploadedFileService.addFile(targetFile, owner);
+        uploadedFileService.addFile(targetFile, uploadFileName, owner);
 
         InputStream servletInputStream = null;
         try {
@@ -103,6 +110,35 @@ public class FileUploadAction extends ActionSupport implements SessionAware{
             }
         }
         fileUtil.delete(upload);//删除缓存
+        return SUCCESS;
+    }
+
+    @Action(value = "fileDownload", results = {@Result(name = SUCCESS, type = "stream",
+            params = {
+                "inputName", "downloadStream",
+                "bufferSize", "4096",
+                "contentDisposition", "attachment;filename=\"${downloadFileName}\";charset=UTF-8",
+                "contentCharSet","UTF-8"}
+    ),
+        @Result(name = INPUT, location = "jsp/fileDownloadFail.jsp")
+    })
+    public String fileDownload(){
+        UploadedFile file = uploadedFileService.getUploadedFileById(downloadFileID);
+        if(file == null){
+            addActionError("您要下载的文件不存在");
+            return INPUT;
+        }
+        download = file.createFile();
+        downloadFileName = file.getFileRealName();
+        if(download == null || !download.exists() || !download.isFile()){
+            addActionError("您要下载的文件不存在");
+            return INPUT;
+        }
+        try {
+            downloadStream = new FileInputStream(download);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return SUCCESS;
     }
 
@@ -157,5 +193,42 @@ public class FileUploadAction extends ActionSupport implements SessionAware{
 
     public void setInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
+    }
+
+    public InputStream getDownloadStream() {
+        return downloadStream;
+    }
+
+    public void setDownloadStream(InputStream downloadStream) {
+        this.downloadStream = downloadStream;
+    }
+
+    public int getDownloadFileID() {
+        return downloadFileID;
+    }
+
+    public void setDownloadFileID(int downloadFileID) {
+        this.downloadFileID = downloadFileID;
+    }
+
+    public String getDownloadFileName() {
+        try {
+            return java.net.URLEncoder.encode(this.downloadFileName, "UTF-8").replaceAll("\\+", " ");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return downloadFileName;
+    }
+
+    public void setDownloadFileName(String downloadFileName) {
+        this.downloadFileName = downloadFileName;
+    }
+
+    public File getDownload() {
+        return download;
+    }
+
+    public void setDownload(File download) {
+        this.download = download;
     }
 }

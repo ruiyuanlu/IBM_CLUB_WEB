@@ -33,7 +33,7 @@ import java.util.stream.Stream;
 @Controller("personnelAction")
 @Scope("prototype")
 @ParentPackage("ajax")
-@AllowedMethods({"addMember","changePassword","personUpgrade","chooseDept","fetchAllPerson","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
+@AllowedMethods({"addMember","changePassword","personUpgrade","chooseDept","fetchAllPerson","getRestInterviewees","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
 public class PersonalAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
     private HttpServletRequest request;
@@ -79,7 +79,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     private Map<String,Object> jsonresult=new HashMap<String,Object>();
     //默认重置密码为111111，用以部长重置部员
     public static final String defaultPassword="111111";
-
+    private String deletedLine;
     private String[] deleted;
     private String needreset;
 
@@ -93,12 +93,12 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     private final String loginKey = "member";
     private final String tokenKey = "token";
     private final String prePageKey = "prePage";
-public PersonalAction(){
-    tokenUtil = TokenUtils.getInstance();
-    cookieUtil = CookieUtils.getInstance();
-    registerUtil = RegisterCheck.getInstance();
-    encoder = Encoder.getInstance();
-}
+    public PersonalAction(){
+        tokenUtil = TokenUtils.getInstance();
+        cookieUtil = CookieUtils.getInstance();
+        registerUtil = RegisterCheck.getInstance();
+        encoder = Encoder.getInstance();
+    }
     @Action(
             value="addMember",
             results={
@@ -144,7 +144,7 @@ public PersonalAction(){
             if (!registerUtil.isValid(RegisterCheck.Type.ID,id)) {
                 addFieldError("id", "学号输入有误，请检查并重新输入。");
             }
-            if (memberService.exist(id)){
+            if (personService.exist(id)){
                 addFieldError("id","该学号仍为preson或member，请删除后添加");
             }
         }
@@ -168,6 +168,29 @@ public PersonalAction(){
             }
         }
     }
+
+
+    @Action(
+            value="getRestInterviewees",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    /**
+     *取出所有面试者，以   形式置于json（可以改为使用isPassed参数有选择的取人，
+     * 但因为目前通过面试方法为删去interviewee故暂为取所有interviewee）
+     */
+    public String getRestInterviewees(){
+        List<Interviewee> interviewees=intervieweeService.getRestInterviewees();
+        if(interviewees==null||interviewees.get(0)==null){
+            addFieldError("getRestInterviewees","已无未面试人员，面试终了！");
+            return INPUT;
+        }
+
+        jsonresult.put("interviewees",interviewees);
+        return INPUT;
+    }
+
 
     @Action(
             value="changePassword",
@@ -228,11 +251,11 @@ public PersonalAction(){
         System.out.println("user input:"+oldpassword);
         System.out.println("DB input  :"+passwordFD);
         if (passwordFD.equals(password)){
-                addFieldError("password","请键入与旧密码不同的新密码！");
-            }
+            addFieldError("password","请键入与旧密码不同的新密码！");
+        }
         if (!oldpassword.equals(passwordFD)){
-                addFieldError("oldpassword","您输入的旧密码不正确！");
-            }
+            addFieldError("oldpassword","您输入的旧密码不正确！");
+        }
     }
 
     @Action(
@@ -250,9 +273,10 @@ public PersonalAction(){
     }
     public  void  validateChooseDept(){
         id = ((Person)session.get(loginKey)).getID();
-        if (id==null||!memberService.exist(id))addFieldError("id","您不是member类成员！");
         if (!departmentService.exist(dept))addFieldError("dept","您要加入的部门不存在");
-        for (Department department:memberService.get(id).getEnterDepts()){
+        System.out.println("memberService.exist(id):   "+memberService.exist(id));
+        if (id==null||!memberService.exist(id))addFieldError("id","您不是member类成员！");
+        else   for (Department department:memberService.get(id).getEnterDepts()){
             if (department.getDeptID()==dept)
                 addFieldError("dept","您已加入该部门");
         }
@@ -275,7 +299,7 @@ public PersonalAction(){
             addFieldError("fetchPerson","并没有这个部门！");
             return INPUT;
         }
-            deptMember = departmentService.getInsideMembers(dept);
+        deptMember = departmentService.getInsideMembers(dept);
         System.out.println("deptMember.toString()"+deptMember.toString());
         System.out.println("deptMember.size()    "+deptMember.size());
         try {
@@ -338,6 +362,22 @@ public PersonalAction(){
         }
         return INPUT;
     }
+    public void  validateDeleteMemberSubmit(){
+        if (deletedLine==null)
+            addFieldError("deleted","请输入要删除者ID！");
+        else {
+            deleted = deletedLine.split(",");
+            if (deleted == null | deleted[0] == null) {
+                addFieldError("deleted", "输入删除者ID格式有误");
+            }
+            else for (String id:deleted){
+                if (!memberService.exist(id)){
+                    addFieldError("deleted","被删除者有的不为member");
+                    break;
+                }
+            }
+        }
+    }
 
 
     @Action(
@@ -352,11 +392,11 @@ public PersonalAction(){
     public String resetPasswordSubmit(){
 
         try {       Member curmember=memberService.get(needreset.trim());
-                    System.out.println("修改前的密码加密："+curmember.getPassword());
-                    curmember.setPassword(defaultPassword);
-                    memberService.update(curmember);
-                    System.out.println("重置后的密码加密："+memberService.get(needreset.trim()).getPassword());
-                    jsonresult.put("resetresult",true);
+            System.out.println("修改前的密码加密："+curmember.getPassword());
+            curmember.setPassword(defaultPassword);
+            memberService.update(curmember);
+            System.out.println("重置后的密码加密："+memberService.get(needreset.trim()).getPassword());
+            jsonresult.put("resetresult",true);
         }
         catch (Exception e){
             addFieldError("resetPassword","密码重置失败！");
@@ -402,8 +442,8 @@ public PersonalAction(){
             Member member_on;
             member_on=memberService.get(id);
             if (member_on==null){
-                 addFieldError("fetchPersonInfo","您的id不存在！");
-                 return INPUT;}
+                addFieldError("fetchPersonInfo","您的id不存在！");
+                return INPUT;}
             member_on.setQQ(QQ);
             member_on.setGender(gender);
             member_on.setPhoneNumber(phoneNumber);
@@ -444,8 +484,6 @@ public PersonalAction(){
             if (!registerUtil.isValid(RegisterCheck.Type.QQ,QQ)) {
                 addFieldError("QQ", "您的QQ号输入有误，请检查并重新输入!");
             }
-            else {
-            }
         }
         //西安交通大学招生简章规定，少年班的入学年龄不得低于14岁
         Calendar curtime = Calendar.getInstance();
@@ -455,8 +493,6 @@ public PersonalAction(){
         else {
             if(!registerUtil.isValid(RegisterCheck.Type.BIRTHDAY,birthday)){
                 addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
-            }
-            else {
             }
         }
         return;
@@ -477,6 +513,14 @@ public PersonalAction(){
 
     public String getName() {
         return name;
+    }
+
+    public String getDeletedLine() {
+        return deletedLine;
+    }
+
+    public void setDeletedLine(String deletedLine) {
+        this.deletedLine = deletedLine;
     }
 
     public void setName(String name) {
