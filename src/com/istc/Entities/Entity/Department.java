@@ -92,8 +92,8 @@ public class Department {
                 ", introduction='" + introduction + '\'' +
                 ", deptName='" + deptName + '\'' +
                 ", establishTime=" + establishTime +
-                ", ministers=" + ministers +
-                ", members=" + members +
+
+
                 ", meetings=" + meetings +
                 ", homeWorks=" + homeWorks +
                 ", registers=" + registers +
