@@ -51,6 +51,8 @@ public class RegisterAction extends ActionSupport implements SessionAware{
     private String QQ;
     private String phoneNumber;
     private boolean gender;
+    protected String description;
+
     private String token;
     private String newToken;
 
@@ -79,6 +81,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         interviewee.setQQ(QQ);
         interviewee.setPhoneNumber(phoneNumber);
         interviewee.setGender(gender);
+        interviewee.setDescription(description);
         Calendar birth = Calendar.getInstance();
         try {
             birth.setTime(sdf.parse(birthday));
@@ -113,6 +116,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         // 生日检查
         if(birthday == null || birthday.equals(""))addFieldError("birthday", "请输入您的生日以便社团成员为您庆祝生日!");
         if(!registerUtil.isValid(Type.BIRTHDAY, birthday))addFieldError("birthday", "您输入的生日已经超越极限啦!您是来逗逼的吧!");
+        if(description == null || "".equals(description))addFieldError("description", "请介绍一下自己来让大家认识你哦~");
     }
 
     public String getId() {

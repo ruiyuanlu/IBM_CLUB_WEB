@@ -43,8 +43,15 @@ public class Person implements Serializable{
 
         Person person = (Person) o;
 
-        return ID != null ? ID.equals(person.ID) : person.ID == null;
-
+        if (gender != person.gender) return false;
+        if (ID != null ? !ID.equals(person.ID) : person.ID != null) return false;
+        if (birthday != null ? !birthday.equals(person.birthday) : person.birthday != null) return false;
+        if (name != null ? !name.equals(person.name) : person.name != null) return false;
+        if (description != null ? !description.equals(person.description) : person.description != null) return false;
+        if (password != null ? !password.equals(person.password) : person.password != null) return false;
+        if (QQ != null ? !QQ.equals(person.QQ) : person.QQ != null) return false;
+        if (phoneNumber != null ? !phoneNumber.equals(person.phoneNumber) : person.phoneNumber != null) return false;
+        return peopleVersion != null ? peopleVersion.equals(person.peopleVersion) : person.peopleVersion == null;
     }
 
     @Override
