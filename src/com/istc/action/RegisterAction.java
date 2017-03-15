@@ -1,6 +1,7 @@
 package com.istc.action;
 
 import com.istc.Entities.Entity.Interviewee;
+import com.istc.Entities.PropertyInterface.Authority;
 import com.istc.Service.EntityService.IntervieweeService;
 import com.istc.Service.EntityService.PersonService;
 import com.istc.Utilities.CookieUtils;
@@ -31,7 +32,7 @@ import com.istc.Validation.RegisterCheck.Type;
 @Scope("prototype")
 @ParentPackage("ajax")
 @AllowedMethods({"register"})
-public class RegisterAction extends ActionSupport implements SessionAware{
+public class RegisterAction extends ActionSupport implements SessionAware, Authority{
 
     private static final long serialVersionUID = 187387589387L;
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -51,10 +52,9 @@ public class RegisterAction extends ActionSupport implements SessionAware{
     private String QQ;
     private String phoneNumber;
     private boolean gender;
-    protected String description;
+    protected String[] description;
 
     private String token;
-    private String newToken;
 
     //会话
     private Map<String, Object> session;
@@ -74,20 +74,24 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 
     @Action(value = "register", results = {@Result(name = INPUT, type = "json", params = {"IgnoreHierarchy", "false"})})
     public String register(){
-        newToken = tokenUtil.tokenCheck(this, session, token);
+        System.out.println("进入 register");
+        token = tokenUtil.tokenCheck(this, session, token);
         Interviewee interviewee = new Interviewee(id, false);
         interviewee.setPassword(encoder.encodeSHA512(password.getBytes()));
         interviewee.setName(name);
         interviewee.setQQ(QQ);
         interviewee.setPhoneNumber(phoneNumber);
         interviewee.setGender(gender);
-        interviewee.setDescription(description);
+        interviewee.setAuthority(intervieweeeAuthority);
+        interviewee.setDescription(this.parseStringArrayToString(description));
         Calendar birth = Calendar.getInstance();
         try {
             birth.setTime(sdf.parse(birthday));
         } catch (ParseException e) {
         }
         interviewee.setBirthday(birth);//设置年龄
+        System.out.println("即将存入数据库");
+
         //存入数据库
         intervieweeService.add(interviewee);
         //加入 session，自动成为登陆状态
@@ -103,7 +107,7 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         // 密码检查
         if(password == null || password.equals(""))addFieldError("password", "请输入您的密码!");
         if(!registerUtil.isValid(Type.PASSWORD, password))addFieldError("password", "密码中只允许使用数字、字母和下划线。长度不小于6位，不大于30位!");
-        if(!password.equals(repassword))addFieldError("repassword", "两次输入的密码不一致!");
+        if(password != null && !password.equals(repassword))addFieldError("repassword", "两次输入的密码不一致!");
         // 姓名检查
         if(name == null || name.equals(""))addFieldError("name", "请输入您的姓名!");
         if(!registerUtil.isValid(Type.NAME, name))addFieldError("name", "请输入正确的姓名信息!");
@@ -119,56 +123,36 @@ public class RegisterAction extends ActionSupport implements SessionAware{
         if(description == null || "".equals(description))addFieldError("description", "请介绍一下自己来让大家认识你哦~");
     }
 
-    public String getId() {
-        return id;
+    private String parseStringArrayToString(String... str){
+        if(str.length == 0)return null;
+        if(str.length == 1)return new String(str[0]);
+        StringBuilder strb = new StringBuilder();
+        for(String s: str)strb.append(s);
+        return strb.toString();
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
     public void setBirthday(String birthday) {
         this.birthday = birthday;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getRepassword() {
-        return repassword;
     }
 
     public void setRepassword(String repassword) {
         this.repassword = repassword;
     }
 
-    public String getQQ() {
-        return QQ;
-    }
-
     public void setQQ(String QQ) {
         this.QQ = QQ;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -189,14 +173,6 @@ public class RegisterAction extends ActionSupport implements SessionAware{
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    public String getNewToken() {
-        return newToken;
-    }
-
-    public void setNewToken(String newToken) {
-        this.newToken = newToken;
     }
 
     @Override

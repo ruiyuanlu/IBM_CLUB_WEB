@@ -18,7 +18,7 @@
     学号:<input type="text" name="id"/><font color="red"><span id="error_id"></span></font><br/>
     密码:<input type="password" name="password"/><font color="red"><span id="error_password"></span></font><br/>
     <input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
-    <input type="checkbox" name="autoLogin" value="true">下次自动登录
+    <input type="checkbox" name="remember" value="true">下次自动登录
 </form>
 <button onclick="loginValidation()">登录</button>
 <font color="red"><span id="errorMessages"></span></font>

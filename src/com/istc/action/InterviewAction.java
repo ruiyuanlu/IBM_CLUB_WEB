@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.istc.Entities.Entity.Interviewee;
 import com.istc.Service.EntityService.IntervieweeService;
+import com.istc.Utilities.TokenUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -27,6 +28,7 @@ import javax.annotation.Resource;
 public class InterviewAction extends ActionSupport implements SessionAware{
 	
 	private static final long serialVersionUID = 12343251L;
+	private static final String tokenKey = "token";
 
 	@Resource(name = "intervieweeService")
     private IntervieweeService intervieweeService;
@@ -34,22 +36,29 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	private String[] passedIDs;
 	private Map<String, Object> session;
 
+	private Interviewee[] restInterviewees;
+	private String token;
+
+	private TokenUtils tokenUtil;
+
 	/**
 	 * 用于获得用户提交的面试结果信息，并对数据库进行相应的处理
 	 */
-	@Action(value="intervieweeCheck")
+	@Action(value="intervieweeCheck", results = {@Result(name = INPUT, type = "json", params = {"ignoreHierarchy","false"})})
 	public String intervieweeCheck() throws Exception{
 		try {
+			tokenUtil = TokenUtils.getInstance();
+			if(tokenUtil.isResubmit(session, token)){
+				token = tokenUtil.tokenCheck(this, session, token);
+				return INPUT;
+			}
 		    //将数据库中面试通过的人删除并加入成员列表
 			intervieweeService.setIntervieweesToMembers(passedIDs);
 			//从数据库中重新获取剩余对象的List
-            List<Interviewee> restIntrviewees = intervieweeService.getRestInterviewees();
-			session.put("interviewList", restIntrviewees);
-			if (restIntrviewees.size() <= 0)
-				addFieldError("getIntervieweeError", "面试已结束！");
+			restInterviewees = intervieweeService.getRestInterviewees();
+			if(restInterviewees.length <= 0) addActionMessage("没有需要面试人员了哦~");
 		} catch (Exception e) {
 			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
-			return INPUT;
 		}
         return INPUT;
     }
@@ -60,25 +69,29 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	 */
 	@Action(value="intervieweeGet",results = {@Result(name = INPUT, type = "json", params = {"IgnoreHierarchy","false"})})
 	public String intervieweeGet() throws Exception{
-		try {
-			session.put("interviewList", intervieweeService.getRestInterviewees());
-		} catch (Exception e) {
-			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
-            return INPUT;
-        }
+		restInterviewees = intervieweeService.getRestInterviewees();
+		if(restInterviewees.length <= 0) addActionMessage("没有需要面试人员了哦~");
 		return INPUT;
-	}
-
-	public String[] getPassedIDs(){
-		return passedIDs;
 	}
 
 	public void setPassedIDs(String[] passedIDs){
 		this.passedIDs = passedIDs;
 	}
 
+	public Interviewee[] getRestInterviewees() {
+		return restInterviewees;
+	}
+
 	@Override
 	public void setSession(Map<String, Object> arg0) {
 		this.session=arg0;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 }

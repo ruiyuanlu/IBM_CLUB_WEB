@@ -28,6 +28,7 @@ public class Person implements Serializable{
     protected String phoneNumber;
     @Basic(fetch = FetchType.EAGER)
     protected boolean gender;//性别
+    protected int authority;
     @Transient
     private final static Boolean MALE = true;
     @Version
@@ -44,6 +45,7 @@ public class Person implements Serializable{
         Person person = (Person) o;
 
         if (gender != person.gender) return false;
+        if (authority != person.authority) return false;
         if (ID != null ? !ID.equals(person.ID) : person.ID != null) return false;
         if (birthday != null ? !birthday.equals(person.birthday) : person.birthday != null) return false;
         if (name != null ? !name.equals(person.name) : person.name != null) return false;
@@ -56,19 +58,31 @@ public class Person implements Serializable{
 
     @Override
     public int hashCode() {
-        return ID != null ? ID.hashCode() : 0;
+        int result = ID != null ? ID.hashCode() : 0;
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (QQ != null ? QQ.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (gender ? 1 : 0);
+        result = 31 * result + authority;
+        result = 31 * result + (peopleVersion != null ? peopleVersion.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "birthday=" + birthday +
-                ", ID='" + ID + '\'' +
+                "ID='" + ID + '\'' +
+                ", birthday=" + birthday +
                 ", name='" + name + '\'' +
-                ", description=" + description +
+                ", description='" + description + '\'' +
+                ", password='" + password + '\'' +
                 ", QQ='" + QQ + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", gender=" + gender +
+                ", authority=" + authority +
                 ", peopleVersion=" + peopleVersion +
                 '}';
     }
@@ -153,4 +167,11 @@ public class Person implements Serializable{
         return Calendar.getInstance().get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
     }
 
+    public int getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(int authority) {
+        this.authority = authority;
+    }
 }

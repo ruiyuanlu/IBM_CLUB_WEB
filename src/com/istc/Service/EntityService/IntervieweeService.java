@@ -2,6 +2,7 @@ package com.istc.Service.EntityService;
 
 import com.istc.Entities.Entity.Interviewee;
 import com.istc.Entities.Entity.Member;
+import com.istc.Entities.PropertyInterface.Authority;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.IntervieweeDAO;
 import com.istc.Service.EntityDAO.EntityDAOInterfaces.MemberDAO;
 import com.istc.Utilities.ClassTypeConverter;
@@ -10,14 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by lurui on 2017/2/25 0025.
  */
 @Service("intervieweeService")
 @Transactional(rollbackFor = Exception.class)
-public class IntervieweeService {
+public class IntervieweeService implements Authority{
     @Resource(name = "intervieweeDAO")
     private transient IntervieweeDAO intervieweeDAO;
     @Resource(name = "memberDAO")
@@ -29,8 +29,11 @@ public class IntervieweeService {
         return intervieweeDAO.exist(id);
     }
 
-    public List<Interviewee> getRestInterviewees(){
-        return intervieweeDAO.findAll();
+    public Interviewee[] getRestInterviewees(){
+        List<Interviewee> interviewees = intervieweeDAO.findAll();
+        Interviewee[] rest = new Interviewee[interviewees.size()];
+        for(int i = 0; i< rest.length; i++) rest[i] = interviewees.get(i);
+        return rest;
     }
 
 
@@ -46,9 +49,8 @@ public class IntervieweeService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
             intervieweeDAO.delete(intervieweeIDs);
+            for(Member m : members)m.setAuthority(memberAuthority);
             memberDAO.save(members);
 
         }

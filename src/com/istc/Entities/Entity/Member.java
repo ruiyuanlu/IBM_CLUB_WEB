@@ -29,9 +29,6 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Member extends Person {
 
-    @Basic
-    private Integer authority;
-
     @ManyToMany(fetch = FetchType.LAZY )//猜测？有mappedBy的一方是多对多关系中不维护关系的一方 正确
     @JoinTable(name = "dept_member",joinColumns = {@JoinColumn(name = "mem_id")},
     inverseJoinColumns = {@JoinColumn(name = "dept_id")})
@@ -59,7 +56,6 @@ public class Member extends Person {
 
         Member member = (Member) o;
 
-        if (authority != null ? !authority.equals(member.authority) : member.authority != null) return false;
         if (enterDepts != null ? !enterDepts.equals(member.enterDepts) : member.enterDepts != null) return false;
         if (registerRecords != null ? !registerRecords.equals(member.registerRecords) : member.registerRecords != null)
             return false;
@@ -69,8 +65,6 @@ public class Member extends Person {
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + (authority != null ? authority.hashCode() : 0);
-//        result = 31 * result + (homeWorks != null ? homeWorks.hashCode() : 0);
         return result;
     }
 
@@ -109,13 +103,6 @@ public class Member extends Person {
         this.enterDepts = manageDepts;
     }
 
-    public Integer getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(Integer authority) {
-        this.authority = authority;
-    }
     public void addDepartment(Department department){
         if(this.enterDepts == null)this.enterDepts = new HashSet<Department>();
         this.enterDepts.add(department);

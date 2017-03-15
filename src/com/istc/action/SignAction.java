@@ -15,6 +15,7 @@ import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.json.annotations.JSON;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -55,11 +56,10 @@ public class SignAction extends ActionSupport implements SessionAware {
 
     @Action(value = "refreshQRCode", results = {@Result(name = INPUT,type = "json", params = {"ignoreHierarchy","false"})})
     public String refreshQRCode(){
+        System.out.println("refreshQRCode 进入");
         token = tokenUtils.generateNewToken();
         addActionMessage(token);
         System.out.println("deptID:"+deptID+"\ttimes:"+times);
-        deptID = deptID;
-        times = times;
         return INPUT;
     }
 
@@ -68,6 +68,7 @@ public class SignAction extends ActionSupport implements SessionAware {
             @Result(name = "QRcodeOutOfRange", location = "jsp/QRcodeOutOfRange.jsp")
     })
     public String memberSign(){
+        System.out.println("memberSign 进入");
         Person person =(Person) session.get(loginKey);
         if(person == null)return "login";
         if(tokenUtils.isResubmit(session, token)){
@@ -85,8 +86,6 @@ public class SignAction extends ActionSupport implements SessionAware {
         register.setRegisterID(new RegisterID(new Department(deptID), times));
         register.addMember(member);
         registerService.add(register);
-
-        System.out.println("签到一次\n"+member);
         return INPUT;
     }
 
@@ -113,10 +112,6 @@ public class SignAction extends ActionSupport implements SessionAware {
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    public Map<String, Object> getSession() {
-        return session;
     }
 
     @Override

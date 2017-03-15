@@ -4,6 +4,7 @@ import com.istc.Entities.Entity.Member;
 import com.istc.Entities.Entity.Person;
 import com.istc.Service.EntityService.PersonService;
 import com.istc.Utilities.CookieUtils;
+import com.istc.Utilities.Encoder;
 import com.istc.Validation.InjectionCheck;
 import com.istc.Utilities.TokenUtils;
 import com.opensymphony.xwork2.ActionSupport;
@@ -53,7 +54,10 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
     private HttpServletResponse response;
     private String token;
     private String newToken;
-    private boolean autoLogin;//是否记忆登陆，由前端表单提交
+    private boolean remember;//是否记忆登陆，由前端表单提交
+
+    //有效性检验
+    private boolean isValid = true;
 
     //自定义的 token 工具，实现在 Utilities 中
     private TokenUtils tokenUtil;
@@ -91,22 +95,33 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
             @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"}),
     })
     public String login() throws Exception{
-        newToken = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
+        System.out.println("进入login");
+        System.out.println("id: "+id);
+        System.out.println("password: "+password);
+
+        isvalidLogin();
+        if(!isValid) return INPUT;
+
+        token = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
         Person person = (Member) session.get(loginKey);
         if(person == null){
             person = new Member();
             person.setID(id);
-            person.setPassword(password.toUpperCase());//前端不知道为什么执行大小写转换会跪
+//            person.setPassword(password.toUpperCase());//前端不知道为什么执行大小写转换会跪
+            person.setPassword(Encoder.getInstance().encodeSHA512(password.getBytes()));
         }
         person = personService.get(person);
         if(person == null){
+            System.out.println("在这里");
             addActionError("学号或密码错误!");
             return INPUT;
         }
         //登陆成功, 放入 session 中, 如果前端传入的参数允许存储cookie, 则操作存储 cookie
         session.put(loginKey, person);
         session.remove(tokenKey);
-        if(autoLogin) cookieUtil.addCookieToResponse(person, response);
+        if(remember) cookieUtil.addCookieToResponse(person, response);
+
+        System.out.println("login 中的 person 信息\n"+person);
 
         //获取用户之前访问的页面,这由全局拦截器 sessionCheck 提供
         prePage = (String)session.get(prePageKey);
@@ -122,6 +137,7 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
 
     @Action(value = "logout", results = {@Result(name="exit",location="jsp/logout.jsp")})
     public String logout()throws Exception {
+        System.out.println("进入logout");
         if (session != null) session.clear();
         return "exit";
     }
@@ -131,20 +147,28 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
      * 理论上自动被Struts根据方法名调用
      * 验证失败时进入 addFieldError 并自动返回 INPUT，成功时为 void
      */
-    public void validateLogin(){
+    public void isvalidLogin(){
         if (id == null || id.equals("")) {
-            addFieldError("id", "请输入学号！");
+            System.out.println("id shi null");
+            setFieldErrorMessage("id", "请输入学号！");
         }
         if (password == null || password.equals("")) {
-            addFieldError("password", "请输入密码！");
+            System.out.println("password shi null");
+
+            setFieldErrorMessage("password", "请输入密码！");
         }
         InjectionCheck injectionChecker = InjectionCheck.getInstance();
         if (!injectionChecker.isValid(id)) {
-            addFieldError("id", "请不要在输入的信息中包含特殊符号（* ' ; - + / % #）");
+            setFieldErrorMessage("id", "请不要在输入的信息中包含特殊符号（* ' ; - + / % #）");
         }
         if (!injectionChecker.isValid(password)) {
-            addFieldError("password","请不要在输入的信息中包含特殊符号（* ' ; - + / % #）");
+            setFieldErrorMessage("password","请不要在输入的信息中包含特殊符号（* ' ; - + / % #）");
         }
+    }
+
+    private void setFieldErrorMessage(String key, String value){
+       addFieldError(key, value);
+       isValid = false;
     }
 
     @Override
@@ -164,33 +188,26 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
         this.token = token;
     }
 
-    public void setAutoLogin(boolean autoLogin) {
-        this.autoLogin = autoLogin;
+    public void setRemember(boolean remember) {
+        this.remember = remember;
     }
 
-    public String Id() {
-        return id;
-    }
+//    public String Id() {
+//        return id;
+//    }
 
-    public String Password() {
-        return password;
-    }
-//    @JSON(serialize = false)//如果配置了此项，则在返回的 json 中不会序列化 autoLogin 对象
-    public boolean getAutoLogin() {
-        return autoLogin;
-    }
+//    public String getPassword() {
+//        return password;
+//    }
+//    @JSON(serialize = false)//如果配置了此项，则在返回的 json 中不会序列化 remember 对象
+//    public boolean getRemember() {
+//        return remember;
+//    }
 
     public String getToken() {
         return token;
     }
 
-    public String getNewToken() {
-        return newToken;
-    }
-
-    public void setNewToken(String newToken) {
-        this.newToken = newToken;
-    }
 
     @Override
     public void setSession(Map<String, Object> map) {

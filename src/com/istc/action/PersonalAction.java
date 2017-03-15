@@ -170,26 +170,26 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     }
 
 
-    @Action(
-            value="getRestInterviewees",
-            results={
-                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
-            }
-    )
-    /**
-     *取出所有面试者，以   形式置于json（可以改为使用isPassed参数有选择的取人，
-     * 但因为目前通过面试方法为删去interviewee故暂为取所有interviewee）
-     */
-    public String getRestInterviewees(){
-        List<Interviewee> interviewees=intervieweeService.getRestInterviewees();
-        if(interviewees==null||interviewees.get(0)==null){
-            addFieldError("getRestInterviewees","已无未面试人员，面试终了！");
-            return INPUT;
-        }
-
-        jsonresult.put("interviewees",interviewees);
-        return INPUT;
-    }
+//    @Action(
+//            value="getRestInterviewees",
+//            results={
+//                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+//            }
+//    )
+//    /**
+//     *取出所有面试者，以   形式置于json（可以改为使用isPassed参数有选择的取人，
+//     * 但因为目前通过面试方法为删去interviewee故暂为取所有interviewee）
+//     */
+//    public String getRestInterviewees(){
+//        List<Interviewee> interviewees=intervieweeService.getRestInterviewees();
+//        if(interviewees==null||interviewees.get(0)==null){
+//            addFieldError("getRestInterviewees","已无未面试人员，面试终了！");
+//            return INPUT;
+//        }
+//
+//        jsonresult.put("interviewees",interviewees);
+//        return INPUT;
+//    }
 
 
     @Action(

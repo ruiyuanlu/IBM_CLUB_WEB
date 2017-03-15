@@ -28,7 +28,9 @@ public class TokenAction extends ActionSupport implements SessionAware{
 
     @Action(value = "generateToken", results =  @Result(name = INPUT, type = "json", params = {"ignoreHierarchy", "false"}))
     public String generateToken(){
+        System.out.println("generateToken");
         token = TokenUtils.getInstance().generateNewToken();
+        System.out.println("generateToken: " + token);
         session.put(tokenKey, token);
         return INPUT;
     }
