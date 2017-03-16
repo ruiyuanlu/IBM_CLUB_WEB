@@ -27,6 +27,7 @@
     生日：<input type="date" name="birthday" id="birthday"/><font color="red"><span id="error_birthday"></span></font><br/>
     手机号：<input type="text" name="phoneNumber"/><font color="red"><span id="error_phoneNumber"></span></font><br/>
     QQ：<input type="text" name="QQ"/><font color="red"><span id="error_QQ"></span></font><br/>
+    descripution:<input type="text" name="description">
     <input type="hidden" name="token" value="<%=session.getAttribute("token")%>">
 </form>
 <button onclick="registerValidation()">注册</button>

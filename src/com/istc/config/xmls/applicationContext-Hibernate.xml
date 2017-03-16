@@ -70,8 +70,8 @@
             <props>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.show_sql">${show_sql}</prop>
+                <prop key="hibernate.format_sql">${format_sql}</prop>
                 <prop key="current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</prop>
             </props>
         </property>

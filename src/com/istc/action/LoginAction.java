@@ -99,11 +99,15 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
         System.out.println("id: "+id);
         System.out.println("password: "+password);
 
+        System.out.println("token:"+token);
+        System.out.println("session 中："+(String) session.get(tokenKey));
+        System.out.println("token是否匹配: "+token.equals((String)session.get(tokenKey)));
+
         isvalidLogin();
         if(!isValid) return INPUT;
 
         token = tokenUtil.tokenCheck(this, session, token);//validate方法会被执行两次导致token变化，因此只能放在login方法中
-        Person person = (Member) session.get(loginKey);
+        Person person = (Person) session.get(loginKey);
         if(person == null){
             person = new Member();
             person.setID(id);
@@ -118,7 +122,7 @@ public class LoginAction extends ActionSupport implements ServletResponseAware,S
         }
         //登陆成功, 放入 session 中, 如果前端传入的参数允许存储cookie, 则操作存储 cookie
         session.put(loginKey, person);
-        session.remove(tokenKey);
+        session.put(tokenKey, token);
         if(remember) cookieUtil.addCookieToResponse(person, response);
 
         System.out.println("login 中的 person 信息\n"+person);

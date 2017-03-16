@@ -5,6 +5,7 @@ import java.util.*;
 import com.istc.Entities.Entity.Interviewee;
 import com.istc.Service.EntityService.IntervieweeService;
 import com.istc.Utilities.TokenUtils;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 面试模块
@@ -24,7 +26,7 @@ import javax.annotation.Resource;
 @Scope(scopeName = "prototype")
 @AllowedMethods({"intervieweeGet", "intervieweeCheck"})
 @ParentPackage("ajax")
-@Result(name="input",location="interview.jsp")
+//@Result(name="input",location="interview.jsp")
 public class InterviewAction extends ActionSupport implements SessionAware{
 	
 	private static final long serialVersionUID = 12343251L;
@@ -33,7 +35,9 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	@Resource(name = "intervieweeService")
     private IntervieweeService intervieweeService;
 
-	private String[] passedIDs;
+	private HttpServletRequest request;
+
+	private String ids;
 	private Map<String, Object> session;
 
 	private Interviewee[] restInterviewees;
@@ -45,23 +49,33 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 	 * 用于获得用户提交的面试结果信息，并对数据库进行相应的处理
 	 */
 	@Action(value="intervieweeCheck", results = {@Result(name = INPUT, type = "json", params = {"ignoreHierarchy","false"})})
-	public String intervieweeCheck() throws Exception{
-		try {
-			tokenUtil = TokenUtils.getInstance();
-			if(tokenUtil.isResubmit(session, token)){
-				token = tokenUtil.tokenCheck(this, session, token);
-				return INPUT;
-			}
-		    //将数据库中面试通过的人删除并加入成员列表
-			intervieweeService.setIntervieweesToMembers(passedIDs);
-			//从数据库中重新获取剩余对象的List
-			restInterviewees = intervieweeService.getRestInterviewees();
-			if(restInterviewees.length <= 0) addActionMessage("没有需要面试人员了哦~");
-		} catch (Exception e) {
-			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
+	public String intervieweeCheck() throws Exception {
+
+		request = ServletActionContext.getRequest();
+		System.out.println(request.getParameter("ids"));
+
+		tokenUtil = TokenUtils.getInstance();
+		if (tokenUtil.isResubmit(session, token)) {
+			token = tokenUtil.tokenCheck(this, session, token);
+			return INPUT;
 		}
-        return INPUT;
-    }
+		System.out.println("token: " + token);
+		System.out.println("ids 是：" + ids);
+//		String[] passIDArray = this.str2strArray(ids, "/");
+//		for (String s : passIDArray) System.out.println("传入的id：" + s);
+		//将数据库中面试通过的人删除并加入成员列表
+		intervieweeService.setIntervieweesToMembers(str2strArray(ids, "/"));
+		//从数据库中重新获取剩余对象的List
+		restInterviewees = intervieweeService.getRestInterviewees();
+		if (restInterviewees.length <= 0) addActionMessage("没有需要面试人员了哦~");
+//			addFieldError("getIntervieweeError", "获取面试人员信息失败！");
+		return INPUT;
+	}
+
+	private String[] str2strArray(String s, String split){
+		if(s == null)return null;
+		return s.split(split);
+	}
 	
 	/**
 	 * 从数据库获取面试人员列表
@@ -74,8 +88,14 @@ public class InterviewAction extends ActionSupport implements SessionAware{
 		return INPUT;
 	}
 
-	public void setPassedIDs(String[] passedIDs){
-		this.passedIDs = passedIDs;
+	public String getIds() {
+		return ids;
+	}
+
+	public void setIds(String ids) {
+		System.out.println("进入set");
+		System.out.println("set的值为: "+ ids);
+		this.ids = ids;
 	}
 
 	public Interviewee[] getRestInterviewees() {

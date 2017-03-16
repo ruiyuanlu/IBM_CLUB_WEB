@@ -55,6 +55,7 @@ public class TokenUtils {
      * @return 检查现有 token，并返回新的 token
      */
     public String tokenCheck(ActionSupport action, Map<String, Object> session, String curToken){
+        System.out.println("tokenCheck 中: 前端token: "+curToken);
         if(isResubmit(session, curToken))
             action.addFieldError(tokenKey, "请勿重复提交信息哦(●'◡'●)");
         String newToken = generateNewToken();

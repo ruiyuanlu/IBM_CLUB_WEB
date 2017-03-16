@@ -11,7 +11,7 @@ import java.io.Serializable;
 /**
  * Created by lurui on 2017/2/4 0004.
  */
-@Repository("MinisterDAO")
+@Repository("ministerDAO")
 public class MinisterDAOImpl<E extends Minister, PK extends Serializable> extends BaseDAOImpl<Minister, String> implements MinisterDAO<E, PK> {
 
     @Override

@@ -23,22 +23,26 @@ public class DepartmentService {
 
     public void add(Department department){
         if (!(department==null||department.getDeptID()==null||department.getDeptID()==0))
-        departmentDAO.save(department);
+            departmentDAO.save(department);
     }
     public void update(Department department){
         if (!(department==null||department.getDeptID()==null||department.getDeptID()==0))
-        departmentDAO.edit(department);
+            departmentDAO.edit(department);
+    }
+    public void remove(int deptID){
+        if (departmentDAO.exist(deptID))
+            departmentDAO.delete(departmentDAO.get(deptID));
     }
     public List<Member> getInsideMembers(int deptID){
         if (deptID==0)
             return null;
-       Department department= (Department)departmentDAO.get(deptID);
-       Set<Member> memberSet=department.getMembers();
-       List<Member> result=new ArrayList<Member>();
-       for (Member member:memberSet){
-           result.add(member);
-       }
-       return result;
+        Department department= (Department)departmentDAO.get(deptID);
+        Set<Member> memberSet=department.getMembers();
+        List<Member> result=new ArrayList<Member>();
+        for (Member member:memberSet){
+            result.add(member);
+        }
+        return result;
     }
     public boolean exist(int dept){
         return  departmentDAO.exist(dept);

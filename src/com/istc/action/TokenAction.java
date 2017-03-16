@@ -36,7 +36,6 @@ public class TokenAction extends ActionSupport implements SessionAware{
     }
 
     public String getToken() {
-        if(token == null) this.generateToken();
         return token;
     }
 

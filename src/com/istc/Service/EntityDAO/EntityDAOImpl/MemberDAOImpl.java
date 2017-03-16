@@ -53,5 +53,7 @@ public class MemberDAOImpl<E extends Member, PK extends Serializable> extends Ba
     @Override
     public void delete(Member member){
         getSession().createQuery("delete from Member m where m.ID = " + member.getID()).executeUpdate();
+        getSession().flush();
+        getSession().clear();
     }
 }

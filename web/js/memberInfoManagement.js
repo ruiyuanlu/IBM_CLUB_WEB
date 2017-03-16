@@ -14,6 +14,9 @@ function changePasswordValidation(){
 function personUpgradeValidation(){
     postForm2Action("personUpgrade","#personUpgrade","成员设置成功！")
 }
+function memberUpgradeValidation(){
+    postForm2Action("memberUpgrade","#memberUpgrade","部长设置成功！")
+}
 
 function changeInfoValidation(){
     postForm2Action("modifyInfo", "#modifyInfo", "修改个人信息成功!");

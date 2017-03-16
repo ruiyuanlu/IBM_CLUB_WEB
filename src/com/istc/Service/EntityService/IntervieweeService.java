@@ -32,7 +32,10 @@ public class IntervieweeService implements Authority{
     public Interviewee[] getRestInterviewees(){
         List<Interviewee> interviewees = intervieweeDAO.findAll();
         Interviewee[] rest = new Interviewee[interviewees.size()];
-        for(int i = 0; i< rest.length; i++) rest[i] = interviewees.get(i);
+        for(int i = 0; i< rest.length; i++) {
+            rest[i] = interviewees.get(i);
+            rest[i].setPassword(null);
+        }
         return rest;
     }
 

@@ -48,6 +48,11 @@ public class RedirectAction extends ActionSupport implements SessionAware, Servl
         System.out.println("进入RedirectAction");
     }
 
+    @Action(value = "indexRedirect", results = {@Result(name = "index", location = "/index.jsp")})
+    public String indexRedirect(){
+        return "index";
+    }
+
     @Action(value = "noSuchAction", results = {@Result(name = "actionNotFound", location = "/bootHTML/404.html")})
     public String noSuchAction(){
         return "actionNotFound";

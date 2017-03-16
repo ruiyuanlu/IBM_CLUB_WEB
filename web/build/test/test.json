@@ -1,11 +1,9 @@
-[
-    {
-        "name" :"luruiyuan",
-        "rank" :"admin",
-        "id"   :2141600000
-    },{
-        "name" :"luruiyuan2",
-        "rank" :"user",
-        "id"   :2141600001
-    }
-]
+{
+"restInterviewees":
+[{
+  "ID":"2141601020","QQ":"333333333","age":14,"authority":0,"birthday":"2003-12-10T00:00:00","description":"crazybitch","gender":true,"isPassed":false,"name":"futa","password":null,"phoneNumber":"13333333333"
+},{
+  "ID":"2222222214","QQ":"62511613","age":17,"authority":0,"birthday":"2000-03-22T00:00:00","description":"caonima\nhehe\nqunide","gender":true,"isPassed":false,"name":"hehe","password":null,"phoneNumber":"13669207392"
+},{
+  "ID":"2222222221","QQ":"5454545","age":15,"authority":0,"birthday":"2002-03-06T00:00:00","description":"4545454545","gender":true,"isPassed":false,"name":"sasasa","password":null,"phoneNumber":"18911111111"}]
+}

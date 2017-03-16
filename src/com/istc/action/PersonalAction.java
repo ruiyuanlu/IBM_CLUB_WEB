@@ -25,7 +25,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.Stream;
 
 /**
  * 用于管理成员信息的增删改查，其中手动增加成员仅可以由部长级以上成员完成
@@ -33,7 +32,7 @@ import java.util.stream.Stream;
 @Controller("personnelAction")
 @Scope("prototype")
 @ParentPackage("ajax")
-@AllowedMethods({"addMember","changePassword","personUpgrade","chooseDept","fetchAllPerson","getRestInterviewees","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
+@AllowedMethods({"addMember","addMinister","changePassword","personUpgrade","chooseDept","fetchAllPerson","getRestInterviewees","deleteMemberSubmit","resetPasswordSubmit","fetchMemberInfo","modifyInfo"})
 public class PersonalAction extends ActionSupport implements SessionAware,ServletResponseAware,ServletRequestAware {
 
     private HttpServletRequest request;
@@ -72,7 +71,8 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     private String readyIntervieweeIdLine;
     //要升级为部员成员id组,action中分割得到
     private String[] readyIntervieweeId;
-
+    //要升级为部长的部员id
+    private String readyMemberId;
 
 
 
@@ -170,26 +170,26 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     }
 
 
-//    @Action(
-//            value="getRestInterviewees",
-//            results={
-//                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
-//            }
-//    )
-//    /**
-//     *取出所有面试者，以   形式置于json（可以改为使用isPassed参数有选择的取人，
-//     * 但因为目前通过面试方法为删去interviewee故暂为取所有interviewee）
-//     */
-//    public String getRestInterviewees(){
-//        List<Interviewee> interviewees=intervieweeService.getRestInterviewees();
-//        if(interviewees==null||interviewees.get(0)==null){
-//            addFieldError("getRestInterviewees","已无未面试人员，面试终了！");
-//            return INPUT;
-//        }
-//
-//        jsonresult.put("interviewees",interviewees);
-//        return INPUT;
-//    }
+    @Action(
+            value="getRestInterviewees",
+            results={
+                    @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
+            }
+    )
+    /**
+     *取出所有面试者，以   形式置于json（可以改为使用isPassed参数有选择的取人，
+     * 但因为目前通过面试方法为删去interviewee故暂为取所有interviewee）
+     */
+    public String getRestInterviewees(){
+        Interviewee[] interviewees=intervieweeService.getRestInterviewees();
+        if(interviewees==null|| interviewees[0] ==null){
+            addFieldError("getRestInterviewees","已无未面试人员，面试终了！");
+            return INPUT;
+        }
+
+        jsonresult.put("interviewees",interviewees);
+        return INPUT;
+    }
 
 
     @Action(
@@ -199,6 +199,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
             }
     )
     public String changePassword(){
+        newToken = tokenUtil.tokenCheck(this, session, token);
         try {
             /**
              * 假定struts已经把要修改的新密码放入private String password
@@ -265,6 +266,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
             }
     )
     public  String chooseDept(){
+        newToken = tokenUtil.tokenCheck(this, session, token);
         Member tommy;
         tommy=memberService.get(id);
         tommy.getEnterDepts().add(departmentService.get(dept));
@@ -317,16 +319,33 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
         }
     }
 
+
     @Action(
-            value="personUpgrade",
+            value="memberUpgrade",
             results={
                     @Result(name="input", type="json", params={"ignoreHierarchy", "false"}),
             }
     )
     /**
+     * 部员升级为无部门部长
+     */
+    public String memberUpgrade(){
+        memberService.setMemberToMinister(readyMemberId);
+        return INPUT;
+    }
+    public void  validateMemberUpgrade(){
+        if (readyMemberId==null||readyMemberId==""){
+            addFieldError("readyMemberId","请输入要升级的部员");
+        }
+        else if (!memberService.exist(readyMemberId)){
+            addFieldError("readyMemberId","ta并不是member类成员");
+        }
+    }
+    /**
      * 将传入interviwee等人升级为部门为dept的member
      */
     public String personUpgrade(){
+        newToken = tokenUtil.tokenCheck(this, session, token);
         intervieweeService.setIntervieweesToMembers(readyIntervieweeId);
         return INPUT;
     }
@@ -353,6 +372,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
             }
     )
     public String deleteMemberSubmit(){
+        newToken = tokenUtil.tokenCheck(this, session, token);
         try {
             //在数据库中删除对应人员。因为人员与部门为多对多双向管理，所以这里是用的方法是使用字符串拼接直接删除member
             memberService.remove(deleted);
@@ -390,7 +410,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
      * 修改id为needreset的member密码为defaultPassword= "111111"
      */
     public String resetPasswordSubmit(){
-
+        newToken = tokenUtil.tokenCheck(this, session, token);
         try {       Member curmember=memberService.get(needreset.trim());
             System.out.println("修改前的密码加密："+curmember.getPassword());
             curmember.setPassword(defaultPassword);
@@ -437,6 +457,7 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
      * 修改Member类型对象并保存
      */
     public String modifyInfo(){
+        newToken = tokenUtil.tokenCheck(this, session, token);
         try {
             id= ((Person)session.get(loginKey)).getID();
             Member member_on;
@@ -501,6 +522,14 @@ public class PersonalAction extends ActionSupport implements SessionAware,Servle
     @Override
     public void setSession(Map<String, Object> map) {
         this.session=map;
+    }
+
+    public String getReadyMemberId() {
+        return readyMemberId;
+    }
+
+    public void setReadyMemberId(String readyMemberId) {
+        this.readyMemberId = readyMemberId;
     }
 
     public String getId() {

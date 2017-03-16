@@ -179,4 +179,8 @@ public class RegisterAction extends ActionSupport implements SessionAware, Autho
     public void setSession(Map<String, Object> map) {
         session = map;
     }
+
+    public void setDescription(String[] description) {
+        this.description = description;
+    }
 }

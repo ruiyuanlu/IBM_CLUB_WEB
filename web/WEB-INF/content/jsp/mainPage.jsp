@@ -18,5 +18,6 @@
 <a href="memberInfoManagementRedirect">成员信息修改</a> <br/>
 <a href="uploadRedirect">文件上传</a><br/>
 <a href="downloadRedirect">文件下载</a><br/>
+<a href="deptManagementRedirect">部门管理</a><br/>
 </body>
 </html>
