@@ -55,6 +55,7 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/struts2-spring-plugin-2.5.10.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xmlbeans-2.6.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.41-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
